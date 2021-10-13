@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- controls 안 써주면 재생 자체가 안 됨 -->
+    <video src="Beach - 79773.mp4" controls></video>
+
+    <video controls width="640px" height="360px">
+        <source src="People - 84973.mp4" type="video/mp4">
+    </video>
+
+    <!-- 동영상 재생하기 전에 미리 보여지는 그림(유튜브 썸네일같은거) -->
+    <!-- poster 속성 이용하면 된다. -->
+    <video poster="lotus.jpg" controls width="640px" height="360px">
+        <source src="People - 84973.mp4" type="video/mp4">
+    </video>
+
+    <!-- 웹사이트 켜자마자 동영상 재생하게 하는 방법 -->
+    <!-- autoplay 옵션 이용 -->
+    <!-- 크롬에서는 절대 자동재생 안 되고, 
+        파이어폭스에서는 일정 크기? 길이? 미만의 동영상은 재생이 된다. -->
+    <video poster="lotus.jpg" controls width="640px" height="360px" autoplay>
+        <source src="People - 84973.mp4" type="video/mp4">
+        <!-- 2.88MB, 9초 -->
+    </video>
+    <video poster="lotus.jpg" controls width="640px" height="360px" autoplay>
+        <source src="Beach - 79773.mp4" type="video/mp4">
+        <!-- 9.59MB, 15초 -->
+    </video>
+    <!-- 음소거하면 무조건 자동재생됨(muted) -->
+    <video poster="lotus.jpg" controls width="640px" height="360px" autoplay muted>
+        <source src="Beach - 79773.mp4" type="video/mp4">
+        <!-- 9.59MB, 15초 -->
+    </video>
+</body>
+</html>

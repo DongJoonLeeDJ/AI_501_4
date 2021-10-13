@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- table[border=1] -->
+    <table border="1">
+        <!-- caption{테이블 캡션} -->
+        <caption>테이블 캡션</caption>
+        <colgroup>
+            <!-- col[span=2 style=background:red] -->
+            <col span="2" style="background:red">
+            <col style="background:blue">
+        </colgroup>
+        <!-- 5행 3열 짜리 테이블 만들어보자 -->
+        <!-- alt + 마우스 클릭 : 다중 선택 -->
+        <thead style="background: green;">
+            <tr>
+                <th>제목</th>
+                <th>제목</th>
+                <th>제목</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- (tr>td*3)*3 -->
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+            <tr>
+                <td>데이터</td>
+                <td>데이터</td>
+                <td>데이터</td>
+            </tr>
+        </tbody>
+        <tfoot style="background: yellow;">
+            <tr>
+                <td>아래쪽</td>
+                <td>아래쪽</td>
+                <td>아래쪽</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+</html>
