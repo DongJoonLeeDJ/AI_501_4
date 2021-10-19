@@ -1,0 +1,14 @@
+<script>
+    function onsub(){
+        alert('test');
+        var id = document.getElementById('id').value;
+        document.getElementById('aa').setAttribute('action','http://10.80.161.222:3000/signup/'+id);
+    }
+</script>
+
+<form id="aa" name="checkid" action="http://10.80.161.222:3000/signup" method="get" onsubmit="onsub()">
+    <input name="id" type="text" className="form-control mg-2" id="id"/>
+    <button onClick={ididchekc} type="submit" value="아이디 중복확인" className="btn btn-primary btn-lg px-4 gap-3">
+        아이디 중복확인
+    </button>
+</form>
