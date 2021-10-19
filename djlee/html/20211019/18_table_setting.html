@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 테이블 태그의 자손인 tr태그. 그 tr태그의 자손인 th */
+        /* 제목 부분이 빨간색이 되게 해보세요(단, 자손 선택자만 쓸 것) */
+        /* 만약 후손선택자로도 스타일 줄줄 알면 백그라운드 한 번 줘보기(노란색) */
+        table>tbody>tr>th { color:red}
+        /* tbody는 여기는 없지만 실질적으로 table의 자손 */
+        table tr>th { background-color: yellow;}
+        /* table의 후손(tbody때문에 자손은 아님. )에 스타일을 준다. */
+    </style>
+</head>
+<body>
+    <table border=1>
+        <!-- <tbody> -->
+        <tr>
+            <th>제목</th>
+            <th>제목</th>
+        </tr>
+        <tr>
+            <td>본문1</td>
+            <td>본문2</td>
+        </tr>
+    <!-- </tbody> -->
+    </table>
+</body>
+</html>

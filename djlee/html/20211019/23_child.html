@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1:first-child{color:red}
+        /* 2번째에서만 적용 */
+        h1:nth-child(2) {background-color: yellow;}
+        /* 짝수번째에 대해서만 적용. n값은 1부터 시작. */
+        h1:nth-child(2n) {border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <p>p 태그 없을 땐 첫번째 h1이 빨간색이지만 이거 추가 되면 다 검은색됨</p>
+    <h1>lorem</h1>
+    <h1>lorem</h1>
+    <h1>lorem</h1>
+    <div>
+        <h1>Lorem, ipsum dolor.(빨강)</h1>
+        <h1>Lorem, ipsum dolor.</h1>
+        <h1>Lorem, ipsum dolor.</h1>
+    </div>
+</body>
+</html>

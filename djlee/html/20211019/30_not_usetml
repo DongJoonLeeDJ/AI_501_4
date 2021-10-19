@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    /* a태그의 밑줄없앰 */
+    a{text-decoration: none;}
+    /* 방문한적이 있는 의 '반대' 선택 - 즉 방문한 적 없는 태그 선택 */
+    a:not(a:visited){color:red}
+    /* href 속성을 갖는 a 태그를 선택 */
+    a:link{background-color: yellow;}
+</style>
+</head>
+<body>
+    <h1><a>href 속성 없는 a 태그</a></h1>
+    <h1><a href="http://abc.com">abc</a></h1>
+    <h1><a href="https://www.naver.com">네이버</a></h1>
+</body>
+</html>
