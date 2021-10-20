@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 후손 선택자(공백, 한 칸 띄는 거) */
+        #aaa h1
+        {
+            /* id가 aaa인 태그의 안쪽에 있는 모든 h1에 대해서 스타일을 적용함 */
+            color: #FF00FF;
+            background-color: aquamarine;
+        }
+        /* 자손 선택자(>) */
+        /* id가 aaa인 태그의 안쪽에 있는 태그들에 스타일을 주되, 
+        안쪽의 안쪽부턴 안 줌 */
+        #aaa>p
+        {
+            color:burlywood;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="aaa">
+        <h1>안녕하세요</h1>
+        <p>네</p>
+        <span>
+            <h1>헤이</h1>
+            <p>예스</p>
+        </span>
+        <h1>안녕히가세요.</h1>
+        <p>넵</p>
+    </div>
+
+    <!-- #abcd>h1 -->
+    <div id="abcd">
+        <h1>id가 abcd인 (div) 태그의 자손</h1>
+    </div>
+
+    
+</body>
+</html>

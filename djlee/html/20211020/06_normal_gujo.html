@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1:last-child { color:red}
+        /* 마지막에서부터 3번째 */
+        h1:nth-last-child(3) {color:blue}  
+        /* 3번째, 6번째, 9번째, 12번째.... 태그에 색깔 입힘 */
+        h1:nth-last-child(3n) {background-color: cyan;}  
+    </style>
+</head>
+<body>
+    <!-- h1*3{내용$}-->
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam ad hic sunt, deserunt eos non, ab recusandae quis ipsa ducimus provident ratione saepe officia aliquid est sint dolor. Ab, alias.</p>
+    <h1>내용1</h1>
+    <h1>내용2</h1>
+    <h1>내용3</h1>
+    <h1>Lorem, ipsum dolor.1</h1>
+    <h1>Lorem, ipsum dolor.2</h1>
+    <h1>Lorem, ipsum dolor.3</h1>
+    <h1>Lorem, ipsum dolor.4</h1>
+    <h1>Lorem, ipsum dolor.5</h1>
+    <p>가장 마지막 태그가 h1이 아니라 p 태그이므로 스타일이 적용이 안 됨</p>
+
+    <div>
+        <h1>---안녕하세요 div 안쪽입니다.---</h1>
+        <h1>안녕하세요 div 안쪽입니다.</h1>
+        <h1>안녕하세요 div 안쪽입니다.</h1>
+        <h1>안녕하세요 div 안쪽입니다.</h1>
+        <h1>안녕하세요 div 안쪽입니다.</h1>
+        <h1>----안녕하세요 div 안쪽입니다.---</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 모든 h1태그는 글자가 파란색이다. */
+        h1{color:blue}
+        /* 모든 p태그는 배경색이 핑크색이다. */
+        p{background-color: pink;}
+        /* 모든 h1들과는 다르게 id가 testh1 인 경우엔 백그라운드 적용됨 */
+        #testh1 { background-color: yellow;}
+        #test_p{color:red}
+        /* p태그이면서 id가 test_p인 것 */
+        /* 붙여서 쓰는 것 : and 조건 */
+        /* p태그이다 && id가 test_p이다. */
+        p#test_p {border : 1px solid black}
+    </style>
+</head>
+<body>
+    <!-- h1#testh1 -->
+    <h1 id="testh1">id가 testh1이다.</h1>
+    <!-- p#test_p -->
+    <p id="test_p">id가 test_p이다.</p>
+    <h1>Lorem, ipsum.</h1>
+    <h1>Lorem, ipsum.</h1>
+    <h1>Lorem, ipsum.</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero adipisci sunt vitae temporibus veritatis harum, quos mollitia voluptatem voluptatibus ipsum provident minima at dolorem facere assumenda amet sit vero aliquid.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero adipisci sunt vitae temporibus veritatis harum, quos mollitia voluptatem voluptatibus ipsum provident minima at dolorem facere assumenda amet sit vero aliquid.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero adipisci sunt vitae temporibus veritatis harum, quos mollitia voluptatem voluptatibus ipsum provident minima at dolorem facere assumenda amet sit vero aliquid.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero adipisci sunt vitae temporibus veritatis harum, quos mollitia voluptatem voluptatibus ipsum provident minima at dolorem facere assumenda amet sit vero aliquid.</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero adipisci sunt vitae temporibus veritatis harum, quos mollitia voluptatem voluptatibus ipsum provident minima at dolorem facere assumenda amet sit vero aliquid.</p>
+</body>
+</html>
