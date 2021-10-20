@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#case1 { border : 1px solid black}
+        div#case2 { 
+            border-width : 1px;
+            border-style:  solid;
+            border-color:  black;
+                    }
+        div#left {border-left:3px dashed red}
+        div#radius{
+            border-radius: 50px;
+            border:3px solid black;
+        }
+        div#radius_left{
+            border-radius: 50px 0px 0px 50px;
+            border:3px dashed black;
+        }
+
+        div#left_red
+        {
+            margin-top: 10px;
+            border-width : 3px;
+            border-style:  solid;
+            border-color:  black;
+            border-left:3px dashed red;
+            border-right:3px solid springgreen;
+            border-top:3px solid cornflowerblue;
+            /* 그냥 50px만 주면 좌상 우상 우하 좌하에 대해서 둥글게 됨 */
+            /* 좌상만 둥글게 됨 */
+            border-radius: 50px 0px 0px 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="case1"><h1>Lorem, ipsum dolor.</h1></div>
+    <div id="case2"><h1>Lorem, ipsum dolor.</h1></div>
+    <div id="left"><h1>Lorem, ipsum dolor.</h1></div>
+    <div id="radius"><h1>Lorem, ipsum dolor.</h1></div>
+    <div id="radius_left"><h1>Lorem, ipsum dolor.</h1></div>
+    <div id="left_red"><h1>Lorem, ipsum dolor.</h1></div>
+</body>
+</html>

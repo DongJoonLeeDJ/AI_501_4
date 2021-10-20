@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            margin: 10px;
+            padding:10px;
+            width: 100px;
+            height: 100px;
+            border: 10px solid black;
+        }
+        /* content-box ; 기본값, width height 값을 주면 border랑 padding 안 쪽 영역의 넓이를 그 만큼 지정 */
+        div:first-child
+        {box-sizing: content-box; 
+            background-color: red;}
+        /* 입력된 width, height값을 border+padding+본문의 값으로 인식  */
+        div:last-child{box-sizing: border-box; 
+            background-color: orange;}
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+</body>
+</html>
