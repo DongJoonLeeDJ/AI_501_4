@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>디스플레이 속성</title>
+    <style>
+        div,span { border: 3px solid black; background-color: springgreen;}
+        #none {display:none}
+        /* inline에는 넓이라는 개념 자체도 없고, 여백도 양옆에만 들어감 */
+        #inline {display:inline; margin:50px; width: 300px; height: 300px;}
+        #inline_block {display: inline-block; margin:50px; 
+                                                      width: 300px; height: 300px;}
+        #hidden{visibility: hidden; } /*display:none != visibility:hidden*/
+    </style>
+</head>
+<body>
+    <div>이건 display 속성이 block입니다.</div>
+    <span>이건 display 속성이 inline입니다.</span>
+    <div id="none">none!</div> <!-- div#none-->
+    <div id="inline">inline!!</div>
+    <div id="inline_block">inline_Block!!!</div>
+    <div id="hidden">hidden</div>
+</body>
+</html>

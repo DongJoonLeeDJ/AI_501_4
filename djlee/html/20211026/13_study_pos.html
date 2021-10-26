@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .box{width: 100px; height: 100px; position: absolute;}
+        .red{background-color: red; left:10px; top:10px;}
+        .green{background-color: green; left:50px; top:50px}
+        .blue{background-color: blue; left:90px; top : 90px}
+    </style>
+    <style>
+        /* 자손과 후손은 다름... > 바로 안쪽에 있는거만 선택 */
+        /* 한 칸 띈 거 : 안쪽의 안쪽들도 다 선택 */
+        /* 핵심 : position: relative; height: 100px; */
+        body>div {position: relative; height: 100px; border: 3px solid black;
+                      overflow: hidden;} /*scroll 쓰면 짤리진 않고 다 볼 순 있다.*/
+    </style>
+</head>
+<body>
+    <h1>Lorem, ipsum.</h1>
+    <!-- div>(div*3) -->
+    <div>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+    <h1>Lorem, ipsum dolor.</h1>
+</body>
+</html>

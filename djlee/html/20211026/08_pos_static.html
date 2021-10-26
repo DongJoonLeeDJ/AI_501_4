@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* position:static은 기본으로 들어가는 값이라 안 적어도 됨 */
+        /* static인 경우엔 left와 top에 무슨 값을 넣어도 무조건 */
+        /* 입력된 순서대로만 화면에 표시됨 */
+        .box{width: 100px; height: 100px; position: static;}
+        .red{background-color: red; left:50px; top:50px}
+        .green{background-color: green;}
+        .blue{background-color: blue;}
+    </style>
+</head>
+<body>
+    <!-- div.box*3 -->
+    <div class="box red"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #one {width: 200px; height: 200px; background-color:pink;
+            left:500px}
+        /* > : one태그 안쪽에 있는 태그  */
+        /* 만약 > 대신에 공백(스페이스바 한 칸)이면 
+           one태그 안쪽의 안쪽도 가리킴 */
+        #one>div {width: 50px; height: 50px; position: absolute; 
+            left: 100px; top: 30px; background-color: hotpink;}
+
+        #two {width: 200px; height: 200px; background-color:blue;
+                position: relative; left:500px}
+        #two>div {width: 50px; height: 50px; position: absolute; 
+            left: 100px; top: 30px; background-color: red;}
+
+            #three {width: 200px; height: 200px; background-color:yellow;
+            left:500px}
+            #three>div {width: 50px; height: 50px; position: absolute; 
+            left: 200px; top: 60px; background-color: gray;}
+    </style>
+</head>
+<body>
+    <div id="one">
+        <div>one안</div>
+    </div>
+    <div id="two">
+        <div>two안</div>
+    </div>
+    <div id="three">
+        <div>three</div>
+    </div>
+</body>
+</html>

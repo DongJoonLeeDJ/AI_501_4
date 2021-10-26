@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #WrapBody { width: 560px; margin : 0 auto; background: rgb(120,115,196);
+background: linear-gradient(90deg, rgba(120,115,196,1) 0%, rgba(75,97,59,1) 35%, rgba(0,212,255,1) 100%);}
+        #Aside {width: 200px; float: left; background-color: darkorange;}
+        #Section{width: 330px; float:right; background-color: deeppink;}
+        /* 구버전 웹브라우저는 지원 안 될 수도 있음 */
+        /* 일종의 보이지 않는 막? 같은 것을 생성해서 Footer가 위로
+        올라오는 것을 막는 것이다. */
+        #Clear{clear: both;}
+    </style>
+</head>
+<body>
+    <div id="WrapBody">
+        <div id="Header">        <h1>Header</h1>     </div>
+        <div id="Navigation">        <h1>Navigation</h1>    </div>
+        <div id="Contents">
+            <div id="Aside">
+                <h1>Aside</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error ipsum aliquid inventore in culpa dolorum deleniti recusandae delectus, ex, veritatis ullam id assumenda at officiis soluta numquam distinctio? Fugiat, labore.</p>
+            </div>
+            <div id="Section">
+                <h1>Section</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, tenetur dolor? Impedit laborum fuga consequatur placeat dolorum velit cupiditate, nobis assumenda et iste, voluptas eos, officia tempore quod libero hic!</p>
+            </div>
+        </div>
+        <div id="Clear"></div>
+        <div id="Footer">   <h1>Footer</h1>     </div>
+    </div>
+
+
+
+</body>
+</html>

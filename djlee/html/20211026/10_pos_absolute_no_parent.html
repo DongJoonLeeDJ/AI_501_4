@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* 부모태그가 없거나 부모태그가 display:static(=기본값)인 경우 */
+        /* fixed와 똑~같이 동작함 */
+        .box{width: 100px; height: 100px; position: absolute;}
+        .red{background-color: red; left:50px; top:50px}
+        /* green과 blue는 top을 지정 안 해서 자동으로 맨 위에 배치됨 */
+        .green{background-color: green;left:100px}
+        .blue{background-color: blue;left:200px}
+    </style>
+</head>
+<body>
+    <!-- div.box*3 -->
+    <div class="box red"></div>
+    <div class="box green"></div>
+    <div class="box blue"></div>
+</body>
+</html>
