@@ -113,13 +113,100 @@
     <style>
         /* 첫번째탭 */
         input:nth-of-type(1) { display: none;}  /*radio 지우는 거*/
-        input:nth-of-type(1) ~ div:nth-of-type(1){display: none;}
-        input:nth-of-type(1):checked ~ div:nth-of-type(1){display: block;}
+        input:nth-of-type(1) ~ div:nth-of-type(1){display: none;} /*그 라디오 옆의 div(tab_item) 지우기*/
+        input:nth-of-type(1):checked ~ div:nth-of-type(1){display: block;}/*div(tab_item) 나타나게 하기*/
         
         /* 두번째탭 */
         input:nth-of-type(2) { display: none;}  /*radio 지우는 거*/
-        input:nth-of-type(2) ~ div:nth-of-type(2){display: none;}
-        input:nth-of-type(2):checked ~ div:nth-of-type(2){display: block;}
+        input:nth-of-type(2) ~ div:nth-of-type(2){display: none;}/*그 라디오 옆의 div(tab_item) 지우기*/
+        input:nth-of-type(2):checked ~ div:nth-of-type(2){display: block;}/*div(tab_item) 나타나게 하기*/
+        
+        /* 탭 모양 구성*/
+        section.buttons{overflow: hidden;}
+        section.buttons>label /*First와 Second*/
+        {
+            /* 수평정렬 */
+            display: block;
+            float: left;
+            /* 크기 및 글자 위치 지정 */
+            width: 100px; 
+            /* 수직 방향 중앙 정렬 */
+            height: 30px;
+            line-height: 30px;
+            /* 수평 방향 중앙 정렬 */
+            text-align: center;
+            /* 테두리 지정 */
+            box-sizing: border-box;
+            border:1px solid black;
+
+            background-color: black;
+            color:white
+            
+        }
+
+        /* 첫번째 radio가 체크되었을 때 옆에 있는 라벨들 중 첫번째 라벨 */
+        /* First */
+        input:nth-of-type(1):checked~section.buttons>label:nth-of-type(1)
+        {
+            background-color: white;
+            color:black;
+            border:3px solid red;
+        }
+        /* 두번째 radio가 체크되었을 때 옆에 있는 라벨들 중 두번째 라벨 */
+        /* Second */
+        input:nth-of-type(2):checked~section.buttons>label:nth-of-type(2)
+        {
+            background-color: white;
+            color:black;
+            border:3px solid red;
+        }
+    </style>
+
+    <style>
+        .item {
+            overflow: hidden;
+            padding: 10px;
+            border:1px solid black;
+            border-top:none;
+        }
+        .thumbnail{
+            float: left;
+        }
+        .description {
+            float: left;
+            margin-left: 10px;
+        }
+        .description>strong
+        {
+            display: block;
+            width: 120px;
+        }
+        /* + 바로 옆에 있는 태그 1개 */
+        .description>strong+p
+        {
+            width: 120px;
+        }
+        /* 글자가 너무 길어졌을 때 생략시키는 방법 */
+        .description>strong, .description>strong+p
+        {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+    <style>
+        #main_footer {
+            /* 중앙 정렬 */
+            width: 960px;
+            margin :0 auto;
+            margin-bottom: 10px;
+            /* 테두리 */
+            box-sizing: border-box;
+            padding: 10px;
+            border:1px solid black;
+            /* 글자 정렬 */
+            text-align: center;
+        }
     </style>
 
 
@@ -155,7 +242,7 @@
         <section id="main_section">
             <article class="main_article">
                 <h1>제목</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ullam quia voluptatum alias iusto est sit nisi enim! Dolorum officiis ex dignissimos soluta similique dolore ipsa blanditiis molestias atque suscipit rerum magni ipsam quibusdam, at incidunt fugit quos exercitationem qui. Quasi tenetur soluta reprehenderit corrupti alias error, id itaque. Sapiente animi itaque debitis suscipit commodi sit similique doloribus quod recusandae reiciendis officia, mollitia incidunt magni! Eos quibusdam ex quis sed temporibus sequi maxime explicabo odit voluptatibus debitis? Fugiat provident consectetur quos. Nulla pariatur quia commodi nostrum expedita repellat impedit, in dicta voluptatem voluptatum corrupti, molestias fugit modi asperiores autem rerum.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, dolor doloribus, repellendus molestiae rem unde non beatae voluptatem aliquid quae quam quas eligendi. Esse, reiciendis inventore distinctio voluptatibus quisquam nobis soluta numquam enim fuga facere nostrum deserunt ipsam ducimus dolorem harum saepe eaque nulla consectetur. Ratione, eum excepturi cum id consectetur inventore, tempora adipisci aut aliquam sequi vel! Voluptatibus, quibusdam. Dignissimos totam earum accusamus a laboriosam quis repellat cumque dolor fuga! Consequuntur error tempora accusantium officia obcaecati nobis! Quisquam quas distinctio dolorem possimus placeat corporis, aliquam earum autem quo enim veniam vel nihil repellat odit dolorum architecto! Omnis obcaecati quia repudiandae quae expedita rerum modi iusto architecto harum voluptatum maiores accusantium, similique sint et eaque itaque ducimus iure! Saepe, ipsa a fugit obcaecati, inventore cum beatae doloremque animi vitae consequatur dolorem nihil ipsam corporis veniam hic ducimus laborum enim quis voluptas accusamus dolores minima soluta. Inventore architecto dolores similique facilis suscipit tempore corporis assumenda dicta, perferendis numquam soluta ad reiciendis odit, porro ipsum! Voluptatum quas assumenda corporis incidunt, aspernatur deleniti mollitia voluptatibus, porro dolorem illo accusantium voluptas? Dicta veniam, officiis ullam nesciunt explicabo quo quos magnam quasi eveniet ratione veritatis nam culpa earum laboriosam animi enim voluptates doloremque? A, ipsa?   Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ullam quia voluptatum alias iusto est sit nisi enim! Dolorum officiis ex dignissimos soluta similique dolore ipsa blanditiis molestias atque suscipit rerum magni ipsam quibusdam, at incidunt fugit quos exercitationem qui. Quasi tenetur soluta reprehenderit corrupti alias error, id itaque. Sapiente animi itaque debitis suscipit commodi sit similique doloribus quod recusandae reiciendis officia, mollitia incidunt magni! Eos quibusdam ex quis sed temporibus sequi maxime explicabo odit voluptatibus debitis? Fugiat provident consectetur quos. Nulla pariatur quia commodi nostrum expedita repellat impedit, in dicta voluptatem voluptatum corrupti, molestias fugit modi asperiores autem rerum.</p>
             </article>
             <article class="main_article">
                 <h1>제목</h1>
@@ -178,7 +265,7 @@
                     <li class="item">
                         <a href="#">
                             <div class="thumbnail">
-                                <img src="https://picsum.photos/id/684/600/400" alt="">
+                                <img src="https://picsum.photos/id/684/45/45" alt="">
                             </div>
                             <div class="description">
                                 <strong>설명하기</strong>
@@ -189,7 +276,7 @@
                     <li class="item">
                         <a href="#">
                             <div class="thumbnail">
-                                <img src="https://picsum.photos/id/684/600/400" alt="">
+                                <img src="https://picsum.photos/id/684/45/45" alt="">
                             </div>
                             <div class="description">
                                 <strong>설명하기</strong>
@@ -200,10 +287,10 @@
                     <li class="item">
                         <a href="#">
                             <div class="thumbnail">
-                                <img src="https://picsum.photos/id/684/600/400" alt="">
+                                <img width=45px height=45px src="https://picsum.photos/id/684/600/400" alt="">
                             </div>
                             <div class="description">
-                                <strong>설명하기</strong>
+                                <strong>설명Lorem, ipsum dolor.</strong>
                                 <p>Lorem ipsum dolor sit amet.</p>
                             </div>
                         </a>
@@ -211,7 +298,7 @@
                     <li class="item">
                         <a href="#">
                             <div class="thumbnail">
-                                <img src="https://picsum.photos/id/684/600/400" alt="">
+                                <img src="https://picsum.photos/id/684/45/45" alt="">
                             </div>
                             <div class="description">
                                 <strong>설명하기</strong>
@@ -226,7 +313,7 @@
                     <li class="item">
                         <a href="#">
                             <div class="thumbnail">
-                                <img src="https://picsum.photos/id/972/600/400" alt="">
+                                <img src="https://picsum.photos/id/972/45/45" alt="">
                             </div>
                             <div class="description">
                                 <strong>두번째</strong>
@@ -237,7 +324,7 @@
                     <li class="item">
                         <a href="#">
                             <div class="thumbnail">
-                                <img src="https://picsum.photos/id/972/600/400" alt="">
+                                <img src="https://picsum.photos/id/972/45/45" alt="">
                                
                             </div>
                             <div class="description">
@@ -249,7 +336,7 @@
                     <li class="item">
                         <a href="#">
                             <div class="thumbnail">
-                                <img src="https://picsum.photos/id/972/600/400" alt="">
+                                <img src="https://picsum.photos/id/972/45/45" alt="">
                           
                             </div>
                             <div class="description">
@@ -261,7 +348,7 @@
                     <li class="item">
                         <a href="#">
                             <div class="thumbnail">
-                                <img src="https://picsum.photos/id/972/600/400" alt="">
+                                <img src="https://picsum.photos/id/972/45/45" alt="">
                        
                             </div>
                             <div class="description">
@@ -275,7 +362,9 @@
 
         </aside>
     </div>
-    <footer>
+    <footer id="main_footer">
+        <h3>HTML5+CSS Basic</h3>
+        <address>WebSite Layout Basic</address>
     </footer>
 
 </body>
