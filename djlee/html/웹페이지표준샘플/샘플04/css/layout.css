@@ -1,0 +1,189 @@
+/* 전체 패딩, 마진, rem 기준 */
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+}
+
+/* 전체 크기 */
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/* 상단 네비게이션 바 */
+#top_navigation_bar {
+    width: 100%;
+    height: 5%;
+    position: fixed;
+    top: 0;
+}
+
+/* 상단 네비게이션 토글 버튼 박스 */
+#top_navigation_toggle_button_box {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    overflow: hidden;
+}
+
+/* 상단 네비게이션 토글 버튼 아이콘 */
+#top_navigation_toggle_button_icon {
+    line-height: 2.6rem;
+}
+
+/* 상단 네비게이션 토글 버튼 텍스트 */
+#top_navigation_toggle_button_text {
+    line-height: 0.3rem;
+}
+
+/* 상단 네비게이션 토글(체크 박스) */
+#top_navigation_toggle {
+    display: none;
+}
+
+/* 상단 네비게이션 토글 ~ 상단 네비게이션(기본) */
+#top_navigation_toggle~#top_navigation {
+    display: none;
+}
+
+/* 상단 네비게이션 토글 ~ 상단 네비게이션(체크) */
+#top_navigation_toggle:checked~#top_navigation {
+    display: block;
+}
+
+/* 상단 네비게이션 */
+#top_navigation {
+    width: 100%;
+    height: auto;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+/* 공식 링크 버튼 박스 */
+#official_link_button_box {
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.official_link{
+    padding: 0.5% 0;
+}
+
+/* 이동 버튼 박스 */
+#move_button_box {
+    height: 20%;
+    position: fixed;
+    right: 0;
+    top: 40%;
+    overflow: hidden;
+}
+
+/* 이동 버튼 */
+.move_button {
+    width: 100%;
+    height: 50%;
+}
+
+/* 헤더 */
+#header {
+    width: 90%;
+    height: 25%;
+    margin: 0 auto;
+    margin-top: 3%;
+    margin-bottom: 1.5%;
+    overflow: hidden;
+}
+
+/* 메인 로고 박스 */
+#main_logo_box {
+    width: 30%;
+    height: 100%;
+    float: left;
+}
+
+/* 메인 로고 */
+#main_logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 메인 타이틀 박스 */
+#main_title_box {
+    width: 70%;
+    height: 100%;
+    line-height: 7rem;
+    ;
+    float: left;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* 메인 타이틀 */
+#main_title>h1 {
+    overflow: hidden;
+
+}
+
+/* 네비게이션 바 */
+#navigation_bar {
+    width: 90%;
+    height: 3%;
+    margin: 0 auto;
+}
+
+/* 게시글 박스 */
+#post_box {
+    width: 90%;
+    height: auto;
+    padding: 3%;
+    margin: 0 auto;
+    margin-bottom: 1.5%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* 게시글 속 이미지 */
+.image_in_post {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* 게시글 속 유튜브 영상 */
+.youtube_video_in_post {
+    margin: 0 auto;
+}
+
+/* 게시글 사이 구분선 */
+.horizontal_line_between_posts {
+    margin: 3% auto;
+}
+
+/* 푸터 */
+#footer {
+    width: 90%;
+    height: auto;
+    padding: 1%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* 푸터 내용 */
+#footer_content {
+    width: 70%;
+    height: auto;
+    float: left;
+}
+
+/* 페이지 버전 */
+#page_version {
+    width: 30%;
+    height: auto;
+    float: left;
+}

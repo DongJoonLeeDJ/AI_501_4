@@ -1,0 +1,297 @@
+ /* 초기화 */
+ * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-image: url(Source/shape_of_water.png);
+    /* background-repeat: no-repeat; */
+    background-size: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+    width: 100%; height: auto;
+
+}
+
+/* 헤더 */
+#main_header {
+    width: 960px;
+    margin: 0 auto;
+    height: 200px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#main_header>#title{
+    position: absolute;
+    width: 300px;
+    height: 110px;
+    top: 35px;
+    left: 350px;
+}
+
+#main_header>#title>#title1 {
+    font-family: 'Dokdo', cursive;
+    font-size: 3em;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    color: rgba(255, 255, 255, 0.822);
+    text-shadow: 6px 4px 5px rgba(0,0,0,0.5);
+}
+
+#main_header>#title>#title2 {
+    font-family: 'Dokdo', cursive;
+    font-size: 5em;
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    color: rgba(255, 255, 255, 0.822);
+    text-shadow: 6px 4px 5px rgba(0,0,0,0.5);
+}
+
+
+/* 네비게이션 바 설정 */
+#main_header>#main_gnb {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+}
+
+#main_header>#main_lnb {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+#main_header>#sub_lnb {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+#lnb_color {
+    position: relative;
+    top: 168px;
+    height: 40px;
+    background: rgba(24, 24, 58, 0.623);
+    -webkit-box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5); 
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5);
+    border-radius: 10px 10px 10px 10px;
+}
+
+#main_gnb>ul {
+    overflow: hidden;
+}
+
+#main_gnb>ul>li {
+    float: left;
+}
+
+#main_gnb>ul>li>a {
+    display: block;
+    padding: 2px 10px;
+    color: white;
+}
+
+#main_lnb>ul {
+    overflow: hidden;
+}
+
+#main_lnb>ul>li {
+    float: left;
+}
+
+#main_lnb>ul>li>a {
+    display: inline;
+    padding: 2px 10px;
+    font-family: 'Nanum Pen Script', cursive;
+    color: white;
+    font-size: 1.3em;
+}
+
+#sub_lnb>ul {
+    overflow: hidden;
+}
+
+#sub_lnb>ul>li {
+    float: left;
+}
+
+#sub_lnb>ul>li>a {
+    display: inline;
+    padding: 2px 10px;
+    font-family: 'Nanum Pen Script', cursive;
+    color: white;
+    font-size: 1.3em;
+}
+
+/* 본문 설정 */
+#content{
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#content > #main_section{
+    width: 740px;
+    float: left;
+}
+#content > #main_aside{
+    width: 200px;
+    float: right;
+}
+#main_section>article#main_article{
+    margin-bottom: 10px;
+    padding: 30px;
+    
+    background: rgba(255, 255, 255, 0.623);
+    -webkit-box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5); 
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5);
+    border-radius: 10px 10px 10px 10px;
+}
+#main_article>a{
+    display: block;
+    color: rgba(128, 128, 128, 0.685);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+#main_article>p:nth-of-type(1){
+    display: block;
+    font-size: 2em;
+    color: rgb(0, 0, 90);
+    margin-bottom: 30px;
+}
+#main_article>p:nth-of-type(2){
+    font-size: small;
+    margin-bottom: 10px;
+}
+#main_article>p#main_begin{
+    margin-top: 30px;
+    margin-bottom: 100px;
+}
+#main_article>p#blackbird{
+    margin-bottom: 10px;
+}
+#main_article>img{
+    margin-bottom: 100px;
+}
+#review{
+    margin-bottom: 40px;
+}
+
+#main_aside>#aside_top{
+    padding: 20px;
+    background: rgba(0, 0, 43, 0.664);
+    color: white;
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5);
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+}
+
+#main_aside>#aside_top>h1{
+    font-family: 'Dokdo', cursive;
+    font-size: 2em;
+    text-align: center;
+}
+
+#main_aside>#aside_top>p{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+#main_aside>#aside_top>#profil{
+    -webkit-box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5); 
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5);
+    border-radius: 10px 10px 10px 10px;
+    overflow: hidden;
+}
+
+#main_aside>#aside_bottom{
+    padding: 20px;
+    background: rgba(0, 0, 43, 0.664);
+    color: white;
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5);
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 20px;
+}
+#main_aside>#aside_bottom>h1{
+    font-family: 'Dokdo', cursive;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tab_item>ul>li>a{
+    color: white;
+}
+
+.tab_item>ul>li{
+    margin-bottom: 10px;
+}
+
+input:nth-of-type(1){display: none;}
+input:nth-of-type(1)~div:nth-of-type(1){display: none;}
+input:nth-of-type(1):checked~div:nth-of-type(1){display: block;}
+
+input:nth-of-type(2){display: none;}
+input:nth-of-type(2)~div:nth-of-type(2){display: none;}
+input:nth-of-type(2):checked~div:nth-of-type(2){display: block;}
+
+section.buttons{overflow: hidden; margin-bottom: 5px;}
+section.buttons>label{display: block; float: left; width:80px; height: 30px; line-height: 30px; text-align: center;
+}
+
+input:nth-of-type(1):hover~section.buttons> label:nth-of-type(1){
+    background: cornflowerblue;
+    border-radius: 10px 0 0 0;
+}
+
+input:nth-of-type(1):checked~section.buttons> label:nth-of-type(1){
+    color: gray;
+    text-decoration: underline;
+}
+
+input:nth-of-type(2):hover~section.buttons> label:nth-of-type(2){
+    background: cornflowerblue;
+    border-radius: 0 10px 0 0;
+}
+
+input:nth-of-type(2):checked~section.buttons> label:nth-of-type(2){
+    color: gray;
+    text-decoration: underline;
+}
+
+.thumbnail{
+    padding: 5px;
+}
+
+.thumbnail>img{
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5);
+    border-radius: 10px 10px 10px 10px;
+}
+
+#footer{
+    padding: 20px;
+    width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.658);
+    border-radius: 10px 10px 0 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 10px -1px rgba(0,0,0,0.5);
+
+}

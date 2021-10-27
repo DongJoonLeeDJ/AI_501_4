@@ -1,0 +1,13 @@
+a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    display: block;
+}
+
+iframe{
+    display: block;
+}

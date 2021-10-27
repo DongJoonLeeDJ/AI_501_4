@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        /* 초기화 코드 */
+        * { margin : 0; padding : 0;}
+        body{font-family: sans-serif;}
+        li{list-style: none;}
+        a{ text-decoration: none;}
+        img{border: 0;}
+
+
+        /* 헤더파트 */
+        #main_header
+        {
+            width:960px;
+            margin:0 auto;
+            height : 160px;
+            position:relative;
+        }
+        #main_header>#title 
+        {
+            position: absolute;
+            left:20px; top:30px;
+        }
+        #main_header>#main_gnb
+        {
+            position:absolute;
+            right:0;  top:0;
+        }
+        #main_header>#main_lnb
+        {
+            position:absolute;
+            right:0;  bottom:10px;
+        }
+
+        #title
+        {
+            font-family: 'East Sea Dokdo', cursive;
+        }
+
+
+        /* gnb */
+        #main_gnb>ul {overflow:hidden}
+        #main_gnb>ul>li {float:left}
+        #main_gnb>ul>li>a {
+            display:block;
+            padding: 2px 10px;
+            border:1px solid black;
+        }
+        #main_gnb>ul>li>a:hover
+        {
+            background:black;
+            color:white
+        }
+        /* lnb */
+        #main_lnb>ul {overflow:hidden}
+        #main_lnb>ul>li {float:left}
+        #main_lnb>ul>li>a {
+            display:block;
+            padding: 10px 20px;
+            border:1px solid black;
+        }
+        #main_lnb>ul>li>a:hover
+        {
+            background:black;
+            color:white
+        }
+
+        #main_gnb>ul>li:first-child>a{border-radius:10px 0 0 10px;}
+        #main_gnb>ul>li:last-child>a{border-radius:0 10px 10px 0;}
+        #main_lnb>ul>li:first-child>a{border-radius:10px 0 0 10px;}
+        #main_lnb>ul>li:last-child>a{border-radius:0 10px 10px 0;}
+
+        /* 콘텐츠 */
+        #content
+        {
+            width: 960px;
+            margin : 0 auto;
+            overflow: hidden;
+        }
+        #content>#main_section
+        {
+            width:750px;
+            float:left;
+            /* background-color: aqua; */
+        }
+        #content>#main_aside
+        {
+            width:200px;
+            float:right;
+            /* background-color: pink; */
+        }
+
+        /* 본문 */
+        #main_section>article.main_article
+        {
+            margin-bottom:10px;
+            padding : 20px;
+            border:1px solid black;
+        }
+
+        input:nth-of-type(1) {display: none}
+        input:nth-of-type(1)~div:nth-of-type(1){display:none}
+        input:nth-of-type(1):checked~div:nth-of-type(1){display:block}
+        input:nth-of-type(2) {display: none}
+        input:nth-of-type(2)~div:nth-of-type(2){display:none}
+        input:nth-of-type(2):checked~div:nth-of-type(2){display:block}
+
+        section.buttons{overflow: hidden;}
+        section.buttons>label{
+            display: block; float: left;
+            width:100px; height: 30px;
+            line-height: 30px;
+            text-align: center;
+            box-sizing: border-box;
+            border:1px solid black;
+            background:black;
+            color:white;
+        }
+        input:nth-of-type(1):checked~section.buttons>label:nth-of-type(1)
+        {
+            background:white;
+            color:black;
+        }
+        input:nth-of-type(2):checked~section.buttons>label:nth-of-type(2)
+        {
+            background:white;
+            color:black;
+        }
+
+        .item
+        {
+            overflow: hidden;
+            padding: 10px;
+            border: 1px solid black;
+            border-top: none;
+        }
+        .thumbnail
+        {
+            float: left;
+        }
+        .description
+        {
+            float: left;
+            margin-left: 10px;
+        }
+        
+        .description>strong
+        {
+            display: block;
+            width: 120px;
+
+           /* 초과 글자 생략 */
+           white-space: nowrap;
+           overflow: hidden;
+           text-overflow: ellipsis;
+        }
+
+        /* footer */
+        #main_footer
+        {
+            /* 중앙 정렬 : 너비 지정하고 margin : 0 auto; */
+            width: 960px;
+            margin: 0 auto;
+
+            /* 여백 */
+            margin-bottom: 10px;
+
+            /* 테두리 */
+            box-sizing: border-box;
+            padding: 10px;
+            border:1px solid black;
+
+            /* 텍스트 중앙 정렬 */
+            text-align: center;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <!-- 258p 한 번 봐보기(다양한 ress css가 있음) -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"> -->
+</head>
+<body>
+    <header id="main_header">
+        <div id="title">
+            <h1>Lorem, ipsum.</h1>
+            <h2>Lorem ipsum dolor sit amet.</h2>
+        </div>
+        <!-- 261p -->
+        <!-- gnb : global navigation bar -->
+        <!-- lnb : local navigation bar -->
+        <nav id="main_gnb">
+            <ul>
+                <!-- (li>a[href=#])*4 -->
+                <li><a href="#">one</a></li>
+                <li><a href="#">two</a></li>
+                <li><a href="#">three</a></li>
+                <li><a href="#">four</a></li>
+            </ul>
+        </nav>
+        <nav id="main_lnb">
+            <ul>
+                <!-- (li>a[href=#])*4 -->
+                <li><a href="#">하나</a></li>
+                <li><a href="#">둘</a></li>
+                <li><a href="#">셋</a></li>
+                <li><a href="#">넷</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="content">
+        <section id="main_section">
+            <article class="main_article">
+                <h1>Lorem, ipsum.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, molestiae.</p>
+            </article>
+            <article class="main_article">
+                <h1>韩太可商。</h1>
+                <p>肯至居匹，人刑特念第定等恼人，保则就我盲斯头临子何出不说用王，成养仆圣冇太同一夫薪办笔大学惊过云，变国的光李什命心牛严人，促慷毒杨后珍分必言，时苟会事你治保入李可选是长不气王见才己，活修定切百斗冒白了谋谢貂宫见姑畴皮愚皇，井才我未上同说书，下后开面为有，我不韩我韩说终京游我生奔最锐，极骨人才纯仁死到想逝人才已大日骨，够为读绪褒燕法回毒百兄才兼斯，仁学仆匹日失，不上能事人此无，上洪朋人回可者专一动而使蒲沉夭，了拢章五流了善接日先联法什贤，今杨洋掉十婵么药，将一首得惊锐败搏找这长其太嗣人，范判实才杀土作是承失归，身为已光破回忧常出临前的，友松姑流平药胜了韩不在娟尚嗣，死侯君仃楚圣老德，至韩郭的能洪房争在让卞命的洪处招，逃极人，笔别徒攻挟病重给而，游的相杨帝严愚人付赏文者有陈选，没哥迷德策清，自尝四收，了夫病是非，人的的变因四天上才，躲我他的化文，的后于求逝自叹方自系回密亓易是单，诗至金嗣春说气给何她老雷，德们自同不几融仑措，乡把亲然准才往自老衣，亡报尘同开化，台不千他韩好关上王韩，兼要这才帮，生逃非负老，里下羊得洪卅了欲承面不么三冈，承极范不火，他慧设他极了土司，办临老狂弟是选会承嗣终己感别好春卞谷，清老谋将笔们洪竟后生留太死苟骨偶宋这无，皇六未死不要的法明太非同请，婵保不，迷让有主专的令就，非听仆先惊书新舟慧服时下说到促融，侯罪何，仍帮此杂斗帝，所地斯，才留何德是要太车，可斯是人为对乏设时在以，王冒至李六临小孔也要陈也韩尤不生尝被找，不下彷普不价人兼氏，作在让韩谋虑下上之着使虽那惶，予嗣承可世变皇承斯张绪不愚身养赠了卞兼，关上远，游商他大老了责失量三云也无航是云留他人，出送而才，降国中你的入明丰安非畴许他案范为子李，开有会斯之小太明朋乐其用之促，他觉国貂友谢，导秦弄日，夭自快厅出杨而斯鼓流生互洞笔，那人败，开他评他况害卑大作人不才当一安位的极，是智份的身，病司备不而卡反远此洪这韩五洞后看师撒，太说对人他是，关夫公杨贼不洪韩光为皇登，尘章低可自下同，才哥法让到笔仃谭登惶羊志韩情联内，不切皮得了严处下到如弟为，者小必看学生我爻日文间郭玉在在的者姑，一怎子当大了不心生是我头纯，瞠姑落，陀杀友郭而，居如德人而仇上居谋非卑而，目一之气冈好魂者朗，十身廿有，掸自风分逝，看风病到春小耳舟特妙逃血哥订骂，小只虽吾看然千前倒孔，土定人，友就临外光笔责在词的，召心人，血劫动者的太，吾处。</p>
+            </article>
+            <article class="main_article">
+                <h1>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית סחטיר בלובק.</h1>
+                <p>לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. לפמעט מוסן מנת. לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית. סת אלמנקום ניסי נון ניבאה. דס איאקוליס וולופטה דיאם. וסטיבולום אט דולור, קראס אגת לקטוס וואל אאוגו וסטיבולום סוליסי טידום בעליק. לורם איפסום דולור סיט אמט, קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי מוסן מנת. להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורך. להאמית קרהשק סכעיט דז מא, מנכם למטכין נשואי מנורךגולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט. הועניב היושבב שערש שמחויט - שלושע ותלברו חשלו שעותלשך וחאית נובש ערששף. זותה מנק הבקיץ אפאח דלאמת יבש, כאנה ניצאחו נמרגי שהכים תוק, הדש שנרא התידם הכייר וק.קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף.</p>
+            </article>
+        </section>
+        <aside id="main_aside">
+            <input type="radio" name="tab" id="first" checked>
+            <input type="radio" name="tab" id="second">
+            <section class="buttons">
+                <label for="first">First</label>
+                <label for="second">Second</label>
+            </section>
+            <div class="tab_item">
+                <ul>
+                    <!-- (li>a[href=#]){$$}*4 -->
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" alt="">
+                            </div>
+                            <div class="description">
+                                <strong>HTML5 Audio SuperStar K</strong>
+                                <p>2021-01-11</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Audio</strong>
+                            <p>2021-01-11</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                            <div class="thumbnail">
+                                <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Audio</strong>
+                            <p>2021-01-11</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Audio</strong>
+                            <p>2021-01-11</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab_item">
+                <ul>
+                    <!-- (li>a[href=#]){$$}*4 -->
+                    <li class="item">
+                        <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5</strong>
+                            <p>2021-01-11</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Audio</strong>
+                            <p>2021-01-11</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Audio</strong>
+                            <p>2021-01-11</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="#">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/45x45" alt="">
+                        </div>
+                        <div class="description">
+                            <strong>HTML5 Audio</strong>
+                            <p>2021-01-11</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <footer id="main_footer">
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <address>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, nam!</address>
+    </footer>
+</body>
+</html>

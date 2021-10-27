@@ -1,0 +1,79 @@
+/* 누니토(영) */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+/* 누니토 산스(영) */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,200;1,300;1,400;1,700;1,800;1,900&display=swap');
+/* 오픈 산스(영) */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+/* 노토 산스(영) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* 노토 산스(한) */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* 기본 크기, 패밀리 */
+* {
+    font-size: 10px;
+    font-family: "Noto Sans KR", "Open Sans", sans-serif;
+}
+
+nav {
+    text-align: center;
+}
+
+#top_navigation_toggle_button_icon,
+#top_navigation_toggle_button_text {
+    text-align: center;
+}
+
+#top_navigation_toggle_button_icon{
+    font-size: 2.7rem;
+}
+
+#top_navigation_toggle_button_text{
+    font-size: 0.3em;
+}
+
+.official_link {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.move_button{
+    text-align: center;
+}
+
+/* 메인 타이틀 */
+#main_title {
+    text-align: center;
+    font-size: 7rem;
+    font-family: "Nunito", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* 메인 타이틀 악센트 */
+.main_title_accent {
+    font-size: 8rem;
+    font-family: inherit;
+    font-weight: 900;
+    font-style: inherit;
+}
+
+/* 게시물 제목 */
+.post_title {
+    text-align: center;
+    font-size: 3rem;
+    font-family: "Noto Sans KR", "Nunito", sans-serif;
+    font-weight: 700;
+}
+
+/* 게시글 본문 단락 */
+.post_body>p {
+    font-size: 1.6rem;
+    font-family: "Noto Sans KR", "Open Sans", sans-serif;
+    font-weight: normal;
+}
+
+/* 페이지 버전 */
+#page_version{
+    text-align: center;
+}

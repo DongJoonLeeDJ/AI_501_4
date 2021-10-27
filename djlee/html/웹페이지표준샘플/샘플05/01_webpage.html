@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chapter_5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <style>
+        /* 초기화 코드 */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            border: 0;
+        }
+
+
+        /* 헤더파트 */
+        #main_header {
+            width: 960px;
+            margin: 0 auto;
+            /* 중앙 정렬~~ */
+            height: 160px;
+            /* 높이 왜 줬니?:  */
+            position: relative;
+        }
+
+        #main_header>title#{
+            position: absolute;
+            left: 20px;
+            top: 30px;
+
+        }
+
+        #main_header>#main_gnb {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #main_header>#main_lnb {
+            position: absolute;
+            right: 0;
+            bottom: 10px;
+        }
+
+        #title {
+            font-family: 'Yeon Sung', cursive;
+
+        }
+
+        #main_gnb {
+            overflow: hidden;
+        }
+
+        #main_gnb>ul>li {
+            float: left
+        }
+
+        #main_gnb>ul>li>a {
+            display: block;
+            padding: 2px 10px;
+            border: 1px solid black;
+        }
+
+        #main_gnb>ul>li>a:hover {
+            background: black;
+            color: white
+        }
+
+        #main_lnb {
+            overflow: hidden;
+        }
+
+        #main_lnb>ul>li {
+            float: left
+        }
+
+        /* <!-- 수평 정렬 공식:자손에 float 속성 적용한면 부모는 오버플로우: hidden 적용 --> */
+        #main_lnb>ul>li>a {
+            display: block;
+            padding: 2px 10px;
+            border: 1px solid black;
+        }
+
+        #main_lnb>ul>li>a:hover {
+            background: black;
+            color: white
+        }
+
+        #main_gnb>ul>li:first-child>a {
+            border-radius: 10px 0 0 10px;
+        }
+
+        #main_gnb>ul>li:last-child>a {
+            border-radius: 0 10px 10px 0;
+        }
+
+        #main_lnb>ul>li:first-child>a {
+            border-radius: 10px 0 0 10px;
+        }
+
+        #main_lnb>ul>li:last-child>a {
+            border-radius: 0 10px 10px 0;
+        }
+
+        #content {
+            width: 960px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #content>#main_section {
+            width: 750px;
+            float: left;
+
+        }
+
+        #content>#main_aside {
+        
+            width: 200px;
+            margin: 0 auto;
+            float: right;
+            
+        }
+
+        #main_section>article.main_article {
+            background-image: url("볼리비아\ 살라르데우유니.jpg") ;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        input:nth-of-type(1) {
+            display: none;
+        }
+
+        input:nth-of-type(1)~div:nth-of-type(1) {
+            display: none;
+        }
+
+        input:nth-of-type(1):checked~div:nth-of-type(1) {
+            display: block;
+        }
+
+        input:nth-of-type(2) {
+            display: none;
+        }
+
+        input:nth-of-type(2)~div:nth-of-type(2) {
+            display: none;
+        }
+
+        input:nth-of-type(2):checked~div:nth-of-type(2) {
+            display: block;
+        }
+
+        section.buttons {
+            overflow: hidden;
+        }
+
+        section.buttons>label {
+            display: block;
+            float: left;
+            width: 100px;
+            margin: 0 auto;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            box-sizing: border-box;
+            border: 1px solid black;
+            background: black;
+            color: white;
+        }
+
+        input:nth-of-type(1):checked~section.buttons>label:nth-of-type(1) {
+            background: white;
+            color: black;
+        }
+
+        input:nth-of-type(2):checked~.section.buttons>label:nth-of-type(2) {
+            background: white;
+            color: black;
+        }
+
+        .item {
+            overflow: hidden;
+            
+            width: 200px;
+            margin: 0 auto;
+            padding: 10px;
+            border: 1px solid black;
+            border-top: none;
+
+
+        }
+
+        .thumbnail {
+            float: left;
+        }
+
+        .description {
+            float: left;
+            width: 120px;
+            padding-left: 10px;
+
+
+        }
+
+        #main_footer {
+            /* 중앙 정렬 공식 */
+            width: 960px;
+            margin: 0 auto;
+            /* 너무 다닥다닥 방지 */
+            margin-bottom: 10px;
+            /* 테두리 */
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid black;
+            text-align: center;
+
+        }
+
+       
+    </style>
+
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css"> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+
+    <style>
+        ul,ol
+        {
+            padding-left: 0;
+        }
+    </style>
+</head>
+
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+
+    <header id="main_header">
+        <div id="title">
+            <h1>Jimin's Travel Bible</h1>
+            <h2>You Live Only Once</h2>
+        </div>
+        <!-- 글로벌 네이게이션 바/ 로컬 네이게이션 바 -->
+        <nav id="main_gnb">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">구독</a></li>
+                        <li><a href="#">메일</a></li>
+                        <li><a href="#">친구추가</a></li>
+                    </ul>
+                </nav>
+                <nav id="main_lnb">
+                    <ul>
+                        <li><a href="#">남미</a></li>
+                        <li><a href="#">아시아</a></li>
+                        <li><a href="#">유럽</a></li>
+                        <li><a href="#">미국</a></li>
+                    </ul>
+                </nav>
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"></li>
+                <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="브라질.jpg" class="d-block w-100" width="960" height=350" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>브라질 리우데자네이루</h5>
+                        <p>도시 곳곳이 삼바의 열기로 가득하다 리우에 왔다면 라이브 바에서 삼바를 즐겨보자. 주말의 ‘라파’지구는 다양한 밴드 공연으로 북적인다. 마음에 드는 바를 찾아 삼바의 매력에 흠쩍 빠져보자.
+                             </p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="볼리비아 살라르데우유니.jpg" class="d-block w-100" width="960"  height="350" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>볼리바아 살라르우유니</h5>
+                        <p>소금 사막에 비가 내려 하늘이 땅과 몸을 섞는 그 모습을 보고 나면 지구가 숨겨둔 신비로움을 훔쳐본 듯한 기분이 든다. 많은 이들이 남미 최고의 비경으로 꼽는다.
+                        </p>
+                    </div>
+                </div>    
+                <div class="carousel-item">
+                    <img src="쿠바 하바나.jpg" class="d-block w-100" width="960" height="350" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>쿠바 하바나</h5>
+                        <p>어떻게 이 도시를 사랑하지 않을 수 있을까. 카메라를 들이대는 곳마다 그림이 되는 곳. 춤과 음악과 태양이 빚어낸 도시.</p>
+                    </div>
+                </div>    
+                <div class="carousel-item">
+                    <img src="에콰도르 갈라파고스제도.jpg" class="d-block w-100"   height="350" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>에콰도르 갈라파고스제도</h5>
+                        <p>찰스 다윈이 진화론의 아이디어를 얻은 섬. 죽기 전에 반드시 해야 할 여행이 있다면 이곳으로의 여행이 아닐까.</p>
+                    </div>
+                </div>
+
+                <div class="carousel-item ">
+                    <img src="페루난두.jpg" class="d-block w-100" width="960"  height="350" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>브라질 페르난두데노로냐섬</h5>
+                        <p>가장 얕은 바다에서도 스노클링을 하며 바다거북이들과 함께 놀 수 있다. 비행기 값도, 섬의 물가도 너무 비싸 배낭여행자의 눈물을 쏙 빼지만, 그 이상을 아낌없이
+                                되돌려준다.
+                        </p>
+                    </div>
+                </div>    
+                <div class="carousel-item ">
+                    <img src="브라질 아마존.jpg" class="d-block w-100" width="960"  height="350" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>브라질 아마존</h5>
+                        <p>‘우주에서 초록빛을 가진 유일한 별’ 지구를 지구답게 만들어주는 곳. 사실 야생동물은 갈라파고스나 브라질의 늪지 판타날에서 더 많이 볼 수 있다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button"
+                            data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button"
+                            data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                        </a>
+                </div>
+
+    </header>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+   
+
+  
+    <div id="content">
+        <section id="main_section">
+            <article class="main_article">
+                
+                <h1>테마로 보는 남미 여행 총정리</h1>
+                <p>비행시간만 25시간이 걸리는 지구 반대편의 땅 남미에서 보낸 총 25개월의 시간. 그 거대한 땅을 주마간산 식으로나마 돌아봤다. 마지막으로 전할 남미 이야기는 주제별 총정리 편.
+                    까다로운 독자들을 위해 미리 밝혀둔다. 객관성과는 거리가 먼, 지극히 주관적인 의견일 뿐이라는 것을. 게다가 남미의 모든 곳을 속속들이 여행한 것도 아니라는 것도. 그러니 그저
+                    재미 삼아 참고만 하시기를. 모든 여행지는 여행하는 이가 스스로 창조하고 재발견하는 것이기에.
+
+
+                </p>
+
+            </article>
+            <article class="main_article">
+                <h1>밤새 노래하고 춤추며 깨어 있는 곳, 아르헨티나 부에노스아이레스</h1>
+                <p>눈물 없이는 볼 수 없었던 명작 만화 ‘엄마 찾아 삼만 리’를 기억하는지. 이탈리아의 어린 소년 마르코가 돈을 벌기 위해 외국으로 나간 엄마를 만나기 위해 찾아왔던 도시의 이름은? 한때 세계에서 가장 부유했던 도시였으나 세기의 불가사의라 불리는 경제위기로 나라가 파산한 후 아직 회복되지 못한 곳. 이곳은 과거의 영광으로 살아가는 도시이자 밤새 노래하고 춤추며 깨어있는 곳이다. ‘좋은 공기’ ‘순풍’이라는 그 이름처럼 바람 들어 함부로 들뜨게 되는 도시. 왕가위 감독의 영화 ‘해피투게더’는 바로 이 도시에 대한 오마주였다. 이 도시를 사랑하는 여행자들에게 “BA"라고 불리는, 아르헨티나의 수도 부에노스아이레스. 감히 단언컨대 남미 대륙에서 가장 매혹적인 도시 중의 하나다. 한 두 장의 글로는 설명할 수 없는 이 도시의 매력을 대표적인 명소 몇 곳과 키워드로 거칠게나마 짚어보자.
+
+                </p>
+            </article>
+            <article class="main_article">
+                <h1>잃어버린 잉카의 비밀 도시, 페루 마추픽추</h1>
+                <p>아무리 사진으로, TV 화면으로 몇 번을 본 풍경이라 해도 막상 그 앞에 서면 심장이 빠르게 뛰는 곳이 있다. 눈앞에 펼쳐진 풍경이 비현실적으로 느껴져 자꾸 한숨을 내쉬게 되는 곳. 잉카 제국의 수도 쿠스코에서 우루밤바 강을 따라 북서쪽으로 달려간 정글의 산꼭대기에 남아있는 도시. 날카로운 산들과 깎아지른 절벽에 둘러싸여 아래에서는 이 도시의 존재를 상상조차 할 수 없어 공중도시라는 이름이 붙은 곳.
+
+            </article>
+        </section>
+       
+
+        <section id="main_aside">
+            <h3>여행지 목록</h3>
+        
+
+        </section>
+        <aside id="main_aside">
+            <input type="radio" name="tab" id="first" checked>
+            <input type="radio" name="tab" id="second">
+            <section class="buttons">
+                <label for="first">브라질</label>
+                <label for="second">그외 남미</label>
+
+            </section>
+            <div class="tab_item">
+                    <ul>
+                        <li class="item"><a href="#">
+                                <div class="thumbnail">
+                                    <img src="삐빠.jpg" width="50" length="50" alt="">
+
+                                </div>
+                                <div class="description">
+                                    <a
+                                        href="https://terms.naver.com/entry.nhn?docId=6175260&categoryId=67841&cid=67006">삐빠</a>
+                                    
+                                    <p>2019-05-11</p>
+                                </div>
+                            </a></li>
+                        <li class="item"><a href="#">
+                                <div class="thumbnail">
+
+                                    <img src="보니뚜.jpg" width="50" length="50" alt="">
+
+                                </div>
+                                <div class="description">
+                                    <a
+                                        href="https://terms.naver.com/entry.nhn?docId=6175260&categoryId=67841&cid=67006">보니뚜</a>
+                                    <p>2018-07-11</p>
+                                </div>
+                            </a></li>
+                        <li class="item"><a href="#">
+                                <div class="thumbnail">
+                                    <img src="리우.jpg" width="50" length="50" alt="">
+
+                                </div>
+                                <div class="description">
+                                    <a href="https://terms.naver.com/entry.nhn?docId=6175260&categoryId=67841&cid=67006">리우</a>
+                                    <p>2018-09-11</p>
+                                </div>
+                            </a></li>
+
+                        <li class="item"><a href="#">
+                                <div class="thumbnail">
+                                    <img src="이과수.jpg" width="50" length="50" alt="">
+
+                                </div>
+                                <div class="description">
+                                    <a
+                                        href="https://terms.naver.com/entry.nhn?docId=6175291&contentsParamInfo=isList%3Dfalse%26navCategoryId%3D67839&cid=67006&categoryId=67839"
+                                        ">이과수</a>
+                                    <p>2018-12-06</p>
+                                </div>
+                            </a></li>
+
+
+                    </ul>
+            </div>
+            <div class="tab_item">
+                <ul>
+                    <li class="item"><a href="#">
+                            <div class="thumbnail">
+                                <img src="부에노스.jpg" width="50" length="50" alt="">
+                                --
+                            </div>
+                            <div class="description">
+                                <a href="https://terms.naver.com/entry.nhn?docId=3576520&categoryId=59051&cid=59049">부에노스</a>
+                                <p>2019-01-11</p>
+                            </div>
+                        </a></li>
+                    <li class="item"><a href="#">
+                            <div class="thumbnail">
+                                <img src="토레스델파이네.jpg" width="50" length="50" alt="">
+
+                            </div>
+                            <div class="description">
+                                <a
+                                        href="https://terms.naver.com/entry.nhn?docId=3576486&categoryId=59051&cid=59049">토레스델파이네</a>
+                                <p>2019-01-13</p>
+                            </div>
+                        </a></li>
+
+                    <li class="item"><a href="#">
+                            <div class="thumbnail">
+                                <img src="모레노.jpg" width="50" length="50" alt="">
+
+                            </div>
+                            <div class="description">
+                                <a
+                                        href="https://terms.naver.com/entry.nhn?docId=3576638&categoryId=59051&cid=59049">파타고니아</a>
+                                <p>2019-01-15</p>
+                            </div>
+                        </a></li>
+
+                    <li class="item"><a href="#">
+                            <div class="thumbnail">
+                                <img src="우슈아이아.jpg" width="50" length="50" alt="">
+
+                            </div>
+                            <div class="description">
+                                <a
+                                        href="https://terms.naver.com/entry.nhn?docId=3576577&categoryId=59051&cid=59049">우슈아이아</a>
+                                <p>2019-01-20</p>
+                            </div>
+                        </a></li>
+                    <li class="item"><a href="#">
+                            <div class="thumnail">
+                                <img src="엘찰텐.jpg" width="50" length="50" alt="">
+
+                            </div>
+                            <div class="description">
+                                <a
+                                        href="https://terms.naver.com/entry.nhn?docId=3576615&categoryId=59051&cid=59049">엘 찰텐</a>
+                                <p>2019-01-30</p>
+                            </div>
+                        </a></li>    
+                </ul>
+            </div>
+
+
+
+        </aside>
+    </div>
+
+
+    <footer id="main_footer">
+        <h3>Jimin Travel bible</h3>
+        <address>Copyright © JIMIN Corp. All Rights Reserved.</address>
+    </footer>
+</body>
+
+</html>
