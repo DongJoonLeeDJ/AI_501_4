@@ -1,0 +1,13 @@
+class C{
+	public void doA() {
+		System.out.println("static method doA");
+	}
+}
+
+class CS{
+	public static C = new C();
+}
+
+public class Ex09 {
+
+}

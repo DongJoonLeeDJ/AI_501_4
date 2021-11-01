@@ -1,0 +1,10 @@
+class PAA{
+	int num;
+}
+
+public class AA extends PAA{
+
+	public static void main(String[] args) {
+		new AA();
+	}
+}

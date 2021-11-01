@@ -1,0 +1,15 @@
+/*
+ * public protected default private
+ *
+ * 
+ * 우리나라는 구다닥리 java 쓴다..??
+ * 신기술.. python node.js
+ * 
+ */
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+		Member m1 = new Member();
+	}
+}

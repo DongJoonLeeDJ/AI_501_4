@@ -1,0 +1,11 @@
+class Circle{
+	double rad = 0;
+	final double PI = 3.14;
+	public Circle(double r) {
+		rad = r;
+	}
+}
+
+public class Ex03 {
+
+}

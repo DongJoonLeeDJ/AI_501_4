@@ -1,0 +1,12 @@
+package com.java.org;
+
+public class Rectangle {
+	private int x;
+	private int y;
+	private int width;
+	private int height;
+	
+	public int square() {
+		return width*height;
+	}
+}

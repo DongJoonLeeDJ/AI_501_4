@@ -1,0 +1,7 @@
+package aa;
+
+public class Car {
+// 클래스변수... 속성... property
+	private String name;
+	private double height;
+}

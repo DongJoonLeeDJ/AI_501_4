@@ -1,0 +1,11 @@
+import com.java.org.AA;
+
+public class Ex04 {
+
+	public static void main(String[] args) {
+	
+		AA a1 = new AA();
+		
+	}
+	
+}

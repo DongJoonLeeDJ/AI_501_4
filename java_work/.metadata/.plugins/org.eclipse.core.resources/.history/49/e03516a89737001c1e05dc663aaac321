@@ -1,0 +1,9 @@
+package zoo;
+
+class Duck{}
+
+public class Cat {
+	public void makeDuck() {
+		Duck duck = new Duck();
+	}
+}

@@ -1,0 +1,20 @@
+package aa;
+
+public class Member {
+
+	private String name;
+	private int age;
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	// alt + shift + s -> r
+	
+	
+	public void print() {
+		System.out.println("MemberClass");
+		System.out.println("name = "+name);
+		System.out.println("age = "+age);
+	}
+}

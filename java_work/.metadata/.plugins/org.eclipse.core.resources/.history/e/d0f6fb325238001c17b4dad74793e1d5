@@ -1,0 +1,6 @@
+class PAA{
+	int num;
+}
+public class AA extends PAA{
+
+}

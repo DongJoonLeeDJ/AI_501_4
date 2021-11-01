@@ -1,0 +1,7 @@
+package com.java.org;
+
+public class Song {
+	// 노래제목을 나타내는 title
+	private String title;
+	
+}

@@ -1,0 +1,18 @@
+/*
+ * JSP = java server page
+ * Java + html + css 
+ * + javascript + jquery 
+ * + db = 
+ * jsp 
+ * spring...
+ * 
+ * python
+ */
+public class Ex01 {
+	
+	public static void main(String[] args) {
+		AA a1 = new AA();
+		
+	}
+
+}

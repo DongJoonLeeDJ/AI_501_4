@@ -1,0 +1,14 @@
+
+/*
+ * 
+ * public protected default private
+ * 
+ * class public default
+ */
+
+public class Ex01 {
+
+	public static void main(String[] args) {
+		aa.Member m1 = new aa.Member();
+	}
+}

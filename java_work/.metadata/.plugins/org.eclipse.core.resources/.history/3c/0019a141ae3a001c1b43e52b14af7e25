@@ -1,0 +1,18 @@
+package com.java.org;
+
+public class Rectangle {
+	private int x;
+	private int y;
+	private int width;
+	private int height;
+	
+	// 넓이 구하는 메서드
+	public int square() {
+		return width*height;
+	}
+	public void show() {
+		System.out.println("x = "+x);
+		System.out.println("y = "+y);
+		System.out.println("넓이는 "+ square());
+	}
+}

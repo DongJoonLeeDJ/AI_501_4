@@ -1,0 +1,18 @@
+package aa;
+
+public class AA {
+	public int num1; 
+	
+	public AA(){
+		
+	}
+	
+	public AA(int n) {
+		num1 = n;
+	}
+	
+	public void doPrint() {
+		System.out.println();
+	}
+
+}
