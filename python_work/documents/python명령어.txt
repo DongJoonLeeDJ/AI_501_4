@@ -1,0 +1,8 @@
+cls 현재화면 깨끗하게
+dir 현재 디렉토리 내용보기
+cd [폴더명] 폴더 변경
+
+ps 프로세스 목록 보기
+
+python a.py         #a.py 실행
+python   #인터렉티브 shell 모드 실행
