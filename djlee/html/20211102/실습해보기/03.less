@@ -1,0 +1,22 @@
+div { height: 1px; }
+@iterations : 255;
+.rainbow-loop(@i) when (@i>0)
+{
+    div:nth-child(@{i})  
+    {
+      background-color: rgb(0,@i,0);   
+    }
+    .rainbow-loop((@i)-1);  
+}
+.rainbow-loop(@iterations);   
+
+@it2 : 510;
+.loop2(@j) when (@j>255)
+{
+  div:nth-child(@{j})
+  {
+    background-color: rgb(0,(@j)+255,0);
+  }
+  .loop2((@j)-1);
+}
+.loop2(@it2);
