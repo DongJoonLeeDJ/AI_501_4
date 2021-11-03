@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script></script>
+    <script>
+        // 태어난 연도 입력받아서 내 나이 출력
+        let myBirthYear = prompt("몇년도에태어났니")
+        console.log("내 나이는 " + (2021-myBirthYear+1)+"살")
+        
+        //초 단위 시간 입력받고 n분 n초 출력
+        let 초 = prompt("몇초?")//한글변수 되는 데 쓰지 마세요
+        if(초>=3600)
+            alert("너무 큰 값입니다.")
+        else
+            console.log(Math.floor(초/60)+"분"+(초%60)+"초")
+        //구구단 출력
+        let num = prompt("몇 단 출력할래?")
+        for(let i = 1; i<10; i++)
+            console.log(`${num}x${i}=${num*i}`);
+        
+    </script>
 </head>
 <body>
     <h1>결과물은 console에 출력하면 된다.</h1>
     <h1>1. 내가 태어난 연도를 입력받아서, 내 나이를 출력(한국식)</h1>
-    <h1>2. 초단위의 시간을 입력받아서 분과 초로 출력.</h1>
+    <h1>2. 초단위의 시간을 입력받아서 분과 초로 출력.     (참고로 Math.floor라는 함수 써야함)</h1>
     <h1>단, 3600초(=1시간)이 되면 오류메시지 alert</h1>
     <h1>2번에서는 오늘 배운 건 아니지만 예전에 배웠을 % 연산자</h1>
     <h1>3. 내가 입력한 숫자에 대한 구구단 출력</h1>
