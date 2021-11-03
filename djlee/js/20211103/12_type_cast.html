@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        console.log("273"-10) //263
+        console.log("273"+10) //27310
+        console.log("273"-"abc") //NaN : Not a Number
+        //명확하게 숫자로 바꾼 다음 연산하고 싶다면
+        //Number로 감싼다!
+        console.log(Number("273")-10) // 263
+        console.log(Number("273")+10) //283
+        let input = prompt("입력해~~~")
+        alert(typeof(input)) //결과 : string (숫자입력해도)
+        alert(input+100) //빼기를 하게 되면 연산이 되나
+                        //더하기는 문자열로써와
+                        //숫자로써 연산이 다르므로
+                        //타입을 명확하게 해줘야 원하는
+                        //결과를 얻을 수 있다!
+        alert(Number(input)+100)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
