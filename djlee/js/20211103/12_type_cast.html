@@ -3,7 +3,10 @@
 <head>
     <script>
         console.log("273"-10) //263
-        console.log("273"+10) //27310
+        console.log("273"/10) //27.3
+        console.log("273"%10) //3
+        console.log("273"*10) //2630
+        console.log("273"+10) //27310  ---> 문자열로서 더해버림
         console.log("273"-"abc") //NaN : Not a Number
         //명확하게 숫자로 바꾼 다음 연산하고 싶다면
         //Number로 감싼다!
