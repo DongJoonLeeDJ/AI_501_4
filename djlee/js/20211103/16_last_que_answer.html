@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1>당신의 띠를 상징하는 동물은 아래와 같습니다.</h1>
+    <img id="mytti">
+    <script>
+        let inputYear = prompt("언제 태어나셨나요?")
+        let tti = inputYear%12
+
+        //방법1
+        let mytti = document.getElementById('mytti')
+        mytti.src = (tti)+".png"
+
+        //방법2
+        switch (tti) {
+            case 0:
+                mytti.src = "0.png"
+                break;
+            case 1:
+                mytti.src = "1.png"
+                break;
+            case 2:
+                mytti.src = "2.png"
+                break;
+            case 3:
+                mytti.src = "3.png"
+                break;
+            case 4:
+                mytti.src = "4.png"
+                break;
+            case 5:
+                mytti.src = "5.png"
+                break;
+            case 6:
+                mytti.src = "6.png"
+                break;
+            case 7:
+                mytti.src = "7.png"
+                break;
+            case 8:
+                mytti.src = "8.png"
+                break;
+            case 9:
+                mytti.src = "9.png"
+                break;
+            case 10:
+                mytti.src = "10.png"
+                break;
+            case 11:
+                mytti.src = "11.png"
+                break;
+        
+            default:
+                break;
+        }
+
+    </script>
+</body>
+</html>
