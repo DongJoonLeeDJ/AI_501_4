@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        //1번 : inch를 cm으로 변경
+        const rawInput = prompt('inch단위의 숫자 입력')
+        const inch = rawInput //불필요한 코드임 ㅋㅋㅋ
+        const cm = inch*2.54
+        alert(`${inch}inch는 ${cm}cm입니다.`)
+        //2번 : cm을 inch로 변경
+        const rawInput2 = prompt('cm단위의 숫자 입력')
+        const cm2 = rawInput2//불필요한 코드임 ㅋㅋㅋ
+        const inch2 = cm2*0.393701
+        alert(`${cm2}cm은 ${inch2}inch입니다.`)
+        //3번문제 : 반지름을 이용한 원의 둘레와 넓이
+        const r = prompt('원의 반지름을 입력하세요.')
+        const PI = 3.14
+        //alert(`원의 넓이:${r*r*PI}, 원의 둘레:${2*r*PI}`)
+        let output =''
+        output += `원의 넓이:${r*r*PI}`
+        output += `, 원의 둘레:${2*r*PI}`
+        alert(output)
+        //4번 : inch를 cm으로 변경
+        const my$ = prompt('달러입력해')
+        const KRW = my$*1207
+        alert(`원화는 ${KRW}입니다.`)
+
+        //5번문제
+        //10간지: 갑을병정무기경신임계
+        //12지신:자축인묘진사오미신유술해 
+        //띠를 구할 때 
+        // 1989 % 12 -> 나머지가 9이면 뱀(사)
+        // 1989 % 10 -> 9.... 기
+        //나머지가 4면 쥐(자)
+
+        const myYear = prompt("언제 태어났니?")
+        let myOutput = ''
+        const gan = myYear%10
+        if(gan == 9) { myOutput += '기'}
+        else if(gan == 0) { myOutput += '경'}
+        else if(gan == 1) { myOutput += '신'}
+        else if(gan == 2) { myOutput += '임'}
+        else if(gan == 3) { myOutput += '계'}
+        else if(gan == 4) { myOutput += '갑'}
+        else if(gan == 5) { myOutput += '을'}
+        else if(gan == 6) { myOutput += '병'}
+        else if(gan == 7) { myOutput += '정'}
+        else if(gan == 8) { myOutput += '무'}
+
+        const tti = myYear%12
+        switch (tti) {
+            case 9:
+                myOutput += '사'
+                break
+            case 10:
+                myOutput += '오'
+                break
+            case 11:
+                myOutput += '미'
+                break
+            case 0:
+                myOutput += '신'
+                break
+            case 1:
+                myOutput += '유'
+                break
+            case 2:
+                myOutput += '술'
+                break
+            case 3:
+                myOutput += '해'
+                break
+            case 4:
+                myOutput += '자'
+                break
+            case 5:
+                myOutput += '축'
+                break
+            case 6:
+                myOutput += '인'
+                break
+            case 7:
+                myOutput += '묘'
+                break
+            case 8:
+                myOutput += '진'
+                break
+            default:
+                break
+        }
+
+        alert(`${myYear}년은 ${myOutput}년입니다.`)
+
+        const mygan = "경신임계갑을병정무기"
+        const mytti = "신유술해자축인묘진사오미"
+        alert(mygan[myYear%10]+mytti[myYear%12])
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
