@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        console.log("2"==2) //true -------> !?  
+        console.log("2"+2) // 22가 나옴...
+        console.log("2"===2) //false
+        console.log(2===2) //true
+
+        //== : 안에 들어있는 값만 같으면 ok
+        // === : 타입이랑 값까지 전부다 똑같아야 함!
+
+        //bool타입은 아니지만 거짓(false)으로 간주하는 것들
+        console.log("false인 것들의 모음집")
+        console.log(Boolean(0))
+        console.log(Boolean(NaN)) //Nan : Not a Number
+        console.log(Boolean(''))
+        console.log(Boolean(null))
+        console.log(Boolean(undefined)) //잘못된 연산할 때 나옴
+        console.log(Boolean(false))
+        console.log("확인해보기")
+        //결과 : t
+        //이유 : 공백이 아닌 문자열이라서
+        console.log(Boolean('0'))
+        //결과 : NaN
+        //String을 빼도 마찬가지로 NaN이다.
+        //단, String으로 감싸고 있기 때문에 "NaN"인 상태다.
+        console.log(String(Number("문자열")))
+        //결과  : t
+        //이유 : 공백이 아닌 문자열이라서
+        console.log(Boolean(String(Number("문자열"))))
+        //결과 : f
+        //이유 : NaN자체는 false로 변화되니까...
+        console.log(Boolean((Number("문자열"))))
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
