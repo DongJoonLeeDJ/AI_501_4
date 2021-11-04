@@ -1,0 +1,92 @@
+1. 자바 클래스를 작성하는 연습을 해보자. 다음 main() 메소드를 실행하였을 때 예시와 같이 출력되도록 TV 클래스를 작성하라.
+
+public static void main(String[] args) {
+   TV myTV = new TV("LG", 2017, 32); //LG에서 만든 2017년 32인치
+   myTV.show();
+}
+LG에서 만든 2017년형 32인치 TV
+
+2. Grade 클래스를 작성해보자. 3 과목의 점수를 입력받아 Grade 객체를 생성하고 성적 평균을 출력하는 main()과 실행 예시는 다음과 같다.
+
+public static void main(String[] args) {
+   // TODO Auto-generated method stub
+   Scanner sc = new Scanner(System.in);
+   
+   System.out.print("수학, 과학, 영어 순으로 3개의 정수 입력 >> ");
+   int math = sc.nextInt();
+   int science = sc.nextInt();
+   int english = sc.nextInt();
+   Grade me = new Grade(math, science, english);
+   System.out.println("평균은 "+me.average()); // average()는 평균을 계산하여 리턴
+   
+   sc.close();
+}
+
+수학, 과학, 영어 순으로 3개의 정수 입력 >> 90 88 96
+평균은 91
+[Hint] Grade 클래스에 int 타입의 math, science, english 필드를 private로 선언하고, 생성자와 세 과목의 평균을 리턴하는 average() 메소드를 작성한다.
+
+3. 노래 한 곡을 나타내는 Song 클래스를 작성하라. Song은 다음 필드로 구성된다.
+
+- 노래의 제목을 나타내는 title
+- 가수를 나타내는 artist
+- 노래가 발표된 연도를 나타내는 year
+- 국적을 나타내는 country
+
+또한 Song 클래스에 다음 생성자와 메소드를 작성하라.
+- 생성자 2개: 기본 생성자와 매개변수로 모든 필드를 초기화하는 생성자
+- 노래 정보를 출력하는 show() 메소드
+- main() 메소드에서는 1978년, 스웨덴 국적의 ABBA가 부른 "Dancing Queen"을
+song 객체로 생성하고 show()를 이용하여 노래의 정보를 다음과 같이 출력하라.
+1978년 스웨덴국적의 ABBA가 부른 Dancing Queen
+
+4.다음 멤버를 가지고 직사각형을 표현하는 Rectangle 클래스를 작성하라.
+
+- int 타입의 x, y, width, height 필드: 사각형을 구성하는 점과 크기 정보
+- x, y, width, height 값을 매개변수로 받아 필드를 초기화하는 생성자
+- int square() : 사각형 넓이 리턴
+- void show() : 사각형의 좌표와 넓이를 화면에 출력
+- boolean contatins(Rectangle r) : 매개변수로 받은 r이 현 사각형 안에 있으면 true 리턴
+- main() 메소드의 코드와 실행 결과는 다음과 같다
+public static void main(String[] args) {
+   Rectangle r = new Rectangle(2, 2, 8, 7);
+   Rectangle s = new Rectangle(5, 5, 6, 6);
+   Rectangle t = new Rectangle(1, 1, 10, 10);
+   
+   r.show();
+   System.out.println("s의 면적은 "+s.square());
+   if(t.contains(r)) System.out.println("t는 r을 포함합니다.");
+   if(t.contains(s)) System.out.println("t는 s를 포함합니다.");
+}
+(2,2)에서 크기가 8x7인 사각형
+s의 면적은 36
+t는 r을 포함합니다.
+
+5.하루의 할 일을 표현하는 클래스 Day는 다음과 같다. 한 달의 할 일을 표현하는 MonthSchedule 클래스를 작성하라.
+
+class Day {
+   private String work; //하루의 할 일을 나타내는 문자열
+   public void set(String work) { this.work = work; }
+   public String get() { return work; }
+   public void show() {
+      if(work == null) System.out.println("없습니다.");
+      else System.out.println(work+"입니다.");
+   }
+}
+MonthSchedule 클래스에는 Day 객체 배열과 적절한 필드, 메소드를 작성하고 실행 예시처럼 입력, 보기, 끝내기 등의 3개의 기능을 작성하라.
+
+이번달 스케쥴 관리 프로그램.
+할일(입력:1, 보기:2, 끝내기:3) >>1
+날짜(1~30)?1
+할일(빈칸없이입력)?자바공부
+
+할일(입력:1, 보기:2, 끝내기:3) >>2
+날짜(1~30)?1
+1일의 할 일은 자바공부입니다.
+
+할일(입력:1, 보기:2, 끝내기:3) >>3
+프로그램을 종료합니다.
+[Hint] MonthSchedule에는 생성자, input(), view(), finish(), run() 메소드를 만들고 main()에서 다음과 같이 호출하여 실행하고 run()에서 메뉴를 출력하고 처리한다.
+
+MonthSchedule april = new MonthSchedule(30); // 4월달의 할 일
+april.run();
