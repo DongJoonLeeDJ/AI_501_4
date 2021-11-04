@@ -1,6 +1,2 @@
-/*
- * 
- */
 public class Ex01 {
-
 }
