@@ -1,3 +1,9 @@
+github 문제
+https://github.com/DongJoonLeeDJ/AI_501_4/blob/main/pmh/20211105/
+
+공유폴더
+\\192.168.51.3\인공지능4차반\04_Java\문제\String문제들
+
 1. 문자열 변경과 분리하기(substinrg)사용하기
 
 EX)
