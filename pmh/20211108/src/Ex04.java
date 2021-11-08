@@ -23,7 +23,11 @@ public class Ex04 {
         System.out.print("글자 입력 >>");
         String inputString = scan.nextLine();
         for ( int i =0; i<numbers.length ; i++) {
-            inputString = inputString.replaceAll(numbers[i], (i+1)+"");
+            inputString = inputString.replaceAll(numbers[i], String.valueOf(i+1));
+        }
+        System.out.println("inputString = "+inputString);
+        for ( int i =0; i<numbers.length ; i++) {
+            inputString = inputString.replaceAll(String.valueOf(i+1),numbers[i]);
         }
         System.out.println("inputString = "+inputString);
     }
