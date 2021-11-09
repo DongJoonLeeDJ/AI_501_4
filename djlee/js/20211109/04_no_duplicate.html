@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let myinput = []
+        for(let i = 0; i<5; i++)
+        {
+            //prompt는 문자열을 반환한다.
+            let num = Number(prompt("숫자입력!"))
+            //indexOf는 존재하지 않는 숫자의 위치를
+            //찾을 경우 즉, 탐색 실패시에 -1을 반환
+            //제일 처음 값을 집어넣을 땐 중복체크 안 함
+            if(myinput.indexOf(num) != -1 
+               && myinput.length>0)
+            {
+                i--;
+                alert("숫자 다시 입력해라");
+                continue; //continue만나면
+                          //아래 코드들 실행하지 않고
+                          //그 다음 단계로 넘어감 
+            }
+            myinput[i] = num
+        }
+        for(let item of myinput)
+            console.log(item)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
