@@ -15,3 +15,6 @@
 5. 로또 만들기(c언어때 자신이 했었던 알고리즘 적용해보기- 혹은 순수 난수 7개)
 => 로또번호이기때문에 중복이 없어야 한다.
 1부터 45까지
+
+화면에 글자 적고 싶으면 document.write대신 아래 코드를 쓸 것. 혹은 alert로 출력해도 됨
+document.getElementById('result').innerText = "쓰고싶은말"
