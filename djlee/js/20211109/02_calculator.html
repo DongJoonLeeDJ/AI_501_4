@@ -27,6 +27,69 @@
                   Number(three)+Number(four)
                   +Number(five));
         }
+
+        function MyMul()
+        {
+            //nth-child 순서가 중요
+            //만약 input:nth-child(1) 이렇게 적었는데
+            //가장 첫번째 태그가 input이 아니면 선택 안 됨
+            //nth-of-type 타입이 중요(태그자체가 중요)
+            //input:nth-of-type(2)의 의미
+            //input태그들 중에 2번째다
+            let one=document.querySelector("input:nth-child(1)") 
+            let two=document.querySelector("input:nth-of-type(2)")
+            let three=document.querySelector("input:nth-of-type(3)")
+            let four=document.querySelector("input:nth-of-type(4)")
+            let five=document.querySelector("input:nth-of-type(5)")
+
+            let myarr = [one,two,three]
+            myarr[3] = four
+            myarr[4] = five
+            let sum = 1
+            for(let i in myarr)
+                sum *= Number(myarr[i].value)
+            alert(sum)
+
+
+            //querySelector
+            //선택자를 통해서 태그를 선택하는 것인데
+            //무조건 하나만 선택
+
+            //querySelectorAll
+            //선택자에 해당하는 모든 태그를 다 선택함!
+            sum = 1
+            let myarr2 = document.querySelectorAll("input")
+            console.log("myarr2의 길이는 "+myarr2.length)
+            console.log(myarr2)
+            for(let j in myarr2)
+            {
+                //myarr2에 있는 값들을 가지고
+                //반복문을 돌리다가
+                //값이 숫자가 아닌 거 만나면 반복문 종료
+                //isNaN 태그에 있는 값이 숫자가 아닌지
+                //여부를 체크함
+                if(isNaN(myarr[j].value))
+                    break;                
+                sum *= Number(myarr2[j].value)
+
+            }
+            alert(sum)
+            //일반적인 for문을 써도 됨
+            sum = 1
+            for(let i = 0; i<myarr2.length; i++)
+                sum *= Number(myarr2[i].value)
+            alert(sum)
+            //for of라는 것도 있음
+            sum=1
+            //item이 바로 myarr2 배열에 있는
+            //요소들
+            for(let item of myarr2)
+            {
+                sum *= Number(item.value)
+            }
+            alert(sum)
+
+        }
     </script>
 
 
