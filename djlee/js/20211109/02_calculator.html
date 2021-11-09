@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function MyAdd()
+        {
+            //id가 one인 태그의 '값'을 가져옴
+            //즉 여기선 input태그의 텍스트박스 안에 있는 글자 갖고옴
+            let one = document.getElementById("one").value
+            let two = document.querySelector("#two").value
+            //value는 문자열이므로
+            //이 문자열들을 숫자로 바꿔서 더해줘야 한다.
+            alert(Number(one) + Number(two));
+        }
+    </script>
+
+
+
+
+
+
+</head>
+<body>
+    <input type="text" id="one">
+    <input type="text" id="two">
+    <button onclick="MyAdd()">두 숫자의 더하기!</button>
+</body>
+</html>
