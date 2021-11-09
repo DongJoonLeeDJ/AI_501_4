@@ -12,6 +12,12 @@
             //즉 여기선 input태그의 텍스트박스 안에 있는 글자 갖고옴
             let one = document.getElementById("one").value
             let two = document.querySelector("#two").value
+
+            let myinput = [one, two]
+            let myinput2 = []
+            myinput2[0] = one
+            myinput2[1] = two
+
             //value는 문자열이므로
             //이 문자열들을 숫자로 바꿔서 더해줘야 한다.
             alert(Number(one) + Number(two));
@@ -25,8 +31,12 @@
 
 </head>
 <body>
-    <input type="text" id="one">
-    <input type="text" id="two">
-    <button onclick="MyAdd()">두 숫자의 더하기!</button>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <button onclick="MyAdd()">숫자들의 합!</button>
+    <button onclick="MyMul()">숫자들의 곱!</button>
 </body>
 </html>
