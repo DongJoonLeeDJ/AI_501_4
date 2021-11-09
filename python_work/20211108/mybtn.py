@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets \
-    import QApplication, QWidget, QPushButton, QVBoxLayout
+    import QApplication, QWidget, QPushButton, QVBoxLayout, QHBoxLayout
 import ex04
 import chapter5
 from random import randint
@@ -16,10 +16,12 @@ class MyApp(QWidget):
         btn2 = QPushButton("BTN2", self)
         btn3 = QPushButton("BTN3", self)
 
-        vLout = QVBoxLayout()
+        vLout = QHBoxLayout()
+        vLout.addStretch(1)
         vLout.addWidget(btn1)
         vLout.addWidget(btn2)
         vLout.addWidget(btn3)
+        vLout.addStretch(1)
 
         btn1.clicked.connect(self.btn1clickd)
         btn2.clicked.connect(self.btn2clickd)

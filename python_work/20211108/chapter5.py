@@ -22,10 +22,12 @@ def dxlsx(filename):
     print()
 
     for column in ws.iter_cols():
-        print(column[0].value)
+        print("column ",end="")
+        print(column)
 
     for row in ws.iter_rows():
-        print(row[2].value)
+        print("row ", end="")
+        print(row)
 
     for row in range(1,ws.max_row+1):
         for col in range(1, ws.max_column + 1):
