@@ -26,4 +26,21 @@ console.log("----3개 지운 뒤 ----");
 for(let item of aa)
     console.log(item)
 
-//특정 요소를 추가(특정 위치에)
+//index(위치) 모르지만
+//특정 위치에 있는 값을 지우고 싶을 때
+//만약 숫자 6을 지우고 싶을 경우!
+//indexOf : 특정 값의 인덱스값을 구함
+const myindex = aa.indexOf(6) 
+console.log("6의 위치 : "+myindex)
+aa.splice(myindex,1)
+console.log("----6 지운 뒤 ----");
+for(let item of aa)
+    console.log(item)
+
+//특정 위치에 값 추가하기
+//뭔가 추가하기 위한 splice인 경우
+//두번째 매개변수(=파라메터)에 0을 집어넣자.
+aa.splice(2,0,1000) //[2]번째 인덱스에 1000추가
+console.log("----[2]번째에 1000추가 ----");
+for(let item of aa)
+    console.log(item)
