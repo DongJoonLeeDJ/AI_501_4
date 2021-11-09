@@ -12,6 +12,9 @@
             //즉 여기선 input태그의 텍스트박스 안에 있는 글자 갖고옴
             let one = document.getElementById("one").value
             let two = document.querySelector("#two").value
+            let three = document.getElementById("three").value
+            let four = document.querySelector("#four").value
+            let five = document.querySelector("#five").value
 
             let myinput = [one, two]
             let myinput2 = []
@@ -20,7 +23,9 @@
 
             //value는 문자열이므로
             //이 문자열들을 숫자로 바꿔서 더해줘야 한다.
-            alert(Number(one) + Number(two));
+            alert(Number(one) + Number(two)+
+                  Number(three)+Number(four)
+                  +Number(five));
         }
     </script>
 
@@ -31,12 +36,14 @@
 
 </head>
 <body>
-    <input type="text">
-    <input type="text">
-    <input type="text">
-    <input type="text">
-    <input type="text">
+    <input type="text" id="one">
+    <input type="text" id="two">
+    <input type="text" id="three">
+    <input type="text" id="four">
+    <input type="text" id="five">
     <button onclick="MyAdd()">숫자들의 합!</button>
+    <!--합 부분은 마음대로 해도 되는 데 곱하는 건 반복문, 
+        배열쓸 것-->
     <button onclick="MyMul()">숫자들의 곱!</button>
 </body>
 </html>
