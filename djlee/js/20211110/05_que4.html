@@ -29,16 +29,35 @@
         function fnc_result(mychoice)
         {
             //alert(mychoice.target.textContent)
+            let pc_choice = Math.floor(Math.random()*3)
+            pcresultimg.src = gbb[pc_choice]
+            //pc_choice = 0 가위, 1 바위, 2 보
             switch (mychoice.target.textContent) {
                 case "가위":
                     //alert('나는 가위를 냈다.')
                     //myresultimg.src = "https://w.namu.la/s/13142cc3185e8aab50bc52e53ed9c38d201e9a1b7f5ce073b4d5df348695ca4141f88267baddde34ebd30b789aafa3cf84e8e96b9382bc55678a0e3aa62e2b5f3b9495371774d7ebf89908543a7c6054"
+                    myresultimg.src = gbb[0]
+                    switch (pc_choice) {
+                        case 0://가위
+                            alert('비김')
+                            break
+                        case 1:
+                            alert('짐')
+                            break
+                        case 2:
+                            alert('이김')                            
+                            break
+                        default:
+                            break
+                    }
                     break;
                 case "바위":
                     //alert('나는 바위를 냈다.')
+                    myresultimg.src = gbb[1]
                     break;
                 case "보":
                     //alert('나는 보를 냈다.')
+                    myresultimg.src = gbb[2]
                     break;
             
                 default:
