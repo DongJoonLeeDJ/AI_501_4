@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function plus()
+        {
+            //getElement(단수형) : 특정 태그 선택
+            //getElements(복수형) : 특정 태그'들' 선택
+            let one = Number(document.getElementById('one').value)
+            
+            //querySelector : style태그에서 쓰던 선택자써서
+            //태그를 선택(무조건 가장 첫번째 선택되는 것만 선택)
+
+            //querySelectorAll : querySelector랑 동일.
+            //여러개 선택하는 것(getElements)
+
+            let two = Number(document.querySelector('#two').value)
+            //지금 같은 경우엔
+            //id를 기준으로 태그 선택하므로 querySelectorAll는
+            //어차피 1개이므로
+            //의미 없긴 함...
+            //하여튼, querySelectorAll쓸 땐 index꼭 붙여야함
+            let myop = document.querySelectorAll('#my_operator')[0]   
+            let myresult = document.querySelector('#my_result')
+
+            //원래 의도했던 것
+            //alert(one+two)
+            myop.innerText = "+"
+            //<태그>여기! 이 부분이 innerText </태그>
+            myresult.innerText = (one+two)
+
+        }
+    </script>
+</head>
+<body>
+    <!-- + - / * -->
+    <input type="text" id="one">
+    <label id="my_operator"></label>
+    <input type="text" id="two">
+    =
+    <label id="my_result"> 결과 </label>
+    <button id="plus_result" onclick="plus()">더하기</button>
+    <button id="mul_result" onclick="mul()" >곱하기</button>
+    
+</body>
+</html>
