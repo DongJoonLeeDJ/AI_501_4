@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- + - / * -->
+    <input type="text" id="one">
+    <label id="my_operator"></label>
+    <input type="text" id="two">
+    =
+    <label id="my_result"> 결과 </label>
+    <button id="plus_result">더하기</button>
+    <button id="mul_result" >곱하기</button>
+    <button id="minus_result">빼기</button>
+    <button id="dv_result">나누기</button>
+
+    <button class="more_simple">+</button>
+    <button class="more_simple">-</button>
+    <button class="more_simple">*</button>
+    <button class="more_simple">/</button>
+
+    <script>
+        function my_calculator(op)//op에 따라서 다른연산
+        {
+            let one = Number(document.getElementById('one').value)
+            let two = Number(document.querySelector('#two').value)
+
+            let myop = document.querySelectorAll('#my_operator')[0]   
+            let myresult = document.querySelector('#my_result')
+            myop.innerText = op
+
+            switch (op) {
+                case '+':
+                    myresult.innerText = (one+two)                    
+                    break;
+                case '-':
+                    myresult.innerText = (one-two)                    
+                    break;
+                case '*':
+                    myresult.innerText = (one*two)                    
+                    break;
+                case '/':
+                    myresult.innerText = (one/two)                    
+                    break;
+                default:
+                    break;
+            }
+
+        }
+        
+
+        let my_plus_result = document.querySelector("#plus_result")
+        let my_mul_result = document.querySelector("#mul_result")
+        let my_minus_result = document.querySelector("#minus_result")
+        let my_dv_result = document.querySelector("#dv_result")
+
+        my_plus_result.onclick = function(){
+            my_calculator('+')
+        }
+        my_mul_result.addEventListener('click',
+                                function()
+                                {
+                                    my_calculator('*')
+                                }
+                                    )
+        my_minus_result.onclick = function()
+        {
+            my_calculator('-')
+        }
+        my_dv_result.onclick = function()
+        {
+            my_calculator('/')
+        }
+        //이렇게 적게되면 my_calculator('/') 결과를
+        //my_dv_result.onclick에 집어넣을 뿐더러
+        //텍스트박스에 값도 없는 데 함수를 먼저 호출해버림
+        //my_dv_result.onclick = my_calculator('/')
+
+        //querySelector 쓰면
+        //class명이 moreSimple인 것 하나만 선택됨
+        //querySelectorAll을 써야
+        //여러개 선택할 수 있다.
+        let more_simples = document.querySelectorAll('.more_simple')
+        //이동준 = 이 이벤트를 호출한 태그
+        function my_op_cal(이동준)
+        {
+            이동준 = 이동준.target.innerText
+            my_calculator(이동준)
+        }
+        more_simples[0].onclick = my_op_cal;
+        more_simples[1].onclick = my_op_cal;
+        more_simples[2].onclick = my_op_cal;
+        more_simples[3].onclick = my_op_cal;
+
+    </script>
+</body>
+</html>

@@ -32,7 +32,18 @@
             myop.innerText = "+"
             //<태그>여기! 이 부분이 innerText </태그>
             myresult.innerText = (one+two)
+        }
+        function mul()
+        {
+            let one = Number(document.getElementById('one').value)
+            let two = Number(document.querySelector('#two').value)
 
+            let myop = document.querySelectorAll('#my_operator')[0]   
+            let myresult = document.querySelector('#my_result')
+
+            myop.innerText = "x"
+            //<태그>여기! 이 부분이 innerText </태그>
+            myresult.innerText = (one*two)
         }
     </script>
 </head>
@@ -45,6 +56,37 @@
     <label id="my_result"> 결과 </label>
     <button id="plus_result" onclick="plus()">더하기</button>
     <button id="mul_result" onclick="mul()" >곱하기</button>
-    
+    <button id="minus_result">빼기</button>
+    <button id="dv_result">나누기</button>
+
+    <script>
+        let minus_result = 
+                    document.querySelector('#minus_result')
+        minus_result.onclick = function() {
+            let one = Number(document.getElementById('one').value)
+            let two = Number(document.querySelector('#two').value)
+
+            let myop = document.querySelectorAll('#my_operator')[0]   
+            let myresult = document.querySelector('#my_result')
+
+            myop.innerText = "-"
+            //<태그>여기! 이 부분이 innerText </태그>
+            myresult.innerText = (one-two)
+        }
+        let dv_result = document.querySelector('#dv_result')
+        dv_result.addEventListener('click', function(){
+            let one = Number(document.getElementById('one').value)
+            let two = Number(document.querySelector('#two').value)
+
+            let myop = document.querySelectorAll('#my_operator')[0]   
+            let myresult = document.querySelector('#my_result')
+
+            myop.innerText = "/"
+            //<태그>여기! 이 부분이 innerText </태그>
+            myresult.innerText = (one/two)
+
+        })
+
+    </script>
 </body>
 </html>
