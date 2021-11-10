@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //prompt로 숫자를 입력받되, 총 5번 입력 받을 예정
+        //숫자를 입력받는 데로 배열에 집어넣되,
+        //중복이면 집어넣지 않는 방식
+        let myinput = [] //숫자 5개 넣을 배열
+        for(let i = 0; i<5; i++)
+        {
+            let num = Number(prompt("숫자입력하세요."))
+            let my_flag = true // 중복이 아닐 땐 true
+            
+            //핵심!
+            //숫자를 입력할 때마다 배열을 처음부터 끝까지 봄
+            for(let j = 0; j<i; j++)
+            {
+                if(num == myinput[j])
+                {
+                    alert('중복!!!')
+                    i--
+                    my_flag=false
+                    break
+                }
+            }
+            if(my_flag)
+                myinput[i] = num
+        }
+        for(let item of myinput)
+            alert(item)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
