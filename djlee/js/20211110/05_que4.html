@@ -26,26 +26,40 @@
         let gbb = [ "https://w.namu.la/s/13142cc3185e8aab50bc52e53ed9c38d201e9a1b7f5ce073b4d5df348695ca4141f88267baddde34ebd30b789aafa3cf84e8e96b9382bc55678a0e3aa62e2b5f3b9495371774d7ebf89908543a7c6054",
                     "https://lh3.googleusercontent.com/proxy/Rkg1fSg-fkrWsc-mrb5jeYHOichqGQ_EftKXgk8QyKiLdsta1JrOtejeu_JTGcj19LrGiGpLQ36OcDF4EQIo3_wSGR1p9b7VpPiHKsNObodGQ21qulxgLhXgl2c10HLB510F_-IbsLk",
                     "http://image.auction.co.kr/itemimage/12/b5/13/12b5130fa6.jpg"]
+        
+        //my_result_txt = h1태그
+        let my_result_txt
+                = document.querySelector('h1')
+        
+        const GAWI = 0//가위 = 0
+        const BAWI = 1//바위 = 1
+        const BHO  = 2//보   = 2
+        //mychoice = 이 함수를 호출한 버튼 태그
         function fnc_result(mychoice)
         {
             //alert(mychoice.target.textContent)
             let pc_choice = Math.floor(Math.random()*3)
             pcresultimg.src = gbb[pc_choice]
             //pc_choice = 0 가위, 1 바위, 2 보
+
+
             switch (mychoice.target.textContent) {
                 case "가위":
                     //alert('나는 가위를 냈다.')
                     //myresultimg.src = "https://w.namu.la/s/13142cc3185e8aab50bc52e53ed9c38d201e9a1b7f5ce073b4d5df348695ca4141f88267baddde34ebd30b789aafa3cf84e8e96b9382bc55678a0e3aa62e2b5f3b9495371774d7ebf89908543a7c6054"
-                    myresultimg.src = gbb[0]
+                    myresultimg.src = gbb[GAWI]
                     switch (pc_choice) {
-                        case 0://가위
-                            alert('비김')
+                        case GAWI://가위
+                            //alert('비김')
+                            my_result_txt.innerText = "비김"
                             break
-                        case 1:
-                            alert('짐')
+                        case BAWI:
+                            //alert('짐')
+                            my_result_txt.innerText = "짐"
                             break
-                        case 2:
-                            alert('이김')                            
+                        case BHO:
+                            //alert('이김') 
+                            my_result_txt.innerText = "이김"                           
                             break
                         default:
                             break
@@ -53,11 +67,37 @@
                     break;
                 case "바위":
                     //alert('나는 바위를 냈다.')
-                    myresultimg.src = gbb[1]
+                    myresultimg.src = gbb[BAWI]
+                    switch (pc_choice) {
+                        case GAWI://가위
+                            my_result_txt.innerText = "이김"
+                            break
+                        case BAWI:
+                            my_result_txt.innerText = "비김"
+                            break
+                        case BHO:
+                            my_result_txt.innerText = "짐"                           
+                            break
+                        default:
+                            break
+                    }
                     break;
                 case "보":
                     //alert('나는 보를 냈다.')
-                    myresultimg.src = gbb[2]
+                    myresultimg.src = gbb[BHO]
+                    switch (pc_choice) {
+                        case GAWI://가위
+                            my_result_txt.innerText = "짐"
+                            break
+                        case BAWI:
+                            my_result_txt.innerText = "이김"
+                            break
+                        case BHO:
+                            my_result_txt.innerText = "비김"                           
+                            break
+                        default:
+                            break
+                    }
                     break;
             
                 default:
