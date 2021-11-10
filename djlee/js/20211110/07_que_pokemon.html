@@ -45,12 +45,34 @@
         function choiceType(choice_type)
         {   //내가 클릭한 그 버튼의 id값을 my_type에 넘김
             my_type=choice_type.target.id;
-            alert(my_type)
         }
         function choiceGen(choice_gen)
         {   //내가 클릭한 그 버튼의 id값을 my_gen에 넘김
             my_gen=choice_gen.target.id;
-            alert(my_gen)
+        }
+        function battle()
+        {
+            if(my_gen == "-" || my_type == "-")
+            {
+                alert("세대나 타입 선택 하세요")
+                return
+            }
+            let me = document.querySelector("#me")
+            let pc = document.querySelector("#pc")
+            switch (my_type) {
+                case 'fire':
+                     me.src = type[FIRE]
+                    break;
+                case 'water':
+                     me.src = type[WATER]
+                    break;
+                case 'leap':
+                     me.src = type[LEAP]
+                    break;
+            
+                default:
+                    break;
+            }
         }
 
         let p_types = document.querySelectorAll(".p")
@@ -59,6 +81,10 @@
         let gens = document.querySelectorAll(".g")
         for(let item of gens)
             item.onclick = choiceGen
+
+        let p_battle = document.querySelector("#p_battle")
+        p_battle.onclick = battle
+        
 
     </script>
 </body>
