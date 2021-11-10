@@ -62,6 +62,34 @@
                     break;
             }
             document.body.appendChild(myphoto)
+
+            let myseason = []
+            myseason[0] = "https://cdn.pixabay.com/photo/2016/02/27/06/43/cherry-blossom-tree-1225186_960_720.jpg"
+            myseason[1] = "https://cdn.pixabay.com/photo/2016/03/04/19/36/beach-1236581_960_720.jpg"
+            myseason[2] = "https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823_960_720.jpg"
+            myseason[3] = "https://cdn.pixabay.com/photo/2016/08/09/21/54/lake-1581879_960_720.jpg"
+
+            let myMonth = [ [3,4,5] ,[6,7,8],[9,10,11],
+                            [12,1,2] ]
+
+            let mytestphoto = 
+                    document.createElement('img')
+            let index = -1
+            for(let i = 0; i<4; i++) //myMonth의 길이
+            {
+                for(let j = 0; j<3; j++) //myMonth의 각 값들의 길이
+                {
+                    let find = myMonth[i].indexOf(mymonth)
+                    if(find != -1)
+                    {
+                        index = i
+                        //console.log(index)
+                        break;
+                    }
+                }
+            }
+            mytestphoto.src = myseason[index]
+            document.body.appendChild(mytestphoto)
         }
     
     </script>
