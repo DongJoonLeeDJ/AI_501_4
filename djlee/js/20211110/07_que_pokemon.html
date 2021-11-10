@@ -59,15 +59,87 @@
             }
             let me = document.querySelector("#me")
             let pc = document.querySelector("#pc")
+
+            let pc_type = Math.floor(Math.random()*3)
+            let pc_gen =  Math.floor(Math.random()*8)+1
+
+            let my_battle_result 
+                = document.querySelector("#my_battle_result")
+
+            if(pc_gen == 2 && pc_type == LEAP)
+                pc.src=type[3]
+            else
+                pc.src =type[pc_type]        
+
             switch (my_type) {
                 case 'fire':
-                     me.src = type[FIRE]
+                    me.src = type[FIRE]
+                    switch (pc_type) {
+                        case FIRE:
+                            my_battle_result.innerText
+                            ="무승부"
+                            break;
+
+                        case WATER:
+                            my_battle_result.innerText
+                            ="패배"
+                            break;
+
+                        case LEAP:
+                            my_battle_result.innerText
+                            ="승리"
+                            break;
+                    
+                        default:
+                            break;
+                    }
                     break;
                 case 'water':
-                     me.src = type[WATER]
+                    me.src = type[WATER]
+                    switch (pc_type) {
+                        case FIRE:
+                            my_battle_result.innerText
+                            ="승리"
+                            break;
+
+                        case WATER:
+                            my_battle_result.innerText
+                            ="무승부"
+                            break;
+
+                        case LEAP:
+                            my_battle_result.innerText
+                            ="패배"
+                            break;
+                    
+                        default:
+                            break;
+                    }
                     break;
                 case 'leap':
-                     me.src = type[LEAP]
+                    if(my_gen == 2)
+                        me.src = type[3]
+                    else
+                        me.src = type[LEAP]
+                        switch (pc_type) {
+                        case FIRE:
+                            my_battle_result.innerText
+                            ="패배"
+                            break;
+
+                        case WATER:
+                            my_battle_result.innerText
+                            ="승리"
+                            break;
+
+                        case LEAP:
+                            my_battle_result.innerText
+                            ="무승부"
+                            break;
+                    
+                        default:
+                            break;
+                    }
                     break;
             
                 default:
