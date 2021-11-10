@@ -108,8 +108,16 @@
                             break;
 
                         case LEAP:
+                            if(pc_gen == 2)
+                            {
+                            my_battle_result.innerText
+                            ="승리(치코치코)"
+                            }
+                            else
+                            {
                             my_battle_result.innerText
                             ="패배"
+                            }
                             break;
                     
                         default:
@@ -128,13 +136,34 @@
                             break;
 
                         case WATER:
+                            if(my_gen==2)
+                            {
+                            my_battle_result.innerText
+                            ="패배(치코ㅜㅜ)"
+                            }
+                            else
+                            {
                             my_battle_result.innerText
                             ="승리"
+                            }
                             break;
 
                         case LEAP:
-                            my_battle_result.innerText
-                            ="무승부"
+                            if(pc_gen == 2 && my_gen==2)
+                            {
+                            my_battle_result.innerText="무승부"
+                            }
+                            else if(pc_gen==2&&my_gen!=2)
+                            {my_battle_result.innerText="승리(치코ㅋㅋ)"
+                            }
+                            else if(pc_gen!=2&&my_gen==2)
+                            {
+                                my_battle_result.innerText  ="패배(치코ㅡㅡ)"
+                            }
+                            else
+                            {
+                                my_battle_result.innerText ="무승부"
+                            }
                             break;
                     
                         default:
