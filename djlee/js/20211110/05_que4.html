@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>가위</button>
+    <button>바위</button>
+    <button>보</button>
+    <br>
+    <span>나의 결과</span>
+    <img>
+    <span>컴퓨터의 결과</span>
+    <img>
+    <h1>최종 결과</h1>
+    <script>
+        // 가위 : https://w.namu.la/s/13142cc3185e8aab50bc52e53ed9c38d201e9a1b7f5ce073b4d5df348695ca4141f88267baddde34ebd30b789aafa3cf84e8e96b9382bc55678a0e3aa62e2b5f3b9495371774d7ebf89908543a7c6054
+        // 바위 : https://lh3.googleusercontent.com/proxy/Rkg1fSg-fkrWsc-mrb5jeYHOichqGQ_EftKXgk8QyKiLdsta1JrOtejeu_JTGcj19LrGiGpLQ36OcDF4EQIo3_wSGR1p9b7VpPiHKsNObodGQ21qulxgLhXgl2c10HLB510F_-IbsLk
+        // 보자기 : http://image.auction.co.kr/itemimage/12/b5/13/12b5130fa6.jpg
+        
+        let myresultimg = document.querySelectorAll('img')[0]
+        let pcresultimg = document.querySelectorAll('img')[1]
+        let gbb = [ "https://w.namu.la/s/13142cc3185e8aab50bc52e53ed9c38d201e9a1b7f5ce073b4d5df348695ca4141f88267baddde34ebd30b789aafa3cf84e8e96b9382bc55678a0e3aa62e2b5f3b9495371774d7ebf89908543a7c6054",
+                    "https://lh3.googleusercontent.com/proxy/Rkg1fSg-fkrWsc-mrb5jeYHOichqGQ_EftKXgk8QyKiLdsta1JrOtejeu_JTGcj19LrGiGpLQ36OcDF4EQIo3_wSGR1p9b7VpPiHKsNObodGQ21qulxgLhXgl2c10HLB510F_-IbsLk",
+                    "http://image.auction.co.kr/itemimage/12/b5/13/12b5130fa6.jpg"]
+        function fnc_result(mychoice)
+        {
+            //alert(mychoice.target.textContent)
+            switch (mychoice.target.textContent) {
+                case "가위":
+                    //alert('나는 가위를 냈다.')
+                    //myresultimg.src = "https://w.namu.la/s/13142cc3185e8aab50bc52e53ed9c38d201e9a1b7f5ce073b4d5df348695ca4141f88267baddde34ebd30b789aafa3cf84e8e96b9382bc55678a0e3aa62e2b5f3b9495371774d7ebf89908543a7c6054"
+                    break;
+                case "바위":
+                    //alert('나는 바위를 냈다.')
+                    break;
+                case "보":
+                    //alert('나는 보를 냈다.')
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+        let mybuttons = document.querySelectorAll('button')
+        for(let item of mybuttons)
+            item.onclick = fnc_result;
+    </script>
+</body>
+</html>
