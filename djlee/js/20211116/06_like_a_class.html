@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function MyStudent(n, a)
+        {
+            this.name = n
+            this.age = a
+            this.Study = function()
+            {
+                alert(this.name +' 학생 등록완료')
+            }
+        }
+        function MyStudent2(n, a)
+        {
+            return {
+                name : n,
+                age : a,
+                Study : function()
+                {
+                    alert(n +' 학생 등록완료')
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    이름: <input type="text"> <br>
+    나이: <input type="text"> <br>
+
+    <h1>학생명 : </h1>
+    <h1>학생이 태어난 연도 : </h1>
+
+    <button>학생이름이랑 태어난 연도 출력</button>
+    <script>
+        let name = document.querySelectorAll('input')[0]
+        let age = document.querySelectorAll('input')[1]
+        let mybtn = document.querySelector('button')
+        let myname = document.querySelectorAll('h1')[0]
+        let myYear = document.querySelectorAll('h1')[1]
+
+        let students = []
+        mybtn.onclick = function()
+        {
+            //함수 호출시 앞에 new 붙이면
+            //객체를 생성시켜주는 코드가 변함
+            let dj = new MyStudent(name.value, age.value)        
+            //let dj = MyStudent2(name.value, age.value)       
+            console.log(dj)
+            myname.innerText = "학생명:"
+            myYear.innerText = "학생이 태어난 연도:"
+            myname.innerText += dj.name
+            myYear.innerText += 2022 - Number(dj.age)
+            dj.Study()
+            students.push(dj)
+            console.log(students)
+        }
+    </script>
+</body>
+</html>
