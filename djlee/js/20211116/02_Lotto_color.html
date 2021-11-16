@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        h1{display: inline-block; border:1px solid black}
+        h1{border-radius: 100px 100px 100px 100px;}
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <br>
+    <button>로또 색깔입히기</button>
+    <button id="random_color">로또랜덤색깔</button>
+    <button id="random_color_one">똑같은 색 랜덤</button>
+    <script>
+        let lotto = []
+        for(let i = 0; i<7; i++)
+        {
+            let num = Math.floor(Math.random()*45)+1
+            if(i>0) //중복검사
+            {
+                //indexOf 함수 
+                //특정한 값이 배열안에서 어디있는지 찾음
+                //만약 그 값이 배열 안에 없으면 -1
+                if(lotto.indexOf(num) != -1)
+                {
+                    i--
+                    continue
+                }
+            }
+            lotto[i] = Number(num)
+        }
+
+        // let h1list = document.querySelectorAll('h1')
+        let h1list = document.getElementsByTagName('h1')
+        let i = 0
+        for(let item of h1list)
+        {
+            //\u00a0 공백
+            item.innerText = lotto[i]
+            i++
+        }
+    </script>
+    <script>
+        //querySelector : 하나만 선택(가장 첫번째꺼)
+        //querySelectorAll : 해당조건태그들 모두 선택해서 배열로 만듦
+        let mybutton = document.querySelector('button')
+        mybutton.onclick = function()
+        {
+            //let temph1list = document.querySelectorAll('h1')
+            for(let item of h1list)
+            {
+                item.style.backgroundColor='springgreen'
+            }
+        }
+        let random_button = document.querySelector
+                                    ('#random_color')
+        let mycolor = ['yellow','blue','red','gray','green']
+        
+        random_button.onclick = function()
+        {
+            for(let item of h1list)
+            {
+                //console.log(mycolor.length)
+                let mc = Math.floor(Math.random()*mycolor.length)
+                //console.log(mycolor[mc])
+                item.style.backgroundColor = mycolor[mc]
+            }
+        }
+        let myone = document.querySelector
+                            ('#random_color_one')
+        myone.onclick = function()
+        {
+            let my_one_color_idx = 
+                            Math.floor(Math.random()*mycolor.length)
+            for(let item of h1list)
+                item.style.backgroundColor = mycolor[my_one_color_idx]
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <script>
+        let student = {
+            name : "이동준",
+            age : 33,
+            language : ["js","jq","c#","c","c++","HTML+css"],
+            introduce : function()
+            {
+                alert("안녕하세요 이동준입니다.")
+            }
+        }
+        document.querySelectorAll('h1')[0].innerText =
+        student.name
+        document.querySelectorAll('h1')[1].innerText =
+        student.age
+        document.querySelectorAll('h1')[2].innerText =
+        student.language
+        student.introduce();
+
+        let students = [{
+            name : "류경문",
+            gender : "여성"
+        },{
+            name : "이진주",
+            skill : "프로그래밍"
+        }, student]
+
+        console.log(students[0].name)
+        console.log(students[0].gender)
+        console.log(students[1].name)
+        console.log(students[1].skill)
+        console.log(students[2].name)
+        console.log(students[2].age)
+    </script>
+</body>
+</html>
