@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="04_myjson.json"></script>
+</head>
+<body>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <h1></h1>
+    <script>
+        let h1list = document.querySelectorAll('h1')
+        //data = json 파일에 그 'data'가 맞음
+        let mydata = JSON.parse(JSON.stringify(data))
+        console.log(mydata)
+        h1list[0].innerText = `${mydata.drwNo}회차`
+        h1list[1].innerText = `1: ${mydata.drwtNo1}`
+        h1list[2].innerText = `2: ${mydata.drwtNo2}`
+        h1list[3].innerText = `3: ${mydata.drwtNo3}`
+        h1list[4].innerText = `4: ${mydata.drwtNo4}`
+        h1list[5].innerText = `5: ${mydata.drwtNo5}`
+        h1list[6].innerText = `6: ${mydata.drwtNo6}`
+        h1list[7].innerText = `보너스 : ${mydata.bnusNo}`
+    </script>
+</body>
+</html>
