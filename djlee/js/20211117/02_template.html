@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function MyCat(n, a, c, g)
+        {
+            this.name = n  
+            this.age = a
+            this.hairColor = c
+            this.gender = g
+            this.speak = function()
+            {
+                alert('야옹 내 이름은 '+n+"이야옹")
+            }
+        }
+
+    </script>
+    <script>
+        let cat = new MyCat("땅땅이",3,"회색","남성")
+        let cat2= new MyCat("호지",2,"갈색","여성")
+        let cat3= new MyCat("랑이",4,"고동색","남성")
+        let cats = [cat, cat2, cat3]
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

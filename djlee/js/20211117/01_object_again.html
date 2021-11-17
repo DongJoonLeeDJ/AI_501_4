@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        let cat = '짬타이거'
+        cat = {
+            name : '땅땅이',
+            age : 3,
+            hairColor : 'gray',
+            freinds : ['현식이','수민이','슘당이','새대갈'],
+            speak : function(){alert('뭐하십니깡')}
+        }
+        let cat2 = {
+            name : '떼껄룩',
+            age : 10,
+            hairColor : 'black',
+            freinds : [],
+            speak : function(){alert('Take a look')}
+        }
+        console.log(cat)
+        console.log(cat.name)
+        console.log(cat.age)
+        console.log(cat.hairColor)
+    </script>
+    <script>
+        //window.onload
+        //창이 다 불러와진 경우 = body에 있는 내용도
+        //전부 불러와진 경우
+        window.onload = function()
+        {
+        //    document.getElementById('name').innerText
+        //    ="안녕"
+        document.getElementById('name').innerText 
+        = cat.name
+        document.querySelector('#age').innerText 
+        = cat.age
+        document.getElementById('hairColor').innerText
+        =cat.hairColor
+
+        }
+
+    </script>
+</head>
+<body>
+    <h1 id="name"></h1>
+    <h1 id="age"></h1>
+    <h1 id="hairColor"></h1>
+</body>
+</html>
