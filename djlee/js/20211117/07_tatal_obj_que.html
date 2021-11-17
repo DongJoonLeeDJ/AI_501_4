@@ -71,10 +71,27 @@
                 {
                     if(item.name == my_name.value)
                     {
-                        console.log(`${item.value}번 동물`+
+                        console.log(`${item.num}번 동물`+
                         `이름: ${item.name} 종류:${item.category}`)
                     }
                 }
+            }
+
+            btn_select_ctg.onclick = function()
+            {
+                let temp = []
+                for(let item of animals)
+                {
+                    if(item.category == my_ctg.value)
+                    {
+                        //temp.push(item)
+                        temp.push(new MyAnimal(item.category, item.name, 
+                                       item.master, item.num, item.age))
+                    }
+                }
+                //temp[0].master = "한지우"
+                console.log(temp)
+                console.log(animals)
             }
         }
     </script>
