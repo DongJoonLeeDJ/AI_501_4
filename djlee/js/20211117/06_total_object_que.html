@@ -12,9 +12,24 @@
             this.regist = function()
             {
                 alert(`${num}번 동물은 등록되었습니다.`
-                 +`(${category}, ${name}, ${master}, ${age})`)
+                 + `(${category}, ${name}, ${master}, ${age})`)
             }
         }
+
+        let myanimals = []
+        for(let i = 0; i<3; i++)
+        {
+            let category = prompt("동물의 종류는?")
+            let name = prompt("이름은?")
+            let master = prompt("주인이름은?")
+            let num = prompt("고유번호는?")
+            let age = prompt("동물 나이는?")
+            myanimals[i] 
+                = new MyAnimal(category,name,master,num,age)
+            //myanimals.push(new MyAnimal(category,name,master,num,age))
+            myanimals[i].regist()
+        }
+        console.log(myanimals)
 
     </script>
 </head>
