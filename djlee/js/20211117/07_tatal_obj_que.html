@@ -52,6 +52,19 @@
                 console.log(animals)
                 animals[animals.length-1].regist();
             }
+
+            btn_select_num.onclick = function()
+            {
+                for(let item of animals)
+                {
+                    if(item.num == my_number.value)
+                    {
+                        alert(`${my_number.value}번 동물`+
+                        `이름: ${item.name} 종류:${item.category}`)
+                        return
+                    }
+                }
+            }
         }
     </script>
 </head>
