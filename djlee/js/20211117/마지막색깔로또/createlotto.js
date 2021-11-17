@@ -63,9 +63,9 @@ window.onload = function()
     let mylottos
     start_lotto.onclick = function(){
 
-        if(drwNum.innerText=='')
+        if(drwNum.value == '')
         {
-            alert('공백입니다.')
+            alert('공백')
             return
         }
 
