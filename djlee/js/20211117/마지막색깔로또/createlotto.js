@@ -62,6 +62,13 @@ window.onload = function()
     let drwNum = document.querySelector('#drwNum')
     let mylottos
     start_lotto.onclick = function(){
+
+        if(drwNum.innerText=='')
+        {
+            alert('공백입니다.')
+            return
+        }
+
         createLottoNum(drwNum.value)
         switch (mycount%3) {
             case 0:
