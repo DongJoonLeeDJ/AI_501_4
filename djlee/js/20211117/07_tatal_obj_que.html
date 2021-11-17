@@ -65,6 +65,17 @@
                     }
                 }
             }
+            btn_select_name.onclick=function()
+            {               
+                for(let item of animals)
+                {
+                    if(item.name == my_name.value)
+                    {
+                        console.log(`${item.value}번 동물`+
+                        `이름: ${item.name} 종류:${item.category}`)
+                    }
+                }
+            }
         }
     </script>
 </head>
