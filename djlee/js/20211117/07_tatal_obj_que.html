@@ -35,9 +35,18 @@
             let btn_select_name = document.getElementById('select_name')
             let btn_select_ctg = document.getElementById('select_ctg')
 
+            let animals = []
+
             btn_create.onclick = function()
             {
-                
+                for(let item of animals)
+                {
+                    if(item.num == my_number.value)
+                    {
+                        alert("중복된 번호!")
+                        return
+                    }
+                }
             }
         }
     </script>
