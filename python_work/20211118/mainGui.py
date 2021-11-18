@@ -10,15 +10,21 @@ class MyApp(QWidget):
         self.se = ScoreExcel()
         self.rowIndex = 0
 
-        self.initUi()  # 화면생성
-        self.initEvent()  # 시그널생성 이벤트함수
+        self.initUi()       # 화면생성
+        self.initEvent()    # 시그널생성 이벤트함수
 
         self.loadfile()
 
         # 조회... 가져오기...# checkbox....
     def loadfile(self):
         rows = self.se.loadrow()
-
+        for row in rows:
+            self.qtable.setItem(self.rowIndex, 0, QTableWidgetItem(row[0]))
+            self.qtable.setItem(self.rowIndex, 1, QTableWidgetItem(row[1]))
+            self.qtable.setItem(self.rowIndex, 2, QTableWidgetItem(row[2]))
+            self.qtable.setItem(self.rowIndex, 3, QTableWidgetItem(row[3]))
+            self.qtable.setItem(self.rowIndex, 4, QTableWidgetItem(row[4]))
+            self.rowIndex += 1
 
     def append(self):
         try:
@@ -45,7 +51,14 @@ class MyApp(QWidget):
             print(e)
 
     def delete(self):
-        self.se.appendrow()
+        self.qtable.setItem(self.rowIndex-1, 0, QTableWidgetItem(''))
+        self.qtable.setItem(self.rowIndex-1, 1, QTableWidgetItem(''))
+        self.qtable.setItem(self.rowIndex-1, 2, QTableWidgetItem(''))
+        self.qtable.setItem(self.rowIndex-1, 3, QTableWidgetItem(''))
+        self.qtable.setItem(self.rowIndex-1, 4, QTableWidgetItem(''))
+
+        self.se.deleterow(self.rowIndex)
+        self.rowIndex -= 1
 
     def create(self):
         self.se.createfile()
