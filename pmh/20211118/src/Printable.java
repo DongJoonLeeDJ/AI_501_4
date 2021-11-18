@@ -6,4 +6,8 @@ public interface Printable {
         System.out.println("컬러로출력");
         print(doc);
     }
+    static void staticPrint(String doc){
+        System.out.println("스테틱은 객체생성하지 않고...");
+        System.out.println(doc);
+    }
 }

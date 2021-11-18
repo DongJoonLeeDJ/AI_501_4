@@ -13,6 +13,7 @@ public class Ex02 {
 
 //        Printable.PAPER_HEIGHT = 200;
 
+        Printable.staticPrint("출력");
     }
 
 }
