@@ -15,23 +15,26 @@ class MyApp(QWidget):
         self.signalfn()
 
         # self.tableW.setItem(self.row, self.col, QTableWidgetItem(QCheckBox("test")))
-        self.tableW.setCellWidget(1,1,QCheckBox("test"))
+        # self.tableW.setCellWidget(1,1,QCheckBox("test"))
 
 
     # excel 저장.. 화면에도 뿌려준다..
     def mybtnfn(self):
-        self.tableW.setItem(self.row,self.col,QTableWidgetItem(str(self.value)))
-        print("누름")
-        self.value += 1
-        # self.row += 1
-        self.col += 1
-        if self.col==4:
-            self.row += 1
-            self.col = 0
-            if self.row > 9:
-                self.tableW.setRowCount(self.row+1)
+        try:
+            self.tableW.setItem(self.row,self.col,QTableWidgetItem(str(self.value)))
+            print("누름")
+            self.value += 1
+            # self.row += 1
+            self.col += 1
+            if self.col==4:
+                self.row += 1
+                self.col = 0
+                if self.row > 9:
+                    self.tableW.setRowCount(self.row+1)
 
-        print("self.row = ",self.row)
+            print("self.row = ",self.row)
+        except Exception as e:
+            print(e)
 
 
 
