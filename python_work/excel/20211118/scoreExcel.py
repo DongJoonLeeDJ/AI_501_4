@@ -9,7 +9,8 @@ class ScoreExcel:
     def deleterow(self,rowIndex):
         wb = load_workbook('score.xlsx')
         ws = wb.active
-
+        # 엑셀에서는 1...
+        # 배열에서는 0...시작으로..
         ws.delete_rows(rowIndex)
         wb.save('score.xlsx')
         wb.close()

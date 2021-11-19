@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets \
-    import QApplication, QWidget, QPushButton, QVBoxLayout, QHBoxLayout
+    import QApplication, QWidget, QPushButton, QHBoxLayout
 import ex04
 import chapter5
 from random import randint
@@ -36,7 +36,7 @@ class MyApp(QWidget):
         ex04.loadCxlsx()
 
     def btn2clickd(self):
-        chapter5.dxlsx(str(randint(0,100)))
+        chapter5.dxlsx(str(randint(0, 100)))
 
 
 if __name__ == '__main__':
