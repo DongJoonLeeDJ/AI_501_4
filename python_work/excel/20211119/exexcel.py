@@ -24,3 +24,18 @@ def makebasic():
 
     wb.save('score.xlsx')
     wb.close()
+
+
+def dmajum():
+    wb = load_workbook('score.xlsx')
+    ws = wb.active
+
+    for idx,cell in enumerate(ws['D']):
+        if idx ==0:
+            continue
+        else:
+            cell.value = 10
+
+
+    wb.save('score.xlsx')
+    wb.close()

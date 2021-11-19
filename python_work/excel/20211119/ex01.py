@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
+import exexcel as bbb
 
 
 class MyApp(QWidget):
@@ -8,10 +9,11 @@ class MyApp(QWidget):
         self.initUi()
 
     def makefile(self):
-        print("기본파일생성")
+        bbb.makebasic()
 
     def manjumfn(self):
-        print("만점")
+        bbb.dmajum()
+        QMessageBox.information(self,'title','10점으로 다바꿈')
 
     def initUi(self):
         self.filebtn = QPushButton("파일만들기")
