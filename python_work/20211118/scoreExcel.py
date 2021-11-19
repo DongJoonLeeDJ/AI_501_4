@@ -10,7 +10,7 @@ class ScoreExcel:
         wb = load_workbook('score.xlsx')
         ws = wb.active
 
-        ws.delete_rows(rowIndex-1)
+        ws.delete_rows(rowIndex)
         wb.save('score.xlsx')
         wb.close()
 
