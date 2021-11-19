@@ -16,12 +16,18 @@ class MyApp(QWidget):
     def initUi(self):
         self.filebtn = QPushButton("파일만들기")
         self.manjunbtn = QPushButton("퀴즈2만점만들기")
+
+        self.hbox = QHBoxLayout()
+        self.hbox.addStretch(1)
+        self.hbox.addWidget(self.filebtn)
+        self.hbox.addWidget(self.manjunbtn)
+        self.hbox.addStretch(1)
+
         # 세로로된 레이아웃 만들기
         self.vbox = QVBoxLayout()
         # 세로로된 레이아웃에 버튼 넣기
         self.vbox.addStretch(5)
-        self.vbox.addWidget(self.filebtn)
-        self.vbox.addWidget(self.manjunbtn)
+        self.vbox.addLayout(self.hbox)
         self.vbox.addStretch(1)
 
         self.setLayout(self.vbox)
