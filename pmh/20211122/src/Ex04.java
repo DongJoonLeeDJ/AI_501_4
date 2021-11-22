@@ -1,3 +1,8 @@
+
+
+// page 428 , page 439
+// 19-1 , 19-2
+
 public class Ex04 {
     public static void main(String[] args) {
         Rectangle r1 = new Rectangle(1,1,9,9);
