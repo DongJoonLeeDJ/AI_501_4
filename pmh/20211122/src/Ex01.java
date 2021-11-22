@@ -44,9 +44,8 @@ public class Ex01 {
                 System.out.print("번호>> ");
                 int bunho = scan.nextInt();
                 scan.nextLine(); //입력버퍼지우기
-
-                seats[bunho-1].r_name = name;
-
+                bunho = (seatline -1) * 10 + (bunho-1);
+                seats[bunho].r_name = name;
             } else if (select.equals("조회")) {
                 System.out.println("S >> ");
                 for (int i = 0; i< 10; i++)
@@ -64,7 +63,14 @@ public class Ex01 {
                     System.out.print(seats[i].r_name+" ");
                 }
             } else if (select.equals("취소")) {
-                System.out.println("취소");
+
+//                System.out.println();
+//                예약:1, 조회:2, 취소:3, 끝내기:4 >> 3
+//                좌석 S:1, A:2, B:3>> 2
+//                A>> ___  ___  ___  ___  김효수  ___  ___  ___  ___  ___
+//                이름>>김효수
+
+//                System.out.println("취소");
             } else if (select.equals("끝내기")) {
                 System.out.println("종료합니다.");
                 break;
