@@ -1,6 +1,8 @@
 from openpyxl import *
 
 ''' 파일 생성 하고 기본 데이터 넣는 함수'''
+
+
 def makebasic():
     wb = Workbook()
     ws = wb.active
@@ -30,68 +32,57 @@ def dmajum():
     wb = load_workbook('score.xlsx')
     ws = wb.active
 
-    for idx,cell in enumerate(ws['D']):
-        if idx ==0:
+    for idx, cell in enumerate(ws['D']):
+        if idx == 0:
             continue
         else:
             cell.value = 10
 
-
     wb.save('score.xlsx')
     wb.close()
-    
-    
+
+
 def 총점함수():
     wb = load_workbook('score.xlsx')
     ws = wb.active
 
     ws['H1'] = "총점"
 
-    for row in ws.iter_rows(min_row=2,min_col=2):
+    for row in ws.iter_rows(min_row=2, min_col=2):
         sum = 0
         try:
             for cell in row[0:6]:
                 sum += cell.value
-            print('sum',sum)
+            print('sum', sum)
         except Exception as e:
             print(e)
         row[6].value = sum
-        # print(row[0].value,
-        #       row[1].value,
-        #       row[2].value,
-        #       row[3].value,
-        #       row[4].value,
-        #       row[5].value,
-        #       row[6].value,
-        #       row[7].value,
-        #       )
 
     wb.save('score.xlsx')
     wb.close()
-    
+
+
 def 성적함수():
     wb = load_workbook('score.xlsx')
     ws = wb.active
 
     ws['I1'] = "성적"
 
+    try:
+        for col in ws.iter_cols(min_col=8, min_row=2, max_col=8):
+            for idx, cell in enumerate(col, start=2):
+                if int(cell.value) >= 90:
+                    ws['I' + str(idx)] = 'A'
+                elif int(cell.value) >= 80:
+                    ws['I' + str(idx)] = 'B'
+                elif int(cell.value) >= 70:
+                    ws['I' + str(idx)] = 'C'
+                elif int(cell.value) >= 60:
+                    ws['I' + str(idx)] = 'D'
+                else:
+                    ws['I' + str(idx)] = 'F'
+    except Exception as e:
+        print(e)
+
     wb.save('score.xlsx')
     wb.close()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

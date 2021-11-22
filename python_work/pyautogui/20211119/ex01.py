@@ -2,6 +2,8 @@ import time
 
 import pyautogui
 
+
+
 # 현재 좌표에서 10,100 좌표로 이동
 # pyautogui.move(10, 100, duration=1)
 
