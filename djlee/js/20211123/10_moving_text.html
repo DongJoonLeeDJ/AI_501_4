@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let myh1 = document.createElement('h1')
+        // myh1.innerText = "자바스크립트로 태그추가"
+        // document.body.appendChild(myh1) 
+
+        //알파벳중 한 개 뽑아내는 함수
+        //위치도 지정함(x와 y좌표)
+        //정수 랜덤 값 뽑는 함수
+        function nextRandomInteger(limit){
+            return Math.round(Math.random()*limit)
+        }
+        let randomAlphabet = (function()
+        {
+            let alphabet='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+            return function(){
+                return alphabet.charAt(nextRandomInteger(25))
+            }
+        })()
+        function randomSpeed(maxSpeed){
+            return Math.random()*maxSpeed - Math.random()*maxSpeed
+        }
+
+    </script>
+    <script>
+        let canvasWidth = 700
+        let canvasHeight = 400
+        //객체 만드는 것
+        function MovingText()
+        {
+            this.x = nextRandomInteger(canvasWidth)
+            this.y = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.b = document.createElement('h1')
+            this.b.innerText = randomAlphabet()
+            this.b.style.position = 'fixed'
+            document.body.appendChild(this.b)
+            this.move = function() //0.3초 한 번 호출
+            {
+                if(this.x<0 || this.x>canvasWidth)
+                    this.vx *= -1
+                if(this.y<0 || this.x>canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx
+                this.y += this.vy
+
+                //좌표 위치 조절
+                this.b.style.left = this.x+'px'
+                this.b.style.top = this.y+'px'
+            }
+        }
+    </script>
+    <script>
+        window.onload = function()
+        {
+            let movingTexts = []
+            for(let i =0; i<100; i++){
+                movingTexts.push(new MovingText())
+            }
+            setInterval(function()
+            {
+                for(let i in movingTexts)
+                    movingTexts[i].move()
+            }, 1000/30)
+        }
+    </script>
+</body>
+</html>

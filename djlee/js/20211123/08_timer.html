@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        //setTimeout 특정 ms 후에 한 번 실행
+        setTimeout(() => {
+            console.log('1초후에 해당 함수 한 번 실행')
+        }, 1*1000);
+
+        //setInterval 특정 ms마다 한 번 실행
+        let count = 0;
+        setInterval(() => {
+            count++;
+            console.log(count+'_1초에 한 번 실행!!')            
+        }, 1*1000);
+    </script>
+</body>
+</html>

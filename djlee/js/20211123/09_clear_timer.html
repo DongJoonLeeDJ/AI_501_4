@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        let timerid
+        let count = 0
+        timerid = setInterval(() => {
+            count++
+            console.log("count = "+count)
+        }, 1*1000); //1ms = 1/1000초   1000ms = 1초
+
+        //10초뒤 멈춤
+        setTimeout(() => {
+            console.log("이제 그만~")
+            clearInterval(timerid)
+        }, 10*1000);
+    </script>
+</body>
+</html>
