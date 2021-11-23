@@ -178,4 +178,34 @@ window.onload = () => {
                             ('#black_and_white')
 
 
+    let not_same_color = document.querySelector('#not_same_color')
+    not_same_color.onclick = ()=>{
+    
+
+        for(let i =1; i<8;i++) {        
+            let r = Math.floor(Math.random()*256)
+            let g = Math.floor(Math.random()*256)
+            let b = Math.floor(Math.random()*256)
+            let tempcolor = `rgb(${r},${g},${b})`
+            document.querySelectorAll('#one>.one')[i].style
+            .backgroundColor=tempcolor
+        }
+        for(let i =1; i<8;i++){
+            let r = Math.floor(Math.random()*256)
+            let g = Math.floor(Math.random()*256)
+            let b = Math.floor(Math.random()*256)
+            let tempcolor = `rgb(${r},${g},${b})`
+            document.querySelectorAll('#two>.two')[i].style
+            .backgroundColor=tempcolor
+        }
+        for(let i =1; i<8;i++){
+            let r = Math.floor(Math.random()*256)
+            let g = Math.floor(Math.random()*256)
+            let b = Math.floor(Math.random()*256)
+            let tempcolor = `rgb(${r},${g},${b})`
+            document.querySelectorAll('#three>.three')[i].style
+            .backgroundColor=tempcolor
+        }
+    }
+
 }
