@@ -42,13 +42,13 @@
             this.vy = randomSpeed(10)
             this.b = document.createElement('h1')
             this.b.innerText = randomAlphabet()
-            this.b.style.position = 'fixed'
+            this.b.style.position = 'absolute'
             document.body.appendChild(this.b)
             this.move = function() //0.3초 한 번 호출
             {
                 if(this.x<0 || this.x>canvasWidth)
                     this.vx *= -1
-                if(this.y<0 || this.x>canvasHeight)
+                if(this.y<0 || this.y>canvasHeight)
                     this.vy *= -1
                 this.x += this.vx
                 this.y += this.vy
