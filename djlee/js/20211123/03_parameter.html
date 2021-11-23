@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        //...items 나머지 매개변수
+        //함수는 함수인데 매개변수의 
+        //개수를 알 수 없는 경우에 씀
+
+        //... 을 전개연산자
+        function mysum(...items) //최신 버전
+        {
+            let sum = 0
+            for(let item of items)
+                sum+=item
+            alert("총합은 " +sum+"이다")
+        }
+        function oldmysum()//옛날 버전
+        {            //arguments : 키워드, 매개변수로 들어온 모든 것들
+            let sum = 0
+            for(let item of arguments)
+                sum+=item
+            alert("총합은 " +sum+"이다")
+        }
+        //디폴트 매개변수
+        function mypow(a=1) //매개변수에 별도의 값이 없으면
+        {                   //1을 대입함
+            alert("이 숫자의 제곱은 "+a*a+"이다")
+        }
+        mysum(1)
+        mysum(1,2,3,4)
+        mysum(1,100,1000,10)
+        oldmysum(2,3,4)
+        mypow()
+        mypow(5)
+    </script>
+</body>
+</html>

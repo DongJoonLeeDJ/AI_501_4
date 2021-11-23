@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        //어떤 함수든지 무조건 3번 실행하게 해줌
+        function threeTime(func)
+        {
+            for(let i = 0; i<3; i++)
+                func()
+        }
+        function aaa()
+        {
+            let a = prompt("이름이뭐에요?")
+            alert("당신의 이름은 "+a+"입니다.")
+        }
+        threeTime( function(){alert('안녕')} )
+        threeTime( ()=>{console.log("Hello")} )
+        threeTime(aaa)
+
+    </script>
+</body>
+</html>

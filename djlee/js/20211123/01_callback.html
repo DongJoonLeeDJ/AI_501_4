@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <script>
+        let arr1 = [10,5,20,3,40]
+        let arr2 = ['10','5','20','3','40']
+        let arr3 = ['b','f','a','s','d']
+        let orderbyNum = function(a,b){
+            return a-b //오름차순
+        }
+        //내림 차순
+        let orderbyNumDesc = (a,b) => { return b-a }
+        console.log(arr1.sort()) //사전순!?!?!?
+        console.log(arr1.sort(orderbyNum)) //사전순!?!?!?
+        console.log(arr1.sort(orderbyNumDesc)) //사전순!?!?!?
+        console.log(arr2.sort()) //사전순
+        console.log(arr3.sort()) //abcd 순
+    </script>
+    
+</body>
+</html>
