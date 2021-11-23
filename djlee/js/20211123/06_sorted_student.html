@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        class Student{
+            constructor(name, age, beonho){
+                this.name = name
+                this.age = age
+                this.beonho = beonho
+            }
+        }
+        let students  = []
+        while(true)
+        {
+            let n = prompt("이름?")
+            let a = prompt("나이?")
+            let b = prompt("번호?")
+            students.push(new Student(n,a,b))
+            if(confirm("계속할까요?")==false)
+                break;
+        }
+        students.sort(function(a,b){return a.beonho-b.beonho})
+        console.log(students)
+    </script>
+</body>
+</html>

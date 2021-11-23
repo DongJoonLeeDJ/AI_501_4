@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        function test(...items)
+        {
+            console.log(items)
+        }
+        const numbers=[11,55,22,33,99]
+        //v:value 각 요소의 값
+        //i:index 인덱스
+        //a: 배열 자체
+        numbers.forEach((v,i,a)=>{
+            console.log(`${i}번째 요소:${v}`)
+            test(...a) //배열 전체 출력
+        })
+        //만약 array자체는 필요없다면 뺴도 됨
+        numbers.forEach((v,i)=>{
+            console.log(`${i}번째 요소:${v}`)
+        })       
+        //인덱스도 필요없다
+        numbers.forEach((v)=>{
+            console.log(`값 ${v}`)
+        })    
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script>
+        function test(...items)
+        {
+            console.log(items)
+        }
+        let mynumbers = []
+        while(true)
+        {
+            let num = prompt("숫자입력!(다른거 입력시 종료!)")
+            if(isNaN(num))
+                break;
+            mynumbers.push(num)
+        }
+        mynumbers.sort((a,b)=>{return b-a})
+        alert("두 번째로 큰 숫자는 "+mynumbers[1]+"입니다.")
+        test(...mynumbers)
+    </script>
+</body>
+</html>
