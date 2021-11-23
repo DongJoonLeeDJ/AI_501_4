@@ -122,7 +122,56 @@ window.onload = () => {
     let case_by_case_random = document.querySelector
                                 ('#case_by_case_random')
 
+    case_by_case_random.onclick = ()=>{
+
+        let tempcolor = 
+                lotto_colors[Math.floor(Math.random()*5)]
+        for(let i =1; i<8;i++)
+        {
+            document.querySelectorAll('#one>.one')[i].style
+            .backgroundColor
+            = tempcolor
+        }
+        tempcolor = 
+        lotto_colors[Math.floor(Math.random()*5)]
+
+        for(let i =1; i<8;i++)
+        {
+            document.querySelectorAll('#two>.two')[i].style
+            .backgroundColor
+            = tempcolor
+        }
+        tempcolor = 
+        lotto_colors[Math.floor(Math.random()*5)]
+        for(let i =1; i<8;i++)
+        {
+            document.querySelectorAll('#three>.three')[i].style
+            .backgroundColor
+            = tempcolor
+        }
+    }
     let same_color = document.querySelector('#same_color')
+    same_color.onclick = ()=>{
+    
+        let r = Math.floor(Math.random()*256)
+        let g = Math.floor(Math.random()*256)
+        let b = Math.floor(Math.random()*256)
+        let tempcolor = `rgb(${r},${g},${b})`
+        for(let i =1; i<8;i++)
+        {
+            document.querySelectorAll('#one>.one')[i].style
+            .backgroundColor=tempcolor
+            
+            document.querySelectorAll('#two>.two')[i].style
+            .backgroundColor=tempcolor
+            
+            document.querySelectorAll('#three>.three')[i].style
+            .backgroundColor=tempcolor
+        }
+    }
+
+
+    
     let number_by_number = document.querySelector
                             ('#number_by_number')
     let black_and_white = document.querySelector
