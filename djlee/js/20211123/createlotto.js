@@ -207,12 +207,48 @@ window.onload = () => {
     }
     let black_and_white = document.querySelector
                             ('#black_and_white')
+    
+    black_and_white.onclick = function()
+    {for(let i = 1; i<8; i++)
+        {
+            document.querySelectorAll('#one>.one')[i].style
+            .backgroundColor=setBackgroundColor
+            (document.querySelectorAll('#one>.one')[i].innerText)
+            
+            document.querySelectorAll('#one>.one')[i].style
+            .color=setfontColor
+            (document.querySelectorAll('#one>.one')[i].innerText)
+            
+            document.querySelectorAll('#two>.two')[i].style
+            .backgroundColor=setBackgroundColor
+            (document.querySelectorAll('#two>.two')[i].innerText)
+            
+            document.querySelectorAll('#two>.two')[i].style
+            .color=setfontColor
+            (document.querySelectorAll('#two>.two')[i].innerText)
+
+            document.querySelectorAll('#three>.three')[i].style
+            .backgroundColor=setBackgroundColor
+            (document.querySelectorAll('#three>.three')[i].innerText)
+
+            document.querySelectorAll('#three>.three')[i].style
+            .color=setfontColor
+            (document.querySelectorAll('#three>.three')[i].innerText)
+        }
+    }
+
+
+
+
+
+
+
+
+
 
 
     let not_same_color = document.querySelector('#not_same_color')
     not_same_color.onclick = ()=>{
-    
-
         for(let i =1; i<8;i++) {        
             let r = Math.floor(Math.random()*256)
             let g = Math.floor(Math.random()*256)
