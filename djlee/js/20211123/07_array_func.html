@@ -6,22 +6,55 @@
         {
             console.log(items)
         }
-        const numbers=[11,55,22,33,99]
+        const mynumbers=[11,55,22,33,99]
         //v:value 각 요소의 값
         //i:index 인덱스
         //a: 배열 자체
-        numbers.forEach((v,i,a)=>{
+        //forEach : 배열의 길이만큼 호출되는 함수
+        
+        mynumbers.forEach((v,i,a)=>{
             console.log(`${i}번째 요소:${v}`)
             test(...a) //배열 전체 출력
         })
         //만약 array자체는 필요없다면 뺴도 됨
-        numbers.forEach((v,i)=>{
+        mynumbers.forEach((v,i)=>{
             console.log(`${i}번째 요소:${v}`)
         })       
         //인덱스도 필요없다
-        numbers.forEach((v)=>{
+        mynumbers.forEach((v)=>{
             console.log(`값 ${v}`)
         })    
+
+        //map: 배열에 있는 것들을 재가공
+        //forEach문처럼 여러 개의 매개변수가 필요하기도 하고
+        //매개변수를 한 개만 넣어도 된다.
+        const pow_numbers = mynumbers.map(
+            //function(v){return v*v}
+            //(v) => {return v*v}
+            (v)=> v*v 
+        )
+        test(...mynumbers)
+        test(...pow_numbers)
+
+        const even_numbers = mynumbers.filter(
+            //(v)=> v%2==0
+            (v)=> {return v%2==0}
+        )
+        test(...even_numbers)
+
+        let numbers = [1,2,3,4,5,6,8,9,10]
+        //filter, map, forEach는 중첩됨
+        //이렇게 연속으로 메소드(=함수) 호출하는 걸
+        //메소드 채이닝이라고 부른다!
+        numbers.filter(
+            (v)=>v%2==0 //짝수들만 가져와서
+        ).map(
+            (v)=>v*v //그것들만 제곱해서
+        ).forEach(
+            (v)=>console.log(v) //출력
+        )
+
+
     </script>
 </body>
 </html>
