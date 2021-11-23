@@ -99,6 +99,26 @@ window.onload = () => {
 
     let all_random = document.querySelector
                          ('#all_random')
+    
+    all_random.onclick = ()=>{
+        //[0]에 있는 것 : ~~~번째
+        //[1]부터[7]까지에 번호있으니
+        //그 부분들만 색칠
+        for(let i =1; i<8;i++)
+        {
+            document.querySelectorAll('#one>.one')[i].style
+            .backgroundColor
+            = lotto_colors[Math.floor(Math.random()*5)]
+            
+            document.querySelectorAll('#two>.two')[i].style
+            .backgroundColor
+            = lotto_colors[Math.floor(Math.random()*5)]
+            
+            document.querySelectorAll('#three>.three')[i].style
+            .backgroundColor
+            = lotto_colors[Math.floor(Math.random()*5)]
+        }
+    }
     let case_by_case_random = document.querySelector
                                 ('#case_by_case_random')
 
