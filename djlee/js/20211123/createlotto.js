@@ -49,9 +49,24 @@ function createLottoNum(drwnum){
 }
 //배경색깔 세팅
 function setBackgroundColor(num){
+    let mynum = Number(num)
+    if(mynum<=10)
+        return 'yellow'
+    else if(mynum<=20)
+        return 'blue'
+    else if(mynum<=30)
+        return 'red'
+    else if(mynum<=40)
+        return 'gray'
+    else
+        return 'green'
 }
 //글자색깔 세팅
 function setfontColor(num){
+    let mynum = Number(num)
+    if(mynum>= 11 && mynum<=30)
+        return 'white'
+    return 'black'
 }
 
 //function(){}  이거랑
@@ -174,6 +189,22 @@ window.onload = () => {
     
     let number_by_number = document.querySelector
                             ('#number_by_number')
+    number_by_number.onclick = () => {
+        for(let i = 1; i<8; i++)
+        {
+            document.querySelectorAll('#one>.one')[i].style
+            .backgroundColor=setBackgroundColor
+            (document.querySelectorAll('#one>.one')[i].innerText)
+            
+            document.querySelectorAll('#two>.two')[i].style
+            .backgroundColor=setBackgroundColor
+            (document.querySelectorAll('#two>.two')[i].innerText)
+            
+            document.querySelectorAll('#three>.three')[i].style
+            .backgroundColor=setBackgroundColor
+            (document.querySelectorAll('#three>.three')[i].innerText)
+        }
+    }
     let black_and_white = document.querySelector
                             ('#black_and_white')
 
