@@ -33,19 +33,14 @@
     <script>
         let canvasWidth = 700 //최대넓이
         let canvasHeight = 400 //최대높이
-        function MovingText(param)
+        function MovingText()
         {
             this.x  = nextRandomInteger(canvasWidth) 
             this.y  = nextRandomInteger(canvasHeight)
             this.vx = randomSpeed(10)
             this.vy = randomSpeed(10)
             this.b  = document.createElement('h1')
-
-            if(!param)//param이 없는 경우
-                this.b.innerText = randomAlphabet()
-            else
-                this.b.innerText = param
-            
+            this.b.innerText = randomAlphabet()
             this.b.style.position = 'fixed'
             //this.b.style.color=`rgb(${nextRandomInteger(255)},${nextRandomInteger(255)},${nextRandomInteger(255)})`
             //appendChild 해줘야 body에 실제로 들어감
@@ -66,12 +61,6 @@
     </script>
     <script>
         window.onload = function(){
-            let adder = document.querySelector('button')
-            let input = document.querySelector('input')
-            adder.onclick =  () =>{
-                movingTexts.push(new MovingText(input.value))
-            }
-
             let movingTexts = []
             //let mycolors = ['red','green','blue']
             //let backcolor =['pink', 'yellow']
@@ -85,14 +74,12 @@
                     movingTexts[i].move()
                     movingTexts[i].b.style.color=
                     `rgb(${nextRandomInteger(255)},
-                         ${nextRandomInteger(255)},
-                         ${nextRandomInteger(255)})`
-
+                    ${nextRandomInteger(255)},
+                    ${nextRandomInteger(255)})`
                     document.body.style.backgroundColor=
                     `rgb(${nextRandomInteger(255)},
                     ${nextRandomInteger(255)},
                     ${nextRandomInteger(255)})`
-
                     //movingTexts[i].b.style.color=mycolors[nextRandomInteger(2)]
                     //document.body.style.backgroundColor=backcolor[nextRandomInteger(1)]
 
@@ -100,17 +87,8 @@
             }, 1000/30) //33.3333 ms에 한 번
         }               //0.03초에 한 번
     </script>
-    <style>
-        button,input
-        {
-            left:0px; 
-            top:500px;
-            position: relative;
-        }
-    </style>
 </head>
 <body>
-    <button>글자 추가</button>
-    <input type="text" name="" id="">
+    
 </body>
 </html>
