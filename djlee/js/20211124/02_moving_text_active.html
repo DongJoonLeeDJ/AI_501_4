@@ -62,8 +62,8 @@
     <script>
         window.onload = function(){
             let movingTexts = []
-            let mycolors = ['red','green','blue']
-            let backcolor =['pink', 'yellow']
+            //let mycolors = ['red','green','blue']
+            //let backcolor =['pink', 'yellow']
             for(let i = 0; i<100; i++){
                 movingTexts.push(new MovingText())
             }
@@ -72,8 +72,16 @@
                 for(let i in movingTexts)
                 {
                     movingTexts[i].move()
-                    movingTexts[i].b.style.color=mycolors[nextRandomInteger(2)]
-                    document.body.style.backgroundColor=backcolor[nextRandomInteger(1)]
+                    movingTexts[i].b.style.color=
+                    `rgb(${nextRandomInteger(255)},
+                    ${nextRandomInteger(255)},
+                    ${nextRandomInteger(255)})`
+                    document.body.style.backgroundColor=
+                    `rgb(${nextRandomInteger(255)},
+                    ${nextRandomInteger(255)},
+                    ${nextRandomInteger(255)})`
+                    //movingTexts[i].b.style.color=mycolors[nextRandomInteger(2)]
+                    //document.body.style.backgroundColor=backcolor[nextRandomInteger(1)]
 
                 }
             }, 1000/30) //33.3333 ms에 한 번
