@@ -54,7 +54,8 @@
             //this.b.style.color=`rgb(${nextRandomInteger(255)},${nextRandomInteger(255)},${nextRandomInteger(255)})`
             //appendChild 해줘야 body에 실제로 들어감
             document.body.appendChild(this.b)
-            this.move = function() {
+        }
+        MovingText.prototype.move = function() {
                 if(this.x<0 || this.x>canvasWidth)
                     this.vx *= -1
                 if(this.y<0 || this.y>canvasHeight)
@@ -65,7 +66,6 @@
                 //좌표위치조정
                 this.b.style.left = this.x+'px'
                 this.b.style.top = this.y+'px'
-            }
         }
     </script>
     <script>

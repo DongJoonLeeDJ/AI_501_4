@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let product = {
+            name : "맹고",
+            type : 'fruit',
+            taste : '맛남',
+            '-' : '마이너스',
+            '+' : '특수문자는 키(key)안 됨',
+            '@' : '골뱅이 이런 거 안 됨. 아니면 따옴표감싸면 됨'
+        }
+        alert(product.name)
+        alert(product['name'])
+        alert(product['taste'])
+        alert(product['@'])
+
+        product.owner = '이승훈'
+        console.log(product)
+        let 들여쓰기 = 5
+        console.log(JSON.stringify(product,null,들여쓰기))
+
+        delete product['@']
+        console.log(product)
+        console.log(JSON.stringify(product,null,들여쓰기))
+
+        alert(typeof product) //object
+        let a = []
+        alert(typeof a)//object
+        alert(Array.isArray(a)) //이거 자체가 배열인지 여부 체크
+        let b= function(){}
+        alert(typeof b) //function
+
+
+    </script>
+</body>
+</html>
