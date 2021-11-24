@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //임의의 정수값을 뽑는 함수 호출
+        function nextRandomInteger(limit){
+            //round = 반올림
+            return Math.round(Math.random()*limit)
+        }
+        let randomAlphabet = (
+            function()
+            {
+                let alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                return function(){
+                    return alphabet.charAt(nextRandomInteger(25))
+                }
+            }
+        )() //함수를 선언하자마자 호출한 것
+
+        function randomSpeed(maxSpeed){
+            return Math.random()*maxSpeed - Math.random()*maxSpeed
+        }
+    </script>
+    <script>
+        let canvasWidth = 700 //최대넓이
+        let canvasHeight = 400 //최대높이
+        function MovingText()
+        {
+            this.x  = nextRandomInteger(canvasWidth) 
+            this.y  = nextRandomInteger(canvasHeight)
+            this.vx = randomSpeed(10)
+            this.vy = randomSpeed(10)
+            this.b  = document.createElement('h1')
+            this.b.innerText = randomAlphabet()
+            this.b.style.position = 'fixed'
+            //appendChild 해줘야 body에 실제로 들어감
+            document.body.appendChild(this.b)
+            this.move = function() {
+                if(this.x<0 || this.x>canvasWidth)
+                    this.vx *= -1
+                if(this.y<0 || this.y>canvasHeight)
+                    this.vy *= -1
+                this.x += this.vx
+                this.y += this.vy
+
+                //좌표위치조정
+                this.b.style.left = this.x+'px'
+                this.b.style.top = this.y+'px'
+            }
+        }
+    </script>
+    <script>
+        window.onload = function(){
+            let movingTexts = []
+            for(let i = 0; i<100; i++){
+                movingTexts.push(new MovingText())
+            }
+            setInterval(function()
+            {
+                for(let i in movingTexts)
+                    movingTexts[i].move()
+            }, 1000/30) //33.3333 ms에 한 번
+        }               //0.03초에 한 번
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
