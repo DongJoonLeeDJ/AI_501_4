@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <Script>
+        let input = prompt("알파벳 소문자 입력")
+        let arr = []
+        
+        //입력받은 문자열의 각 요소를 중복없이 배열에 넣음
+        for (var i = 0; i < input.length; i++) {
+            if (arr.indexOf(input.charAt(i)) == -1) {
+                arr.push(input.charAt(i))
+            }
+        }
+
+        //만들어진 배열의 각 요소로 전체 문자열에 해당 알파벳이 몇개 있나 검사해서 개수 출력
+        for (var i = 0; i < arr.length; i++) {
+            var count=0
+            for(var j = 0; j<input.length; j++){
+                var source = arr[i]
+                var check = input.charAt(j)
+                if(source == check){
+                    count++
+                }
+            }
+            document.write(arr[i] + "는" + count+"개 입니다. <br>")
+        }
+            console.log(input)
+
+    </Script>
+</body>
+
+</html>

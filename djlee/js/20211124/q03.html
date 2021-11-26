@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var input = prompt("암호 입력");
+        
+        //코드표대로 객체 생성
+        var code={
+            a:"ㄱ",
+            b:"ㄴ",
+            c:"ㄷ",
+            d:"ㄹ",
+            e:"ㅁ",
+            f:"ㅂ",
+            g:"ㅅ",
+            h:"ㅇ",
+            i:"ㅈ",
+            j:"ㅊ",
+            k:"ㅋ",
+            l:"ㅌ",
+            m:"ㅍ",
+            n:"ㅎ",
+            o:"ㅏ",
+            p:"ㅑ",
+            q:"ㅓ",
+            r:"ㅕ",
+            s:"ㅗ",
+            t:"ㅛ",
+            u:"ㅜ",
+            v:"ㅠ",
+            w:"ㅡ",
+            x:"ㅣ",
+        }
+
+        //입력받은 문자열의 첫번째 알파벳 부터 키값으로 하는 코드 출력
+        for(var i =0; i< input.length;i++){
+            takeKey=input.charAt(i) // 문자 'a'  변수 a
+            document.write(code[takeKey])
+        }
+
+        
+    </script>
+</body>
+</html>
