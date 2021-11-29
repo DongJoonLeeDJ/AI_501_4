@@ -11,6 +11,7 @@ class DBox<T,L extends Number,R>{
         return "DBox{" + "name=" + name + ", count=" + count + '}';
     }
 }
+// 주석 색깔
 public class Ex05 {
     public static void main(String[] args) {
         DBox<String,Double,Integer> dbox1 = new DBox<>();

@@ -1,29 +1,19 @@
 import sys
 import time
-import pyautogui
+import mypaint
 from PyQt5.QtWidgets import *
 
 
 class MyApp(QWidget):
     def __init__(self):
         super().__init__()
-        self.initUi()
 
-    def doms(self):
-        try:
-            time.sleep(3)
-            box = pyautogui.locateOnScreen('font.PNG', confidence=0.8)
-            pyautogui.click(box)
-            pyautogui.click()
-            pyautogui.move(10,200,duration=1)
-            pyautogui.click()
-        except Exception as e:
-            print(e)
+        self.initUi()
 
     def initUi(self):
         self.mpaintbtn = QPushButton("그림판", self)
         self.mpaintbtn.move(30, 20)
-        self.mpaintbtn.clicked.connect(self.doms)
+        self.mpaintbtn.clicked.connect(mypaint.doms)
 
         self.setWindowTitle("First App")
         self.move(300, 300)
