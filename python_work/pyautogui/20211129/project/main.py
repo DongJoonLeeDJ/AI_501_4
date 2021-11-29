@@ -10,8 +10,12 @@ class MyApp(QWidget):
         self.initUi()
 
     def start(self):
-        # chk = self.tableWidget.item(0, 0).text()
-        # print(chk)
+        try:
+            a = self.tableWidget.cellWidget(0, 0).isChecked()
+            print(a)
+        except Exception as e:
+            print(e)
+
         id = self.tableWidget.item(0,2).text()
         pw = self.tableWidget.item(0,3).text()
         webma.dostart(id,pw)
@@ -39,11 +43,9 @@ class MyApp(QWidget):
             self.tableWidget.setCellWidget(row, 0 , QCheckBox())
 
 
-        self.tableWidget.setItem(0, 1,QTableWidgetItem('승훈'))
+        self.tableWidget.setItem(0, 1, QTableWidgetItem('승훈'))
         self.tableWidget.setItem(0, 2, QTableWidgetItem('mysky0420@naver.com'))
-        self.tableWidget.setItem(0, 3, QTableWidgetItem('a123456789'))
-
-
+        self.tableWidget.setItem(0, 3, QTableWidgetItem('a123456789!'))
 
         hbox = QVBoxLayout()
         hbox.addWidget(self.qbtn)
