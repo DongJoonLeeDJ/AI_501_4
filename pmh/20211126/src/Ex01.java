@@ -49,11 +49,8 @@ public class Ex01 {
         for(Person temp:pary){
             System.out.println("temp = "+temp);
         }
-        Arrays.sort(pary, new Comparator<Person>() {
-            @Override
-            public int compare(Person o1, Person o2) {
-                return o1.getAge()-o2.getAge();
-            }
+        Arrays.sort(pary, (o1,o2)->{
+            return o1.getAge() - o2.getAge();
         });
         for(Person temp:pary){
             System.out.println("temp = "+temp);
