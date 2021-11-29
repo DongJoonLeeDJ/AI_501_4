@@ -6,7 +6,7 @@
 #
 # print(a)
 
-b = dict(a=11,b=22,c=33)
+b = dict(a=44,c=22,d=33,b=11)
 
 print(b)
 print(b['a'])
@@ -14,3 +14,9 @@ print(b['a'])
 
 for temp in b.items():
     print(temp)
+
+alist = sorted(b.items() , key = lambda x : x[0])
+print(alist)
+
+blist = sorted(b.items() , key = lambda x : x[1])
+print(blist)
