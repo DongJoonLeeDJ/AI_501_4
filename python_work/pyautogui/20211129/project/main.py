@@ -10,6 +10,8 @@ class MyApp(QWidget):
         self.initUi()
 
     def start(self):
+        # chk = self.tableWidget.item(0, 0).text()
+        # print(chk)
         id = self.tableWidget.item(0,2).text()
         pw = self.tableWidget.item(0,3).text()
         webma.dostart(id,pw)
