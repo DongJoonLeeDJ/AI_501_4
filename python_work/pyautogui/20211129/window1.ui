@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <widget class="QDialog" name="MainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -46,7 +46,7 @@
      <string>삭제</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="info_line">
     <property name="geometry">
      <rect>
       <x>30</x>

@@ -11,14 +11,16 @@ class Window1(QMainWindow, form_class2):
         super().__init__()
         self.setupUi(self)
         self.xl = Customer_Email()
-        self.le = ""
+        # self.le = ""
         self.pushButton.clicked.connect(self.customer)
         # print(self.lineEdit.text(),'asdasd')
 
     def customer(self):#라인텍스트 안글자가 출력
+
         try:
             print('일로오나')
-            print(self.lineEdit.text())
+            print(self.info_line.text())
+            # print(self.lineEdit_2.text())
             # self.le = self.lineEdit.text()
             # print(self.le)
             # self.xl.SaveEmail(self.le)
@@ -28,8 +30,8 @@ class Window1(QMainWindow, form_class2):
 
 
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    mywindow = Window1()
-    mywindow.show()
-    sys.exit(app.exec_())
+# if __name__ == '__main__':
+#     app = QApplication(sys.argv)
+#     mywindow = Window1()
+#     mywindow.show()
+#     sys.exit(app.exec_())
