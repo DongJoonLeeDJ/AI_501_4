@@ -5,8 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+    h1{user-select: none;} /*클릭 여러번 할 때 글자 선택되는 거 방지*/
+</style>
 </head>
 <body>
+    <h1>Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates pariatur suscipit, ea dolor voluptatem ducimus quam numquam nobis error praesentium. Tenetur autem molestiae numquam omnis explicabo! Culpa aspernatur sunt excepturi.</h1>
     
+    <script>
+        let counter = 0
+        let flag = false
+        const myh1 = document.querySelector('h1')
+        myh1.addEventListener('click', 
+        function()
+        {
+            if(flag)
+                counter--
+            else
+                counter++
+            if(counter>25)
+                flag = true
+            if(counter<0)
+                flag = false
+            
+            myh1.style.color = `rgb(${counter*10},0,0)`
+        })
+        myh1.addEventListener('mouseover', function()
+        {
+            myh1.style.backgroundColor='yellow'
+        })
+        myh1.addEventListener('mouseout', function()
+        {
+            myh1.style.backgroundColor='white'
+        })
+    </script>
 </body>
 </html>
