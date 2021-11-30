@@ -10,11 +10,13 @@ class MyApp(QWidget):
         self.initUi()
 
     def start(self):
-        try:
-            a = self.tableWidget.cellWidget(0, 0).isChecked()
-            print(a)
-        except Exception as e:
-            print(e)
+        # try:
+        #     a = self.tableWidget.cellWidget(0, 0).isChecked()
+        #     print(a)
+        #     a = self.tableWidget.cellWidget(1, 0).isChecked()
+        #     print(a)
+        # except Exception as e:
+        #     print(e)
 
         id = self.tableWidget.item(0,2).text()
         pw = self.tableWidget.item(0,3).text()
