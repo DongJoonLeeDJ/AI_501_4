@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+        let count = 0
+        let red = 0
+        let green = 0
+        let blue = 0
+        const mydiv = document.querySelector('div')
+        mydiv.style.height = '1024px'
+        setInterval(function()
+        {
+            if(count<255)
+            {
+                red=255
+                green=count
+            }
+            else if(count <(255*2))
+            {
+                red = 255 - (count%255)
+                green = 255
+            }
+            else if(count <(255*3))
+            {
+                green = 255
+                blue = (count%255)
+            }
+            else if(count <(255*4))
+            {
+                green = 255- (count%255)
+                blue = 255
+            }
+            else if(count <(255*5))
+            {
+                red = (count%255)
+                blue = 255
+            }
+            else if(count <(255*6))
+            {
+                red = 255
+                blue = 255-(count%255)
+            }
+            mydiv.style.backgroundColor
+            =`rgb(${red},${green},${blue})`
+            count++
+        },10)
+
+    </script>
+</body>
+</html>
