@@ -12,10 +12,10 @@
             const divs = document.querySelectorAll('div')
 
             divs.forEach(
-                function(mydiv, myindex){
-                    const val = myindex*10
-                    mydiv.style.height = '10px'
-                    mydiv.style.backgroundColor = `rgb(${val},${val},${val})`
+                function(a, b){
+                    const val = b*10
+                    a.style.height = '10px'
+                    a.style.backgroundColor = `rgb(${val},${val},${val})`
                 }
             )
         }
