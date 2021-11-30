@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pink{background-color: pink;}
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',
+        function()
+        {
+            const divA=document.querySelector('#first')
+            const divB=document.querySelector('#second')
+            const myh1 = document.createElement('h1')
+            myh1.textContent = '이동하는 h1태그~'
+            //class="pink" 를 js코드를 통해서 추가
+            myh1.setAttribute('class', 'pink')
+
+            const toFirst = function()
+            {
+                divA.appendChild(myh1)
+                setTimeout(toSecond, 1000)
+            }
+            const toSecond = function()
+            {
+                divB.appendChild(myh1)
+                setTimeout(toFirst, 2000)
+            }
+            toFirst()
+
+        })
+    </script>
+</head>
+<body>
+    <div id="first">
+        <h1>첫 번째 div 내부</h1>
+    </div>
+    <div id="second">
+        <h1>두 번째 div 내부</h1>
+    </div>
+</body>
+</html>
