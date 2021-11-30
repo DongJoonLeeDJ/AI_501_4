@@ -5,8 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',
+        function()
+        {
+            const divs = document.querySelectorAll('div')
+
+            divs.forEach(
+                function(mydiv, myindex){
+                    const val = myindex*10
+                    mydiv.style.height = '10px'
+                    mydiv.style.backgroundColor = `rgb(${val},${val},${val})`
+                }
+            )
+        }
+        )
+    </script>
 </head>
 <body>
-    
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
 </body>
 </html>
