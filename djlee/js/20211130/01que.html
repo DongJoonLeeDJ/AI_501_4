@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    p{font-family: Consolas;}
+</style>
+</head>
+<body>
+    <script>
+        //대소문자 구분 안 하고
+        //문자의 개수 적으려면 대소문자 통일을 먼저
+        //한다.
+        //만약 대소문자를 다 구문할거라면
+        //끝에 .UpperCase()를 빼면 된다.
+        let input = prompt("영문자 입력하세요.").toUpperCase()
+        let arr = [] //중복없이 입력했던 글자들을 모음
+
+        for(let i = 0; i<input.length; i++)
+        {
+            if(arr.indexOf(input.charAt(i))== -1)
+                arr.push(input.charAt(i))
+        }
+        let result
+        for(let i = 0; i<arr.length; i++)
+        {
+            let count = 0
+            let 원본
+            for(let j = 0; j<input.length; j++)
+            {
+                원본 = arr[i]
+                let 체크할변수 = input.charAt(j)
+                if(원본 == 체크할변수)
+                {
+                    count++
+                }
+            }
+            result = document.createElement('p')
+            result.innerHTML = `${원본}은${count}개 입니다.<br>`
+            document.body.appendChild(result)
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{font-family: 'D2Coding', Consolas}
+    </style>
+</head>
+<body>
+    <script>
+        let input = prompt("영문자 입력하세요.").toUpperCase()
+        let arr = [] //중복없이 입력했던 글자들을 모음
+        for(let i = 0; i<input.length; i++)
+        {
+            if(arr.indexOf(input.charAt(i))== -1)
+                arr.push(input.charAt(i))
+        }
+        //각 요소별 처음 등장 인덱스를 출력
+        for(let i = 0; i<arr.length; i++){
+            let order = input.indexOf(arr[i])            
+            let result = document.createElement('p')
+            result.innerHTML 
+            = `${arr[i]}은[${order}] 에서 처음 나옴<br>`
+            document.body.appendChild(result)
+        }
+
+    </script>
+</body>
+</html>

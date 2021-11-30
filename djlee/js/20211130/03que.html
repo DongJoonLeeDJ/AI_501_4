@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let input = prompt("암호입력해라").toUpperCase()
+        let code = {
+            A:"ㄱ",
+            B:'ㄴ',
+            C:'ㄷ',
+            D:'ㄹ',
+            E:'ㅁ',
+            F:'ㅂ',
+            G:'ㅅ',
+            H:'ㅇ',
+            I:'ㅈ',
+            J:'ㅊ',
+            K:'ㅋ',
+            L:'ㅌ',
+            M:'ㅍ',
+            N:'ㅎ',
+            O:'ㅏ',
+            P:'ㅑ',
+            Q:'ㅓ',
+            R:'ㅕ',
+            S:'ㅗ',
+            T:'ㅛ',
+            U:'ㅜ',
+            V:'ㅠ',
+            W:'ㅡ',
+            X:'ㅣ'
+        }
+
+        let result=''
+        for(let i = 0; i<input.length;i++){
+            result += code[input.charAt(i)]
+        }
+        let temp = document.createElement('h1')
+        temp.innerText = result
+        document.body.appendChild(temp)
+    </script>
+</body>
+</html>

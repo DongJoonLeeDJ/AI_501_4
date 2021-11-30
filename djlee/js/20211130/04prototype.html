@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // Number.prototype.류경문짱 = (n=2) => this.valueOf()**n
+        Number.prototype.류경문짱 = function(n=2)
+        {
+            return this.valueOf()**n
+        }
+        String.prototype.contain = function(data){
+            return this.indexOf(data)>=0
+        }
+        Array.prototype.contain = function(data){
+            return this.indexOf(data)>=0
+        }
+    </script>
+</head>
+<body>
+    <script>
+        const a = 12
+        //textContent = innerText랑 동일
+        let temp = document.createElement('h1')
+        temp.textContent += (a.류경문짱()) //12제곱
+        temp.textContent += "\n"
+        temp.textContent += (a.류경문짱(3))//12 세제곱
+        temp.textContent += "\n"
+        temp.textContent += (a.류경문짱(10))//12를 10번 제곱
+        temp.textContent +="\n"
+        temp.textContent += (12**2) //그냥 이렇게 적어도 되긴 하다.
+        document.body.appendChild(temp)
+
+        let h1_2 = document.createElement('h1')
+        h1_2.style.color = 'springgreen'
+        h1_2.style.backgroundColor='black'
+        h1_2.innerHTML += "안녕 <br>"
+        h1_2.innerHTML += `안 in 안녕 : ${"안녕".contain("안")}`
+        h1_2.innerHTML += "<br>"
+        h1_2.innerHTML += "헤이 <br>"
+        h1_2.innerHTML += `야 in 헤이 : ${"헤이".contain('야')}`
+        document.body.appendChild(h1_2)
+
+        let h1_3 = document.createElement('h1')
+        h1_3.innerHTML += "[1,2,3,4,5]<br>"
+        h1_3.innerHTML += `1 in [1,2,3,4,5] = ${[1,2,3,4,5].contain(1)}`
+        h1_3.innerHTML += `<br>6 in [1,2,3,4,5] = ${[1,2,3,4,5].contain(6)}`
+        document.body.appendChild(h1_3)
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> .border { border: 3px solid red}
+            .radius {border-radius: 25px;}
+    
+    
+    </style>
+
+    <script>
+        //window.onload = function()
+        document.addEventListener('DOMContentLoaded', function()
+        {
+            let ab = document.querySelector('#ab')
+            ab.style.color = "red"
+            let img = document.querySelector('img')
+            //setAttribute 태그의 속성값을 스크립트로
+            //건들 수 있게 됨
+            img.setAttribute('src', 'https://picsum.photos/id/1025/600/400')
+            img.setAttribute('class', 'border radius')
+            
+            //getAttribute 특정 속성값 가져옴
+            alert(img.getAttribute('class')) 
+        })
+    </script>
+</head>
+<body>
+    <img class="border" src="" alt="">
+    <h1 id="ab">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ducimus, repellat officia magni culpa itaque sed illo minima rerum temporibus perspiciatis voluptatem. In ad est illum quidem ratione nisi hic.</h1>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ducimus, repellat officia magni culpa itaque sed illo minima rerum temporibus perspiciatis voluptatem. In ad est illum quidem ratione nisi hic.</h1>
+</body>
+</html>
