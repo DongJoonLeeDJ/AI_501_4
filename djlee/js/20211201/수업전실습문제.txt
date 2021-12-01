@@ -1,0 +1,12 @@
+다이아몬드를 *로 찍어내되
+- 화면에 그려내기
+- 첫번째줄 빨강, 두번째 주황,...다시 빨강
+- 빨주노초파남보가 반복되게 찍어내기 
+-배경은 gray
+red
+orange
+yellow
+green
+blue
+darkblue
+purple

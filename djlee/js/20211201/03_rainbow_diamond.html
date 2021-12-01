@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color: gray;}
+        .red{color:red}
+        .orange{color:orange}
+        .yellow{color:yellow}
+        .green{color:green}
+        .blue{color:blue}
+        .darkblue{color:darkblue}
+        .purple{color:purple}
+    </style>
+</head>
+<body>
+    <script>
+        const size = 5 //다이아몬드 크기 결정
+        let mycolor = ['red','orange','yellow','green',
+                       'blue','darkblue','purple']
+        let coloridx = 0
+        for (let i = 1; i <= size; i++) {
+            //space bar
+            for (let j = size; j > i; j--) {
+                //output += ' '
+                let space = document.createElement('span')
+                //&nbsp;를 해줘야 한 칸 띈다
+                space.innerHTML = '&nbsp;'
+                document.body.appendChild(space)
+            }
+            //star
+            for (let k = 0; k < 2 * i - 1; k++) {
+                //output += '*'
+                let star = document.createElement('span')
+                star.innerHTML='*'
+                //star.style.color = mycolor[coloridx%7]
+                star.setAttribute('class',mycolor[coloridx%7])
+                document.body.appendChild(star)
+            }
+            // output += '\n'
+            //let br = document.createElement('br')
+            //document.body.appendChild(br)
+            coloridx++
+            document.body.appendChild(document.createElement('br'))
+        }
+        //console.log(output)
+        for (let i = size - 1; i > 0; i--) {
+            for (let j = size; j > i; j--) {
+                
+                let space = document.createElement('span')
+                //&nbsp;를 해줘야 한 칸 띈다
+                space.innerHTML = '&nbsp;'
+                document.body.appendChild(space)
+            }
+            for (let k = 0; k < 2 * i - 1; k++) {
+                
+                let star = document.createElement('span')
+                star.innerHTML='*'
+                star.style.color = mycolor[coloridx%7]
+                document.body.appendChild(star)
+            }
+            coloridx++
+            let br = document.createElement('br')
+            document.body.appendChild(br)
+        }
+    </script>
+</body>
+</html>
