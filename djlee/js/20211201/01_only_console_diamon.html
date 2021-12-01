@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      let output = ''
+      const size = 5//다이아몬드 크기 결정
+    for(let i = 1; i<=size; i++)
+    {
+        //space bar
+         for(let j = size; j>i; j--)
+         {
+            output += ' '
+         }
+         //star
+         for(let k = 0; k<2*i-1; k++)
+         {
+             output += '*'
+         }
+         output += '\n'
+    }
+    //console.log(output)
+    for(let i = size-1; i>0; i--)
+    {
+         for(let j = size; j>i; j--)
+         {
+             output += ' '
+         }
+         for(let k =0; k<2*i-1;k++)
+         {
+             output += '*'
+         }
+         output+='\n'
+    }
+    console.log(output)
+    </script>
+</body>
+</html>
