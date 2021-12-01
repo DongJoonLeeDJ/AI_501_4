@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',
+        ()=>
+        {
+            const star = document.querySelector('h1')
+            star.style.position = 'fixed'
+            let [x,y] = [0,0] 
+            //let x = 0
+            //let y = 0
+            const block = 20
+            const print = () => {
+                star.style.left = `${x*block}px`
+                star.style.top  = `${y*block}px`
+            }
+            print()// ★이 left:0, top:0에 위치하게 됨
+
+            const [left, up, right, down] = [37,38,39,40]
+            document.body.addEventListener('keydown',
+            //(event)=>
+            function(event)
+            {  //event의 정체: 이벤트를 부르는 주체
+                //즉 <- 키 눌렀다면 event는 <-키가 된다.
+                switch (event.keyCode) {
+                    case left:
+                        if(x<=0)
+                            break
+                        x -= 1
+                        break;
+                    case up:
+                        if(y<=-2)
+                            break
+                        y -= 1
+                    break;
+                    case right:
+                        x += 1
+                        break;
+                    case down:
+                        y +=1
+                    break;
+                
+                    default:
+                        break;
+                }
+                print()
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>★</h1>
+</body>
+</html>

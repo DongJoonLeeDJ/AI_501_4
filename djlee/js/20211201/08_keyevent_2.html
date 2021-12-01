@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', 
+        ()=>{
+            const myh1 = document.querySelector('h1')
+            const myprint = (myevent)=>{
+                let myoutput = ''
+                myoutput+=`alt:${myevent.altKey}<br>`
+                myoutput+=`ctrl:${myevent.ctrlKey}<br>`
+                myoutput+=`shift:${myevent.shiftKey}<br>`
+                myoutput+=`code:${typeof(myevent.code) 
+                    !== 'undefined' ?
+                myevent.code : myevent.KeyCode}<br>`
+                myh1.innerHTML = myoutput
+                }
+             
+            document.addEventListener('keydown', myprint)
+            document.addEventListener('keyup', myprint)
+
+        })
+    </script>
+</head>
+<body>
+    <h1></h1>
+</body>
+</html>

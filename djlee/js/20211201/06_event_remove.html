@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas minus, architecto, aliquid, dolore inventore quasi odit distinctio quibusdam sed nihil mollitia temporibus dicta incidunt blanditiis suscipit quis esse sapiente eaque.</h1>
+    <button id="remove">이벤트 제거</button>
+    <script>
+        let count = 0;
+        const myh1 = document.querySelector('h1')
+        const btn = document.querySelector('#remove')
+        const colorful = function(){
+            count++
+            myh1.style.color = `rgb(0,0,${count*5})`
+        }
+        myh1.addEventListener('click', colorful)
+        btn.addEventListener('click', function()
+        {
+            myh1.removeEventListener('click', colorful)
+        })
+    </script>
+
+</body>
+</html>
