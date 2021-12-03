@@ -12,8 +12,11 @@ class Review:
         self.bad = bad
 
     def __str__(self):
-        return '내용 ' + self.comment + '  날짜 ' + self.date + ' 별점 ' + self.star + \
-               '  좋아요 ' + self.good + '  싫어요 ' + self.bad
+        return '내용 ' + self.comment + \
+               ' 날짜 ' + self.date +   \
+               ' 별점 ' + self.star +   \
+               ' 좋아요 ' + self.good + \
+               ' 싫어요 ' + self.bad
 
 
 url = 'https://movie.naver.com/movie/bi/mi/basic.naver?code=36944'
