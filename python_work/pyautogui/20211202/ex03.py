@@ -13,8 +13,8 @@ class Review:
 
     def __str__(self):
         return '내용 ' + self.comment + \
-               ' 날짜 ' + self.date +   \
-               ' 별점 ' + self.star +   \
+               ' 날짜 ' + self.date + \
+               ' 별점 ' + self.star + \
                ' 좋아요 ' + self.good + \
                ' 싫어요 ' + self.bad
 
@@ -30,12 +30,20 @@ print(html)'''
 
 req = requests.get(url)
 html = BeautifulSoup(req.text.strip(), 'html.parser')
-# print(html)
+
+score_result = html.select('.score_result > ul > li')
+
 review_list = []
 
-review_list.append(Review('이영화참잘만틈','20110101','10','400','300'))
-review_list.append(Review('이영화인간이만든게아님','20120401','9','111','7'))
-review_list.append(Review('로맨스영화..좋음','20120301','7','200','30'))
+# review_list 한개씩 찾아서 추가
+for idx, li in enumerate(score_result):
+    star_jumsu = li.find('div', class_='star_score').text.strip()   # 점수
+    score_reple = li.find('div',class_='score_reple')               # div...
+    reple = score_reple.find('p').text.strip()
+    date = score_reple.findAll('em')[1].text
+    like, hate = li.findAll('strong')[0].text,li.findAll('strong')[1].text
+    review_list.append(Review(reple,date,star_jumsu,like,hate))
 
+# review_list 출력해보기
 for review in review_list:
     print(review)
