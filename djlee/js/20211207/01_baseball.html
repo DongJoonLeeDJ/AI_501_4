@@ -82,6 +82,7 @@
             for(let i = 0; i<buttons.length; i++)
             {
                 buttons[i].style.color = ''
+                buttons[i].disabled = false
             }
 
             array = []
@@ -121,7 +122,7 @@
             buttons[i].addEventListener('click',
             function()
             {
-                if(h1output.innerHTML.includes(i)==false)
+                if(h1output.innerHTML.include(i)==false)
                 {
                     if(h1output.innerHTML.length<3){
                         h1output.innerHTML += i
@@ -213,19 +214,32 @@
 
                 if(count==3)
                 {
+                    let hintNum = Math.floor(Math.random()*10)
+                    //arr 배열에 있는 값은 숫자가 아니라 문자
+                    //output자체가 문자
+                    //hintNum+'' 이렇게 하면 문자가 들어감
+                    //숫자+문자열 = 문자열취급
+                    let checkNumber = arr.indexOf(hintNum+'')
+                    while(checkNumber!= -1)
+                    {
+                        hintNum = Math.floor(Math.random()*10)
+                        checkNumber = arr.indexOf(hintNum+'')
+                    }
+                    buttons[hintNum].style.color = 'red'
+                    buttons[hintNum].disabled = true
 
                 }
-                else if(count==5)
+                else if(count==5 || count == 7 ||count==8)
                 {
-
-                }
-                else if(count == 7)
-                {
-
-                }
-                else if(count == 8)
-                {
-
+                    let hintNum = Math.floor(Math.random()*10)
+                    let checkNumber = arr.indexOf(hintNum+'')
+                    while(checkNumber!= -1 || buttons[hintNum].style.color!='')
+                    {
+                        hintNum = Math.floor(Math.random()*10)
+                        checkNumber = arr.indexOf(hintNum+'')
+                    }
+                    buttons[hintNum].style.color = 'red'
+                    buttons[hintNum].disabled = true
                 }
                 if(count >= 9) //결국 못 맞춘 것
                 {
