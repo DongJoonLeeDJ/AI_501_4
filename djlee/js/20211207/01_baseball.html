@@ -175,7 +175,40 @@
             }
             else
             {
+                let arr = [output[0], output[1], output[2]]
+                let ball = 0
+                let strike = 0
+                //ball과 strike의 개수 혹은 out여부 체크
+                for(let i=0; i<h1output.innerHTML.length;i++)
+                {
+                    let test = arr.indexOf(h1output.innerHTML[i])
+                    if(test!=-1)
+                    {
+                        if(arr[i] == h1output.innerHTML[i])
+                            strike++
+                        else
+                            ball++
+                    }
+                }
+                //지금 당장 필요한 건 아니고
+                //나중에 h1output이 리셋될 때(문제끝나서)
+                //마지막으로 입력한 값 표시하기 위한 용도
+                let h1Temp = h1output.innerHTML
+                if(ball==0&&strike==0)
+                {
+                    h3input.innerHTML += 
+                        '['+h1output.innerHTML+']'+' ' + 'out'
 
+                    h3input.innerHTML += '<br>'
+                    h1output.innerHTML = ''
+                }
+                else
+                {
+                    h3input.innerHTML += '['+h1output.innerHTML+']'+' '+
+                    strike+'S '+ ball+'B'
+                    h3input.innerHTML += '<br>'
+                    h1output.innerHTML = ''
+                }
             }
 
         })
