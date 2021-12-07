@@ -82,7 +82,7 @@
             for(let i = 0; i<buttons.length; i++)
             {
                 buttons[i].style.color = ''
-                buttons[i].disabled = false
+                //buttons[i].disabled = false
             }
 
             array = []
@@ -97,8 +97,6 @@
                 }
             } while (array.length<3);//3글자만 뽑아낸다.
         }
-
-
 
         let cancel = document.getElementById('cancel')
         let submit = document.getElementById('submit')
@@ -117,19 +115,21 @@
             }, 100
         )
 
+        //myevent = 버튼 누른 주체(이 함수를 부르는 주체)
+        let myclick =  function(myevent) //currentTarget = target
+        { //myevent.currentTarget = 이 함수를 부르는 주체(좀 더 구체적으로)
+            if(h1output.innerHTML.includes(myevent.target.innerHTML)==false)
+            {
+                if(h1output.innerHTML.length<3){
+                    h1output.innerHTML += myevent.currentTarget.innerHTML
+                }
+            }
+
+        }
+
         for(let i = 0; i<buttons.length; i++)
         {
-            buttons[i].addEventListener('click',
-            function()
-            {
-                if(h1output.innerHTML.includes(i)==false)
-                {
-                    if(h1output.innerHTML.length<3){
-                        h1output.innerHTML += i
-                    }
-                }
-
-            })
+            buttons[i].addEventListener('click',myclick )
         }
 
         cancel.addEventListener('click',function()
@@ -168,6 +168,12 @@
                 answer.innerHTML='정답은?'
                 timecount=0
                 clearInterval(timeCountInterval)
+                //이벤트 리셋(싹 다 지우고 다시 추가)
+                for(let i = 0; i<buttons.length; i++)
+                {
+                    buttons[i].removeEventListener('click',myclick )
+                    buttons[i].addEventListener('click',myclick )
+                }
                 timeCountInterval = setInterval(
                     function() {
                         timecount++
@@ -226,7 +232,8 @@
                         checkNumber = arr.indexOf(hintNum+'')
                     }
                     buttons[hintNum].style.color = 'red'
-                     buttons[hintNum].disabled = true
+                    buttons[hintNum].removeEventListener('click', myclick)
+                    // buttons[hintNum].disabled = true
 
                 }
                 else if(count==5 || count == 7 ||count==8)
@@ -239,7 +246,8 @@
                         checkNumber = arr.indexOf(hintNum+'')
                     }
                     buttons[hintNum].style.color = 'red'
-                     buttons[hintNum].disabled = true
+                    buttons[hintNum].removeEventListener('click', myclick)
+                    // buttons[hintNum].disabled = true
                 }
                 if(count >= 9) //결국 못 맞춘 것
                 {
@@ -259,6 +267,12 @@
                     answer.innerHTML='정답은 ? '
                     timecount = 0
                     clearInterval(timeCountInterval)
+                    //이벤트 리셋(싹 다 지우고 다시 추가)
+                    for(let i = 0; i<buttons.length; i++)
+                    {
+                        buttons[i].removeEventListener('click',myclick )
+                        buttons[i].addEventListener('click',myclick )
+                    }
                     timeCountInterval=setInterval(
                         function()
                         {
