@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 id="first">Lorem ipsum dolor sit amet.</h1>
+    <h1 id="second">Lorem ipsum dolor sit amet.</h1>
+    <script>
+        //자바스크립트로 태그 선택(first)
+        let firstTag = document.getElementById('first')
+        let first2 = document.querySelector('#first')
+        firstTag.style.color='red'
+        first2.style.backgroundColor='pink'
+        //제이쿼리로 태그 선택(second)
+        $('#second').css('color','green').
+        css('background-color','springgreen')
+    </script>
+</body>
+</html>
