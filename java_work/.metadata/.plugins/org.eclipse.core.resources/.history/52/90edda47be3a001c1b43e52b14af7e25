@@ -1,9 +1,0 @@
-class Boat{
-	public void myboat() {
-		System.out.println("이것은 보트");
-	}
-}
-
-public class Car {
-
-}

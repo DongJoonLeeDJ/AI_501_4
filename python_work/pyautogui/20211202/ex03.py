@@ -37,13 +37,16 @@ review_list = []
 
 # review_list 한개씩 찾아서 추가
 for idx, li in enumerate(score_result):
-    star_jumsu = li.find('div', class_='star_score').text.strip()   # 점수
-    score_reple = li.find('div',class_='score_reple')               # div...
-    reple = score_reple.find('p').text.strip()
-    date = score_reple.findAll('em')[1].text
-    like, hate = li.findAll('strong')[0].text,li.findAll('strong')[1].text
-    review_list.append(Review(reple,date,star_jumsu,like,hate))
+    print(li.select('.star_score')[0].text.strip())
+    # star_jumsu = li.find('div', class_='star_score').text.strip()   # 점수
+    # score_reple = li.find('div',class_='score_reple')               # div...
+    # reple = score_reple.find('p').text.strip()
+    # date = score_reple.findAll('em')[1].text
+    # like, hate = li.findAll('strong')[0].text,li.findAll('strong')[1].text
+    # review_list.append(Review(reple,date,star_jumsu,like,hate))
 
 # review_list 출력해보기
 for review in review_list:
     print(review)
+
+# https://myounghoi.pythonanywhere.com/

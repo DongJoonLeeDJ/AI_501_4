@@ -1,7 +1,0 @@
-package com.java.org;
-
-public class BB {
-	public int b = 10;
-	
-	
-}

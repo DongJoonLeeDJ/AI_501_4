@@ -1,9 +1,0 @@
-
-public class Ex05 {
-	public static int num = 100;
-
-	public static void main(String[] args) {
-		Ex05.num -= 10;
-		System.out.println("Ex05.num = "+Ex05.num);
-	}
-}

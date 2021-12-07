@@ -1,9 +1,0 @@
-import com.java.org.Song;
-
-public class Ex02 {
-	
-	public static void main(String[] args) {
-		
-	}
-
-}
