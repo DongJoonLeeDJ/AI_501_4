@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 30px;
+            height: 30px;
+            margin-left: 20px;
+            font-size: 20px;
+        }
+
+        #answer,
+        #submit,
+        #cancel {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+
+        #input {
+            position: fixed;
+            top: 50px;
+            left: 150px;
+        }
+
+        #time {
+            position: fixed;
+            top: 50px;
+            left: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 60px;">
+        <h1 id="output" style="margin-left: 170px;"></h1>
+    </div>
+    <div>
+        <div style="margin-bottom: 20px;">
+            <button class="choiceValue">0</button>
+            <button class="choiceValue">1</button>
+            <button class="choiceValue">2</button>
+            <button class="choiceValue">3</button>
+            <button class="choiceValue">4</button>
+        </div>
+        <div style="margin-bottom: 20px;">
+            <button class="choiceValue">5</button>
+            <button class="choiceValue">6</button>
+            <button class="choiceValue">7</button>
+            <button class="choiceValue">8</button>
+            <button class="choiceValue">9</button>
+        </div>
+    </div>
+    <button id="cancel" style="margin-left: 20px;">취소</button>
+    <button id="submit" style="margin-left: 20px;">제출</button>
+
+    <div style="height: 60px;">
+        <!-- 제출한 숫자 표시 -->
+        <h3 id="input" style="margin-left: 170px;"></h3>
+        <!-- 경과 시간 표시 -->
+        <h5 id="time"></h5>
+    </div>
+
+    <!-- 디버깅버튼 -->
+    <button id="answer">
+        정답은 ?
+    </button>
+
+    <script>
+        let output = ''
+        let array = []
+        let input = 0
+
+        do {
+            input = Math.floor(Math.random() * 10)
+            const idx = array.indexOf(input)
+            if (idx == -1) {
+                array.push(input)
+                output += input
+            }
+        } while (array.length < 3)
+
+        let buttons = document.getElementsByClassName('choiceValue')
+
+        function shuffleNewNumber() {
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].style.color = ''
+            }
+
+            output = ''
+            array = []
+            input = 0
+
+            do {
+                input = Math.floor(Math.random() * 10)
+                const idx = array.indexOf(input)
+                if (idx == -1) {
+                    array.push(input)
+                    output += input
+                }
+            } while (array.length < 3)
+        }
+
+        let cancel = document.getElementById('cancel')
+        let submit = document.getElementById('submit')
+        let h1output = document.getElementById('output')
+        let h3input = document.getElementById('input')
+        let answer = document.getElementById('answer')
+        let time = document.getElementById('time')
+        let count = 0
+        let timecount = 0
+
+        let timeCountInterval = setInterval(function () {
+            timecount++
+            time.innerText = timecount
+        }, 150)
+
+        for (let i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function () {
+                if (h1output.innerHTML.includes(i) == false) {
+                    if (h1output.innerHTML.length < 3)
+                        h1output.innerHTML += i
+                }
+            })
+        }
+
+        cancel.addEventListener('click', function () {
+            h1output.innerHTML = ''
+            answer.innerHTML = '정답은 ?'
+        })
+
+        // answer.style.display = 'none'
+        answer.addEventListener('click', function () {
+            this.innerHTML = '정답은 ' + output
+        })
+
+        submit.addEventListener('click', function () {
+            if (h1output.innerHTML.length != 3) {
+                alert('숫자 3개를 입력해야 합니다.')
+                return
+            }
+            count++
+            if (output == h1output.innerHTML) {
+                count = 0
+                alert('정답!')
+                if (timecount < 300)
+                    alert('상')
+                else if (timecount < 3000)
+                    alert('중')
+                else if (timecount < 10000)
+                    alert('하')
+                else
+                    alert('...')
+                h3input.innerHTML = ''
+                shuffleNewNumber()
+                h1output.innerHTML = ''
+                answer.innerHTML = '정답은 ?'
+                timecount = 0
+                clearInterval(timecount)
+                timeCountInterval = setInterval(function () {
+                    timecount++
+                    time.innerHTML = timecount
+                }, 100)
+            } else {
+                let arr = [output[0], output[1], output[2]]
+                let ball = 0
+                let strike = 0
+                for (let i = 0; i < h1output.innerHTML.length; i++) {
+                    let test = arr.indexOf(h1output.innerHTML[i])
+                    if (test != -1) {
+                        if (arr[i] == h1output.innerHTML[i])
+                            strike++
+                        else
+                            ball++
+                    }
+                }
+                let h1Temp = h1output.innerHTML
+                if (ball == 0 && strike == 0) {
+                    h3input.innerHTML += '[' + h1output.innerHTML + ']' + ' ' + 'out'
+                    h3input.innerHTML += '<br>'
+                    h1output.innerHTML = ''
+                } else {
+                    h3input.innerHTML += '[' + h1output.innerHTML + ']' + ' ' + strike + 'S ' + ball + 'B'
+                    h3input.innerHTML += '<br>'
+                    h1output.innerHTML = ''
+                }
+
+                let arr1 = [output[0], output[1], output[2]]
+                let arr2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                let arr3 = arr2.filter((element) => element != arr1[0] && element != arr1[1] && element != arr1[
+                    2])
+
+                if (count == 3) {
+                    let num = arr3[Math.floor(Math.random() * 7)]
+                    for (let i = 0; i < buttons.length; i++) {
+                        if (buttons[i].innerHTML == num) {
+                            buttons[i].style.color = 'red'
+                            buttons[i].disabled = true
+                        }
+                    }
+                    arr3.slice(num, 1)
+                } else if (count == 5) {
+                    num = arr3[Math.floor(Math.random() * 6)]
+                    for (let i = 0; i < buttons.length; i++) {
+                        if (buttons[i].innerHTML == num) {
+                            buttons[i].style.color = 'red'
+                            buttons[i].disabled = true
+                        }
+                    }
+                    arr3.slice(num, 1)
+                } else if (count == 7) {
+                    num = arr3[Math.floor(Math.random() * 5)]
+                    for (let i = 0; i < buttons.length; i++) {
+                        if (buttons[i].innerHTML == num) {
+                            buttons[i].style.color = 'red'
+                            buttons[i].disabled = true
+                        }
+                    }
+                    arr3.slice(num, 1)
+                } else if (count == 8) {
+                    num = arr3[Math.floor(Math.random() * 4)]
+                    for (let i = 0; i < buttons.length; i++) {
+                        if (buttons[i].innerHTML == num) {
+                            buttons[i].style.color = 'red'
+                            buttons[i].disabled = true
+                        }
+                    }
+                    arr3.slice(num, 1)
+                }
+                if (count >= 9) {
+                    count = 0
+                    for (let i = 0; i < buttons.length; i++) {
+                        buttons[i].style.color = ''
+                        buttons[i].disabled = false
+                    }
+                    alert
+                        (
+                            '마지막으로 입력한 ' +
+                            h1Temp +
+                            '도 정답이 아닙니다.' +
+                            '정답은 ' + output + '입니다.'
+                        )
+                    h3input.innerHTML = ''
+                    shuffleNewNumber()
+                    h1output = ''
+                    answer.innerHTML = '정답은 ? '
+                    timecount = 0
+                    clearInterval(timeCountInterval)
+                    timeCountInterval = setInterval(
+                        function () {
+                            timecount++
+                            time.innerHTML = timecount
+                        }, 100
+                    )
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
