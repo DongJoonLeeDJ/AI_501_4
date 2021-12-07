@@ -89,13 +89,13 @@
             input = 0
             output = ''
             do {
-            input = Math.floor(Math.random()*10)//0~9
-            const idx = array.indexOf(input)
-            if(idx == -1){
-                array.push(input)
-                output+=input
-            }
-        } while (array.length<3);//3글자만 뽑아낸다.
+                input = Math.floor(Math.random()*10)//0~9
+                const idx = array.indexOf(input)
+                if(idx == -1){
+                    array.push(input)
+                    output+=input
+                }
+            } while (array.length<3);//3글자만 뽑아낸다.
         }
 
 
@@ -226,7 +226,7 @@
                         checkNumber = arr.indexOf(hintNum+'')
                     }
                     buttons[hintNum].style.color = 'red'
-                    buttons[hintNum].disabled = true
+                     buttons[hintNum].disabled = true
 
                 }
                 else if(count==5 || count == 7 ||count==8)
@@ -239,7 +239,7 @@
                         checkNumber = arr.indexOf(hintNum+'')
                     }
                     buttons[hintNum].style.color = 'red'
-                    buttons[hintNum].disabled = true
+                     buttons[hintNum].disabled = true
                 }
                 if(count >= 9) //결국 못 맞춘 것
                 {
@@ -253,7 +253,7 @@
                     )
                     h3input.innerHTML=''
                     shuffleNewNumber()
-                    h1output=''
+                    h1output.innerHTML=''
                     answer.innerHTML='정답은 ? '
                     timecount = 0
                     clearInterval(timeCountInterval)
