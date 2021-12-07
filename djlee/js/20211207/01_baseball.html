@@ -156,9 +156,10 @@
                 alert('정답!')
                 ////////////////
                 //timecount에 따른 메시지 출력
-                //100 미만일 땐 '천재'
-                //1000미만일 땐 '보통'
-                //10000미만일 땐 '...' 등... 자유롭게
+                if(timecount<100)
+                    alert('천재')
+                else
+                    alert('보통')
                 ////////////////
                 h3input.innerHTML=''
                 shuffleNewNumber()
