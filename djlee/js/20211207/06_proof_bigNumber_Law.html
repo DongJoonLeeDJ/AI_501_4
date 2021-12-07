@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="myjq.js"></script>
     <title>Document</title>
     <style>
         .max { color:deeppink }
@@ -29,5 +30,14 @@
     <h1>6</h1>
     <h1 class="6">0</h1>
     <h1 class="6">0</h1>
+    <script>
+       //참고로 jQuery text 값 주는 법
+       $('h1:first').text('aaa')
+       //$('h1').text('aaa') //모조리 aaa로 바꿔버림
+
+       //jQuery 텍스트 받아오는 법
+       let mytext = $('h1:first').text()
+       console.log(mytext)
+    </script>
 </body>
 </html>
