@@ -59,7 +59,9 @@ body
 }
 .title {
     position: relative;
-    color: darkblue; /*노래 제목 색깔*/
+    /*노래 제목 색깔*/
+    background-color: cyan;
+    color: darkblue; 
     text-align: center;
     margin:0 auto;
 }
