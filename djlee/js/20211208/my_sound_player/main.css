@@ -42,6 +42,12 @@ body
     flex: 1;/*서로한테 동일한 너비를 주겠다*/
     cursor: pointer;
 }
+
+.pads>div:hover
+{
+    background: lightblue;
+}
+
 .pad1 {background-color: red;}
 .pad2 {background-color: orange;}
 .pad3 {background-color: yellow;}
