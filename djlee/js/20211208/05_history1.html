@@ -6,15 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>h1:hover{color:red; cursor: pointer;}</style>
+    <style>h2:hover{color:blue; cursor: pointer;}</style>
 </head>
 <body>
     <h1>history2로 이동</h1>
     <a href="06_history2.html">06history2로 이동</a>
+    <h2>앞으로 가~</h2>
     <script>
         document.querySelector('h1').onclick =
         function(){
             location.href='06_history2.html'
-        }
+        }//go 전전단계나 앞앞단계등으로도 다양하게 이동가능
+        document.querySelector('h2').onclick=
+        function() { history.go(1)/*history.forward()*/ }
     </script>
 </body>
 </html>
