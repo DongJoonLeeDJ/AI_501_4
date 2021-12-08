@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="myjq.js"></script>
     <title>Document</title>
     <style>
         .max { color:deeppink }
@@ -44,20 +45,12 @@
             //0이 나오면 주사위 1로 간주
             //5가 나오면 주사위 6으로 간주
             let random = Math.floor(Math.random()*6)
-            ///bad code
-            //let count = parseInt(document.querySelector('.a'+(random+1)).innerHTML)
-            //count++
-            //document.querySelector('.a'+(random+1)).innerHTML = count
-            //
-
-
             emptyArray[random]++
         }
         for(let i =1; i<=6;i++)
         {
             //h1태그이면서 클래스명이 a인 것
-            document.querySelector('h1.a'+i).innerHTML=
-            emptyArray[i-1]
+            $('h1.a'+i).text(emptyArray[i-1])
         }
         let max = 0
         let maxIndex = 0
@@ -65,8 +58,7 @@
         {
             // percent를 구하기 위한 값
             // max도 구해야 함
-            let percent = document.querySelector('h1.a'+i)
-            .innerHTML
+            let percent = $('h1.a'+i).text()
             if(max<Number(percent))//그냥 percent는문자
             {                     //숫자로바꿔서 비교해야 함
                 max = percent     //그냥 비교시 사전순비교
@@ -75,16 +67,11 @@
             //h1에있는 값 받아와서
             percent = (percent/bigCountLaw)*100
             //h2부분에 적음
-            document.querySelector('h2.a'+i).innerHTML 
-                  = parseFloat(percent).toFixed(2)+'%'
+            $('h2.a'+i).text(parseFloat(percent).toFixed(2)+'%')
         }
 
-        document.querySelector('h1.a'+maxIndex).
-        setAttribute('class', 'max')
-        document.querySelector('h2.a'+maxIndex).
-        setAttribute('class', 'max')
-
-
+        $('h1.a'+maxIndex).addClass('max')
+        $('h2.a'+maxIndex).addClass('max')
 
     </script>
 </body>
