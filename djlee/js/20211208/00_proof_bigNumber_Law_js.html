@@ -57,7 +57,8 @@
         for(let i =1; i<=6;i++)
         {
             //h1태그이면서 클래스명이 a인 것
-            document.querySelector('h1.a'+i).innerHTML=emptyArray[i-1]
+            document.querySelector('h1.a'+i).innerHTML=
+            emptyArray[i-1]
         }
         let max = 0
         let maxIndex = 0
@@ -65,7 +66,8 @@
         {
             // percent를 구하기 위한 값
             // max도 구해야 함
-            let percent = document.querySelector('h1.a'+i).innerHTML
+            let percent = document.querySelector('h1.a'+i)
+            .innerHTML
             if(max<percent)
             {
                 max = percent
