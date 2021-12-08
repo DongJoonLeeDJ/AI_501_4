@@ -68,9 +68,9 @@
             // max도 구해야 함
             let percent = document.querySelector('h1.a'+i)
             .innerHTML
-            if(max<percent)
-            {
-                max = percent
+            if(max<Number(percent))//그냥 percent는문자
+            {                     //숫자로바꿔서 비교해야 함
+                max = percent     //그냥 비교시 사전순비교
                 maxIndex = i
             }
             //h1에있는 값 받아와서
@@ -79,6 +79,11 @@
             document.querySelector('h2.a'+i).innerHTML 
                   = parseFloat(percent).toFixed(2)+'%'
         }
+
+        document.querySelector('h1.a'+maxIndex).
+        setAttribute('class', 'max')
+        document.querySelector('h2.a'+maxIndex).
+        setAttribute('class', 'max')
 
 
 
