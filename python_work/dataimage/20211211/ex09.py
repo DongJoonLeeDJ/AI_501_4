@@ -47,6 +47,7 @@ class MyApp(QWidget):
         plt.close()
 
         print("test")
+        # 화면에 보여주기...
         pm = QPixmap('a.png')
         self.qlabel.setPixmap(pm)
 
