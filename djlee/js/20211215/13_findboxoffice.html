@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin : 0;
+            padding : 0;
+        }
+        body{
+            text-align: center;
+            background-color: pink;
+        }
+        .boxOffice /*div태그*/
+        {
+            width: 500px;
+            margin : 20px auto;
+            padding : 5px;
+            border : 3px dotted #ffffff
+        }
+        ul { /*.boxOffice 안에 있음*/
+            width: 100%;
+            padding: 8px;
+            list-style-position: inside;
+            text-align: left;
+            list-style-type: none;
+        }
+        /*ul 태그 안에 li태그들*/
+        ul li {
+            width: 92%;
+            margin : 5px 0;
+            background-color: aquamarine;
+            padding :5px 10px;
+            cursor: pointer;
+        }
+        ul li:hover {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+    <h1>영화 박스오피스 top 10</h1>
+    <p>최신 영화 박스오피스 순위 알려드림</p>
+    <div class="boxOffice">
+        <h2 class="boxOfficeType"></h2>
+        <p class="showRange"></p>
+        <ul class="boxOfficeList"></ul>
+    </div>
+    <script>
+        // 첫번째 XMLHttpRequest 방식 - 옛날꺼
+        // 두번째 fetch 방식 - 최신꺼   -> fetch방식을 해봅니다.
+        // 세번째 $.ajax - jQuery
+        document.addEventListener('DOMContentLoaded', 
+        function()
+        {
+            const key = "43acf2413769000d8f1218245a94a6ba"
+            let date = (d => new Date(d.setDate(d.getDate()-1)))
+            (new Date)
+            console.log(date.getFullYear())
+            console.log(date.getMonth())
+            console.log(date.getDate())
+            let year = date.getFullYear()
+            let month = date.getMonth()
+            let day = date.getDate()
+            //date.getMonth() : 0~11
+            //1월부터 8월인 경우   01 02 03 04 05 06 07 08 09 이렇게 써줘야 함
+            if(Number(month)<9)
+            {
+                month = '0'+(Number(month)+1)
+            }
+            else 
+                month = Number(month)+1
+
+            //1일 = 0... 즉 0부터 시작
+            //근데 어차피 이 api는 오늘껀 못 불러오고
+            //어제꺼만 불러올 수 있다.
+            if(Number(day)<9)
+            {
+                day = '0'+(Number(day)+1)
+            }
+
+            console.log(''+year+month+day)
+
+            let targetDate = ''+year+month+day
+            const apiUrl = `http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${targetDate}`
+            console.log(apiUrl)
+            const boxOfficeType 
+                    = document.querySelector('.boxOfficeType')
+            const showRange = document.querySelector('.showRange')
+            const myUl = document.querySelector('.boxOfficeList')
+
+            
+
+        })
+    </script>
+</body>
+</html>
