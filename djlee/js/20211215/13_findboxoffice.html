@@ -92,6 +92,24 @@
             const showRange = document.querySelector('.showRange')
             const myUl = document.querySelector('.boxOfficeList')
 
+            fetch(apiUrl).then( function(response)
+            {
+                if(!response.ok)
+                    throw new Error("오류!!!")
+                return response.json()
+            }).then(function(result)
+            {
+                console.log(result)
+                const jsonObj = result //생략해도 됨
+
+                const boxOfficeResult = 
+                    jsonObj['boxOfficeResult']
+                boxOfficeType.textContent = 
+                    boxOfficeResult['boxofficeType']
+                showRange.textContent = boxOfficeResult['showRange']
+
+
+            })
             
 
         })
