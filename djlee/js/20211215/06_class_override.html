@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //이름, 나이, 집사이름
+        class Cat {
+            constructor(이름, 나이, 집사이름)
+            {
+                this.이름 = 이름
+                this.나이 = 나이
+                this.집사이름 = 집사이름
+            }
+            eat()
+            {
+                console.log("냠냠 "+this.이름+"은/는 식사한다.")
+            }
+        }
+
+        //상속
+        //Cat 클래스에 있는 것들을 다 가져다 쓸 수 있음
+        class Tiger extends Cat {
+            constructor(name, age, master, sleepTime){
+                super(name,age,master)
+                this.수면시간 = sleepTime //수면시간 추가
+            }
+            //cat에 있는 eat 함수 오버라이딩
+            eat()
+            {
+                super.eat() //조상클래스에 있는 걸 호출함
+                console.log("촤랍촤랍 쾁쾁")
+            }
+            cry() //cry 추가
+            {
+                console.log("어흥!")
+            }
+            sleep()
+            {
+                console.log(this.수면시간+"시간 동안 잔다.")
+            }
+
+            //모든 객체들의 최상위 객체 있는
+            //toString을 오버라이딩하는 것이 가능
+            //console.log(객체명) 바로 적어도
+            //이 함수가 자동으로 호출됨
+            toString()
+            {
+                return "이 호랑이는 "+
+                this.이름+"이며, 주인이름은" +
+                this.집사이름+"입니다. "+
+                this.나이+"살이며, "+this.수면시간
+                +"만큼 잠을 잡니다."
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let cat1 = new Cat("야옹이",1,"이동준")
+        let tiger = new Tiger("호랭이",2, "조 이그스틱",10)
+        console.log("-------------")
+        console.log(cat1)
+        console.log(tiger)
+        console.log(cat1+'') //console.log(cat1)하면 객체 자체가 그대로 표현됨
+        console.log(tiger+'')//toString 자동호출
+        console.log("-------------")
+
+        
+        cat1.eat()
+        tiger.eat() //tiger에 eat을 명시안했지만 cat꺼가져옴
+        tiger.cry()
+        tiger.sleep()
+
+        
+    </script>
+</body>
+</html>

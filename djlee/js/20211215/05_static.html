@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class 회원{
+            static counter = 0
+            constructor(id,name)
+            {
+                this.아이디 = id
+                this.이름 = name
+                회원.counter++;
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        //let count=0
+        let a = new 회원("ldjgood", "이동준")
+        //count++
+        let b = new 회원("ljj_zzang", "이진주")
+        //count++
+        console.log(a.아이디+a.이름)
+        console.log(b.아이디+b.이름)
+        console.log("지금까지 가입한 회원은"+회원.counter)
+    </script>
+    
+</body>
+</html>
