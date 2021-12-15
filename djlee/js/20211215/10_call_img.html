@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>    
+</head>
+<body id='root'>
+    <script type="text/babel">
+        const container = document.getElementById('root')
+        const name = prompt("이름이 뭐니?")
+        let imgUrl;
+        let component;
+        if(name=='토끼')
+        {
+            imgUrl = '토끼.jpg'
+            component = <div>
+                <h1>{name}이미지입니다.</h1>
+                <img src={imgUrl}/>
+                </div>
+        }
+        else if(name == '고양이')
+        {imgUrl = '고양이.jpg'
+            component = <div>
+                <h1>{name}이미지입니다.</h1>
+                <img src={imgUrl}/>
+                </div>
+        }
+        else if(name=='개')
+        {
+            imgUrl = 'doggy.jpeg'
+            component = <div>
+                <h1>{name}이미지입니다.</h1>
+                <img src={imgUrl}/>
+                </div>
+        }
+        else
+        {
+           component = <h1>그런거없다</h1>
+        }
+        ReactDOM.render(component,container)
+    </script>
+</body>
+</html>
