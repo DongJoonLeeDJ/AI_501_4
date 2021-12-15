@@ -4,9 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>가격은 아래와 같습니다.</h1>
+    <script>
+        $.ajax(
+            {
+                url : "https://dongjoonleedj.github.io/testWebHosting/myjson.json",
+                dataType:"json",
+                success : function(data){
+                    let h1 = $('<h1></h1>')
+                    h1.text("가격은"+data.price+"입니다.")
+                    $('body').append(h1)
+                },
+                error:function(r,s,e){}
+
+                
+            }
+        )
+    </script>
 </body>
 </html>
