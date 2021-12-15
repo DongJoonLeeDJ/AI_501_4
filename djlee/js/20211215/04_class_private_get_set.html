@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Circle {
+            #반지름
+            constructor(반지름)
+            {
+                if(반지름<0)
+                    throw "양수를 입력해주세요"
+                this.#반지름 = 반지름
+            }
+            getArea()
+            {
+                return this.#반지름*this.#반지름*3.14
+            }
+            getRound()
+            {
+                return this.#반지름*2*3.14
+            }
+            set 반지름(value)
+            {
+                if(value<0)
+                    throw "원의 반지름은 음수일 수 없습니다."
+                this.#반지름 = value
+            }
+            get 반지름()
+            {
+                return this.#반지름
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let c1 = new Circle(10)
+        //#반지름해놓으니까 이런식으로 변경 안 됨
+        //객체명.멤버변수 = 값 
+        //c1.반지름 = 200 
+        c1.반지름 = 200
+        console.log(c1.반지름)
+        console.log(c1.getArea())
+        console.log(c1.getRound())
+        let c2 = new Circle(1)
+        //직접 접근하려고 해도 private이라는 이유로
+        //직접 변경 안 됨
+        //c2.#반지름 = -10;
+        c2.반지름 = -10
+        console.log(c2.getArea())
+        console.log(c2.getRound())
+    </script>
+</body>
+</html>

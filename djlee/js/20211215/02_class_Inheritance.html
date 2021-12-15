@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //이름, 나이, 집사이름
+        class Cat {
+            constructor(이름, 나이, 집사이름)
+            {
+                this.이름 = 이름
+                this.나이 = 나이
+                this.집사이름 = 집사이름
+            }
+            eat()
+            {
+                console.log("냠냠 "+this.이름+"은/는 식사한다.")
+            }
+        }
+
+        //상속
+        //Cat 클래스에 있는 것들을 다 가져다 쓸 수 있음
+        class Tiger extends Cat {
+            constructor(name, age, master, sleepTime){
+                super(name,age,master)
+                this.수면시간 = sleepTime //수면시간 추가
+            }
+            cry() //cry 추가
+            {
+                console.log("어흥!")
+            }
+            sleep()
+            {
+                console.log(this.수면시간+"시간 동안 잔다.")
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        let cat1 = new Cat("야옹이",1,"이동준")
+        let tiger = new Tiger("호랭이",2, "조 이그스틱",10)
+        cat1.eat()
+        tiger.eat() //tiger에 eat을 명시안했지만 cat꺼가져옴
+        tiger.cry()
+        tiger.sleep()
+    </script>
+</body>
+</html>
