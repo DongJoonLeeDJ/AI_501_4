@@ -106,10 +106,38 @@
                     jsonObj['boxOfficeResult']
                 boxOfficeType.textContent = 
                     boxOfficeResult['boxofficeType']
-                showRange.textContent = boxOfficeResult['showRange']
+                showRange.textContent = 
+                        boxOfficeResult['showRange']
+
+                const movieList = 
+                  boxOfficeResult['dailyBoxOfficeList']
+
+                movieList.forEach(
+                    element => {
+                        const myLi = document.createElement('li')
+                        const myDiv = document.createElement('div')
+                        const mh2 = document.createElement('h2')
+                        const mp1 = document.createElement('p')
+                        const mp2 = document.createElement('p')
+                        const mp3 = document.createElement('p')
+                        //영화명/개봉일/누적관객수/순위변동
+                        mh2.textContent = element['movieNm'] //제목
+                        mp1.textContent = "개봉일:"+element['openDt']
+                        mp2.textContent = "누적관객수:"+element['audiAcc']
+                        mp3.textContent = "순위변동:"+element['rankInten']
+                        
+                        myLi.appendChild(myDiv)
+                        myDiv.appendChild(mh2)
+                        myDiv.appendChild(mp1)
+                        myDiv.appendChild(mp2)
+                        myDiv.appendChild(mp3)
+                        myUl.appendChild(myLi)
+
+                    }
+                )
 
 
-            })
+            }).catch(()=>{console.log("exception")})
             
 
         })
