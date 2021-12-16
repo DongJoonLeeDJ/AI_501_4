@@ -10,13 +10,28 @@ class MyApp(QWidget):
         super().__init__()
         self.initUi()
 
-        self.imgbasic ='hid.jpg'
+        self.img_filename ='hid.jpg'
 
-        img_basic = cv2.imread(self.imgbasic)
-        print(img_basic.shape)
+        self.img_basic = cv2.imread(self.img_filename)
+        '''
+        b g r 
+        '''
+        print(self.img_basic[100,100])
+        print(self.img_basic.shape)
+
+    def ori(self):
+        qm = QPixmap('hid.jpg')
+        self.imlabel.setPixmap(qm)
 
     def copy(self):
-        print('copy')
+        try:
+            roi = self.img_basic[100:200,150:250]
+            self.img_basic[50:150,100:200] = roi
+            cv2.imwrite('hid_copy.jpg',self.img_basic)
+        except Exception as e:
+            print(e)
+        qm = QPixmap('hid_copy.jpg')
+        self.imlabel.setPixmap(qm)
 
     def red_remove(self):
         print('red_remove')
@@ -33,6 +48,9 @@ class MyApp(QWidget):
         self.imlabel = QLabel('',self)
         self.imlabel.setPixmap(qm)
 
+        self.btn_ori = QPushButton('원본이미지', self)
+        self.btn_ori.move(350, 0)
+
         self.btn_copy = QPushButton('이미지복사',self)
         self.btn_copy.move(350,30)
 
@@ -45,6 +63,7 @@ class MyApp(QWidget):
         self.btn_gray_add = QPushButton('그레이처리', self)
         self.btn_gray_add.move(350, 120)
 
+        self.btn_ori.clicked.connect(self.ori)
         self.btn_copy.clicked.connect(self.copy)
         self.btn_red_remove.clicked.connect(self.red_remove)
         self.btn_red_add.clicked.connect(self.red_add)
