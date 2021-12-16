@@ -29,8 +29,9 @@
 <a href="hello-servlet">Hello Servlet</a><br>
 <a href="MyServlet">MyServlet</a>
 한글나오냐..
-<form action="submit.jsp" method="get">
-    <input type="text" name="aa" value="han">
+<form action="submit.jsp" method="post">
+    <input type="text" name="aa" value="한글">
+    <input type="text" name="gugu" value="2">
     <input type="submit" value="전송">
 </form>
 </body>
