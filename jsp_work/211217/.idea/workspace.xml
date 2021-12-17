@@ -9,15 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073ed1c2-e929-4378-b66d-c4f8edc056bb" name="Changes" comment="211217">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/sessionget.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/sessionset.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/response.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/response.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/_211217-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/_211217-1.0-SNAPSHOT/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/_211217-1.0-SNAPSHOT/response.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/_211217-1.0-SNAPSHOT/response.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="073ed1c2-e929-4378-b66d-c4f8edc056bb" name="Changes" comment="211217" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -116,7 +108,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1639701369546</updated>
-      <workItem from="1639701371907" duration="6883000" />
+      <workItem from="1639701371907" duration="7507000" />
     </task>
     <task id="LOCAL-00001" summary="211217">
       <created>1639706423760</created>
