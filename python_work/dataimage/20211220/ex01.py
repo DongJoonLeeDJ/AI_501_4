@@ -1,6 +1,11 @@
 import cv2
 import numpy as np
 
+'''
+    
+    
+
+'''
 
 def doA(x):
     # print(x, '이거 연결됨')
