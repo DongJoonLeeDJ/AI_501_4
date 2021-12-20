@@ -13,6 +13,7 @@
     <title>Title</title>
 </head>
 <body>
+<% request.setCharacterEncoding("utf-8");%>
 <jsp:useBean id="m1" class="com.example._1220.dto.Member"></jsp:useBean>
 <jsp:setProperty name="m1" property="*"></jsp:setProperty>
 <%--<jsp:setProperty name="m1" property="email"></jsp:setProperty>--%>

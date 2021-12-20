@@ -3,4 +3,25 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <!-- tomcat 시작... web.xml server.xml 내용을 읽어서 실행한다 -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error/e404.jsp</location>
+    </error-page>
+
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>com.example._1220.filter.CharsetEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
 </web-app>
