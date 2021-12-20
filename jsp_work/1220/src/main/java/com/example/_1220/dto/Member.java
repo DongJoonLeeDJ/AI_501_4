@@ -1,4 +1,4 @@
-package com.example._1220.bean;
+package com.example._1220.dto;
 
 public class Member {
     private String email;
