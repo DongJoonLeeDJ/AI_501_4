@@ -1,6 +1,15 @@
 import cv2
 import os
 
+'''
+    jsp 내장객체
+    request, response, out , session
+    python..
+    이미지 합치기... 
+    이미지 변형...
+    이미지 임계점처리...
+'''
+
 # path = '/home/test/test/data'
 # filePath = os.path.join(path, "aa.avi")
 filePath = "wildlife.mp4"

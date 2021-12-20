@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="073ed1c2-e929-4378-b66d-c4f8edc056bb" name="Changes" comment="211217" />
+    <list default="true" id="073ed1c2-e929-4378-b66d-c4f8edc056bb" name="Changes" comment="211217">
+      <change afterPath="$PROJECT_DIR$/../../python_work/dataimage/20211217/aa1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../python_work/dataimage/20211217/aa2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../python_work/dataimage/20211217/aa3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../python_work/dataimage/20211217/ex06.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../python_work/dataimage/20211217/ex06.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,6 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1639701369546</updated>
       <workItem from="1639701371907" duration="7507000" />
+      <workItem from="1639959786767" duration="307000" />
     </task>
     <task id="LOCAL-00001" summary="211217">
       <created>1639706423760</created>
@@ -133,6 +139,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="211217" />
