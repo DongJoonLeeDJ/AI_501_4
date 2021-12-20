@@ -18,8 +18,8 @@
 <jsp:setProperty name="m1" property="*"></jsp:setProperty>
 <%--<jsp:setProperty name="m1" property="email"></jsp:setProperty>--%>
 <%
-//    String email = request.getParameter("email");
-//    String pwd = request.getParameter("pwd");
+    String email = request.getParameter("email");
+    String pwd = request.getParameter("pwd");
 //    String gender = request.getParameter("gender");
     // Java Bean...클래스..
 //    Member m1 = new Member();
@@ -31,8 +31,8 @@
     // dao 클래스 안에 db table 삽입해주는 함수 호출
     md.insertmember(m1);
 %>
-<%--<%=email%>--%>
-<%--<%=pwd%>--%>
+<%=email%>
+<%=pwd%>
 <%--<%=gender%>--%>
 <br>
 <%=m1%>

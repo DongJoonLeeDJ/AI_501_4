@@ -9,10 +9,8 @@ public class CharsetEncodingFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-
         request.setCharacterEncoding(encoding);
         chain.doFilter(request, response);
-        System.out.println("일로오나");
     }
 
 
