@@ -37,7 +37,7 @@
         <div class="form-group">
             <label for="pwd">gender</label>
             남
-            <input type="radio" name="gender" id="gender" value="male" clicked>
+            <input type="radio" name="gender" id="gender" value="male" checked>
             여
             <input type="radio" name="gender" value="female">
         </div>
