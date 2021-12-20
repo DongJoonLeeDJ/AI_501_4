@@ -49,6 +49,23 @@ while True:
     adtaframe = cv2.adaptiveThreshold(gray_frame, 255,
                                     cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
                                     cv2.THRESH_BINARY, 21, 3)
+
+    cv2.putText(frame,
+                'runrun',
+                (150, 200),
+                cv2.FONT_HERSHEY_DUPLEX,
+                10,
+                (0, 0, 0)
+                )
+
+    cv2.putText(adtaframe,
+                'runrun',
+                (150, 200),
+                cv2.FONT_HERSHEY_DUPLEX,
+                10,
+                (0, 0, 255)
+                )
+
     cv2.imshow('frame', frame)  # 프레임 보여주기
     cv2.imshow('garyframe', gray_frame)  # 프레임 보여주기
     cv2.imshow('adtaframe', adtaframe)  # 프레임 보여주기
