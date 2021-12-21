@@ -11,7 +11,17 @@ contours, hie = cv2.findContours(thresh,
 
 print(contours)
 
-cv2.drawContours(img,contours,-1,(0,0,255),5)
+for contour in contours:
+    print(cv2.contourArea(contour))
+    if( cv2.contourArea(contour)>100):
+        # cv2.drawContours(img,contour,-1,(0,0,255),5)
+        x,y,w,h = cv2.boundingRect(contour)
+        cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),3)
+
+        roi = img[y:y+h,x:x+w]
+        roi = cv2.resize(roi,(64,64))
+        cv2.imshow('roi',roi)
+        cv2.waitKey(0)
 
 cv2.imshow('img',img)
 cv2.imshow('gray_img',gray_img)
