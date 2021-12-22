@@ -1,0 +1,17 @@
+
+--cmd창에서 실행
+exp c##scott/tiger file=test.dmp 
+
+
+--sql plus에서 실행(system관리자로 로그인해서 할 것)
+create user c##mytest identified by 1234;
+grant connect, dba, resource to c##mytest;
+alter user c##mytest default tablespace users quota unlimited on users;
+
+--cmd에서 실행
+imp c##mytest/1234 file=test.dmp full=y
+
+
+
+--주의사항
+--되도록이면 c드라이브에서 진행하도록 하고, 한글경로 없어야 한다.
