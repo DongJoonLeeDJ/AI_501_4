@@ -25,21 +25,33 @@ public class Member extends HttpServlet {
         dto.setGender(request.getParameter("gender"));
         System.out.println(dto);
 
+        // select .. 할때도.. 디비 연결을 해야하고..
+        // insert .. 할때도 디비 연결은 해야 합니다...
         try
         {
             // jar 파일 추가 되어 있는지 검사 하는 함수.
             Class.forName("com.mysql.cj.jdbc.Driver");
             // 디비 연결하는 거....
             Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/aa?serverTimezone=UTC","root","1234");
+
+            PreparedStatement pstmt = conn.prepareStatement("INSERT INTO " +
+                                                                "member " +
+                                                                "(email, pwd, gender) " +
+                                                                "VALUES " +
+                                                                "('aa@naver.com', '5678', '여')");
+            pstmt.executeUpdate();
+            // insert update delete -> pstmt.executeUpdate() 로실행
+            // select -> pstmt.executeQuery() 로 실행
+
             // sql 문 작성해야한다.
-            PreparedStatement pstmt = conn.prepareStatement("select * from member");
-            // sql 문 실행해야한다. table 반환되면 rs 담기
-            ResultSet rs = pstmt.executeQuery();
-            while(rs.next()){
-                System.out.println(rs.getString("email"));
-                System.out.println(rs.getString("pwd"));
-                System.out.println(rs.getString("gender"));
-            }
+//            PreparedStatement pstmt = conn.prepareStatement("select * from member");
+//            // sql 문 실행해야한다. table 반환되면 rs 담기
+//            ResultSet rs = pstmt.executeQuery();
+//            while(rs.next()){
+//                System.out.println(rs.getString("email"));
+//                System.out.println(rs.getString("pwd"));
+//                System.out.println(rs.getString("gender"));
+//            }
 
         }catch (Exception e){
             e.printStackTrace();
