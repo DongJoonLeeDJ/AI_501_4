@@ -24,12 +24,27 @@
 </head>
 <body>
 <%@ include file="../nav.jsp" %>
-<%
-    for( MemberDto dto : list) {
-%>
-되나...
-<%
-    }
-%>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>이메일</th><th>패스워드</th><th>성별</th>
+            </tr>
+        </thead>
+        <tbody>
+    <%
+        for( MemberDto dto : list) {
+    %>
+            <tr>
+                <td><%=dto.getEmail()%></td>
+                <td><%=dto.getPwd()%></td>
+                <td><%=dto.getGender()%></td>
+            </tr>
+    <%
+        }
+    %>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
