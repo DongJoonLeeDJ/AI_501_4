@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberDao {
+    // db select...
     public List<MemberDto> memberlist() {
         List<MemberDto> list = new ArrayList<>();
         
@@ -45,5 +46,28 @@ public class MemberDao {
 
 
         return list;
+    }
+
+    // db insert...
+    public void memberset(MemberDto dto){
+        System.out.println(dto);
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn =
+                DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/aa",
+                                            "root",
+                                            "1234");
+            PreparedStatement pstmt =
+                conn.prepareStatement("insert into member (email,pwd,gender) values (?,?,?)");
+
+            pstmt.setString(1, dto.getEmail());
+            pstmt.setString(2, dto.getPwd());
+            pstmt.setString(3, dto.getGender());
+
+
+            pstmt.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -8,7 +8,7 @@
             <a class="nav-link" href="/1224_war_exploded/member/memberlist.jsp">memberlist</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Link 2</a>
+            <a class="nav-link" href="/1224_war_exploded/member/memberform.jsp">memberform</a>
         </li>
         <!-- Dropdown -->
         <li class="nav-item dropdown">
