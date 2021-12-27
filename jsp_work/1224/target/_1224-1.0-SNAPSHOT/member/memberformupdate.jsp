@@ -14,7 +14,8 @@
 <body>
 <%@ include file="../nav.jsp" %>
 <div class="container">
-    <form action="memberproc.jsp">
+    <form action="memberupdateproc.jsp">
+        <input type="hidden" name="idx" value="<%=dto.getIdx()%>">
         <div class="form-group">
             <label for="email">email </label>
             <input type="email" class="form-control" placeholder="Enter email" id="email" name="email" value="<%=dto.getEmail()%>">

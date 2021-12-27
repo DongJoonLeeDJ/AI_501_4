@@ -46,6 +46,27 @@ public class MemberDao {
         return list;
     }
 
+    public void memberset(MemberDto dto, boolean update){
+        PreparedStatement pstmt = null;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn =
+                    DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/aa",
+                            "root",
+                            "1234");
+            pstmt = conn.prepareStatement("update member set email=?,pwd=?,gender=? where idx=?");
+
+            pstmt.setString(1, dto.getEmail());
+            pstmt.setString(2, dto.getPwd());
+            pstmt.setString(3, dto.getGender());
+            pstmt.setInt(4,dto.getIdx());
+
+            pstmt.executeUpdate();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
     // db insert...
     public void memberset(MemberDto dto){
         try{
