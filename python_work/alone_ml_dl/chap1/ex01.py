@@ -37,7 +37,7 @@ class MyApp(QWidget):
             self.infolabel.resize(pm.width(), pm.height())
 
     def doC(self):
-        ex03.doC(int(self.inputX.text()),int(self.inputY.text()))
+        ex03.doC(int(self.inputX.text()), int(self.inputY.text()))
 
         pm = QPixmap('Graph.jpg')
         self.qlabel.setPixmap(pm)

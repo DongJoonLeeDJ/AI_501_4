@@ -3,10 +3,11 @@ from sklearn.neighbors import KNeighborsClassifier
 import numpy as np
 
 bream_length = [25.4, 26.3, 26.5, 29.0, 29.0, 29.7, 29.7,
-                    30.0, 30.0, 30.7, 31.0, 31.0, 31.5, 32.0,
-                    32.0, 32.0, 33.0, 33.0, 33.5, 33.5, 34.0,
-                    34.0, 34.5, 35.0, 35.0, 35.0, 35.0, 36.0,
-                    36.0, 37.0, 38.5, 38.5, 39.5, 41.0, 41.0]
+                30.0, 30.0, 30.7, 31.0, 31.0, 31.5, 32.0,
+                32.0, 32.0, 33.0, 33.0, 33.5, 33.5, 34.0,
+                34.0, 34.5, 35.0, 35.0, 35.0, 35.0, 36.0,
+                36.0, 37.0, 38.5, 38.5, 39.5, 41.0, 41.0]
+
 bream_weight = [242.0, 290.0, 340.0, 363.0, 430.0, 450.0,
                 500.0, 390.0, 450.0, 500.0, 475.0, 500.0,
                 500.0, 340.0, 600.0, 600.0, 700.0, 700.0,
@@ -27,12 +28,12 @@ def doC(x,y):
     doA()
 
 def doA():
-    plt.scatter(bream_length, bream_weight,label='bream')
-    plt.scatter(smelt_length, smelt_weight,label='smelt')
+    plt.scatter(bream_length, bream_weight, label='bream')
+    plt.scatter(smelt_length, smelt_weight, label='smelt')
 
     # print(test_data[:, 0])
     # print(test_data[:, 1])
-    plt.scatter(test_data[:,0], test_data[:,1], marker='^')
+    plt.scatter(test_data[:,0], test_data[:,1], marker='^',label='test_data')
     plt.legend(loc='lower right')
 
     plt.xlabel('length')
