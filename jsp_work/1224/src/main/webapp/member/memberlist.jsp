@@ -22,13 +22,15 @@
     <title>Title</title>
     <%@ include file="../head.jsp"%>
     <style>
-        .onmouse:{
-
+        .onmouse:hover{
+            background-color: antiquewhite;
+            cursor: pointer;
         }
     </style>
     <script>
-        function memberupdate(){
-            alert('눌렀니');
+        function memberupdate(idx){
+            // alert(idx+' 눌렀니');
+            location.href='memberformupdate.jsp?idx='+idx;
         }
     </script>
 </head>
@@ -45,7 +47,7 @@
     <%
         for( MemberDto dto : list) {
     %>
-            <tr onclick="memberupdate();" class="onmouse">
+            <tr onclick="memberupdate(<%=dto.getIdx()%>);" class="onmouse">
                 <td><%=dto.getEmail()%></td>
                 <td><%=dto.getPwd()%></td>
                 <td><%=dto.getGender()%></td>

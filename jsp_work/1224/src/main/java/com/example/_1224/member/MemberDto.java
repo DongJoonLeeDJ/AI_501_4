@@ -1,12 +1,15 @@
 package com.example._1224.member;
 
 public class MemberDto {
+    private int idx;
     private String email;
     private String pwd;
     private String gender;
 
     public MemberDto(){}
-    public MemberDto(String email, String pwd, String gender) {
+
+    public MemberDto(int idx, String email, String pwd, String gender) {
+        this.idx = idx;
         this.email = email;
         this.pwd = pwd;
         this.gender = gender;
@@ -15,10 +18,19 @@ public class MemberDto {
     @Override
     public String toString() {
         return "MemberDto{" +
-                "email='" + email + '\'' +
+                "idx=" + idx +
+                ", email='" + email + '\'' +
                 ", pwd='" + pwd + '\'' +
                 ", gender='" + gender + '\'' +
                 '}';
+    }
+
+    public int getIdx() {
+        return idx;
+    }
+
+    public void setIdx(int idx) {
+        this.idx = idx;
     }
 
     public String getEmail() {

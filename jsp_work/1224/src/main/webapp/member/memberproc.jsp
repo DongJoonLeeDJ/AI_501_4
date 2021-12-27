@@ -10,5 +10,5 @@
     MemberDao dao = new MemberDao();
     dao.memberset(dto);
 
-//    response.sendRedirect("/1224_war_exploded/index.jsp");
+    response.sendRedirect("/1224_war_exploded/index.jsp");
 %>
