@@ -1,4 +1,7 @@
 from sklearn.neighbors import KNeighborsClassifier
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 fish_length = [25.4, 26.3, 26.5, 29.0, 29.0, 29.7, 29.7, 30.0, 30.0, 30.7, 31.0, 31.0,
                 31.5, 32.0, 32.0, 32.0, 33.0, 33.0, 33.5, 33.5, 34.0, 34.0, 34.5, 35.0,
@@ -22,10 +25,50 @@ knclf = KNeighborsClassifier()
 knclf.fit(train_data,train_target)
 
 score = knclf.score(test_data,test_target)
-print("점수",score)
+# print("점수",score)
 
 prevalue = knclf.predict([[10,11]])
-print("예측값",prevalue)
+# print("예측값",prevalue)
+
+inputarr = np.array(fish_data)
+targetarr = np.array(fish_target)
+
+print(inputarr.shape)
+
+np.random.seed(42)
+arg = np.arange(49)
+print(arg)
+np.random.shuffle(arg)
+print(arg)
+
+train_data = inputarr[arg[:35]]
+print(train_data)
+train_target = targetarr[arg[:35]]
+print(train_target)
+
+test_data = inputarr[arg[35:]]
+test_target = targetarr[arg[35:]]
+print(test_data)
+print(test_target)
+
+plt.scatter(train_data[:,0],train_data[:,1],label='train_data')
+plt.scatter(test_data[:,0],test_data[:,1],label='test_data')
+
+plt.legend(loc='lower right')
+
+plt.show()
+
+knclf = KNeighborsClassifier()
+knclf.fit(train_data,train_target)
+
+score = knclf.score(test_data,test_target)
+print('알고리즘점수',score)
+
+prevalue = knclf.predict([[10,11],[30,350]])
+print(prevalue)
+
+
+
 
 
 
