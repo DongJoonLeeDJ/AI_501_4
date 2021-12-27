@@ -13,7 +13,7 @@ fish_weight = [242.0, 290.0, 340.0, 363.0, 430.0, 450.0, 500.0, 390.0, 450.0, 50
                 7.5, 7.0, 9.7, 9.8, 8.7, 10.0, 9.9, 9.8, 12.2, 13.4, 12.2, 19.7, 19.9]
 
 fish_data = [[l,w] for l,w in zip(fish_length,fish_weight)]
-fish_target = ['bream']*35 + ['smelt']*14
+fish_target = [1]*35 + [0]*14
 
 train_data = fish_data[:35]
 train_target = fish_target[:35]
