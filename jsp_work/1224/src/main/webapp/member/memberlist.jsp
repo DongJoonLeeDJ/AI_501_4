@@ -21,6 +21,16 @@
 <head>
     <title>Title</title>
     <%@ include file="../head.jsp"%>
+    <style>
+        .onmouse:{
+
+        }
+    </style>
+    <script>
+        function memberupdate(){
+            alert('눌렀니');
+        }
+    </script>
 </head>
 <body>
 <%@ include file="../nav.jsp" %>
@@ -35,7 +45,7 @@
     <%
         for( MemberDto dto : list) {
     %>
-            <tr>
+            <tr onclick="memberupdate();" class="onmouse">
                 <td><%=dto.getEmail()%></td>
                 <td><%=dto.getPwd()%></td>
                 <td><%=dto.getGender()%></td>

@@ -50,7 +50,6 @@ public class MemberDao {
 
     // db insert...
     public void memberset(MemberDto dto){
-        System.out.println(dto);
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn =
@@ -63,7 +62,6 @@ public class MemberDao {
             pstmt.setString(1, dto.getEmail());
             pstmt.setString(2, dto.getPwd());
             pstmt.setString(3, dto.getGender());
-
 
             pstmt.executeUpdate();
         }catch (Exception e){

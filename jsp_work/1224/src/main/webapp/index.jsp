@@ -7,9 +7,8 @@
 </head>
 <body>
 <%@ include file="nav.jsp"%>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+<div class="container" style="background-color: red">
+    중간정렬
+</div>
 </body>
 </html>
