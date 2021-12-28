@@ -16,4 +16,21 @@ insert into samsung values (8,'삼성라이온즈',4);
 select * from samsung;
 
 
+-- self join을 하려면 테이블에 이름을 붙여야 함
+select aa.name boss, bb.name name 
+from samsung aa join samsung bb on aa.id=bb.boss_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
