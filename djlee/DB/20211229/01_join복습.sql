@@ -43,6 +43,24 @@ orders join customer on orders.custid=customer.custid;
 
 
 
+-- 중첩 질의 안 써도 됨
+select orders.orderid , book.bookname ,orders.saleprice ,customer.name   
+FROM  orders, book, customer  
+where orders.custid = customer.custid and orders.bookid=book.bookid 
+order by orderid;
+
+
+
+-- 중첩 질의 써서 푸는 법 -> view랑 연관되기 때문
+-- customer 테이블과 그리고 book과 orders를 join한 결과물을
+-- 다시 서로 join한다.
+
+select orderid, aa.bookname, customer.name, saleprice from 
+(select orderid, book.bookname, orders.saleprice, orders.custid from 
+orders join book on orders.bookid=book.bookid) aa join customer on 
+aa.custid = customer.custid order by orderid;
+
+
 
 
 
