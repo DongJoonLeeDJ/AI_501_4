@@ -64,6 +64,12 @@ aa.custid = customer.custid order by orderid;
 
 
 
+-- book과 (orders와 customer)를 join한 테이블의 join
+select orderid, aa.name, book.bookname, saleprice from 
+(select orderid, customer.name, saleprice, bookid from 
+orders join customer on orders.custid=customer.custid) aa join book on 
+aa.bookid = book.bookid order by orderid;
+
 
 
 
