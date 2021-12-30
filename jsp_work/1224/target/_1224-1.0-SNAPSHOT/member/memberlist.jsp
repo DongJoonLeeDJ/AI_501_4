@@ -37,18 +37,21 @@
 <body>
 <%@ include file="../nav.jsp" %>
 <div class="container">
+    <form action="memberdelete.jsp">
+        <input class="btn btn-primary" type="submit" value="삭제" style="margin: 20px 0;">
     <table class="table">
         <thead>
             <tr>
-                <th>이메일</th><th>패스워드</th><th>성별</th>
+                <th></th><th>이메일</th><th>패스워드</th><th>성별</th>
             </tr>
         </thead>
         <tbody>
     <%
         for( MemberDto dto : list) {
     %>
-            <tr onclick="memberupdate(<%=dto.getIdx()%>);" class="onmouse">
-                <td><%=dto.getEmail()%></td>
+            <tr>
+                <td><input style="position:absolute; margin-left:1.5rem;" type="checkbox" name="delidx" value="<%=dto.getIdx()%>"></td>
+                <td onclick="memberupdate(<%=dto.getIdx()%>);" class="onmouse"><%=dto.getEmail()%></td>
                 <td><%=dto.getPwd()%></td>
                 <td><%=dto.getGender()%></td>
             </tr>
@@ -57,6 +60,7 @@
     %>
         </tbody>
     </table>
+    </form>
 </div>
 </body>
 </html>
