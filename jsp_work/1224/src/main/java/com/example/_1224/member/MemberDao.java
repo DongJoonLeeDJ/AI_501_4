@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MemberDao {
-    // db select...
+    // db select list...
     public List<MemberDto> memberlist() {
         List<MemberDto> list = new ArrayList<>();
         
@@ -46,6 +46,7 @@ public class MemberDao {
         return list;
     }
 
+    // db update
     public void memberset(MemberDto dto, boolean update){
         PreparedStatement pstmt = null;
         try{
@@ -91,6 +92,7 @@ public class MemberDao {
     // select -> executeQuery()
     // insert, update, delete -> executeUpdate();
 
+    // db select one...
     public MemberDto memberget(int idx) {
         try{
             // jar 파일 있는지 확인
