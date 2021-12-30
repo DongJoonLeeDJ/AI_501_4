@@ -1,3 +1,4 @@
+<%@ page import="com.example._1224.board.BoardDao" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -6,9 +7,11 @@
 <body>
 <%
     String[] temp = request.getParameterValues("delidx");
-    out.println(temp[0]);
-    out.println(temp[1]);
-    out.println(temp[2]);
+    BoardDao bd = new BoardDao();
+    String ret = bd.delete(temp);
+//    out.println(ret);
+    if(ret.equals("true"))
+        response.sendRedirect("memberlist.jsp");
 %>
 </body>
 </html>
