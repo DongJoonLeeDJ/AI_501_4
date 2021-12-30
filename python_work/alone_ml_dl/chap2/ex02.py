@@ -34,32 +34,73 @@ print(test_input.shape)
     학습기 -> 훈련데이터, 테스트데이터..
     학습기 성능...
 '''
-
-
 knclf = KNeighborsClassifier()
-knclf.fit(train_input,train_target)
 
-score = knclf.score(test_input,test_target)
-print('학습기 점수',score)
+print(train_input[:5])
 
-prevalue = knclf.predict([[25,150]])
-print('예측값',prevalue)
+mean = np.mean(train_input,axis=0)
+std = np.std(train_input,axis=0)
 
-distances, indexes = knclf.kneighbors([[25,150]])
+train_scaled = (train_input-mean)/std
+test_scaled = (test_input-mean)/std
 
-print(distances)
-print(indexes)
-print(train_input[indexes])
+print(train_scaled[:5])
+print(test_scaled[:5])
 
-preproba = knclf.predict_proba([[25,150]])
-print('예측확률',preproba)
+from sklearn.preprocessing import StandardScaler
 
+ss = StandardScaler()
+ss.fit(train_input,train_target)
 
-plt.scatter(train_input[:,0],train_input[:,1])
-plt.scatter(25,150,marker='^')
-plt.xlim((0, 1000))
-plt.scatter(train_input[indexes,0], train_input[indexes,1], marker='D')
+train_scaled = ss.transform(train_input)
+print(train_scaled[:5])
+print(test_scaled[:5])
 
+knclf.fit(train_scaled,train_target)
+score = knclf.score(test_scaled,test_target)
+print(score)
+
+newcom = [[25,150]]
+newcom = (newcom-mean)/std
+print('직접 구한 newcom = ',newcom)
+
+newcom = ss.transform([[25,150]])
+print('strandardscaler로구한 newcom =',newcom)
+prevalue = knclf.predict(newcom)
+print(prevalue)
+
+plt.scatter(train_scaled[:,0],train_scaled[:,1])
 plt.show()
+
+
+'''
+    머신러닝 딥러닝..
+    학습을 잘해서... 예측값...
+'''
+
+# knclf.fit(train_input,train_target)
+#
+# score = knclf.score(test_input,test_target)
+# print('학습기 점수',score)
+#
+# prevalue = knclf.predict([[25,150]])
+# print('예측값',prevalue)
+#
+# distances, indexes = knclf.kneighbors([[25,150]])
+#
+# print(distances)
+# print(indexes)
+# print(train_input[indexes])
+#
+# preproba = knclf.predict_proba([[25,150]])
+# print('예측확률',preproba)
+#
+#
+# plt.scatter(train_input[:,0],train_input[:,1])
+# plt.scatter(25,150,marker='^')
+# plt.xlim((0, 1000))
+# plt.scatter(train_input[indexes,0], train_input[indexes,1], marker='D')
+#
+# plt.show()
 
 
