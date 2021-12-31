@@ -9,7 +9,7 @@
     String[] temp = request.getParameterValues("delidx");
     BoardDao bd = new BoardDao();
     String ret = bd.delete(temp);
-//    out.println(ret);
+
     if(ret.equals("true"))
         response.sendRedirect("memberlist.jsp");
 %>
