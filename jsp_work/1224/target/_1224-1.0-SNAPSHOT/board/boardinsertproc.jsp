@@ -13,5 +13,12 @@
 
     BoardDao bd = new BoardDao();
     String ret = bd.insert(dto);
+    if(ret.equals("true"))
+        response.sendRedirect("boardselect.jsp");
+    else {
 %>
-<%=ret%>
+<%=ret%>가 나와서 insert 실패!!
+<%
+    }
+%>
+

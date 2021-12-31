@@ -3,12 +3,28 @@
 <head>
     <title>Title</title>
     <jsp:include page="../head.jsp"/>
+    <script>
+        function chk(){
+            var title = $('#title').val();
+            var name = $('#name').val();
+            var content = $('#content').val();
+            if(!title)
+                alert('제목을 입력하세요');
+            else if(!name)
+                alert('작성자을 입력하세요');
+            else if(!content)
+                alert('내용을 입력하세요');
+            else
+                return true;
+            return false;
+        }
+    </script>
 </head>
 <body>
     <jsp:include page="../nav.jsp"/>
     <div class="container">
         <h2>boardinsert</h2>
-        <form action="boardinsertproc.jsp">
+        <form action="boardinsertproc.jsp" onsubmit="return chk()">
             <div class="form-group">
                 <label for="title">title</label>
                 <input type="text" class="form-control" id="title" name="title" style="width: 70%;">

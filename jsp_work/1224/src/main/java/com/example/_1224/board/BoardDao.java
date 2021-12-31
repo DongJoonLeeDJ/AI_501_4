@@ -19,7 +19,9 @@ public class BoardDao {
                             "jdbc:mysql://127.0.0.1:3306/aa",
                             "root",
                             "1234");
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM board");
+            PreparedStatement pstmt =
+                    conn.prepareStatement(
+                            "SELECT * FROM board ORDER BY idx DESC LIMIT 0,5");
             ResultSet rs = pstmt.executeQuery();
             while(rs.next()){
                 list.add(
@@ -48,8 +50,14 @@ public class BoardDao {
                             "INSERT INTO board " +
                                 "(name, title,content,wdate) " +
                                 "VALUES " +
-                                "('aaa', ' 제목제목제제','제목',NOW())");
+                                "(?, ?, ?, NOW())");
+
+            pstmt.setString(1,dto.getName());
+            pstmt.setString(2,dto.getTitle());
+            pstmt.setString(3,dto.getContent());
+
             pstmt.executeUpdate();
+            return "true";
         }catch (Exception e){
             e.printStackTrace();
         }
