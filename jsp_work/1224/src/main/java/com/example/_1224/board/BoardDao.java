@@ -1,5 +1,6 @@
 package com.example._1224.board;
 
+import com.example._1224.db.DBIn;
 import com.example._1224.member.MemberDto;
 
 import java.sql.Connection;
@@ -62,5 +63,28 @@ public class BoardDao {
             e.printStackTrace();
         }
         return "false";
+    }
+
+    public BoardDto selectrow(int idx) {
+        try{
+            Class.forName(DBIn.jar);
+            Connection conn = DriverManager.getConnection( DBIn.url, DBIn.user, DBIn.pw );
+            PreparedStatement pstmt =
+                    conn.prepareStatement(
+                            "SELECT * FROM BOARD WHERE IDX = ?");
+            pstmt.setInt(1, idx);
+
+            ResultSet rs = pstmt.executeQuery();
+            if(rs.next()){
+                return new BoardDto(rs.getInt("idx"),
+                                    rs.getString("name"),
+                                    rs.getString("title"),
+                                    rs.getString("content"),
+                                    rs.getString("wdate"));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return new BoardDto();
     }
 }

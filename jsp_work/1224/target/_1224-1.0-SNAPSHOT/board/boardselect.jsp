@@ -32,7 +32,7 @@
                     <tr>
                         <td><%=dto.getIdx()%></td>
                         <td><%=dto.getName()%></td>
-                        <td><%=dto.getTitle()%></td>
+                        <td><a href="boardview.jsp?idx=<%=dto.getIdx()%>"><%=dto.getTitle()%></a></td>
                         <td><%=dto.getWdate()%></td>
                     </tr>
                 <%
