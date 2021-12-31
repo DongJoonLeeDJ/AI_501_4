@@ -1,7 +1,14 @@
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
 import numpy as np
 import matplotlib.pyplot as plt
+
+'''
+    KNeighborsRegressor 이웃되는회귀... -> x좌표 늘어나도 y좌표가 늘어나지 않는다
+    LinearRegression 선형회귀... -> 단항 회귀.. x좌표 음수 y 좌표...
+    항..-> 다항회귀.. 학습... 조금 나은 성능보인다..
+'''
 
 perch_length = np.array(
     [8.4, 13.7, 15.0, 16.2, 17.4, 18.0, 18.7, 19.0, 19.6, 20.0,
@@ -33,26 +40,47 @@ test_input = test_input.reshape(-1, 1)
 knr = KNeighborsRegressor(n_neighbors=3)
 knr.fit(train_input, train_target)
 
-pred = knr.predict([[50],[100]])
-print(pred)
+pred = knr.predict([[50], [100]])
+print('pred', pred)
 
-dis,idxs = knr.kneighbors([[50]])
+dis, idxs = knr.kneighbors([[50]])
 
 # pred = knr.predict([[100]])
 # print(pred)
 
-plt.scatter(perch_length,perch_weight)
-plt.scatter([50,100],[1033,1033])
-plt.scatter(train_input[idxs],train_target[idxs])
+lr = LinearRegression()
+lr.fit(train_input, train_target)
+
+lrpred = lr.predict([[15], [50], [100]])
+print('lrpred', lrpred)
+
+print('a = ',lr.coef_,'b = ',lr.intercept_)
+
+train_poly = np.column_stack((train_input**2,train_input))
+test_poly = np.column_stack((test_input**2,test_input))
+
+print(train_poly[:5])
+print(train_target[:5])
+# print(test_poly[:5])
+
+polylr = LinearRegression()
+polylr.fit(train_poly,train_target)
+
+print('a = b = ',polylr.coef_,'c = ',polylr.intercept_)
+
+# 학습하는 항(특성)의 개수를 늘리고 있습니다. 특성공학..
+# polynomal 특성
+
+plt.scatter(perch_length, perch_weight)
+plt.scatter([50], [1033])
+plt.scatter(train_input[idxs], train_target[idxs])
+plt.plot([15, 50], [15*lr.coef_+lr.intercept_, 50*lr.coef_+lr.intercept_])
+
+x = np.arange(0, 50)
+y = polylr.coef_[0]+x**2 + polylr.coef_[1]*x + polylr.intercept_
+
+plt.plot(x, y)
+
 plt.xlabel('length')
 plt.ylabel('weight')
 plt.show()
-
-
-
-
-
-
-
-
-
