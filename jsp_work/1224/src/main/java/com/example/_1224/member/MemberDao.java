@@ -1,9 +1,8 @@
 package com.example._1224.member;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import com.example._1224.db.DBIn;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -131,6 +130,10 @@ public class MemberDao {
     // db member delete
     public String delete(String[] temp) {
 
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
         String idxs = "";
         // idxs = 1,2   length = 2
         for(int i = 0; i< temp.length ; i++){
@@ -143,19 +146,74 @@ public class MemberDao {
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn =
+            conn =
                     DriverManager.getConnection(
                             "jdbc:mysql://127.0.0.1:3306/aa",
                             "root",
                             "1234");
-            PreparedStatement pstmt =
+            pstmt =
                     conn.prepareStatement("DELETE FROM MEMBER WHERE IDX IN ("+idxs+")");
             pstmt.executeUpdate();
             return "true";
         }catch (Exception e){
             e.printStackTrace();
         }
+        finally {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
 
+        return "false";
+    }
+
+    public String memberchk(String id) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try{
+            Class.forName(DBIn.jar);
+            conn = DriverManager.getConnection(DBIn.url,DBIn.user,DBIn.pw);
+            pstmt = conn.prepareStatement("SELECT COUNT(*) AS CNT FROM MEMBER WHERE EMAIL = ?");
+            pstmt.setString(1, id);
+
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                int cnt = rs.getInt("CNT");
+                if(cnt == 0)
+                    return "true";
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
         return "false";
     }
 }

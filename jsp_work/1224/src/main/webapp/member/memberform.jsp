@@ -13,7 +13,7 @@
                 type: "get",
                 cache: true,
                 dataType: "text",
-                data: {a:10, b:20},
+                data: {id: $('#email').val(), b:20},
                 success: function(data,result){
                     result = data.trim();
                     $('#result').html(result);
