@@ -6,6 +6,8 @@ from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import PolynomialFeatures
 
+import matplotlib.pyplot as plt
+
 # 1,2,3 2,6,3 -> 10
 # 4,5,6 20,30,24 -> 20
 
@@ -54,7 +56,7 @@ print('예측되는값', pred, '실제값', train_target[4])
     항이 너무 많으면 학습했을때 학습 데이터로는 정확한 값이 나오지만
     테스트 데이터로는 예측값을 알 수 없다..
 '''
-pf = PolynomialFeatures(degree=2,include_bias=False)
+pf = PolynomialFeatures(degree=5, include_bias=False)
 pf.fit(train_input)
 
 train_poly = pf.transform(train_input)
@@ -64,12 +66,48 @@ test_poly = pf.transform(test_input)
 # print(train_poly[1])
 
 lr = LinearRegression()
-lr.fit(train_poly,train_target)
+lr.fit(train_poly, train_target)
 
-poly_score = lr.score(test_poly,test_target)
-# print('9개의 항으로 학습 했을 때 학습기 점수',poly_score)
+poly_score = lr.score(test_poly, test_target)
+print('55개의 항으로 학습 했을 때 학습기 점수', poly_score)
 
 mydata = pf.transform([[36, 10.61, 6.74]])
 # print(mydata)
 pred = lr.predict(mydata)
-# print('pred',pred)
+print('pred', pred)
+
+ss = StandardScaler()
+ss.fit(train_poly)
+
+train_scaled = ss.transform(train_poly)
+test_scaled = ss.transform(test_poly)
+
+''' Ridge '''
+from sklearn.linear_model import Ridge
+
+ridge = Ridge()
+print(train_scaled.shape)
+ridge.fit(train_scaled, train_target)
+ridgescore = ridge.score(test_scaled, test_target)
+print('릿지알고리즘 학습했을때 선형회귀 알고리즘 예측 점수', ridgescore)
+
+pred = ridge.predict(ss.transform(mydata))
+print('릿지에서 예측값', pred)
+
+x = [0.001, 0.01, 0.1, 1, 10, 100]
+y_train = []
+y_test = []
+
+for i in x:
+    ridge = Ridge(alpha=i)
+    ridge.fit(train_scaled, train_target)
+    score_train = ridge.score(train_scaled, train_target)
+    y_train.append(score_train)
+    score_test = ridge.score(test_scaled, test_target)
+    y_test.append(score_test)
+
+plt.plot(np.log10(x), y_train)
+plt.plot(np.log10(x), y_test)
+plt.show()
+
+
