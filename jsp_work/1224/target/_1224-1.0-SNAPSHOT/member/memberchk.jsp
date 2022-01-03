@@ -6,4 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-content
+<%
+    String ret = "true";
+
+    if(ret.equals("true"))
+        out.println("true");
+    else
+        out.println("false");
+%>

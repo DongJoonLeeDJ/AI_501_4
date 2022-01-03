@@ -6,8 +6,8 @@
     <title>Title</title>
     <%@ include file="../head.jsp"%>
     <script>
+        var result = "false";
         function doChk(){
-            alert('연결됐냐');
             var aobj= {
                 url: "memberchk.jsp",
                 type: "get",
@@ -15,24 +15,32 @@
                 dataType: "text",
                 data: {a:10, b:20},
                 success: function(data,result){
-                    alert("성공함");
-                    alert(data);
-                    alert(result);
+                    result = data.trim();
+                    $('#result').html(result);
                 },
                 error: function (request, status){
-                    alert("에러됨");
-                    alert(request);
                     alert(status);
                 }
             };
             $.ajax(aobj);
+        }
+        function doSubmit(){
+            result = $('#result').html();
+            if(result =="true") {
+                alert("일로온다.");
+                return true;
+            }
+            else{
+                alert("아이디 중복 체크 하셔야 됩니다.");
+                return false;
+            }
         }
     </script>
 </head>
 <body>
 <%@ include file="../nav.jsp" %>
 <div class="container">
-    <form action="memberproc.jsp">
+    <form action="memberproc.jsp" onsubmit="return doSubmit()">
         <div class="form-group mt-3">
             <label for="email">email </label>
             <input type="email"
@@ -43,6 +51,7 @@
                    name="email"
                    value="aa@naver.com">
             <button class="btn btn-primary" type="button" onclick="doChk();">중복체크</button>
+            <span id="result"></span>
         </div>
         <div class="form-group">
             <label for="pwd">pwd:</label>
