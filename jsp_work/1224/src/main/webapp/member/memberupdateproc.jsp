@@ -8,7 +8,11 @@
 <%
     // db 저장 로직...
     MemberDao dao = new MemberDao();
-    dao.memberset(dto,true);
+    // update 함수 호출
+    String ret = dao.memberset(dto,true);
 
-    response.sendRedirect("/1224_war_exploded/index.jsp");
+    if(ret.equals("true"))
+        response.sendRedirect("/1224_war_exploded/member/memberlist.jsp");
+    else
+        out.println("sql 문 실행 실패");
 %>
