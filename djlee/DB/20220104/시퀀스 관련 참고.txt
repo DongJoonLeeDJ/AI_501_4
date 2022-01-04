@@ -1,0 +1,9 @@
+select * from univ_student;
+
+insert into univ_student values (UNIV_HAKBEON_SEQ.nextval, '김철수', '002', 4.0);
+
+-- nextval : 현재 값 집어넣어주고 ++ 해주는 거
+-- currval : 현재값만 넣어주고 ++은 안 함
+insert into univ_student values (UNIV_HAKBEON_SEQ.nextval, '김철수', '002', UNIV_HAKBEON_SEQ.currval);
+
+select * from univ_student;
