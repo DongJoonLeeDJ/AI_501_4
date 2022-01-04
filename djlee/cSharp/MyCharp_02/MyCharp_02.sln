@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCharp_02", "MyCharp_02\MyCharp_02.csproj", "{DF2FF242-7F60-4831-AAB9-08F2103A552F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCharp_02_02", "MyCharp_02_02\MyCharp_02_02.csproj", "{1FE0D298-8010-4568-A93F-1605EA37EB97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF2FF242-7F60-4831-AAB9-08F2103A552F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF2FF242-7F60-4831-AAB9-08F2103A552F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF2FF242-7F60-4831-AAB9-08F2103A552F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF2FF242-7F60-4831-AAB9-08F2103A552F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FE0D298-8010-4568-A93F-1605EA37EB97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FE0D298-8010-4568-A93F-1605EA37EB97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FE0D298-8010-4568-A93F-1605EA37EB97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FE0D298-8010-4568-A93F-1605EA37EB97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB21C19D-4531-448F-AA45-53A2C9356261}
+	EndGlobalSection
+EndGlobal
