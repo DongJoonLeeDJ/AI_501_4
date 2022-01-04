@@ -1,0 +1,93 @@
+
+-- 전공 테이블
+create table univ_major
+(
+ code char(3) primary key,
+ name varchar2(50)
+);
+-- 학번을 저장할 시퀀스 먼저 만들기
+create sequence univ_hakbeon_seq;
+
+-- 학생 테이블
+create table univ_student
+(
+   hakbeon int primary key,
+   name varchar2(50),
+   hakgwa_code char(3),
+   hakjeom number,
+   foreign key(hakgwa_code) REFERENCES univ_major(code)
+);
+
+
+-- 전공부분부터 추가
+insert into univ_major values ('001', '아동가족학');
+insert into univ_major values ('002', '컴공');
+insert into univ_major values ('003', '전자공학');
+insert into univ_major values ('004', '심리학');
+insert into univ_major values ('005', '전기공학');
+
+select * from univ_major;
+
+-- 학생 추가
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'이동준', '001', 1.2);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'류경문', '002', 3.5);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'권용규', '001', 4.0);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'김민아', '003', 3.5);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'이진주', '003', 2.0);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'권도균', '004', 3.3);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'권승연', '005', 4.2);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'박명회', '001', 4.3);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'이원만', '001', 4.1);
+insert into univ_student values(univ_hakbeon_seq.nextval, 
+'허동화', '001', 4.15);
+
+select * from univ_student;
+
+-- 학번, 이름, 학과, 학점 출력되게 하기
+-- 학생 테이블에서 학과코드들에 대한 학과명들을 가져와야 함
+-- 즉 학생 테이블과 전공 테이블을 서로 join해야 함
+-- univ_student는 s라고 가정, univ_major는 m이라고 가정
+select s.hakbeon, s.name, m.name, hakjeom 
+from univ_student s join univ_major m on 
+s.hakgwa_code=m.code;
+
+
+-- 뷰 없이 할 수도 있고
+select m.name, avg(hakjeom) 
+from univ_student s join univ_major m on 
+s.hakgwa_code=m.code group by m.name;
+
+
+-- 뷰 이용해서 조금 더 심플하게 보이게 할 수도 있음
+create view stu_and_maj as 
+select s.hakbeon, s.name, m.name majname, hakjeom 
+from univ_student s join univ_major m on 
+s.hakgwa_code=m.code;
+-- 뷰가 담고 있는 건 학생과 학생의 과, 학생들 학점
+select * from stu_and_maj;
+
+select majname, avg(hakjeom) from stu_and_maj 
+group by majname;
+
+--평균 학점 가장 높은 과
+
+--기본적으로 가장 높은 평점(학과별로 묶었을 시)을 먼저 찾는 것
+select max(ahakjeom) from (select majname, avg(hakjeom) ahakjeom from stu_and_maj 
+group by majname);
+
+create view maj_avg_hakjeom as select majname, avg(hakjeom) ahakjeom from stu_and_maj 
+group by majname;
+
+select max(ahakjeom) from maj_avg_hakjeom;
+
+select * from maj_avg_hakjeom where ahakjeom =
+(select max(ahakjeom) from maj_avg_hakjeom)
