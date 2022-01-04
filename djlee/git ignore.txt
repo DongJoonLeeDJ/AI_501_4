@@ -1,0 +1,24 @@
+1. 해당 저장소 폴더 안에서 마우스 우클릭 하여 git bash 선택해야 함
+
+2. 뒤에 있는 점까지 다 따라쳐야 함
+
+
+git rm -r --cached .
+git add .
+git commit -m "fixed untracked files"
+
+
+.gitignore의 장점
+
+.suo와 같은 쓸데없는 파일들은 commit 하지 않는다.
+즉 나중에 git 보면 진짜로 추가하거나 바꾼 코드만 볼 수 있다.
+불필요하다 싶은 건 .gitignore에 추가하면 됨
+특정 확장자를 가진 파일이나 혹은 특정 파일 모두 추가 가능
+
+단점
+
+zip과 같이 꼭 필요한 것까지 같이 ignore해버릴 수 있다.
+
+
+출처
+https://jojoldu.tistory.com/307
