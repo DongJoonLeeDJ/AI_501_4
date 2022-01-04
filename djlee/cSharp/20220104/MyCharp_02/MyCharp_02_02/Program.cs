@@ -10,16 +10,16 @@ namespace MyCharp_02_02
     {
         static void Main(string[] args)
         {
-            /*
+            
              
-            string test = Console.ReadLine();
-            int ct = Console.CursorTop;
-            int cl = Console.CursorLeft;
-            Console.SetCursorPosition(cl + test.Length, ct-1);
+            //string test = Console.ReadLine();
+            //int ct = Console.CursorTop;
+            //int cl = Console.CursorLeft;
+            //Console.SetCursorPosition(cl + test.Length, ct-1);
             //참고
             //Console.ReadLine한 다음 커서 움직이는 거
              
-             */
+             
 
 
 
