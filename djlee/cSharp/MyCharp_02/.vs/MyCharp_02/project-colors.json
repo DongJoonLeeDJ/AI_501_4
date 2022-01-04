@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "df2ff242-7f60-4831-aab9-08f2103a552f": {
+      "ProjectGuid": "df2ff242-7f60-4831-aab9-08f2103a552f",
+      "DisplayName": "MyCharp_02",
+      "ColorIndex": 0
+    },
+    "1fe0d298-8010-4568-a93f-1605ea37eb97": {
+      "ProjectGuid": "1fe0d298-8010-4568-a93f-1605ea37eb97",
+      "DisplayName": "MyCharp_02_02",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "기타 파일",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}
