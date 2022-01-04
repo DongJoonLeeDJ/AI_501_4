@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1a7dd1b5-6b80-4a8c-bc54-fea3939bb9be": {
+      "ProjectGuid": "1a7dd1b5-6b80-4a8c-bc54-fea3939bb9be",
+      "DisplayName": "MyHelloCSharp",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

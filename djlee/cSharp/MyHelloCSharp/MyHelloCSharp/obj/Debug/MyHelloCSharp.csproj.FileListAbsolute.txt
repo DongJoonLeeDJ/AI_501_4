@@ -1,0 +1,8 @@
+D:\djlee\AI_501_4\djlee\cSharp\MyHelloCSharp\MyHelloCSharp\bin\Debug\MyHelloCSharp.exe.config
+D:\djlee\AI_501_4\djlee\cSharp\MyHelloCSharp\MyHelloCSharp\bin\Debug\MyHelloCSharp.exe
+D:\djlee\AI_501_4\djlee\cSharp\MyHelloCSharp\MyHelloCSharp\bin\Debug\MyHelloCSharp.pdb
+D:\djlee\AI_501_4\djlee\cSharp\MyHelloCSharp\MyHelloCSharp\obj\Debug\MyHelloCSharp.csproj.AssemblyReference.cache
+D:\djlee\AI_501_4\djlee\cSharp\MyHelloCSharp\MyHelloCSharp\obj\Debug\MyHelloCSharp.csproj.SuggestedBindingRedirects.cache
+D:\djlee\AI_501_4\djlee\cSharp\MyHelloCSharp\MyHelloCSharp\obj\Debug\MyHelloCSharp.csproj.CoreCompileInputs.cache
+D:\djlee\AI_501_4\djlee\cSharp\MyHelloCSharp\MyHelloCSharp\obj\Debug\MyHelloCSharp.exe
+D:\djlee\AI_501_4\djlee\cSharp\MyHelloCSharp\MyHelloCSharp\obj\Debug\MyHelloCSharp.pdb

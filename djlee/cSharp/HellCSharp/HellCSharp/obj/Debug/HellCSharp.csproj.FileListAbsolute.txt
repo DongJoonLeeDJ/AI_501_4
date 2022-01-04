@@ -1,0 +1,8 @@
+D:\djlee\AI_501_4\djlee\cSharp\HellCSharp\HellCSharp\bin\Debug\HellCSharp.exe.config
+D:\djlee\AI_501_4\djlee\cSharp\HellCSharp\HellCSharp\bin\Debug\HellCSharp.exe
+D:\djlee\AI_501_4\djlee\cSharp\HellCSharp\HellCSharp\bin\Debug\HellCSharp.pdb
+D:\djlee\AI_501_4\djlee\cSharp\HellCSharp\HellCSharp\obj\Debug\HellCSharp.csproj.AssemblyReference.cache
+D:\djlee\AI_501_4\djlee\cSharp\HellCSharp\HellCSharp\obj\Debug\HellCSharp.csproj.SuggestedBindingRedirects.cache
+D:\djlee\AI_501_4\djlee\cSharp\HellCSharp\HellCSharp\obj\Debug\HellCSharp.csproj.CoreCompileInputs.cache
+D:\djlee\AI_501_4\djlee\cSharp\HellCSharp\HellCSharp\obj\Debug\HellCSharp.exe
+D:\djlee\AI_501_4\djlee\cSharp\HellCSharp\HellCSharp\obj\Debug\HellCSharp.pdb

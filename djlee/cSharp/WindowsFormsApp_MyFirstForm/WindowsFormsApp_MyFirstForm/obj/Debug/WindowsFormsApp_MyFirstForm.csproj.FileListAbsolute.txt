@@ -1,0 +1,11 @@
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\bin\Debug\WindowsFormsApp_MyFirstForm.exe.config
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\bin\Debug\WindowsFormsApp_MyFirstForm.exe
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\bin\Debug\WindowsFormsApp_MyFirstForm.pdb
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\obj\Debug\WindowsFormsApp_MyFirstForm.csproj.AssemblyReference.cache
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\obj\Debug\WindowsFormsApp_MyFirstForm.csproj.SuggestedBindingRedirects.cache
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\obj\Debug\WindowsFormsApp_MyFirstForm.Properties.Resources.resources
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\obj\Debug\WindowsFormsApp_MyFirstForm.csproj.GenerateResource.cache
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\obj\Debug\WindowsFormsApp_MyFirstForm.csproj.CoreCompileInputs.cache
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\obj\Debug\WindowsFormsApp_MyFirstForm.exe
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\obj\Debug\WindowsFormsApp_MyFirstForm.pdb
+D:\djlee\AI_501_4\djlee\cSharp\WindowsFormsApp_MyFirstForm\WindowsFormsApp_MyFirstForm\obj\Debug\WindowsFormsApp_MyFirstForm.Form1.resources
