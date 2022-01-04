@@ -1,4 +1,3 @@
-
 -- 전공 테이블
 create table univ_major
 (
@@ -90,4 +89,37 @@ group by majname;
 select max(ahakjeom) from maj_avg_hakjeom;
 
 select * from maj_avg_hakjeom where ahakjeom =
-(select max(ahakjeom) from maj_avg_hakjeom)
+(select max(ahakjeom) from maj_avg_hakjeom);
+
+
+-- 학생정보를 출력하는 뷰(학과정보가 포함되어있는)
+select * from stu_and_maj;
+-- 학과별 평점
+select * from maj_avg_hakjeom;
+
+
+--학점이 가장 높은 사람
+select * from stu_and_maj where 
+hakjeom = (select max(hakjeom) from stu_and_maj);
+
+
+-- 학과별 학점 높은 사람
+-- 학과별로 가장 높은 점수들
+-- 이 점수들의 주인을 출력해주면 됨
+select max(hakjeom) max_hakjeom, majname from stu_and_maj 
+group by majname; 
+select * from stu_and_maj;
+
+create view max_hakjeom_hakgwa as 
+select max(hakjeom) max_hakjeom, majname from stu_and_maj 
+group by majname; 
+
+select a.hakbeon, a.majname, a.name, a.hakjeom from 
+stu_and_maj a join max_hakjeom_hakgwa b on 
+a.majname = b.majname and a.hakjeom = b.max_hakjeom;
+
+
+
+
+
+
