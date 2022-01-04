@@ -10,12 +10,25 @@ namespace MyCharp_02_02
     {
         static void Main(string[] args)
         {
+            /*
+             
+            string test = Console.ReadLine();
+            int ct = Console.CursorTop;
+            int cl = Console.CursorLeft;
+            Console.SetCursorPosition(cl + test.Length, ct-1);
+            //참고
+            //Console.ReadLine한 다음 커서 움직이는 거
+             
+             */
+
+
+
+
             // \ (역슬래시) = escapse 문자
             //폰트따라선 W 모양으로 나오기도 함
             Console.WriteLine("내 이름은 \"이동준\"입니다.");
             Console.WriteLine("\\"); // escape 문자 자체를 출력
             Console.WriteLine(@"이동준\류경문");//앞에 @ 붙이면 역슬래시(escape문자)에 한해선 두 번 안 적어도 됨
-
 
             Console.WriteLine("Hello World"[0]);
             Console.WriteLine("안녕하세요"[0]);            

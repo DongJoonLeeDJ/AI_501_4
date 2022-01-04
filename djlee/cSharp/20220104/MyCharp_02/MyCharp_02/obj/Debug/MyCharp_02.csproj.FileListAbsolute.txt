@@ -1,8 +1,0 @@
-D:\djlee\AI_501_4\djlee\cSharp\MyCharp_02\MyCharp_02\bin\Debug\MyCharp_02.exe.config
-D:\djlee\AI_501_4\djlee\cSharp\MyCharp_02\MyCharp_02\bin\Debug\MyCharp_02.exe
-D:\djlee\AI_501_4\djlee\cSharp\MyCharp_02\MyCharp_02\bin\Debug\MyCharp_02.pdb
-D:\djlee\AI_501_4\djlee\cSharp\MyCharp_02\MyCharp_02\obj\Debug\MyCharp_02.csproj.AssemblyReference.cache
-D:\djlee\AI_501_4\djlee\cSharp\MyCharp_02\MyCharp_02\obj\Debug\MyCharp_02.csproj.SuggestedBindingRedirects.cache
-D:\djlee\AI_501_4\djlee\cSharp\MyCharp_02\MyCharp_02\obj\Debug\MyCharp_02.csproj.CoreCompileInputs.cache
-D:\djlee\AI_501_4\djlee\cSharp\MyCharp_02\MyCharp_02\obj\Debug\MyCharp_02.exe
-D:\djlee\AI_501_4\djlee\cSharp\MyCharp_02\MyCharp_02\obj\Debug\MyCharp_02.pdb
