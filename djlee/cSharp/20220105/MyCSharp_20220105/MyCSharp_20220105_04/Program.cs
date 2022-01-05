@@ -28,6 +28,17 @@ namespace MyCSharp_20220105_04
             int size = int.Parse(Console.ReadLine()); 
             int[] my_size_arr = new int[size];
             Console.WriteLine("my_size_arr의 길이 = "+my_size_arr.Length);
+
+
+            my_size_arr[0] = 10000;
+            Console.WriteLine(my_size_arr[0]);
+
+            while (true)
+            {
+                Console.WriteLine("무한반복중...");
+                Console.WriteLine(Console.ReadLine());
+            }
+
         }
     }
 }
