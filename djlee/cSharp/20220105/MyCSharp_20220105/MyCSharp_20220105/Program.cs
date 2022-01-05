@@ -58,7 +58,19 @@ namespace MyCSharp_20220105
             //두번째 숫자를 문자열로 인식하고 배열 연산 이용해서 각 자리에 있는
             //숫자를 가져와서 계산하기
             //1. 아스키코드 이용
+            string str_second = second.ToString();
+            //'0'을 빼는 이유는... str_second[0], str_second[1], str_second[2]는
+            //글자이고, 글자는 아스키코드값을 가진다.
+            //'0'은 숫자 48로 대응되고, '9'는 숫자 57로 대응됨
+            Console.WriteLine($"{first*(str_second[2]-'0')}");
+            Console.WriteLine($"{first*(str_second[1]-'0')}");
+            Console.WriteLine($"{first*(str_second[0]-'0')}");
+            //Char.GetNumericValue = 글자를 숫자로 바꿔주는 방법
+            Console.WriteLine($"{first*Char.GetNumericValue(str_second[0])}");
             //2. tostring과 parse 이용하기
+            Console.WriteLine($"{first * int.Parse(str_second[2].ToString())}");
+            Console.WriteLine($"{first * int.Parse(str_second[1].ToString())}");
+            Console.WriteLine($"{first * int.Parse(str_second[0].ToString())}");
 
 
         }
