@@ -110,6 +110,7 @@ namespace MyCSharp_20220105_03
                     break;
             }
 
+            Console.WriteLine("지금 계절은?");
             switch (nowMonth)
             {
                 case 12:
@@ -134,6 +135,45 @@ namespace MyCSharp_20220105_03
                     break;
                 default:
                     Console.WriteLine($"{nowMonth}는 잘못됐습니다.");
+                    break;
+            }
+
+
+            Console.WriteLine("나이를 입력해주세요.");
+            int age = int.Parse(Console.ReadLine());
+
+            //내가 만약 34살이면 3.4가 되서, int 변수니까
+            //3이 됨
+            switch (age/10)
+            {
+                case 0:
+                case 1: //0세부터 19세까지
+                    Console.WriteLine("미성년자");
+                    break;
+                case 2:
+                case 3://20세부터 39세까지
+                    Console.WriteLine("청년");
+                    break;
+                case 4:
+                case 5://40세부터 59세까지
+                    Console.WriteLine("중년");
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    Console.WriteLine("노년");
+                    break;
+                case 10:
+                case 11:
+                case 12:
+                    if(age>123)
+                        Console.WriteLine("타노스");
+                    else
+                        Console.WriteLine("장수");
+                    break;
+                default: //음수라든지 130 넘는 경우
+                    Console.WriteLine("타노스");
                     break;
             }
 
