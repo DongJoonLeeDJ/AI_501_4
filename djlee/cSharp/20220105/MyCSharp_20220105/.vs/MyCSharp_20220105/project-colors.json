@@ -5,7 +5,32 @@
       "ProjectGuid": "a368d303-3e64-4595-959d-fc2378b8ee5e",
       "DisplayName": "MyCSharp_20220105",
       "ColorIndex": 0
+    },
+    "22794454-5dc2-4ae8-8310-9b8cf4542ac0": {
+      "ProjectGuid": "22794454-5dc2-4ae8-8310-9b8cf4542ac0",
+      "DisplayName": "MyCSharp_20220105_2",
+      "ColorIndex": 1
+    },
+    "b1e8b3bd-29a5-40bf-b9f5-8033b58b1c71": {
+      "ProjectGuid": "b1e8b3bd-29a5-40bf-b9f5-8033b58b1c71",
+      "DisplayName": "MyCSharp_20220105_03",
+      "ColorIndex": 2
+    },
+    "5b2e869a-3633-4d51-b055-e13ef5df3117": {
+      "ProjectGuid": "5b2e869a-3633-4d51-b055-e13ef5df3117",
+      "DisplayName": "MyCSharp_20220105_04",
+      "ColorIndex": 3
+    },
+    "e4537d1e-7f65-48f8-b3bd-5585a78230d5": {
+      "ProjectGuid": "e4537d1e-7f65-48f8-b3bd-5585a78230d5",
+      "DisplayName": "MyCSharp_20220105_5",
+      "ColorIndex": 4
+    },
+    "d7d49c0b-2472-4fbd-9035-c710202622ed": {
+      "ProjectGuid": "d7d49c0b-2472-4fbd-9035-c710202622ed",
+      "DisplayName": "MyCSharp_Answer",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 6
 }
