@@ -13,7 +13,7 @@ namespace MyCSharp_20220105_03
             //region 영역
             #region MyIfStatementTest
             //alt + 방향키(위,아래) : 코드 이동함
-            bool flag = true;
+            bool flag = false;
             /*<-눌러*/
             if (flag) //flag 값을 false로 두면 이 중괄호 안에 있는 것들 다 실행x
             {
@@ -61,6 +61,85 @@ namespace MyCSharp_20220105_03
 
             }
             #endregion
+
+
+            #region solve
+            int nowYear = DateTime.Now.Year; //2022
+            int nowMonth = DateTime.Now.Month; //1
+
+            Console.WriteLine("올해의 띠는?");
+            switch (nowYear%12)
+            {
+                case 9:
+                    Console.WriteLine("뱀");
+                    break;
+                case 10:
+                    Console.WriteLine("말");
+                    break;
+                case 11:
+                    Console.WriteLine("양");
+                    break;
+                case 0:
+                    Console.WriteLine("원숭이");
+                    break;
+                case 1:
+                    Console.WriteLine("닭");
+                    break;
+                case 2:
+                    Console.WriteLine("개");
+                    break;
+                case 3:
+                    Console.WriteLine("돼지");
+                    break;
+                case 4:
+                    Console.WriteLine("쥐");
+                    break;
+                case 5:
+                    Console.WriteLine("소");
+                    break;
+                case 6:
+                    Console.WriteLine("호랑이");
+                    break;
+                case 7:
+                    Console.WriteLine("토끼");
+                    break;
+                case 8:
+                    Console.WriteLine("용");
+                    break;
+                default:
+                    break;
+            }
+
+            switch (nowMonth)
+            {
+                case 12:
+                case 1:
+                case 2:
+                    Console.WriteLine("겨울");
+                    break;
+                case 3:
+                case 4:
+                case 5:
+                    Console.WriteLine("봄");
+                    break;
+                case 6:
+                case 7:
+                case 8:
+                    Console.WriteLine("여름");
+                    break;
+                case 9:
+                case 10:
+                case 11:
+                    Console.WriteLine("가을");
+                    break;
+                default:
+                    Console.WriteLine($"{nowMonth}는 잘못됐습니다.");
+                    break;
+            }
+
+
+            #endregion
+
         }
     }
 }
