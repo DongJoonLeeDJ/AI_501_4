@@ -15,9 +15,10 @@
     <jsp:include page="../nav.jsp"/>
     <div class="container">
         <h2>boardview</h2>
-        <div style="border: 1px solid #ccc;
-                    border-radius: 3%;
-                    padding: 0.5rem;">
+        <div class="mb-3"
+                style="border: 1px solid #ccc;
+                border-radius: 3%;
+                padding: 0.5rem;">
             <div class="form-group">
                 <label>title</label>
                 <strong><%=row.getTitle()%></strong>
@@ -39,8 +40,18 @@
                 </div>
             </div>
         </div>
-        <button type="button" class="btn btn-primary">수정</button>
-        <button type="button" class="btn btn-primary">삭제</button>
+        <button type="button" class="btn btn-primary" id="updatebtn">수정</button>
+        <button type="button" class="btn btn-primary" id="deletebtn">삭제</button>
     </div>
 </body>
 </html>
+
+<script>
+    $("#updatebtn").on('click',function(){ alert('수정버튼누림') })
+    $("#deletebtn").on('click',function(){
+        var result = confirm('삭제하시겠습니까?')
+        if(result){
+            window.location = 'boarddelete.jsp?idx=<%=idx%>';
+        }
+    })
+</script>

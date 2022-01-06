@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BoardDao {
+
     public List<BoardDto> selectlist(){
         List<BoardDto> list = new ArrayList<>();
         try{
@@ -86,5 +87,35 @@ public class BoardDao {
             e.printStackTrace();
         }
         return new BoardDto();
+    }
+
+    public boolean delete(int idx) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try{
+            Class.forName(DBIn.jar);
+
+            conn = DriverManager.getConnection(DBIn.url,DBIn.user,DBIn.pw);
+            pstmt = conn.prepareStatement("DELETE FROM BOARD WHERE IDX=?");
+            pstmt.setInt(1, idx);
+
+            pstmt.executeUpdate();
+
+            //select executeQuery
+            // insert update delete executeupdate, execute
+            return true;
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (pstmt != null)
+                    pstmt.close();
+                if (conn != null)
+                    conn.close();
+            }catch (Exception e){
+
+            }
+        }
+        return false;
     }
 }
