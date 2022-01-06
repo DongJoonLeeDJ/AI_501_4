@@ -216,4 +216,35 @@ public class MemberDao {
         }
         return "false";
     }
+
+    // 로그인 할수 있는지 없는지 체크 함수
+    public boolean memberloginchk(String email, String pwd) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        try{
+            Class.forName(DBIn.jar);
+
+            conn = DriverManager.getConnection(DBIn.url,DBIn.user,DBIn.pw);
+            pstmt = conn.prepareStatement("select * from member where email=? and pwd=?");
+            pstmt.setString(1, email);
+            pstmt.setString(2, pwd);
+
+            rs = pstmt.executeQuery();
+            if(rs.next()) {
+                // rs.next 가 되면 그 해당되는 행이 있으므로 반환값 true
+                return true;
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            }catch (Exception e){}
+        }
+        return false;
+    }
 }

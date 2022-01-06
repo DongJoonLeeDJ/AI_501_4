@@ -9,6 +9,10 @@
         <location>/error/e404.jsp</location>
     </error-page>
 
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>com.example._1224.filter.CharSetEncoding</filter-class>

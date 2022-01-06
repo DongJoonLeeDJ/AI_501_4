@@ -14,14 +14,15 @@
             <form action="/1224_war_exploded/loginproc.jsp">
                 <div class="form-group">
                     <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email">
+                    <input type="email" class="form-control" id="email" name="email" value="aa@naver.com">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd">
+                    <input type="password" class="form-control" id="pwd" name="pwd" value="1234">
                 </div>
                 <div class="checkbox">
-                    <label><input type="checkbox"> Remember me</label>
+                    <!-- cookie 설정 하면 자동으로 아이디 패스워드값 설정 되어 있는거... -->
+                    <label><input type="checkbox" name="loginsave" value="true"> Remember me</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
