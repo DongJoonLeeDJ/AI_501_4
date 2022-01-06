@@ -24,6 +24,7 @@
         // tomcat 기본적으로 가지고 있는 시간이..
         session.setAttribute("email",email);
         session.setAttribute("pwd",pwd);
+        response.sendRedirect("index.jsp");
     }
     else{
         out.println("로그인할수 없음");

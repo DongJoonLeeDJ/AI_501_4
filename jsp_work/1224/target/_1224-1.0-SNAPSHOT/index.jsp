@@ -4,11 +4,22 @@
 <head>
     <title>JSP - Hello World</title>
     <%@ include file="head.jsp"%>
+    <script>
+        $('document').ready(function(){
+           $('#logout').on('click',function(){
+               window.location='logout.jsp';
+           });
+        });
+    </script>
 </head>
 <body>
 <%@ include file="nav.jsp"%>
 <div class="container">
     <div class="row p-3">
+        <%
+            Object emailobj = session.getAttribute("email");
+            if (emailobj == null){
+        %>
         <div class="col-md-4 pt-5">
             <h1>로그인창</h1>
             <form action="/1224_war_exploded/loginproc.jsp">
@@ -27,6 +38,16 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
+        <%
+            }else{
+        %>
+        <div class="col-md-4 pt-5">
+            로그인했음.<br>
+            <img src="img/saram.jpg" width="100%"><br>
+            <%=emailobj %> 님 환영 합니다.
+            <button class="btn btn-primary" id="logout">로그아웃</button>
+        </div>
+        <% } %>
         <div class="col-md-8">
             <h1>광고창</h1>
             <iframe width="100%" height="360"
