@@ -67,15 +67,18 @@ public class BoardDao {
     }
 
     public BoardDto selectrow(int idx) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
         try{
             Class.forName(DBIn.jar);
-            Connection conn = DriverManager.getConnection( DBIn.url, DBIn.user, DBIn.pw );
-            PreparedStatement pstmt =
+            conn = DriverManager.getConnection( DBIn.url, DBIn.user, DBIn.pw );
+            pstmt =
                     conn.prepareStatement(
                             "SELECT * FROM BOARD WHERE IDX = ?");
             pstmt.setInt(1, idx);
 
-            ResultSet rs = pstmt.executeQuery();
+            rs = pstmt.executeQuery();
             if(rs.next()){
                 return new BoardDto(rs.getInt("idx"),
                                     rs.getString("name"),
@@ -85,6 +88,12 @@ public class BoardDao {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            }catch (Exception e){}
         }
         return new BoardDto();
     }
@@ -98,6 +107,44 @@ public class BoardDao {
             conn = DriverManager.getConnection(DBIn.url,DBIn.user,DBIn.pw);
             pstmt = conn.prepareStatement("DELETE FROM BOARD WHERE IDX=?");
             pstmt.setInt(1, idx);
+
+            pstmt.executeUpdate();
+
+            //select executeQuery
+            // insert update delete executeupdate, execute
+            return true;
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if (pstmt != null)
+                    pstmt.close();
+                if (conn != null)
+                    conn.close();
+            }catch (Exception e){
+
+            }
+        }
+        return false;
+    }
+
+    public boolean update(BoardDto dto) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        try{
+            Class.forName(DBIn.jar);
+
+            conn = DriverManager.getConnection(DBIn.url,DBIn.user,DBIn.pw);
+            pstmt = conn.prepareStatement("UPDATE board " +
+                                                "SET NAME=?, " +
+                                                " title=?, " +
+                                                " content=?, " +
+                                                " wdate=now() " +
+                                                "WHERE idx =?");
+            pstmt.setString(1, dto.getName());
+            pstmt.setString(2, dto.getTitle());
+            pstmt.setString(3, dto.getContent());
+            pstmt.setInt(4, dto.getIdx());
 
             pstmt.executeUpdate();
 

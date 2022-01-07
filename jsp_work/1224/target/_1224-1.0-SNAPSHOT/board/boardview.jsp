@@ -47,7 +47,9 @@
 </html>
 
 <script>
-    $("#updatebtn").on('click',function(){ alert('수정버튼누림') })
+    $("#updatebtn").on('click',function(){
+        window.location = 'boardupdateform.jsp?idx=<%=idx%>';
+    })
     $("#deletebtn").on('click',function(){
         var result = confirm('삭제하시겠습니까?')
         if(result){

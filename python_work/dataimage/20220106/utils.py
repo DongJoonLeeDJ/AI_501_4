@@ -31,10 +31,11 @@ def extract_chars(img):
         color_img = get_chars(oriimg.copy(), color)
         gray_img = cv2.cvtColor(color_img, cv2.COLOR_BGR2GRAY)
         ret, thresh_img = cv2.threshold(gray_img, 127, 255, 0)
+        # cv2.imshow('thresh_img', thresh_img)
 
         contours, _ = cv2.findContours(thresh_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
-        color_img = cv2.drawContours(color_img, contours, 3, (255, 0, 0), 3)
+        color_img = cv2.drawContours(color_img, contours, -1, (255, 0, 0), 3)
 
         for contour in contours:
             area = cv2.contourArea(contour)
