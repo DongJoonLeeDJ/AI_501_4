@@ -9,7 +9,7 @@
 <%
     String email = request.getParameter("email");
     String pwd = request.getParameter("pwd");
-    String loginsave = request.getParameter("loginsave");
+    Object loginsave = request.getParameter("loginsave");
 %>
 <%=email%>
 <%=pwd%>
@@ -24,6 +24,17 @@
         // tomcat 기본적으로 가지고 있는 시간이..
         session.setAttribute("email",email);
         session.setAttribute("pwd",pwd);
+        if (loginsave != null)
+        {
+            Cookie co1 = new Cookie("email",email);
+            Cookie co2 = new Cookie("pwd",pwd);
+
+            co1.setMaxAge(60*1);
+            co2.setMaxAge(60*1);
+
+            response.addCookie(co1);
+            response.addCookie(co2);
+        };
         response.sendRedirect("index.jsp");
     }
     else{

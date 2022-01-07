@@ -17,6 +17,17 @@
 <div class="container">
     <div class="row p-3">
         <%
+            String email = "";
+            String pwd = "";
+            Cookie cos[] = request.getCookies();
+
+            for(Cookie co: cos){
+                if(co.getName().equals("email"))
+                    email = co.getValue();
+                if(co.getName().equals("pwd"))
+                    pwd = co.getValue();
+            }
+
             Object emailobj = session.getAttribute("email");
             if (emailobj == null){
         %>
@@ -25,11 +36,11 @@
             <form action="/1224_war_exploded/loginproc.jsp">
                 <div class="form-group">
                     <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email" name="email" value="aa@naver.com">
+                    <input type="email" class="form-control" id="email" name="email" value="<%=email%>">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" name="pwd" value="1234">
+                    <input type="password" class="form-control" id="pwd" name="pwd" value="<%=pwd%>">
                 </div>
                 <div class="checkbox">
                     <!-- cookie 설정 하면 자동으로 아이디 패스워드값 설정 되어 있는거... -->
