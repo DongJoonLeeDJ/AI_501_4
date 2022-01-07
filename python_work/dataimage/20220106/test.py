@@ -14,5 +14,3 @@ def doA():
 # print(next(doA()))
 # print(next(doA()))
 
-for i in doA():
-    print(i)

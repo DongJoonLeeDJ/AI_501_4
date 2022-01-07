@@ -5,6 +5,9 @@ blue = 0
 green = 1
 red = 2
 
+def resize20(img):
+    resized = cv2.resize(img,(20,20))
+    return resized.reshape(-1,400).astype(np.float32)
 
 def get_chars(img, wcolor):
     other_color1 = (wcolor + 1) % 3
@@ -23,32 +26,32 @@ def get_chars(img, wcolor):
     img[gselect] = 255
     return img
 
-
 def extract_chars(img):
+    chars = []
     colors = [green, blue, red]
     oriimg = cv2.imread('img/1.png')
     for color in colors:
         color_img = get_chars(oriimg.copy(), color)
         gray_img = cv2.cvtColor(color_img, cv2.COLOR_BGR2GRAY)
         ret, thresh_img = cv2.threshold(gray_img, 127, 255, 0)
-        # cv2.imshow('thresh_img', thresh_img)
+
 
         contours, _ = cv2.findContours(thresh_img, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
         color_img = cv2.drawContours(color_img, contours, -1, (255, 0, 0), 3)
-
+        # cv2.imshow('thresh_img', thresh_img)
+        # cv2.imshow('color_img', color_img)
         for contour in contours:
             area = cv2.contourArea(contour)
             if (area) > 50:
                 x, y, width, height = cv2.boundingRect(contour)
                 roi = gray_img[y:y+height,x:x+width]
-                cv2.imshow('roi',roi)
-                cv2.waitKey(0)
+                chars.append((x,roi))
+                # print('x = ',x)
+                # cv2.imwrite('roi.png',roi)
+                # print(cv2.resize(roi,(20,20)))
 
-        # cv2.imshow('color_img', color_img)
-        # cv2.imshow('gray_img', gray_img)
-        # cv2.imshow('thresh_img', thresh_img)
-        # cv2.waitKey(0)
-
+    chars = sorted(chars, key=lambda char:char[0])
+    return chars
 
 extract_chars(10)
