@@ -21,14 +21,20 @@ for folder in folders:
 
 train_input = np.array(train_input)
 train_target = np.array(train_target)
+print(train_input.shape)
+print(train_target.shape)
+print(train_target[:])
 
 knclf = KNeighborsClassifier(n_neighbors=1)
 knclf.fit(train_input,train_target)
 
 predvalue = knclf.predict(
-                          [train_input[0],
-                           train_input[1],
-                           train_input[2]]
+                          [
+                              train_input[0],
+                              train_input[1],
+                              train_input[2],
+                              train_input[10]
+                          ]
                           )
 print(predvalue)
 
