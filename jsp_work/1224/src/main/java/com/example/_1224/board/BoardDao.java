@@ -12,19 +12,22 @@ import java.util.List;
 
 public class BoardDao {
 
-    public List<BoardDto> selectlist(){
+    public List<BoardDto> selectlist(int pagenum){
         List<BoardDto> list = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection conn =
+            conn =
                     DriverManager.getConnection(
                             "jdbc:mysql://127.0.0.1:3306/aa",
                             "root",
                             "1234");
-            PreparedStatement pstmt =
+            pstmt =
                     conn.prepareStatement(
                             "SELECT * FROM board ORDER BY idx DESC LIMIT 0,5");
-            ResultSet rs = pstmt.executeQuery();
+            rs = pstmt.executeQuery();
             while(rs.next()){
                 list.add(
                         new BoardDto(rs.getInt("idx"),
@@ -35,6 +38,13 @@ public class BoardDao {
             }
         }catch (Exception e){
             e.printStackTrace();
+        }
+        finally {
+            try {
+                if (rs != null) rs.close();
+                if (pstmt != null) pstmt.close();
+                if (conn != null) conn.close();
+            }catch (Exception e){}
         }
         return list;
     }
