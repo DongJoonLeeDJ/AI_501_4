@@ -26,10 +26,10 @@ def get_chars(img, wcolor):
     img[gselect] = 255
     return img
 
-def extract_chars(img):
+def extract_chars(filename):
     chars = []
     colors = [green, blue, red]
-    oriimg = cv2.imread('img/1.png')
+    oriimg = cv2.imread('img/'+str(filename)+'.png')
     for color in colors:
         color_img = get_chars(oriimg.copy(), color)
         gray_img = cv2.cvtColor(color_img, cv2.COLOR_BGR2GRAY)
@@ -53,5 +53,3 @@ def extract_chars(img):
 
     chars = sorted(chars, key=lambda char:char[0])
     return chars
-
-extract_chars(10)
