@@ -21,11 +21,13 @@
             String pwd = "";
             Cookie cos[] = request.getCookies();
 
-            for(Cookie co: cos){
-                if(co.getName().equals("email"))
-                    email = co.getValue();
-                if(co.getName().equals("pwd"))
-                    pwd = co.getValue();
+            if (cos!=null) {
+                for (Cookie co : cos) {
+                    if (co.getName().equals("email"))
+                        email = co.getValue();
+                    if (co.getName().equals("pwd"))
+                        pwd = co.getValue();
+                }
             }
 
             Object emailobj = session.getAttribute("email");

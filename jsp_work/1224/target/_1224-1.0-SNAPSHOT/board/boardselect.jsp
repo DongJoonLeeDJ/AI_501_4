@@ -5,16 +5,19 @@
 <%
     // 아무페이지 없이 올때도 pageNumber 1
     // 1page 누를때도 pageNumber 1
-    String active = "active";
     int pagenum=1;
     Object pageNumber = request.getParameter("pageNumber");
     if(pageNumber != null){
         pagenum = Integer.parseInt((String)pageNumber);
     }
-    out.print(pagenum);
+//    out.print(pagenum);
     BoardDao bd = new BoardDao();
     List<BoardDto> list = bd.selectlist(pagenum);
     System.out.println(list);
+
+    // 총 페이지 개수 가져오기...
+    int pagecnt = bd.selectpagecnt();
+//    out.println(pagecnt);
 %>
 <html>
 <head>
@@ -51,9 +54,16 @@
         </table>
         <ul class="pagination justify-content-center">
             <li class="page-item <%=pagenum==1?"disabled":""%>"><a class="page-link" href="boardselect.jsp?pageNumber=<%=(pagenum-1)%>">Previous</a></li>
-            <li class="page-item <%=pagenum==1?"active":""%>"><a class="page-link" href="boardselect.jsp?pageNumber=1">1</a></li>
-            <li class="page-item <%=pagenum==2?"active":""%>"><a class="page-link" href="boardselect.jsp?pageNumber=2">2</a></li>
-            <li class="page-item <%=pagenum==3?"active":""%>"><a class="page-link" href="boardselect.jsp?pageNumber=3">3</a></li>
+            <%
+            // i = 1 ,2 pagecnt = 2
+            for ( int i= 1; i <= pagecnt;i++) {
+            %>
+                <li class="page-item <%=pagenum==1?"active":""%>">
+                    <a class="page-link" href="boardselect.jsp?pageNumber=<%=i%>"><%=i%></a>
+                </li>
+            <%
+            }
+            %>
             <li class="page-item <%=pagenum==3?"disabled":""%>"><a class="page-link" href="boardselect.jsp?pageNumber=<%=(pagenum+1)%>">Next</a></li>
         </ul>
     </div>
