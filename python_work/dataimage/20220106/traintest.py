@@ -22,8 +22,16 @@ for folder in folders:
 train_input = np.array(train_input)
 train_target = np.array(train_target)
 print(train_input.shape)
+print(train_input[10])
+
+# cv2.imshow("train_input",
+#            cv2.resize(train_input[12].reshape(20,20),(400,400)))
+# cv2.waitKey(0)
+
 print(train_target.shape)
 print(train_target[:])
+
+np.savez("traintest.npz",train=train_input,target=train_target)
 
 knclf = KNeighborsClassifier(n_neighbors=1)
 knclf.fit(train_input,train_target)

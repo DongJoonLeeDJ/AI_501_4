@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+    <title th:text="#{member.register}">title</title>
+</head>
+<body>
+    <h2 th:text="#{member.info}">info</h2>
+    <form action="step3" th:object="${registerRequest}" method="post">
+    <p>
+        <label for="email" th:text="#{email}">email</label>:<br>
+        <input name="email" th:value="*{email}" />
+        <span th:each="err : ${#fields.errors('email')}" th:text="${err}"></span>
+    </p>
+    <p>
+        <label for="name" th:text="#{name}">name</label>:<br>
+        <input type="text" id="name" th:field="*{name}" />
+        <span th:each="err : ${#fields.errors('name')}" th:text="${err}"></span>
+    </p>
+    <p>
+    	<label for="password" th:text="#{password}">pw</label>:<br>
+        <input type="password" id="password" th:field="*{password}" />
+        <span th:each="err : ${#fields.errors('password')}" th:text="${err}"></span>
+    </p>
+    <p>
+    	<label for="confirmPassword" th:text="#{password.confirm}">confirm</label>:<br>
+    	<input type="password" id="confirmPassword" th:field="*{confirmPassword}" />
+        <span th:each="err : ${#fields.errors('confirmPassword')}" th:text="${err}"></span>
+    </p>
+    <input type="submit" th:value="#{register.btn}" value="reg" />
+    </form>
+</body>
+</html>
