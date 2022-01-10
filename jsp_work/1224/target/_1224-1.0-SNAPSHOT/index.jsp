@@ -83,6 +83,8 @@
     </div>
     <div class="row">
         <a href="/1224_war_exploded/fileupload/aa1.jpg">aa1.jpg</a>
+        <a href="/1224_war_exploded/fileupload/코로나 백신접종 현황_훈련생용_인공지능4차.xlsx">코로나 백신접종 현황_훈련생용_인공지능4차.xlsx</a>
+
     </div>
 </div>
 </body>
