@@ -81,6 +81,9 @@
             <p>모든 국민은 언론·출판의 자유와 집회·결사의 자유를 가진다. 대한민국은 국제평화의 유지에 노력하고 침략적 전쟁을 부인한다. 탄핵소추의 의결을 받은 자는 탄핵심판이 있을 때까지 그 권한행사가 정지된다.</p>
         </div>
     </div>
+    <div class="row">
+        <a href="/1224_war_exploded/fileupload/aa1.jpg">aa1.jpg</a>
+    </div>
 </div>
 </body>
 </html>

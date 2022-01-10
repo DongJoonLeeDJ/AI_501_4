@@ -17,6 +17,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.27" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: servlets.com:cos:05Nov2002" />
         </element>
       </element>
       <element id="directory" name="META-INF">

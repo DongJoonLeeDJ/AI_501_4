@@ -58,13 +58,13 @@
             // i = 1 ,2 pagecnt = 2
             for ( int i= 1; i <= pagecnt;i++) {
             %>
-                <li class="page-item <%=pagenum==1?"active":""%>">
+                <li class="page-item <%=pagenum==i?"active":""%>">
                     <a class="page-link" href="boardselect.jsp?pageNumber=<%=i%>"><%=i%></a>
                 </li>
             <%
             }
             %>
-            <li class="page-item <%=pagenum==3?"disabled":""%>"><a class="page-link" href="boardselect.jsp?pageNumber=<%=(pagenum+1)%>">Next</a></li>
+            <li class="page-item <%=pagenum==pagecnt?"disabled":""%>"><a class="page-link" href="boardselect.jsp?pageNumber=<%=(pagenum+1)%>">Next</a></li>
         </ul>
     </div>
 </body>

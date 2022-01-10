@@ -21,5 +21,8 @@
                 <a class="dropdown-item" href="#">Link 3</a>
             </div>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/1224_war_exploded/file/fileuploadform.jsp">fileupload</a>
+        </li>
     </ul>
 </nav>
