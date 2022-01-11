@@ -10,7 +10,12 @@
       "ProjectGuid": "5dbbab77-e868-431d-869f-9c03cbe7bdf8",
       "DisplayName": "MyCSharp03_algorithm",
       "ColorIndex": 1
+    },
+    "6c6d5801-8d07-44a9-b702-f8c8e4c7917e": {
+      "ProjectGuid": "6c6d5801-8d07-44a9-b702-f8c8e4c7917e",
+      "DisplayName": "WindowsFormsAppLoginForm",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

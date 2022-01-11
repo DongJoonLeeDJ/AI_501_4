@@ -87,8 +87,10 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(223, 138);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(290, 29);
             this.textBox2.TabIndex = 4;
+            this.textBox2.UseSystemPasswordChar = true;
             // 
             // button1
             // 
@@ -102,6 +104,7 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -144,6 +147,7 @@
             this.label5.Size = new System.Drawing.Size(74, 21);
             this.label5.TabIndex = 9;
             this.label5.Text = "회원가입";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // imageList1
             // 
@@ -164,6 +168,7 @@
             this.button3.Size = new System.Drawing.Size(48, 33);
             this.button3.TabIndex = 10;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
