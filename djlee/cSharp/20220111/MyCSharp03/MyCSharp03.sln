@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCSharp03", "MyCSharp03\My
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCSharp03_algorithm", "MyCSharp03_algorithm\MyCSharp03_algorithm.csproj", "{5DBBAB77-E868-431D-869F-9C03CBE7BDF8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppLoginForm", "WindowsFormsAppLoginForm\WindowsFormsAppLoginForm.csproj", "{6C6D5801-8D07-44A9-B702-F8C8E4C7917E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5DBBAB77-E868-431D-869F-9C03CBE7BDF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DBBAB77-E868-431D-869F-9C03CBE7BDF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DBBAB77-E868-431D-869F-9C03CBE7BDF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C6D5801-8D07-44A9-B702-F8C8E4C7917E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C6D5801-8D07-44A9-B702-F8C8E4C7917E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C6D5801-8D07-44A9-B702-F8C8E4C7917E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C6D5801-8D07-44A9-B702-F8C8E4C7917E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
