@@ -29,14 +29,14 @@ namespace MyCSharp03_algorithm
 
             //그래서 만약 내림차순 정렬하고 싶으면 Sort를 통해서 오름차순 정렬 후, 그걸 Reverse하면 됨
 
-            foreach (var item in numbers)
+            foreach (var item in numbers) //정렬 결과 출력
             {
                 Console.WriteLine(item);
             }
 
             Array.Reverse(numbers); // 오름차순정렬을 하기 위해서, 일부러 반대로 뒤집어봄...
 
-            for(int i = 0; i<arrsize;i++)
+            for(int i = 0; i<arrsize;i++) //버블소트(거품정렬)
             {
                 for(int j = 0; j<arrsize-1; j++)
                 {
@@ -49,11 +49,29 @@ namespace MyCSharp03_algorithm
                 }
             }
 
-            foreach (var item in numbers)
+            foreach (var item in numbers) //결과 출력
             {
                 Console.WriteLine(item);
             }
 
+            Array.Reverse(numbers); //다시 일부러 뒤집어봄
+
+            int minth; // 최솟값의 위치
+            for(int i = 0; i<arrsize-1;i++)
+            {
+                minth = i;
+                for(int j = i+1; j<arrsize; j++)
+                {
+                    if (numbers[j] < numbers[minth])
+                        minth = j;
+                }
+                //값 서로 바꾸기
+                int temp = numbers[minth];
+                numbers[minth] = numbers[i];
+                numbers[i] = temp;
+            }
+            foreach(var item in numbers)
+                Console.WriteLine(item);
 
 
         }
