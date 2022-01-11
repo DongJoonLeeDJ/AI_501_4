@@ -12,6 +12,22 @@ namespace WindowsFormsAppLoginForm
 {
     public partial class Form1 : Form
     {
+        private Point mousePoint;
+
+        private void Form_MouseDown(object sender, MouseEventArgs e)
+        {
+            mousePoint = new Point(e.X, e.Y);
+        }
+
+        private void Form_MouseMove(object sender, MouseEventArgs e)
+        {
+            if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
+            {
+                Location = new Point(this.Left - (mousePoint.X - e.X),
+                     this.Top - (mousePoint.Y - e.Y));
+            }
+        }
+
         public Form1()
         {
             InitializeComponent();
