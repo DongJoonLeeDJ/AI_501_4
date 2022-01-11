@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppLoginForm", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCSharp03_Last_Console", "MyCSharp03_Last_Console\MyCSharp03_Last_Console.csproj", "{2026E84F-94B1-41E0-A1E8-47785AA72437}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsAppStart", "WindowsFormsAppStart\WindowsFormsAppStart.csproj", "{4BEB9E43-0510-4C4B-A093-A0BBD65E5E3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{2026E84F-94B1-41E0-A1E8-47785AA72437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2026E84F-94B1-41E0-A1E8-47785AA72437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2026E84F-94B1-41E0-A1E8-47785AA72437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BEB9E43-0510-4C4B-A093-A0BBD65E5E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BEB9E43-0510-4C4B-A093-A0BBD65E5E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BEB9E43-0510-4C4B-A093-A0BBD65E5E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BEB9E43-0510-4C4B-A093-A0BBD65E5E3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

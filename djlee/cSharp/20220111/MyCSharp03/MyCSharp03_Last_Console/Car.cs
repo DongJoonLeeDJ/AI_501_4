@@ -8,6 +8,23 @@ namespace MyCSharp03_Last_Console
 {
     public class Car
     {
+        /*
+         * 
+         *
+        //이걸 기본 생성자라고 함
+        //기본 생성자엔 아무것도 없음
+        //이게 암묵적으로 만들어져 있기 때문에
+        //Car c = new Car(); 코드가 되는 것이다.
+        public Car()
+        {
+        }
+         
+         
+         */
+
+
+
+
         // { get; set; } 의 의미
         //java의 getter, setter랑 똑같은 거
         //java의 통상적 getter, setter랑 똑같이 쓸거면 그냥 {get;set;}쓰거나
@@ -24,12 +41,15 @@ namespace MyCSharp03_Last_Console
         //별도의 private 변수 선언하고
         //그 변수를 리턴하거나 그 변수의 값을 바꾸는 식으로 코드를 짜야한다.(아래처럼)
         private int q;
-        public int quantity 
+        public int quantity //quantity를 통해 q에 접근하는 거임. q 대신 quantity 대입하면 stackoverflow
         {
             get { return q; }
             set {
                 if (value < 0)
+                {
+                    //Console.WriteLine($"{value}는 음수입니다!!!");
                     q = 0;
+                }
                 else
                     q = value;
             }
