@@ -48,9 +48,9 @@ namespace MyCSharp04_00_List
                 l.ForeColor = Color.Green;
         }
 
-
         private void button9_Click(object sender, EventArgs e)
         {
+
             //랜덤한 7개의 숫자를 뽑는다. 단 이 7개는 서로 중복되면 안 됨.
             int[] lotto = new int[7];
             //i<7 이렇게 적어도 되긴 함.
@@ -147,6 +147,11 @@ namespace MyCSharp04_00_List
         private void button8_Click(object sender, EventArgs e)
         {
             removeText((sender as Button).Text);
+        }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            new Form3().Show();
         }
     }
 }

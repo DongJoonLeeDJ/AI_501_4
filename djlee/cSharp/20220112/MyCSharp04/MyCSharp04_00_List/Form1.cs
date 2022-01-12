@@ -169,5 +169,10 @@ namespace MyCSharp04_00_List
             //new Form2().Show();//모달리스, Modeless
             new Form2().ShowDialog();
         }
+
+        private void metroButton1_Click(object sender, EventArgs e)
+        {
+            new Form3().Show();
+        }
     }
 }
