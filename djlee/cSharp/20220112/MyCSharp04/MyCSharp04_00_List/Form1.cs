@@ -166,7 +166,8 @@ namespace MyCSharp04_00_List
 
         private void uiButton1_Click(object sender, EventArgs e)
         {
-            new Form2().Show();
+            //new Form2().Show();//모달리스, Modeless
+            new Form2().ShowDialog();
         }
     }
 }
