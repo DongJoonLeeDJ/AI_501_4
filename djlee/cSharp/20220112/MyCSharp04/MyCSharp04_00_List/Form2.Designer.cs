@@ -49,6 +49,7 @@
             this.num1 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.myControl1 = new MyCSharp04_00_List.MyControl();
             this.SuspendLayout();
             // 
             // label4
@@ -242,7 +243,7 @@
             // 
             // metroButton1
             // 
-            this.metroButton1.Location = new System.Drawing.Point(268, 320);
+            this.metroButton1.Location = new System.Drawing.Point(2, 252);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(166, 23);
             this.metroButton1.TabIndex = 33;
@@ -250,11 +251,19 @@
             this.metroButton1.UseSelectable = true;
             this.metroButton1.Click += new System.EventHandler(this.metroButton1_Click);
             // 
+            // myControl1
+            // 
+            this.myControl1.Location = new System.Drawing.Point(600, 12);
+            this.myControl1.Name = "myControl1";
+            this.myControl1.Size = new System.Drawing.Size(491, 426);
+            this.myControl1.TabIndex = 34;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1122, 450);
+            this.Controls.Add(this.myControl1);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.num7);
             this.Controls.Add(this.num6);
@@ -306,5 +315,6 @@
         private System.Windows.Forms.Label num1;
         private System.Windows.Forms.Button button9;
         private MetroFramework.Controls.MetroButton metroButton1;
+        private MyControl myControl1;
     }
 }

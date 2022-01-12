@@ -17,7 +17,7 @@ namespace MyCSharp04_00_List
             InitializeComponent();
         }
 
-        void plus(int a)
+        void plus(int a) //copy & paste(복사 & 붙여넣기)
         {
             a++;
         }
@@ -28,7 +28,7 @@ namespace MyCSharp04_00_List
             textBox1.Text = a.ToString();
         }
 
-        void plus(TextBox t)
+        void plus(TextBox t) //바로가기
         {
             t.Text = int.Parse(t.Text) + 1 + "";
         }
@@ -38,7 +38,7 @@ namespace MyCSharp04_00_List
             plus(textBox2);
         }
 
-        void plus(Product p)
+        void plus(Product p) //바로가기
         {
             p.price++;
         }

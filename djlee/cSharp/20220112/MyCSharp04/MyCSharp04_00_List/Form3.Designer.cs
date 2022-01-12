@@ -34,6 +34,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.myControl1 = new MyCSharp04_00_List.MyControl();
             this.SuspendLayout();
             // 
             // button1
@@ -87,11 +88,19 @@
             this.textBox3.Size = new System.Drawing.Size(100, 21);
             this.textBox3.TabIndex = 5;
             // 
+            // myControl1
+            // 
+            this.myControl1.Location = new System.Drawing.Point(326, 36);
+            this.myControl1.Name = "myControl1";
+            this.myControl1.Size = new System.Drawing.Size(445, 393);
+            this.myControl1.TabIndex = 6;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.myControl1);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -113,5 +122,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private MyControl myControl1;
     }
 }

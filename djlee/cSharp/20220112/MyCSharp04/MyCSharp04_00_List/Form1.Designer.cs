@@ -54,6 +54,7 @@
             this.metroButton1 = new MetroFramework.Controls.MetroButton();
             this.uiButton1 = new Sunny.UI.UIButton();
             this.button11 = new System.Windows.Forms.Button();
+            this.myControl1 = new MyCSharp04_00_List.MyControl();
             this.SuspendLayout();
             // 
             // btn_list_study
@@ -299,11 +300,19 @@
             this.button11.Text = "button11";
             this.button11.UseVisualStyleBackColor = true;
             // 
+            // myControl1
+            // 
+            this.myControl1.Location = new System.Drawing.Point(809, 83);
+            this.myControl1.Name = "myControl1";
+            this.myControl1.Size = new System.Drawing.Size(445, 393);
+            this.myControl1.TabIndex = 26;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1282, 657);
+            this.Controls.Add(this.myControl1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.uiButton1);
             this.Controls.Add(this.metroButton1);
@@ -365,6 +374,7 @@
         private MetroFramework.Controls.MetroButton metroButton1;
         private Sunny.UI.UIButton uiButton1;
         private System.Windows.Forms.Button button11;
+        private MyControl myControl1;
     }
 }
 
