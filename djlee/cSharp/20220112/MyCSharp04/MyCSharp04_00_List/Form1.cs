@@ -144,5 +144,24 @@ namespace MyCSharp04_00_List
                 ListText.Text += item + " ";
             }
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Product p = new Product();
+            p.name = textBox1.Text;
+            p.price = int.Parse(textBox2.Text);
+            p.introduce();
+            MessageBox.Show("pCount="+Product.pCount);
+            Product p2 = new Product();
+            p2.name = textBox3.Text;
+            p2.price = int.Parse(textBox4.Text);
+            p2.introduce();
+            MessageBox.Show("pCount=" + Product.pCount);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"현재 제품 개수는 {Product.showCount()}입니다.");
+        }
     }
 }
