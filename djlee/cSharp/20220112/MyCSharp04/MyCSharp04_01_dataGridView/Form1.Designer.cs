@@ -48,6 +48,7 @@
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Grade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -211,11 +212,22 @@
             this.Score.HeaderText = "학생의점수";
             this.Score.Name = "Score";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(221, 467);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(340, 85);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "다음 그리드뷰";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 586);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_score);
             this.Controls.Add(this.label5);
@@ -263,6 +275,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
         private System.Windows.Forms.DataGridViewTextBoxColumn Grade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Score;
+        private System.Windows.Forms.Button button3;
     }
 }
 

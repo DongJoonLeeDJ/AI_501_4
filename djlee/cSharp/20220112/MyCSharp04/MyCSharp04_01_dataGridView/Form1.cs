@@ -32,5 +32,10 @@ namespace MyCSharp04_01_dataGridView
             dataGridView2.Rows.Add(textBox_name.Text, textBox_age.Text, 
                 textBox_grade.Text, textBox_score.Text);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new Form2().Show();
+        }
     }
 }
