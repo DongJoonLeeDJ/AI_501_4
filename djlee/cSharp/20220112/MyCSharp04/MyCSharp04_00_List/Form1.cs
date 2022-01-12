@@ -163,5 +163,10 @@ namespace MyCSharp04_00_List
         {
             MessageBox.Show($"현재 제품 개수는 {Product.showCount()}입니다.");
         }
+
+        private void uiButton1_Click(object sender, EventArgs e)
+        {
+            new Form2().Show();
+        }
     }
 }

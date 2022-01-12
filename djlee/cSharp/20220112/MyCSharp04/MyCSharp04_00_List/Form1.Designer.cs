@@ -51,6 +51,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.metroButton1 = new MetroFramework.Controls.MetroButton();
+            this.uiButton1 = new Sunny.UI.UIButton();
+            this.button11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_list_study
@@ -263,11 +266,46 @@
             this.textBox4.Size = new System.Drawing.Size(100, 21);
             this.textBox4.TabIndex = 19;
             // 
+            // metroButton1
+            // 
+            this.metroButton1.BackColor = System.Drawing.Color.DarkOrange;
+            this.metroButton1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.metroButton1.Location = new System.Drawing.Point(586, 40);
+            this.metroButton1.Name = "metroButton1";
+            this.metroButton1.Size = new System.Drawing.Size(185, 55);
+            this.metroButton1.TabIndex = 23;
+            this.metroButton1.Text = "metroButton1";
+            this.metroButton1.UseSelectable = true;
+            // 
+            // uiButton1
+            // 
+            this.uiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.uiButton1.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.uiButton1.Location = new System.Drawing.Point(600, 140);
+            this.uiButton1.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiButton1.Name = "uiButton1";
+            this.uiButton1.Size = new System.Drawing.Size(171, 42);
+            this.uiButton1.TabIndex = 24;
+            this.uiButton1.Text = "uiButton1";
+            this.uiButton1.Click += new System.EventHandler(this.uiButton1_Click);
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(621, 221);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 25;
+            this.button11.Text = "button11";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button11);
+            this.Controls.Add(this.uiButton1);
+            this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox3);
@@ -323,6 +361,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private MetroFramework.Controls.MetroButton metroButton1;
+        private Sunny.UI.UIButton uiButton1;
+        private System.Windows.Forms.Button button11;
     }
 }
 
