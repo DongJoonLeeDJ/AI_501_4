@@ -16,6 +16,18 @@ namespace MyCSharp04
         public Form1()
         {
             InitializeComponent();
+            label1.Text = "";
+            label2.Text = "";
+            label3.Text = "";
+            label4.Text = "";
+            label5.Text = "";
+            label6.Text = "";
+            label7.Text = "";
+
+            Button button1 = new Button();
+            button1.Location = new Point(50, 50);
+            Controls.Add(button1);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,6 +82,7 @@ namespace MyCSharp04
 
                 for(int i = 0; i< labels.Length; i++)
                 {
+                    labels[i].BackColor = Color.Transparent; //투명
                     if (lotto[i] <= 10)
                     {
                         labels[i].ForeColor = Color.Yellow;
