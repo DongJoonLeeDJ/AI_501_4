@@ -20,6 +20,17 @@ namespace MyCSharp04_00_List
         {
             InitializeComponent();
             btn_list_study.Text = "안녕";
+
+            Random random = new Random();
+            button1.Text = random.Next(100).ToString();
+            button5.Text = button1.Text;
+            button2.Text = random.Next(100).ToString();
+            button6.Text = button2.Text;
+            button3.Text = random.Next(100).ToString();
+            button7.Text = button3.Text;
+            button4.Text = random.Next(100).ToString();
+            button8.Text = button4.Text;
+
         }
 
         private void btn_list_study_Click(object sender, EventArgs e)
@@ -48,6 +59,90 @@ namespace MyCSharp04_00_List
             a.Add(numbers);
             MessageBox.Show(""+a[0]+a[1]+a[2]);
 
+        }
+
+        //button1~4까지는 추가
+        //button5~8까지는 제건
+        private void button1_Click(object sender, EventArgs e)
+        {
+            list.Add(button1.Text);
+            ListText.Text = "";
+            foreach (var item in list)
+            {
+                ListText.Text += item + " ";
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            list.Add(button2.Text);
+            ListText.Text = "";
+            foreach (var item in list)
+            {
+                ListText.Text += item + " ";
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            list.Add(button3.Text);
+            ListText.Text = "";
+            foreach (var item in list)
+            {
+                ListText.Text += item + " ";
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            list.Add(button4.Text);
+            ListText.Text = "";
+            foreach (var item in list)
+            {
+                ListText.Text += item + " ";
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            list.Remove(button5.Text);
+            ListText.Text = "";
+            foreach (var item in list)
+            {
+                ListText.Text += item + " ";
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            list.Remove(button6.Text);
+            ListText.Text = "";
+            foreach (var item in list)
+            {
+                ListText.Text += item + " ";
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+            list.Remove(button7.Text);
+            ListText.Text = "";
+            foreach (var item in list)
+            {
+                ListText.Text += item + " ";
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+            list.Remove(button8.Text);
+            ListText.Text = "";
+            foreach (var item in list)
+            {
+                ListText.Text += item + " ";
+            }
         }
     }
 }
