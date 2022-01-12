@@ -74,6 +74,16 @@ namespace MyCSharp04_00_List
             num6.Text = lotto[5].ToString();
             num7.Text = lotto[6].ToString();
 
+            //이걸 더 줄이고 싶다면, Label 배열 안에 num들을 넣고, 각각에 대해서
+            //changeColor 돌리면 됨
+            changeColor(num1);
+            changeColor(num2);
+            changeColor(num3);
+            changeColor(num4);
+            changeColor(num5);
+            changeColor(num6);
+            changeColor(num7);
+
 
 
         }
