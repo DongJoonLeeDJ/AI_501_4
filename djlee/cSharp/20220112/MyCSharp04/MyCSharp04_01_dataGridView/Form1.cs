@@ -26,5 +26,11 @@ namespace MyCSharp04_01_dataGridView
            // dataGridView1.Rows.Add(textBox1.Text+"a", textBox2.Text+"b");
            // dataGridView1.Rows.Remove(dataGridView1.Rows[0]);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView2.Rows.Add(textBox_name.Text, textBox_age.Text, 
+                textBox_grade.Text, textBox_score.Text);
+        }
     }
 }
