@@ -55,6 +55,7 @@
             this.uiButton1 = new Sunny.UI.UIButton();
             this.button11 = new System.Windows.Forms.Button();
             this.myControl1 = new MyCSharp04_00_List.MyControl();
+            this.userControl11 = new MyCSharp04_00_List.UserControl1();
             this.SuspendLayout();
             // 
             // btn_list_study
@@ -302,16 +303,24 @@
             // 
             // myControl1
             // 
-            this.myControl1.Location = new System.Drawing.Point(809, 83);
+            this.myControl1.Location = new System.Drawing.Point(621, 258);
             this.myControl1.Name = "myControl1";
             this.myControl1.Size = new System.Drawing.Size(445, 393);
             this.myControl1.TabIndex = 26;
+            // 
+            // userControl11
+            // 
+            this.userControl11.Location = new System.Drawing.Point(149, 364);
+            this.userControl11.Name = "userControl11";
+            this.userControl11.Size = new System.Drawing.Size(150, 150);
+            this.userControl11.TabIndex = 27;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 657);
+            this.Controls.Add(this.userControl11);
             this.Controls.Add(this.myControl1);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.uiButton1);
@@ -375,6 +384,7 @@
         private Sunny.UI.UIButton uiButton1;
         private System.Windows.Forms.Button button11;
         private MyControl myControl1;
+        private UserControl1 userControl11;
     }
 }
 

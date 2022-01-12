@@ -15,6 +15,16 @@ namespace MyCSharp04_01_dataGridView
         public Form1()
         {
             InitializeComponent();
+            //컬럼을 동적으로(=코드상에서) 추가함
+            dataGridView1.Columns.Add("name", "이름");
+            dataGridView1.Columns.Add("major", "전공");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Add(textBox1.Text, textBox2.Text);
+            //dataGridView1.Rows.Remove(dataGridView1.Rows[0]);
+            //dataGridView1.Rows.Add(textBox1.Text, textBox2.Text);
         }
     }
 }
