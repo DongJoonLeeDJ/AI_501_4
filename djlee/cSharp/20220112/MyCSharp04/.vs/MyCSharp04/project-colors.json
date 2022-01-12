@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "49c1aeb2-8b07-4d48-af0d-538ebfd82882": {
+      "ProjectGuid": "49c1aeb2-8b07-4d48-af0d-538ebfd82882",
+      "DisplayName": "MyCSharp04",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "기타 파일",
+      "ColorIndex": -1
+    },
+    "2cb75024-3e07-45cf-8bbb-b1c5530bda95": {
+      "ProjectGuid": "2cb75024-3e07-45cf-8bbb-b1c5530bda95",
+      "DisplayName": "MyCSharp04_00_List",
+      "ColorIndex": 1
+    },
+    "b88b7c09-3477-4d8b-bdc1-70895b211e8f": {
+      "ProjectGuid": "b88b7c09-3477-4d8b-bdc1-70895b211e8f",
+      "DisplayName": "MyCSharp04_01_dataGridView",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
