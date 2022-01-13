@@ -12,6 +12,23 @@ public class HelloController {
 	public String hello(Model model,
 			@RequestParam(value = "name", required = false) String name) {
 		model.addAttribute("greeting", "안녕하세요, " + name);
+		model.addAttribute("aaa", "bbbb");
 		return "hello";
+	}
+	
+	@GetMapping("/aa")
+	public String aa(Model model,
+			@RequestParam(value = "name", required = false) String name) {
+		model.addAttribute("greeting", "안녕하세요, " + name);
+		model.addAttribute("aaa", "bbbb");
+		return "aa";
+	}
+	
+	@GetMapping("/bb")
+	public String bb(Model model,
+			@RequestParam(value = "name", required = false) String name) {
+		model.addAttribute("greeting", "안녕하세요, " + name);
+		model.addAttribute("aaa", "bbbb");
+		return "bb";
 	}
 }

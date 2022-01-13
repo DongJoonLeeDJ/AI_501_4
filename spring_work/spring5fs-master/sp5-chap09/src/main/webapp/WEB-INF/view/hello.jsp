@@ -6,5 +6,7 @@
   </head>
   <body>
     인사말: ${greeting}
+    <br>
+    ${aaa }
   </body>
 </html>

@@ -28,6 +28,7 @@ def get_result(filename):
                 result_string += '*'
                 yon = "*"
         temp = re.split('\+|\-|\*',result_string)
+        # 0100 + 200
         result_string = str(int(temp[0]))+yon+str(int(temp[1]))
         print(result_string)
 

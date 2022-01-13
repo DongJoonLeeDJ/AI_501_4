@@ -1,6 +1,13 @@
 package chap02;
 
 public class Greeter {
+	
+	private static Greeter gre = new Greeter();
+	
+	public static Greeter getInstance() {
+		return gre;
+	}
+	
 	private String format;
 
 	public String greet(String guest) {

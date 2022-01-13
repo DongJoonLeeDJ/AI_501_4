@@ -15,6 +15,7 @@ for i in range(1,31):
     src = img.get_attribute('src')
 
     name = './img/'+str(i)+'.png'
+
     # download the image
     urllib.request.urlretrieve(src,name)
 
