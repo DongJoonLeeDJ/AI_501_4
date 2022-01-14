@@ -8,6 +8,8 @@ public class MemberDao {
 
 	private static long nextId = 0;
 
+	// java map 키 값 쌍으로 이루어진 자료형타입...
+	// 자료형... List, Map, Set ....
 	private Map<String, Member> map = new HashMap<>();
 
 	public Member selectByEmail(String email) {

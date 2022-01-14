@@ -16,7 +16,7 @@ import spring.VersionPrinter;
 public class AppConf2 {
 	
 	@Autowired
-	private MemberDao memberDao;
+	private MemberDao memberDao;	//자동주입
 	
 	@Autowired
 	private MemberPrinter memberPrinter;

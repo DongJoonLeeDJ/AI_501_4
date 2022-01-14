@@ -29,6 +29,9 @@ public class MainForSpring2 {
 		
 		BufferedReader reader = 
 				new BufferedReader(new InputStreamReader(System.in));
+		
+//		Scanner scan = new Scanner(system.in);
+//		scan.nextL
 		while (true) {
 			System.out.println("명령어를 입력하세요:");
 			String command = reader.readLine();
@@ -37,6 +40,7 @@ public class MainForSpring2 {
 				break;
 			}
 			if (command.startsWith("new ")) {
+				// new dron512@naver.com 홍길동 pw1234 pw1234
 				processNewCommand(command.split(" "));
 				continue;
 			} else if (command.startsWith("change ")) {
@@ -57,12 +61,15 @@ public class MainForSpring2 {
 	}
 
 	private static void processNewCommand(String[] arg) {
+		// new dron512@naver.com 홍길동 pw1234 pw1234
+		
 		if (arg.length != 5) {
 			printHelp();
 			return;
 		}
 		MemberRegisterService regSvc =
 				ctx.getBean("memberRegSvc", MemberRegisterService.class);
+		
 		RegisterRequest req = new RegisterRequest();
 		req.setEmail(arg[1]);
 		req.setName(arg[2]);

@@ -15,8 +15,11 @@ public class MyMain {
 		AnnotationConfigApplicationContext acac = 
 			new AnnotationConfigApplicationContext(MyConf.class,MyConf2.class);
 		
-		MemberDao md = acac.getBean(MemberDao.class);
-		md.doInsert();
+//		MemberDao md = acac.getBean(MemberDao.class);
+//		md.doInsert();
+		
+		MemberService ms = acac.getBean(MemberService.class);
+		ms.callInsert();
 		
 		acac.close();
 		

@@ -12,6 +12,7 @@ public class MemberRegisterService {
 	public Long regist(RegisterRequest req) {
 		Member member = memberDao.selectByEmail(req.getEmail());
 		if (member != null) {
+			// 강제 예외발생...
 			throw new DuplicateMemberException("dup email " + req.getEmail());
 		}
 		Member newMember = new Member(
