@@ -24,6 +24,7 @@ public class MainForSpring2 {
 	private static ApplicationContext ctx = null;
 	
 	public static void main(String[] args) throws IOException {
+		
 		ctx = new AnnotationConfigApplicationContext(AppConf1.class, AppConf2.class);
 		
 		BufferedReader reader = 

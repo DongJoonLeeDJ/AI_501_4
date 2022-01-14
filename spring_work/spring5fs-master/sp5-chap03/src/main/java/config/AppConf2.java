@@ -14,8 +14,10 @@ import spring.VersionPrinter;
 
 @Configuration
 public class AppConf2 {
+	
 	@Autowired
 	private MemberDao memberDao;
+	
 	@Autowired
 	private MemberPrinter memberPrinter;
 	
