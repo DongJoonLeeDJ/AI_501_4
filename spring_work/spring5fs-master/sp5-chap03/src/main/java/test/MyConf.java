@@ -1,5 +1,6 @@
 package test;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -9,7 +10,14 @@ import org.springframework.context.annotation.Import;
 public class MyConf {
 	
 	@Bean
-	public MemberDao memberdao() {
+	@Qualifier("memberdao1")
+	public MemberDao memberdao1() {
+		return new MemberDao();
+	}
+	
+	@Bean
+	@Qualifier("memberdao2")
+	public MemberDao memberdao2() {
 		return new MemberDao();
 	}
 

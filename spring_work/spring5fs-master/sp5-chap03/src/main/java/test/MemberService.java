@@ -3,6 +3,10 @@ package test;
 public class MemberService {
 	
 	private MemberDao md;
+	
+	public void setMd(MemberDao md) {
+		this.md = md;
+	}
 
 	public MemberService(MemberDao md) {
 		this.md = md;
