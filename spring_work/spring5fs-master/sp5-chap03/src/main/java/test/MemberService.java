@@ -8,10 +8,14 @@ public class MemberService {
 		this.md = md;
 	}
 	
-	public void callInsert() {
+	public void callInsert(MemberDto dto) {
 		System.out.println("md.insert호출전");
-		md.doInsert();
+		md.doInsert(dto);
 		System.out.println("md.insert호출후");
+	}
+
+	public void callList() {
+		md.doList();
 	}
 
 }

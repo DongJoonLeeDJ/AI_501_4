@@ -13,13 +13,18 @@ public class MyMain {
 	
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext acac = 
-			new AnnotationConfigApplicationContext(MyConf.class,MyConf2.class);
+			new AnnotationConfigApplicationContext(MyConf.class);
 		
 //		MemberDao md = acac.getBean(MemberDao.class);
 //		md.doInsert();
 		
 		MemberService ms = acac.getBean(MemberService.class);
-		ms.callInsert();
+		
+		ms.callInsert(new MemberDto("홍길동", 20));
+		ms.callInsert(new MemberDto("김길동", 21));
+		ms.callInsert(new MemberDto("이길동", 22));
+		
+		ms.callList();
 		
 		acac.close();
 		
