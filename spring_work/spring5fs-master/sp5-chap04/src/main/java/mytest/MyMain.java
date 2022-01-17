@@ -2,15 +2,24 @@ package mytest;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 /*
  * spring 객체 담는통안에 같은클래스 두개 들어가있을 때 구분하는 역활..
  * @Qualifier
+ * 
+ * spring - mybatis
+ * 
+ * springboot - jpa
+ * 
  */
 public class MyMain {
 	public static void main(String[] args) {
-		AnnotationConfigApplicationContext acac = 
-				new AnnotationConfigApplicationContext(MyConf.class);
+//		AnnotationConfigApplicationContext acac = 
+//				new AnnotationConfigApplicationContext(MyConf.class);
+		
+		GenericXmlApplicationContext acac = 
+				new GenericXmlApplicationContext("./mytest/myconf.xml");
 		
 		MemberDao md = acac.getBean(MemberDao.class);
 		
