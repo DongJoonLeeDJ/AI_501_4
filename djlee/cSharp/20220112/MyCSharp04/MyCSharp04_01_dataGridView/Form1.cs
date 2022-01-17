@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyCSharp04_01_dataGridView
@@ -23,13 +16,13 @@ namespace MyCSharp04_01_dataGridView
         private void button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Add(textBox1.Text, textBox2.Text);
-           // dataGridView1.Rows.Add(textBox1.Text+"a", textBox2.Text+"b");
-           // dataGridView1.Rows.Remove(dataGridView1.Rows[0]);
+            // dataGridView1.Rows.Add(textBox1.Text+"a", textBox2.Text+"b");
+            // dataGridView1.Rows.Remove(dataGridView1.Rows[0]);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            dataGridView2.Rows.Add(textBox_name.Text, textBox_age.Text, 
+            dataGridView2.Rows.Add(textBox_name.Text, textBox_age.Text,
                 textBox_grade.Text, textBox_score.Text);
         }
 

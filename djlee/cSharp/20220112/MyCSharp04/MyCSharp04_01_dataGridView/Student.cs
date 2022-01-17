@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyCSharp04_01_dataGridView
+﻿namespace MyCSharp04_01_dataGridView
 {
     public class Student
     {
