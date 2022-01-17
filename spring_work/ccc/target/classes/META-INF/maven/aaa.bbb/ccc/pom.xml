@@ -1,13 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-		http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>sp5</groupId>
-	<artifactId>sp5-chap02</artifactId>
+	<groupId>aaa.bbb</groupId>
+	<artifactId>ccc</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
+	
+	<!-- ctrl + shift + f 자동정렬 -->
+	<!-- 
+		1.MavenProject 생성
+		2.java 버전 맞추기 프로젝트 properties들어가서 buildpath 맞추기 
+		3.pom.xml
+			spring-context 버전에 맞게 dependency 설정
+	 -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -29,5 +34,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

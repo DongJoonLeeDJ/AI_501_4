@@ -112,5 +112,49 @@ from scipy.special import expit
 
 print(expit(z값들))
 
+lr = LogisticRegression(C=20, max_iter=1000)
+lr.fit(train_scaled, train_target)
+
+print(lr.score(train_scaled,train_target))
+print(lr.score(test_scaled,test_target))
+
+print(lr.predict(test_scaled[:5]))
+
+proba = lr.predict_proba(test_scaled[:5])
+print(np.round(proba,decimals=3))
+
+z값들 = lr.decision_function(test_scaled[:5])
+print(z값들)
+
+from scipy.special import softmax
+
+proba = softmax(z값들,axis=1)
+print(np.round(proba,decimals=3))
+
+'''
+    딥러닝
+    activation 활성화...
+    
+    엄청큰수가 나오더라도..
+    
+    시그모이드.. 통과 
+    양의 무한대수... 1
+    음의 무한대수... 0
+    0 1 수로 변경..
+    
+    시그모이드 
+    음성데이터,양성데이터
+    imdb 리뷰데이터...영화리뷰...
+    좋아요...싫어요... 
+    
+    나는 이 영화 좋아요... 0
+    나는 이 영화 싫어요... 1
+    
+    소프트맥스
+    
+    이미지데이터
+    바지, 원피스, 구두, 운동화,
+     
+'''
 
 
