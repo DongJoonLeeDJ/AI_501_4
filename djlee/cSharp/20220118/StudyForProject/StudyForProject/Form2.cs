@@ -104,5 +104,15 @@ namespace StudyForProject
         {
             executeQuery($"insert into myoracletest values ({textBox1.Text}, '{textBox2.Text}')");
         }
+
+        private void button_update_Click(object sender, EventArgs e)
+        {
+            executeQuery($"update myoracletest set name='{textBox2.Text}' where id={textBox1.Text}");
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            executeQuery($"delete from myoracletest where id={textBox1.Text}");
+        }
     }
 }
