@@ -23,6 +23,8 @@ namespace ConnectDBStudy
 
        public static DataSet ds;
 
+        const string TABLE = "kb_student";
+
        private static void ConnectDB()
         {
             try
@@ -41,14 +43,14 @@ namespace ConnectDBStudy
         {
             ConnectDB(); //db연결 해주고 나서, select문 날리는거다.
 
-            string sql = "select * from kb_student";
+            string sql = "select * from "+ TABLE;
             OracleDataAdapter oda = new OracleDataAdapter();
             oda.SelectCommand = new OracleCommand();
             oda.SelectCommand.Connection = OraConn;
             oda.SelectCommand.CommandText = sql;  //select문 날리는 부분
 
             ds = new DataSet();
-            oda.Fill(ds, "kb_student");
+            oda.Fill(ds, TABLE);
 
             //List<MyTest> tests = new List<MyTest>();
             
@@ -94,15 +96,15 @@ namespace ConnectDBStudy
                 {
                     //이렇게 어떤 건 따옴표, 어떤건 따옴표 안 주니 헷갈리므로
                     //실무에서는 그냥 varchar2로 통일하는 법도 있다.
-                    query = $"insert into kb_student values({hakbeon},'{name}',{age},'{gender}')";
+                    query = $"insert into {TABLE} values({hakbeon},'{name}',{age},'{gender}')";
                 }
                 else if(menu == "update")
                 {
-                    query = $"update kb_student set name='{name}', age={age}, gender='{gender}' where hakbeon={hakbeon}";
+                    query = $"update {TABLE} set name='{name}', age={age}, gender='{gender}' where hakbeon={hakbeon}";
                 }
                 else if(menu == "delete") //delete일 땐 name, age, gender 안 씀
                 {
-                    query = $"delete from kb_student where hakbeon={hakbeon}";
+                    query = $"delete from {TABLE} where hakbeon={hakbeon}";
                 }
                 else
                 {
