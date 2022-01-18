@@ -52,5 +52,26 @@ namespace ConnectDBStudy
             DataManager.executeQuery("delete", int.Parse(textBox1.Text));
             refreshGridView();
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //dataGridView1.CurrentRow.DataBoundItem
+                //내가 클릭한 줄을 하나의 데이터로써 불러옴
+                //그 데이터를 KBStudent로 변환함
+                //이게 가능한 이유는 이 datagridview의 datasource가 kbstudent로 되었기때문
+                KBStudent temp = dataGridView1.CurrentRow.DataBoundItem as KBStudent;
+                textBox1.Text = temp.hakbeon+"";
+                textBox2.Text = temp.name;
+                textBox3.Text = temp.age.ToString(); //ToString을 하든 ""을 하든 상관없다.
+                textBox4.Text = temp.gender;
+            }
+            catch (Exception)
+            {
+
+                //throw;
+            }
+        }
     }
 }
