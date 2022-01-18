@@ -1,0 +1,11 @@
+1. update, insert, delete 되었을 때, 바로 select되서
+화면에 바로 보이게 하기
+
+
+2. 테이블 설계해서 datagridview에 띄워보기
++crud 되게 하기
+ex) KB_Student table
+기본키 : 학번(number)
+이름(varchar2)
+나이(age)
+성별(gender)         이런식으로 해보기
