@@ -62,6 +62,9 @@ namespace StudyForProject
 
         private void btn_insert_Click(object sender, System.EventArgs e)
         {
+
+
+
             //db랑 연결 -> 똑같은 코드가 계속 반복 됨...
             //오라클 연결하는 부분
             try
@@ -84,11 +87,54 @@ namespace StudyForProject
                 //db 연결 닫기
                 OraConn.Close();
             }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message); // 에러 메시지 출력
+                MessageBox.Show(ex.StackTrace); //어디서 에러났는지 출력
+                throw; //에러메시지 던지고 프로그램 꺼짐(계속하기 누르면 계속 되긴 함)
+            }
+
+
+
+        }
+
+        private void btn_update_Click(object sender, System.EventArgs e)
+
+        {
+
+
+
+            //db랑 연결 -> 똑같은 코드가 계속 반복 됨...
+            //오라클 연결하는 부분
+            try
+            {
+                OraConn = new OracleConnection(ORADB);
+                OraConn.Open();
+            }
             catch (System.Exception)
             {
-
                 throw;
             }
+            try
+            {
+                //db에 update문 전송
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = OraConn;
+                cmd.CommandText = $"update myoracletest set name='{textBox_Name.Text}' where id={textBox_ID.Text}";
+                //$"insert into teacher values ('{textBox_Name.Text}', {textBox_ID.Text}, '{textBox_Name.Text}')";
+                cmd.ExecuteNonQuery();
+                //db 연결 닫기
+                OraConn.Close();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message); // 에러 메시지 출력
+                MessageBox.Show(ex.StackTrace); //어디서 에러났는지 출력
+                throw; //에러메시지 던지고 프로그램 꺼짐(계속하기 누르면 계속 되긴 함)
+            }
+
+
+
         }
     }
 }

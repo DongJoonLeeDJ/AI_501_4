@@ -31,14 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_connect_select = new System.Windows.Forms.Button();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.myTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_insert = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_ID = new System.Windows.Forms.TextBox();
             this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.myTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_update = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myTestBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,24 +70,6 @@
             this.btn_connect_select.Text = "연결 및 전체 출력";
             this.btn_connect_select.UseVisualStyleBackColor = true;
             this.btn_connect_select.Click += new System.EventHandler(this.btn_connect_select_Click);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // myTestBindingSource
-            // 
-            this.myTestBindingSource.DataSource = typeof(StudyForProject.MyTest);
             // 
             // btn_insert
             // 
@@ -130,11 +113,40 @@
             this.textBox_Name.Size = new System.Drawing.Size(100, 21);
             this.textBox_Name.TabIndex = 6;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // myTestBindingSource
+            // 
+            this.myTestBindingSource.DataSource = typeof(StudyForProject.MyTest);
+            // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(24, 331);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.TabIndex = 7;
+            this.btn_update.Text = "수정";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_update);
             this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.textBox_ID);
             this.Controls.Add(this.label2);
@@ -163,6 +175,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_ID;
         private System.Windows.Forms.TextBox textBox_Name;
+        private System.Windows.Forms.Button btn_update;
     }
 }
 
