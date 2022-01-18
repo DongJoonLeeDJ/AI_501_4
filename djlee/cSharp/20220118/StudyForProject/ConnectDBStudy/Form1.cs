@@ -16,5 +16,11 @@ namespace ConnectDBStudy
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //DataManager.querySelect()
+            dataGridView1.DataSource = DataManager.kBStudents;
+        }
     }
 }

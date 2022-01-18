@@ -19,11 +19,11 @@ namespace ConnectDBStudy
        "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))" +
        "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
        "User Id=c##scott;Password=tiger;"; //오라클 연결시 필요한 기본 정보들(id,pw,port 등)
-        OracleConnection OraConn = new OracleConnection();
+       static OracleConnection OraConn = new OracleConnection();
 
        public static DataSet ds;
 
-       private void ConnectDB()
+       private static void ConnectDB()
         {
             try
             {
@@ -37,7 +37,7 @@ namespace ConnectDBStudy
             }
         }
 
-        public void selectQuery()
+        public static void selectQuery()
         {
             ConnectDB(); //db연결 해주고 나서, select문 날리는거다.
 
@@ -79,7 +79,7 @@ namespace ConnectDBStudy
         //executeQuery("update",1,"DongJooneLee",34, "여자");
         //executeQuery("delete",2);
 
-        public void executeQuery(string menu, int hakbeon, string name=null, int age=0, string gender="남자")
+        public static void executeQuery(string menu, int hakbeon, string name=null, int age=0, string gender="남자")
         {
             ConnectDB();
 
