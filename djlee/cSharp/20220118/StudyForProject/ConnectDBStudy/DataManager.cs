@@ -6,7 +6,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConnectDBStudy
+
+//namespace = 이름공간
+//똑같은 이름을 또 쓰고 싶을 때...
+//다른 이름공간에서 이 이름을 쓴다.
+namespace MyNamespace
+{
+    public class DataManager { public int age { get; set; } }
+}
+
+//namespace
+//쉽게말하면
+//namespace= 프로그램명 = 프로젝트명
+namespace ConnectDBStudy 
 {
     public class DataManager
     {
