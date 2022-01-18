@@ -10,10 +10,9 @@ namespace StudyForProject
         const string ORADB = "Data Source=(DESCRIPTION=(ADDRESS_LIST=" +
                "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))" +
                "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
-               "User Id=c##scott;Password=tiger;";
+               "User Id=c##scott;Password=tiger;"; //오라클 연결시 필요한 기본 정보들(id,pw,port 등)
         OracleConnection OraConn = new OracleConnection();
 
-        OracleCommand cmd = new OracleCommand();
         DataSet ds;
 
         public Form1()
@@ -28,7 +27,6 @@ namespace StudyForProject
             {
                 OraConn = new OracleConnection(ORADB);
                 OraConn.Open(); //oracle db를 열었다.
-                cmd = new OracleCommand(); //커멘드라인 저장할 객체 생성
             }
             catch (System.Exception ex)
             {
@@ -37,7 +35,7 @@ namespace StudyForProject
             //쿼리문 날리기
             string sql = "select * from myoracletest"; //문자열 안에 세미콜론 넣지 말기
             OracleDataAdapter oda = new OracleDataAdapter();
-            oda.SelectCommand = new OracleCommand();
+            oda.SelectCommand = new OracleCommand(); //커멘드라인 저장할 객체 생성
             oda.SelectCommand.Connection = OraConn;
             oda.SelectCommand.CommandText = sql;
 
