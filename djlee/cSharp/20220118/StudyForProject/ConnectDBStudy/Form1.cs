@@ -21,7 +21,7 @@ namespace ConnectDBStudy
         {
             dataGridView1.DataSource = null;
             //이거 예외처리없으면... kBStudents가 0칸 일 때 이 코드 수행시 프로그램 튕김
-            if (dataGridView1.Rows.Count > 0) 
+            if (DataManager.kBStudents.Count > 0) 
                 dataGridView1.DataSource = DataManager.kBStudents;
         }
 
