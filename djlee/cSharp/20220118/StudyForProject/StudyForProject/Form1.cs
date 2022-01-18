@@ -59,5 +59,35 @@ namespace StudyForProject
             //db연결 닫기
             OraConn.Close();
         }
+
+        private void btn_insert_Click(object sender, System.EventArgs e)
+        {
+            //db랑 연결 -> 똑같은 코드가 계속 반복 됨...
+            //오라클 연결하는 부분
+            try
+            {
+                OraConn = new OracleConnection(ORADB);
+                OraConn.Open();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
+            try
+            {
+                //db에 insert문 전송
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = OraConn;
+                cmd.CommandText = $"insert into myoracletest values ({textBox_ID.Text},'{textBox_Name.Text}')";
+                cmd.ExecuteNonQuery();
+                //db 연결 닫기
+                OraConn.Close();
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
