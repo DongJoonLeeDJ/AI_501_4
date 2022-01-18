@@ -25,7 +25,7 @@ namespace StudyForProject
             //오라클 연결하는 부분
             try
             {
-                OraConn = new OracleConnection(ORADB);
+                OraConn = new OracleConnection(ORADB); //오라클 접속
                 OraConn.Open(); //oracle db를 열었다.
             }
             catch (System.Exception ex)
@@ -36,8 +36,8 @@ namespace StudyForProject
             string sql = "select * from myoracletest"; //문자열 안에 세미콜론 넣지 말기
             OracleDataAdapter oda = new OracleDataAdapter();
             oda.SelectCommand = new OracleCommand(); //커멘드라인 저장할 객체 생성
-            oda.SelectCommand.Connection = OraConn;
-            oda.SelectCommand.CommandText = sql;
+            oda.SelectCommand.Connection = OraConn; //어디에 접속할지 정함
+            oda.SelectCommand.CommandText = sql; //쿼리문 날림
 
             ds = new DataSet(); //데이터를 저장하는 DataSet 객체 생성
             oda.Fill(ds, "myoracletest"); //DataSet에 쿼리 결과물을 저장하는 코드
@@ -47,8 +47,8 @@ namespace StudyForProject
             //테이블에 있는 데이터만큼 foreach문을 수행함
             foreach (DataRow item in ds.Tables[0].Rows) //DataSet에 테이블이 여러개가 들어갈 수 있는 데, 현재는 하나만 들어간 거.
             {
-                MyTest myTest = new MyTest();
-                myTest.name = item["Name"].ToString();
+                MyTest myTest = new MyTest(); //인스턴스 생성
+                myTest.name = item["Name"].ToString(); //각 속성들 값을 ds에서 읽어옴
                 myTest.id = int.Parse(item["ID"].ToString());
                 tests.Add(myTest);
             }
