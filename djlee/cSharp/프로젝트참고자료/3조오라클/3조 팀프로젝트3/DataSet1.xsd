@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.숙박예약관리.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.OracleClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="총사업장정보TableAdapter" GeneratorDataComponentClassName="총사업장정보TableAdapter" Name="총사업장정보" UserDataComponentName="총사업장정보TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectName="TEAM3.총사업장정보" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT "사업장주소", "업주번호", "사업장이름", "일련번호", "방타입", "방개수", "요금" FROM TEAM3."총사업장정보"</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="사업장주소" DataSetColumn="사업장주소" />
+              <Mapping SourceColumn="업주번호" DataSetColumn="업주번호" />
+              <Mapping SourceColumn="사업장이름" DataSetColumn="사업장이름" />
+              <Mapping SourceColumn="일련번호" DataSetColumn="일련번호" />
+              <Mapping SourceColumn="방타입" DataSetColumn="방타입" />
+              <Mapping SourceColumn="방개수" DataSetColumn="방개수" />
+              <Mapping SourceColumn="요금" DataSetColumn="요금" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="총사업장정보" msprop:Generator_TableClassName="총사업장정보DataTable" msprop:Generator_TableVarName="table총사업장정보" msprop:Generator_RowChangedName="총사업장정보RowChanged" msprop:Generator_TablePropName="총사업장정보" msprop:Generator_RowDeletingName="총사업장정보RowDeleting" msprop:Generator_RowChangingName="총사업장정보RowChanging" msprop:Generator_RowEvHandlerName="총사업장정보RowChangeEventHandler" msprop:Generator_RowDeletedName="총사업장정보RowDeleted" msprop:Generator_RowClassName="총사업장정보Row" msprop:Generator_UserTableName="총사업장정보" msprop:Generator_RowEvArgName="총사업장정보RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="사업장주소" msprop:Generator_ColumnVarNameInTable="column사업장주소" msprop:Generator_ColumnPropNameInRow="사업장주소" msprop:Generator_ColumnPropNameInTable="사업장주소Column" msprop:Generator_UserColumnName="사업장주소" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="업주번호" msprop:Generator_ColumnVarNameInTable="column업주번호" msprop:Generator_ColumnPropNameInRow="업주번호" msprop:Generator_ColumnPropNameInTable="업주번호Column" msprop:Generator_UserColumnName="업주번호" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="사업장이름" msprop:Generator_ColumnVarNameInTable="column사업장이름" msprop:Generator_ColumnPropNameInRow="사업장이름" msprop:Generator_ColumnPropNameInTable="사업장이름Column" msprop:Generator_UserColumnName="사업장이름" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="80" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="일련번호" msprop:Generator_ColumnVarNameInTable="column일련번호" msprop:Generator_ColumnPropNameInRow="일련번호" msprop:Generator_ColumnPropNameInTable="일련번호Column" msprop:Generator_UserColumnName="일련번호">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="방타입" msprop:Generator_ColumnVarNameInTable="column방타입" msprop:Generator_ColumnPropNameInRow="방타입" msprop:Generator_ColumnPropNameInTable="방타입Column" msprop:Generator_UserColumnName="방타입" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="방개수" msprop:Generator_ColumnVarNameInTable="column방개수" msprop:Generator_ColumnPropNameInRow="방개수" msprop:Generator_ColumnPropNameInTable="방개수Column" msprop:Generator_UserColumnName="방개수" type="xs:decimal" minOccurs="0" />
+              <xs:element name="요금" msprop:Generator_ColumnVarNameInTable="column요금" msprop:Generator_ColumnPropNameInRow="요금" msprop:Generator_ColumnPropNameInTable="요금Column" msprop:Generator_UserColumnName="요금" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
