@@ -102,8 +102,19 @@ namespace StudyForProject
 
         {
 
-
-
+            //Name이 label3인 것을 form주에서 찾아내서 그 것의 text 변경
+            //foreach (var item in Controls)
+            //for(int i = 0; i<Controls.Count; i++)
+            //{
+            //    if(Controls[i] is Label)
+            //    {
+            //        if((Controls[i] as Label).Name == "label3")
+            //        {
+            //            Controls[i].Text = "zzzz";
+            //        }
+            //    }
+            //}
+            
             //db랑 연결 -> 똑같은 코드가 계속 반복 됨...
             //오라클 연결하는 부분
             try
@@ -169,6 +180,11 @@ namespace StudyForProject
                 throw; //에러메시지 던지고 프로그램 꺼짐(계속하기 누르면 계속 되긴 함)
             }
 
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            new Form2().Show();
         }
     }
 }

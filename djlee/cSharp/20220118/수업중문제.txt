@@ -9,3 +9,5 @@ ex) KB_Student table
 이름(varchar2)
 나이(age)
 성별(gender)         이런식으로 해보기
+
+3. 다하신 분들은 프로젝트에 대해서 얘기해보기
