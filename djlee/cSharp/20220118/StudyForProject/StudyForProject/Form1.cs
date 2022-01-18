@@ -79,6 +79,7 @@ namespace StudyForProject
                 OracleCommand cmd = new OracleCommand();
                 cmd.Connection = OraConn;
                 cmd.CommandText = $"insert into myoracletest values ({textBox_ID.Text},'{textBox_Name.Text}')";
+                //$"insert into teacher values ('{textBox_Name.Text}', {textBox_ID.Text}, '{textBox_Name.Text}')";
                 cmd.ExecuteNonQuery();
                 //db 연결 닫기
                 OraConn.Close();
