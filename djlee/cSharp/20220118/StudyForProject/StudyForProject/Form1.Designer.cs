@@ -36,10 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_ID = new System.Windows.Forms.TextBox();
             this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.btn_update = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.myTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btn_update = new System.Windows.Forms.Button();
+            this.btn_delete = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myTestBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -113,6 +117,16 @@
             this.textBox_Name.Size = new System.Drawing.Size(100, 21);
             this.textBox_Name.TabIndex = 6;
             // 
+            // btn_update
+            // 
+            this.btn_update.Location = new System.Drawing.Point(24, 331);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(75, 23);
+            this.btn_update.TabIndex = 7;
+            this.btn_update.Text = "수정";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -131,21 +145,53 @@
             // 
             this.myTestBindingSource.DataSource = typeof(StudyForProject.MyTest);
             // 
-            // btn_update
+            // btn_delete
             // 
-            this.btn_update.Location = new System.Drawing.Point(24, 331);
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(75, 23);
-            this.btn_update.TabIndex = 7;
-            this.btn_update.Text = "수정";
-            this.btn_update.UseVisualStyleBackColor = true;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            this.btn_delete.Location = new System.Drawing.Point(24, 389);
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete.TabIndex = 8;
+            this.btn_delete.Text = "삭제";
+            this.btn_delete.UseVisualStyleBackColor = true;
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(195, 350);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "수정";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(276, 355);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(478, 12);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "ctrl키를 누르고 드래그해도 복사는 되는 데, 이 버튼은 원본이랑 똑같은 이벤트랑 연결됨";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(116, 394);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(288, 12);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "ctrl+c, ctrl+v 하면 이벤트를 내가 따로 설정해줘야 함";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btn_delete);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_update);
             this.Controls.Add(this.textBox_Name);
             this.Controls.Add(this.textBox_ID);
@@ -176,6 +222,10 @@
         private System.Windows.Forms.TextBox textBox_ID;
         private System.Windows.Forms.TextBox textBox_Name;
         private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Button btn_delete;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
