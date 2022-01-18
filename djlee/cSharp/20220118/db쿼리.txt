@@ -1,0 +1,31 @@
+create table MyoracleTest
+(
+   id int primary key,
+   name varchar2(20)
+);
+select * from teacher;
+select * from myoracletest;
+insert into MyoracleTest values(1, 'lee');
+insert into MyoracleTest values(2,'park');
+
+insert into teacher values('aaa',1.9,'11234');
+commit;
+
+
+create table KB_STUDENT
+(
+ hakbeon number primary key,
+ name varchar2(100),
+ age int,
+ gender varchar2(10)
+);
+--int를 적어도 number로 변환이 됨
+
+commit;
+
+
+
+
+
+
+

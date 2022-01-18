@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudyForProject", "StudyForProject\StudyForProject.csproj", "{544A5F17-744B-4A0D-A968-FD3CEE92FB98}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectDBStudy", "ConnectDBStudy\ConnectDBStudy.csproj", "{4998A244-7EDB-470D-8A33-86F9AA76F7F2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{544A5F17-744B-4A0D-A968-FD3CEE92FB98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{544A5F17-744B-4A0D-A968-FD3CEE92FB98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{544A5F17-744B-4A0D-A968-FD3CEE92FB98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4998A244-7EDB-470D-8A33-86F9AA76F7F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4998A244-7EDB-470D-8A33-86F9AA76F7F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4998A244-7EDB-470D-8A33-86F9AA76F7F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4998A244-7EDB-470D-8A33-86F9AA76F7F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
