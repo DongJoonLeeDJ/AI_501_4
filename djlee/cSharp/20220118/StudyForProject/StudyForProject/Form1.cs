@@ -11,10 +11,10 @@ namespace StudyForProject
                "(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))" +
                "(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=XE)));" +
                "User Id=c##scott;Password=tiger;";
-        public static OracleConnection OraConn = new OracleConnection();
+        OracleConnection OraConn = new OracleConnection();
 
         OracleCommand cmd = new OracleCommand();
-        public static DataSet ds;
+        DataSet ds;
 
         public Form1()
         {
