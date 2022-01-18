@@ -70,11 +70,39 @@ namespace StudyForProject
 
         }
 
+        public void executeQuery(string query)
+        {
+            ConnectDB();
+
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = OraConn;
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            OraConn.Close();
+
+            selectQuery(); //db 연결해서 추가,수정,삭제 후 db닫고, 다시 db 연결해서
+                            //조회하고, db연결 닫음
+        }
+
 
 
         private void button_select_Click(object sender, EventArgs e)
         {
             selectQuery();
+        }
+
+        private void button_insert_Click(object sender, EventArgs e)
+        {
+            executeQuery($"insert into myoracletest values ({textBox1.Text}, '{textBox2.Text}')");
         }
     }
 }

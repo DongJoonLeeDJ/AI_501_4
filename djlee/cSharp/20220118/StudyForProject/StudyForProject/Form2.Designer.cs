@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.myTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.myTestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button_select = new System.Windows.Forms.Button();
             this.button_insert = new System.Windows.Forms.Button();
             this.button_update = new System.Windows.Forms.Button();
@@ -62,10 +62,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(743, 196);
             this.dataGridView1.TabIndex = 0;
             // 
-            // myTestBindingSource
-            // 
-            this.myTestBindingSource.DataSource = typeof(StudyForProject.MyTest);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -79,6 +75,10 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // myTestBindingSource
+            // 
+            this.myTestBindingSource.DataSource = typeof(StudyForProject.MyTest);
             // 
             // button_select
             // 
@@ -98,6 +98,7 @@
             this.button_insert.TabIndex = 2;
             this.button_insert.Text = "insert";
             this.button_insert.UseVisualStyleBackColor = true;
+            this.button_insert.Click += new System.EventHandler(this.button_insert_Click);
             // 
             // button_update
             // 
