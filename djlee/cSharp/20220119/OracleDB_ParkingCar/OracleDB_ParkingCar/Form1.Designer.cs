@@ -174,6 +174,7 @@
             this.button_park_in.TabIndex = 8;
             this.button_park_in.Text = "주차";
             this.button_park_in.UseVisualStyleBackColor = true;
+            this.button_park_in.Click += new System.EventHandler(this.button_park_in_Click);
             // 
             // button_park_out
             // 

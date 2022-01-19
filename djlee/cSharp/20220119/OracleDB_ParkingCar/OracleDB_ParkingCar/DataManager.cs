@@ -155,6 +155,8 @@ namespace OracleDB_ParkingCar
             }
 
             OraConn.Close();
+
+            selectQuery(); //수정 삭제 삽입 후 테이블 조회해서 cars List 업데이트 시킴
         }
 
     }
