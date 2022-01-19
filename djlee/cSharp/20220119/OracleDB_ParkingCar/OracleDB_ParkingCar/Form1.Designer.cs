@@ -43,7 +43,7 @@
             this.button_park_in = new System.Windows.Forms.Button();
             this.button_park_out = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox_parkingspot_manager = new System.Windows.Forms.TextBox();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.dataGridView_parkingcar = new System.Windows.Forms.DataGridView();
@@ -83,7 +83,7 @@
             // 
             this.groupBox2.Controls.Add(this.button_delete);
             this.groupBox2.Controls.Add(this.button_add);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.textBox_parkingspot_manager);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Location = new System.Drawing.Point(365, 32);
             this.groupBox2.Name = "groupBox2";
@@ -193,12 +193,12 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "공간번호";
             // 
-            // textBox5
+            // textBox_parkingspot_manager
             // 
-            this.textBox5.Location = new System.Drawing.Point(72, 32);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 21);
-            this.textBox5.TabIndex = 1;
+            this.textBox_parkingspot_manager.Location = new System.Drawing.Point(72, 32);
+            this.textBox_parkingspot_manager.Name = "textBox_parkingspot_manager";
+            this.textBox_parkingspot_manager.Size = new System.Drawing.Size(100, 21);
+            this.textBox_parkingspot_manager.TabIndex = 1;
             // 
             // button_add
             // 
@@ -315,7 +315,7 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_add;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox_parkingspot_manager;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView_parkingcar;
         private System.Windows.Forms.DataGridViewTextBoxColumn parkingSpotDataGridViewTextBoxColumn;
