@@ -82,14 +82,6 @@ namespace CarManager_Modified
             ds = new DataSet();
             oda.Fill(ds, TABLE);
 
-            //List<MyTest> tests = new List<MyTest>();
-
-            //parkingCars.Clear(); //기존에 있는 걸 지움
-
-            foreach (DataRow item in ds.Tables[0].Rows)
-            {
-                //parkingCars.Add(car); //그 데이터들을 Cars에 넣음
-            }
             ParkingCar car = new ParkingCar();
             car.ParkingSpot = int.Parse(ds.Tables[0].Rows[0]["ParkingSpot"].ToString());
             car.CarNumber = ds.Tables[0].Rows[0]["CarNumber"].ToString();
@@ -152,7 +144,7 @@ namespace CarManager_Modified
             catch (Exception ex)
             {
                 //System.Windows.Forms.MessageBox.Show(ex.StackTrace);
-                throw new Exception("이미 존재하는 공간입니다.");
+                throw new Exception(ex.Message + "오류위치"+Environment.NewLine+ex.StackTrace);
             }
 
             OraConn.Close();
