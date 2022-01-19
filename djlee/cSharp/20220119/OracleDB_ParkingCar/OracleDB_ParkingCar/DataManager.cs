@@ -151,6 +151,7 @@ namespace OracleDB_ParkingCar
             catch (Exception ex) //쿼리문에 문제 생길 시 오류 발생
             {
                 //쿼리문과 함께 오류 메시지들 출력
+                OraConn.Close(); //쿼리 날렸을 때 실패하면 db접속을 닫아준다.
                 throw new Exception(query+ "_" +ex.Message+"오류위치"+Environment.NewLine+ex.StackTrace);
             }
 

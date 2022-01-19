@@ -47,12 +47,12 @@
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
             this.dataGridView_parkingcar = new System.Windows.Forms.DataGridView();
-            this.parkingCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.parkingSpotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.driverNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.parkingTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.parkingCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -210,6 +210,7 @@
             this.button_add.TabIndex = 2;
             this.button_add.Text = "공간추가";
             this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // button_delete
             // 
@@ -219,6 +220,7 @@
             this.button_delete.TabIndex = 3;
             this.button_delete.Text = "공간삭제";
             this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // dataGridView_parkingcar
             // 
@@ -239,10 +241,7 @@
             this.dataGridView_parkingcar.RowTemplate.Height = 23;
             this.dataGridView_parkingcar.Size = new System.Drawing.Size(644, 219);
             this.dataGridView_parkingcar.TabIndex = 0;
-            // 
-            // parkingCarBindingSource
-            // 
-            this.parkingCarBindingSource.DataSource = typeof(OracleDB_ParkingCar.ParkingCar);
+            this.dataGridView_parkingcar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_parkingcar_CellClick);
             // 
             // parkingSpotDataGridViewTextBoxColumn
             // 
@@ -278,6 +277,10 @@
             this.parkingTimeDataGridViewTextBoxColumn.HeaderText = "ParkingTime";
             this.parkingTimeDataGridViewTextBoxColumn.Name = "parkingTimeDataGridViewTextBoxColumn";
             this.parkingTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // parkingCarBindingSource
+            // 
+            this.parkingCarBindingSource.DataSource = typeof(OracleDB_ParkingCar.ParkingCar);
             // 
             // Form1
             // 

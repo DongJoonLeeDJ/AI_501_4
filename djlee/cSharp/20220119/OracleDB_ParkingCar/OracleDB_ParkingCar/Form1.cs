@@ -117,5 +117,28 @@ namespace OracleDB_ParkingCar
                 MessageBox.Show(ex.StackTrace);
             }
         }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            DataManager.executeQuery("insert", textBox_parkingspot_manager.Text);
+            refreshScreen();
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            DataManager.executeQuery("delete", textBox_parkingspot_manager.Text);
+            refreshScreen();
+        }
+
+        private void dataGridView_parkingcar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            ParkingCar car = dataGridView_parkingcar.CurrentRow.DataBoundItem as ParkingCar;
+            textBox_parkingspot.Text = car.ParkingSpot.ToString();
+            textBox_parkingspot_manager.Text = textBox_parkingspot.Text;
+
+            textBox_carnumber.Text = car.CarNumber;
+            textBox_drivername.Text = car.DriverName;
+            textBox_phonenumber.Text = car.PhoneNumber;
+        }
     }
 }
