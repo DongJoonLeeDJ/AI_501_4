@@ -184,6 +184,7 @@
             this.button_park_out.TabIndex = 9;
             this.button_park_out.Text = "출차";
             this.button_park_out.UseVisualStyleBackColor = true;
+            this.button_park_out.Click += new System.EventHandler(this.button_park_out_Click);
             // 
             // label5
             // 

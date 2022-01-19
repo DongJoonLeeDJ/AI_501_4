@@ -64,6 +64,51 @@ namespace OracleDB_ParkingCar
                 }
                 else 
                 {
+                    //주차상태 - 테이블
+                    //해당 주차공간을 update함
+                    //차번호 차주이름 폰번호
+                    DataManager.executeQuery("update", textBox_parkingspot.Text, textBox_carnumber.Text,
+                        textBox_drivername.Text, textBox_phonenumber.Text);
+                    DataManager.selectQuery();
+                    refreshScreen();
+                    // dataGridView_parkingcar.DataSource = null;
+                    // dataGridView_parkingcar.DataSource = DataManager.cars;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.StackTrace);
+            }
+        }
+
+        private void button_park_out_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (textBox_parkingspot.Text == "") //주차공간을 누락시킨 경우
+                {
+                    MessageBox.Show("주차 공간 입력하세요.");
+                    return;
+                }
+                ParkingCar car = DataManager.selectQuery(int.Parse(textBox_parkingspot.Text));
+
+                if (car.CarNumber == "")//해당 주차공간에 CarNumber값이 존재하는 경우.
+                {
+                    MessageBox.Show("아직 차가 없습니다.");
+                }
+                else
+                {
+                    //주차상태 - 테이블
+                    //해당 주차공간을 update함
+                    //차번호 차주이름 폰번호
+                    DataManager.executeQuery("update", textBox_parkingspot.Text, "", "", "");
+                    DataManager.selectQuery();
+                    refreshScreen();
+                    //dataGridView_parkingcar.DataSource = null;
+                    //dataGridView_parkingcar.DataSource = DataManager.cars;
+
                 }
             }
             catch (Exception ex)

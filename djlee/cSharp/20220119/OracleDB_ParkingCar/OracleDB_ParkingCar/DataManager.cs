@@ -136,7 +136,7 @@ namespace OracleDB_ParkingCar
         //executeQuery("update",1,"30규1234","이동준","010-2940-1613")
         //삽입, 삭제, 수정 역할 함
         //삽입 : 주차공간 추가, 삭제 : 주차공간 삭제, 수정 : 주차 및 출차처리
-        static void executeQuery(string menu, string parkingSpot, string carNumber=null, string driverName=null, string phoneNumber=null)
+        public static void executeQuery(string menu, string parkingSpot, string carNumber=null, string driverName=null, string phoneNumber=null)
         {
             ConnectDB();
             string query = "";
