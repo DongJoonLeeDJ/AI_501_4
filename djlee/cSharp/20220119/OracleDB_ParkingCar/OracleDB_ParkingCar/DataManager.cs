@@ -132,5 +132,30 @@ namespace OracleDB_ParkingCar
             return query;
         }
 
+        //executeQuery("delete",1)
+        //executeQuery("update",1,"30규1234","이동준","010-2940-1613")
+        //삽입, 삭제, 수정 역할 함
+        //삽입 : 주차공간 추가, 삭제 : 주차공간 삭제, 수정 : 주차 및 출차처리
+        static void executeQuery(string menu, string parkingSpot, string carNumber=null, string driverName=null, string phoneNumber=null)
+        {
+            ConnectDB();
+            string query = "";
+            try
+            {
+                OracleCommand cmd = new OracleCommand();
+                cmd.Connection = OraConn;
+                query = Query(menu, parkingSpot, carNumber, driverName, phoneNumber);
+                cmd.CommandText = query;
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex) //쿼리문에 문제 생길 시 오류 발생
+            {
+                //쿼리문과 함께 오류 메시지들 출력
+                throw new Exception(query+ "_" +ex.Message+"오류위치"+Environment.NewLine+ex.StackTrace);
+            }
+
+            OraConn.Close();
+        }
+
     }
 }
