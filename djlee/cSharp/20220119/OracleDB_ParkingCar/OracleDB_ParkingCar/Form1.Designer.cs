@@ -46,7 +46,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.button_add = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_parkingcar = new System.Windows.Forms.DataGridView();
             this.parkingCarBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.parkingSpotDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,7 +56,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_parkingcar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkingCarBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.dataGridView_parkingcar);
             this.groupBox3.Location = new System.Drawing.Point(29, 175);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(663, 245);
@@ -218,25 +218,25 @@
             this.button_delete.Text = "공간삭제";
             this.button_delete.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridView_parkingcar
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_parkingcar.AllowUserToAddRows = false;
+            this.dataGridView_parkingcar.AllowUserToDeleteRows = false;
+            this.dataGridView_parkingcar.AutoGenerateColumns = false;
+            this.dataGridView_parkingcar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_parkingcar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.parkingSpotDataGridViewTextBoxColumn,
             this.carNumberDataGridViewTextBoxColumn,
             this.driverNameDataGridViewTextBoxColumn,
             this.phoneNumberDataGridViewTextBoxColumn,
             this.parkingTimeDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.parkingCarBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(644, 219);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridView_parkingcar.DataSource = this.parkingCarBindingSource;
+            this.dataGridView_parkingcar.Location = new System.Drawing.Point(13, 20);
+            this.dataGridView_parkingcar.Name = "dataGridView_parkingcar";
+            this.dataGridView_parkingcar.ReadOnly = true;
+            this.dataGridView_parkingcar.RowTemplate.Height = 23;
+            this.dataGridView_parkingcar.Size = new System.Drawing.Size(644, 219);
+            this.dataGridView_parkingcar.TabIndex = 0;
             // 
             // parkingCarBindingSource
             // 
@@ -292,7 +292,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_parkingcar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.parkingCarBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -317,7 +317,7 @@
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_parkingcar;
         private System.Windows.Forms.DataGridViewTextBoxColumn parkingSpotDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn carNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn driverNameDataGridViewTextBoxColumn;
