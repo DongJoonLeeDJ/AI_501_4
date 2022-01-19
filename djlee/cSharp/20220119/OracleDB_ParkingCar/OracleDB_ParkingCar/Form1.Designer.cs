@@ -32,10 +32,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox_parkingspot = new System.Windows.Forms.TextBox();
+            this.textBox_carnumber = new System.Windows.Forms.TextBox();
+            this.textBox_drivername = new System.Windows.Forms.TextBox();
+            this.textBox_phonenumber = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,10 +68,10 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox_phonenumber);
+            this.groupBox1.Controls.Add(this.textBox_drivername);
+            this.groupBox1.Controls.Add(this.textBox_carnumber);
+            this.groupBox1.Controls.Add(this.textBox_parkingspot);
             this.groupBox1.Location = new System.Drawing.Point(29, 22);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(301, 147);
@@ -102,33 +102,33 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "주차현황";
             // 
-            // textBox1
+            // textBox_parkingspot
             // 
-            this.textBox1.Location = new System.Drawing.Point(82, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 0;
+            this.textBox_parkingspot.Location = new System.Drawing.Point(82, 21);
+            this.textBox_parkingspot.Name = "textBox_parkingspot";
+            this.textBox_parkingspot.Size = new System.Drawing.Size(100, 21);
+            this.textBox_parkingspot.TabIndex = 0;
             // 
-            // textBox2
+            // textBox_carnumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 48);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 1;
+            this.textBox_carnumber.Location = new System.Drawing.Point(82, 48);
+            this.textBox_carnumber.Name = "textBox_carnumber";
+            this.textBox_carnumber.Size = new System.Drawing.Size(100, 21);
+            this.textBox_carnumber.TabIndex = 1;
             // 
-            // textBox3
+            // textBox_drivername
             // 
-            this.textBox3.Location = new System.Drawing.Point(82, 79);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 21);
-            this.textBox3.TabIndex = 2;
+            this.textBox_drivername.Location = new System.Drawing.Point(82, 79);
+            this.textBox_drivername.Name = "textBox_drivername";
+            this.textBox_drivername.Size = new System.Drawing.Size(100, 21);
+            this.textBox_drivername.TabIndex = 2;
             // 
-            // textBox4
+            // textBox_phonenumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(82, 106);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 3;
+            this.textBox_phonenumber.Location = new System.Drawing.Point(82, 106);
+            this.textBox_phonenumber.Name = "textBox_phonenumber";
+            this.textBox_phonenumber.Size = new System.Drawing.Size(100, 21);
+            this.textBox_phonenumber.TabIndex = 3;
             // 
             // label1
             // 
@@ -307,10 +307,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_phonenumber;
+        private System.Windows.Forms.TextBox textBox_drivername;
+        private System.Windows.Forms.TextBox textBox_carnumber;
+        private System.Windows.Forms.TextBox textBox_parkingspot;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button_delete;
