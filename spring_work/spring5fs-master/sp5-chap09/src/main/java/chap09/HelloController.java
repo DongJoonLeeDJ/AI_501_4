@@ -14,12 +14,15 @@ public class HelloController {
 	@Autowired
 	AA aa;
 	
+	@GetMapping("/")
+	public String index(Model model) {
+		return "index";
+	}
+	
 	@GetMapping("/hello")
 	public String hello(Model model,
 			@RequestParam(value = "name", required = false) String name) {
 		System.out.println(aa);
-//		model.addAttribute("greeting", "안녕하세요, " + name);
-//		model.addAttribute("aaa", "bbbb");
 		return "hello";
 	}
 	
