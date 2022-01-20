@@ -2,15 +2,15 @@
     pageEncoding="UTF-8"%>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href="/1224_war_exploded/index.jsp">Logo</a>
+    <a class="navbar-brand" href="/sp5-chap09/">Logo</a>
 
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="/1224_war_exploded/member/memberlist.jsp">memberlist</a>
+            <a class="nav-link" href="/sp5-chap09/member/selectall">memberlist</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/1224_war_exploded/member/memberform.jsp">memberform</a>
+            <a class="nav-link" href="/sp5-chap09/member/insertform">memberform</a>
         </li>
         <!-- Dropdown -->
         <li class="nav-item dropdown">

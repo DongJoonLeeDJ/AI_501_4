@@ -1,15 +1,16 @@
 package config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import mybeans.AA;
 
 @Configuration
+@ComponentScan(basePackages = {"chap09.member"})
 public class MyConf {
 
 	public MyConf() {
-		System.out.println("myConf 생성자 호출");
 	}
 	
 	@Bean
