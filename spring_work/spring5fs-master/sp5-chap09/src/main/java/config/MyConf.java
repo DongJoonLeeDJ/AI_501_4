@@ -1,10 +1,15 @@
 package config;
 
+import java.io.IOException;
+
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import mybeans.AA;
 
@@ -36,35 +41,32 @@ public class MyConf {
 	}
 	/*
 	 * pom.xml 
+	 * datasource.jar
 	 * 1.
 	 * mybatis.jar
 	 * mybatis-spring.jar
 	 * 2.
 	 * SqlSessionFactoryBean 객체 주입
+	 * 
+	 * 3. Mapper.xml 작성
+	 * 4. sql 구문작성.
 	 */
-	
 	@Bean
-	public SqlSessionFactoryBean sqlsessionfactorybean() {
+	public SqlSessionFactory sqlsessionfactorybean() throws Exception {
 		SqlSessionFactoryBean ss = new SqlSessionFactoryBean();
+		ss.setMapperLocations(
+				new PathMatchingResourcePatternResolver()
+				.getResources("classpath*:*/*/*mapper.xml"));
 		ss.setDataSource(dataSource());
-		return ss;
+		return ss.getObject();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	@Bean
+	public SqlSessionTemplate sqlsessiontemplate() throws Exception {
+		SqlSessionFactory ssf = (SqlSessionFactory) sqlsessionfactorybean();
+		SqlSessionTemplate sst = new SqlSessionTemplate(ssf);
+		return sst;
+	}
 	
 	
 	
