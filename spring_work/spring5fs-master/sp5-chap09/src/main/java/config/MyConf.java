@@ -45,8 +45,10 @@ public class MyConf {
 	 * 1.
 	 * mybatis.jar
 	 * mybatis-spring.jar
+	 * 
 	 * 2.
 	 * SqlSessionFactoryBean 객체 주입
+	 * SqlSessionTemplate 객체 주입
 	 * 
 	 * 3. Mapper.xml 작성
 	 * 4. sql 구문작성.
@@ -63,7 +65,7 @@ public class MyConf {
 
 	@Bean
 	public SqlSessionTemplate sqlsessiontemplate() throws Exception {
-		SqlSessionFactory ssf = (SqlSessionFactory) sqlsessionfactorybean();
+		SqlSessionFactory ssf = sqlsessionfactorybean();
 		SqlSessionTemplate sst = new SqlSessionTemplate(ssf);
 		return sst;
 	}

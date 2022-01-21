@@ -6,9 +6,9 @@
 	<select id="selectall" resultType="chap09.member.MemberDto">
 		select * from member
 	</select>
-	<insert id="insert">
+	<insert id="insert" parameterType="chap09.member.MemberDto">
 		insert into member 
 		values
-		(1,'aa@naver.com','1234','1234')
+		(#{idx},#{email},#{pwd},#{gender})
 	</insert>
 </mapper>

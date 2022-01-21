@@ -37,7 +37,9 @@ public class MemberController {
 		System.out.println("datasource toString() 함수 호출됨 \n"+datasource);
 //		System.out.println("ssfb toString() 함수 호출됨 \n"+ssfb);
 		System.out.println("ss toString() 함수 호출됨 \n"+ss);
-//		ss.insert("members.insert");
+		ss.insert("members.insert",new MemberDto(2, "dd@naver.com", "123123", "남"));
+		ss.insert("members.insert",new MemberDto(3, "bb@naver.com", "5563", "여"));
+		ss.insert("members.insert",new MemberDto(4, "cc@naver.com", "1277823", "여자"));
 		List<MemberDto> list = ss.selectList("members.selectall");
 		
 //		Connection conn = null;
