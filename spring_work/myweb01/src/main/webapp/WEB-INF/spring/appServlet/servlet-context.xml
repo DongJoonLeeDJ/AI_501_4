@@ -23,6 +23,4 @@
 	
 	<context:component-scan base-package="aaa.web.cc" />
 	
-	
-	
 </beans:beans>

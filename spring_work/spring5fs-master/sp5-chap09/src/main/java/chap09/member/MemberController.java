@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.util.List;
 
 import org.apache.tomcat.jdbc.pool.DataSource;
+import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +24,14 @@ public class MemberController {
 	@Autowired
 	DataSource datasource;
 	
+	@Autowired
+	SqlSessionFactoryBean ssfb;
+	
 	@GetMapping(value = "selectall")
 	public String selectall(Model model) {
 		
 		System.out.println("datasource toString() 함수 호출됨 \n"+datasource);
+		System.out.println("ssfb toString() 함수 호출됨 \n"+ssfb);
 		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
