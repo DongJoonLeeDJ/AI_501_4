@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import mybeans.AA;
 
 @Configuration
-@ComponentScan(basePackages = {"chap09.member"})
+@ComponentScan(basePackages = {"chap09.member","chap09.todo"})
 public class MyConf {
 
 	public MyConf() {

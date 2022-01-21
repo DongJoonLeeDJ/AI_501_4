@@ -15,6 +15,17 @@
         <!-- Dropdown -->
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Todo
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="/sp5-chap09/todo/selectall">selectall</a>
+                <a class="dropdown-item" href="/1224_war_exploded/board/boardinsertform.jsp">insert</a>
+                <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+        </li>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                 Board
             </a>
             <div class="dropdown-menu">

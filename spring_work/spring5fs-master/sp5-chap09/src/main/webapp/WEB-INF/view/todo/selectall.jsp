@@ -9,7 +9,7 @@
 </head>
 <body>
 <%@ include file="../nav.jsp"%>
-<h1>memberselectall</h1>
+<h1>todoselectall</h1>
 ${list}<br>
 <c:forEach items="${list}" var="dto">
 ${dto.email}
