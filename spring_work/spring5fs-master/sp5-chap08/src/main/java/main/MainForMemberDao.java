@@ -15,7 +15,7 @@ public class MainForMemberDao {
 
 	public static void main(String[] args) {
 		AnnotationConfigApplicationContext ctx = 
-				new AnnotationConfigApplicationContext(AppCtx.class);
+			new AnnotationConfigApplicationContext(AppCtx.class);
 
 		memberDao = ctx.getBean(MemberDao.class);
 
@@ -39,8 +39,8 @@ public class MainForMemberDao {
 	private static void updateMember() {
 		System.out.println("----- updateMember");
 		Member member = memberDao.selectByEmail("madvirus@madvirus.net");
-		String oldPw = member.getPassword();
-		String newPw = Double.toHexString(Math.random());
+		String oldPw = member.getPassword();	//database pw
+		String newPw = Double.toHexString(Math.random());	//pw생성
 		member.changePassword(oldPw, newPw);
 
 		memberDao.update(member);

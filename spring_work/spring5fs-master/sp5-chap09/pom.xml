@@ -35,6 +35,25 @@
 			<artifactId>spring-webmvc</artifactId>
 			<version>5.0.2.RELEASE</version>
 		</dependency>
+		
+		<!-- jdbcTemplate java -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>5.0.2.RELEASE</version>
+		</dependency>
+		<!-- tomcat connection DataSource -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+			<version>8.5.27</version>
+		</dependency>
+		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+		</dependency>
 	</dependencies>
 
 	<build>

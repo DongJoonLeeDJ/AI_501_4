@@ -22,6 +22,18 @@ public class MemberDao {
 	public MemberDao(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+	
+	/*
+	 * jdbcTemplate <- 이거 망해서.. -> Mabtis...
+	 * 
+	 * Connection conn;
+	 * PrepareStatement pstmt;
+	 * Resultset rs;
+	 * 
+	 * conn.close
+	 * pstmt.close
+	 * rs.close
+	 */
 
 	public Member selectByEmail(String email) {
 		List<Member> results = jdbcTemplate.query(
@@ -41,6 +53,9 @@ public class MemberDao {
 
 		return results.isEmpty() ? null : results.get(0);
 	}
+	
+	// select -> executeQuery 
+	// insert update delete -> executeupdate()
 
 	public void insert(Member member) {
 		KeyHolder keyHolder = new GeneratedKeyHolder();
