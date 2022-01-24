@@ -6,4 +6,8 @@
 	<select id="selectone" resultType="chap10.member.Member">
 		select * from member where idx = 3
 	</select>
+	
+	<select id="selectall" resultType="chap10.member.Member">
+		select * from member order by idx desc
+	</select>
 </mapper>

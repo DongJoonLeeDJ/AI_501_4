@@ -1,5 +1,7 @@
 package chap10.member;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,6 +16,12 @@ public class MemberDao {
 		Member member = sst.selectOne("members.selectone");
 		return member;
 	}
+
+	public List<Member> selectAll() {
+		List<Member> list = sst.selectList("members.selectall");
+		return list;
+	}
+	
 //	public Member selectList() {
 //		
 //	}
