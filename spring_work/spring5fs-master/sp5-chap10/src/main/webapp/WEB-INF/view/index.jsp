@@ -15,6 +15,8 @@
 			<ul>
 				<li>1.MyBatis 관련 5개 jar 파일 설정(pom.xml)</li>
 				<li>2.DataSource Bean객체생성(MyConf.java))</li>
+				<li>3.MyBatis 관련 Bean객체 생성(MyConf.java)</li>
+				<li>4.Mapper.xml작성</li>
 			</ul>
 		</div>	
 	</div>
