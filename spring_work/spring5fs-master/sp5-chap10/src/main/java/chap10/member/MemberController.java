@@ -1,8 +1,8 @@
 package chap10.member;
 
-import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,13 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MemberController {
 	
 	@Autowired
-	SqlSessionTemplate sst;
-	
+	MemberService ms;
 
 	@GetMapping("selectall")
-	public String selectall() {
-		Member member = sst.selectOne("members.selectone");
-		System.out.println(member);
+	public String selectall(Model model) {
+		model.addAttribute("member", ms.selectone());
 		return "member/selectall";
 	}
 }

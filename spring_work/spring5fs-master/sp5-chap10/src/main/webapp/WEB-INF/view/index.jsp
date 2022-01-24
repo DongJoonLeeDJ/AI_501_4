@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="nav.jsp"></jsp:include>
-<div class="contrainer">
+<div class="container">
 	<h1>index</h1>
 	<div class="row">
 		<div class="col-sm-12">

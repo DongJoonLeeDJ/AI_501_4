@@ -33,7 +33,7 @@ public class MyConf {
 		SqlSessionFactoryBean ss = new SqlSessionFactoryBean();
 		ss.setMapperLocations(
 				new PathMatchingResourcePatternResolver()
-				.getResources("classpath*:*/*/*mapper.xml"));
+				.getResources("classpath*:*/*/*Mapper.xml"));
 		ss.setDataSource(dataSource());
 		return ss.getObject();
 	}
