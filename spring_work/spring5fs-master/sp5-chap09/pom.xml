@@ -49,12 +49,13 @@
 			<artifactId>tomcat-jdbc</artifactId>
 			<version>8.5.27</version>
 		</dependency>
-		<!-- mysql -->
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.45</version>
+			<version>8.0.26</version>
 		</dependency>
+
 		<!-- mybatis 라이브러리 -->
 		<dependency>
 			<groupId>org.mybatis</groupId>
@@ -68,11 +69,11 @@
 			<version>2.0.6</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/cglib/cglib -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>cglib</groupId> -->
-<!-- 			<artifactId>cglib</artifactId> -->
-<!-- 			<version>3.3.0</version> -->
-<!-- 		</dependency> -->
+		<!-- <dependency> -->
+		<!-- <groupId>cglib</groupId> -->
+		<!-- <artifactId>cglib</artifactId> -->
+		<!-- <version>3.3.0</version> -->
+		<!-- </dependency> -->
 
 	</dependencies>
 
@@ -86,6 +87,11 @@
 					<target>1.8</target>
 					<encoding>utf-8</encoding>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.2.2</version>
 			</plugin>
 		</plugins>
 	</build>

@@ -14,6 +14,7 @@
 <body>
 <%@ include file="../nav.jsp"%>
 <h1>selectall</h1>
+소스를 바꿔면 되나...
 <%=request.getAttribute("list")%>
 <% 
 	List<MemberDto> list = (List<MemberDto>) request.getAttribute("list");
