@@ -79,7 +79,7 @@ namespace AfterProjectPresentation
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int count = 990;
+            int count = 1;
             List<Lotto> lottos = new List<Lotto>();
             while(true)
             {//990회차부터 끝까지 계속 가져오겠다.
@@ -88,7 +88,7 @@ namespace AfterProjectPresentation
                 var jArray = JObject.Parse(json);
                 if (jArray["returnValue"].ToString() == "fail")
                     break;
-                Console.WriteLine(jArray.ToString());
+                //Console.WriteLine(jArray.ToString());
 
                 Lotto l = new Lotto();
                 l.drwtNo1 = jArray["drwtNo1"].ToString();
@@ -105,6 +105,19 @@ namespace AfterProjectPresentation
 
             dataGridView2.DataSource = null;
             dataGridView2.DataSource = lottos;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //Locale l = new Locale("대구", 1, 2);
+            //Console.WriteLine(l);
+            //Console.WriteLine(l.ToString());
+
+            // 새창 열고 기존창 닫기
+            Hide(); //기존 창 감춤
+            Form2 frm2 = new Form2();
+            frm2.ShowDialog(); //ShowDialog를 쓰면 코드가 이 시점에서 딱 멈춤! 근데 Show()를 쓰면 창을 띄우고 그 밑에 코드도 쭈루룩!!!
+            Close(); //Form2가 종료되면 Form1도 종료되고, 프로그램 자체가 꺼짐
         }
     }
 }

@@ -38,10 +38,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.entpNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.lottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drwtNo1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drwtNo2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drwtNo3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,10 +46,15 @@
             this.drwtNo6DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drwNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.drwNoDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.itemNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.entpNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lottoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -131,7 +132,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(775, 160);
+            this.dataGridView1.Size = new System.Drawing.Size(253, 160);
             this.dataGridView1.TabIndex = 6;
             // 
             // button5
@@ -163,28 +164,6 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(876, 150);
             this.dataGridView2.TabIndex = 8;
-            // 
-            // itemNameDataGridViewTextBoxColumn
-            // 
-            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "itemName";
-            this.itemNameDataGridViewTextBoxColumn.HeaderText = "itemName";
-            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
-            this.itemNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // entpNameDataGridViewTextBoxColumn
-            // 
-            this.entpNameDataGridViewTextBoxColumn.DataPropertyName = "entpName";
-            this.entpNameDataGridViewTextBoxColumn.HeaderText = "entpName";
-            this.entpNameDataGridViewTextBoxColumn.Name = "entpNameDataGridViewTextBoxColumn";
-            this.entpNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(AfterProjectPresentation.Drug);
-            // 
-            // lottoBindingSource
-            // 
-            this.lottoBindingSource.DataSource = typeof(AfterProjectPresentation.Lotto);
             // 
             // drwtNo1DataGridViewTextBoxColumn
             // 
@@ -234,11 +213,44 @@
             this.drwNoDateDataGridViewTextBoxColumn.HeaderText = "drwNoDate";
             this.drwNoDateDataGridViewTextBoxColumn.Name = "drwNoDateDataGridViewTextBoxColumn";
             // 
+            // lottoBindingSource
+            // 
+            this.lottoBindingSource.DataSource = typeof(AfterProjectPresentation.Lotto);
+            // 
+            // itemNameDataGridViewTextBoxColumn
+            // 
+            this.itemNameDataGridViewTextBoxColumn.DataPropertyName = "itemName";
+            this.itemNameDataGridViewTextBoxColumn.HeaderText = "itemName";
+            this.itemNameDataGridViewTextBoxColumn.Name = "itemNameDataGridViewTextBoxColumn";
+            this.itemNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // entpNameDataGridViewTextBoxColumn
+            // 
+            this.entpNameDataGridViewTextBoxColumn.DataPropertyName = "entpName";
+            this.entpNameDataGridViewTextBoxColumn.HeaderText = "entpName";
+            this.entpNameDataGridViewTextBoxColumn.Name = "entpNameDataGridViewTextBoxColumn";
+            this.entpNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(AfterProjectPresentation.Drug);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(284, 142);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(605, 160);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "지도api연동";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1166, 587);
+            this.ClientSize = new System.Drawing.Size(920, 540);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.dataGridView1);
@@ -252,8 +264,8 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lottoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,6 +294,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn drwNoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn drwNoDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource lottoBindingSource;
+        private System.Windows.Forms.Button button6;
     }
 }
 
