@@ -1,10 +1,10 @@
 <cars>
 <car>
   <parkingSpot>1</parkingSpot>
-  <carNumber></carNumber>
-  <driverName></driverName>
-  <phoneNumber></phoneNumber>
-  <parkingTime>2022-01-18 오후 4:32:43</parkingTime>
+  <carNumber>111</carNumber>
+  <driverName>222</driverName>
+  <phoneNumber>333</phoneNumber>
+  <parkingTime>2022-01-26 오전 11:29:58</parkingTime>
 </car>
 <car>
   <parkingSpot>2</parkingSpot>

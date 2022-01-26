@@ -1,0 +1,55 @@
+public Student()
+{
+	public int age;
+	public String name;
+}
+
+
+- json -
+{
+	age:30,
+	name:"이동준"
+}
+
+- xml -
+eXtensible Markup Language
+Hyper Text Markup Language
+
+Student student = new Student();
+
+<student>
+	<age>30</age>
+	<name>이동준</age>
+<student>
+
+
+------------- List(여러개 일 때)
+
+일반 코드
+List<Student> students = new List<Student>();
+students.Add(new Student(34,"이동준"));
+students.Add(new Student(14,"박명회"));
+students.Add(new Student(24,"류경문"));
+
+json
+[
+	{ age: 34, name="이동준" },
+	{ age: 14, name="박명회" },
+	{ age: 24, name="류경문" }
+]
+
+xml
+<students>
+	<student>
+		<age>34</age>
+		<name>이동준</name>
+	<student>
+	<student>
+		<age>14</age>
+		<name>박명회</name>
+	<student>
+	<student>
+		<age>24</age>
+		<name>류경문</name>
+	<student>
+</students>
