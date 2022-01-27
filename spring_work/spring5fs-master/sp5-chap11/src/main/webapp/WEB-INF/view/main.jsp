@@ -7,6 +7,7 @@
 </head>
 <body>
     <p>환영합니다.</p>
+    <p><a href="<c:url value="/member/insert" />">mybatis insert</a>
     <p><a href="<c:url value="/register/step1" />">[회원 가입하기]</a>
 </body>
 </html>

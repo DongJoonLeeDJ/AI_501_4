@@ -32,24 +32,23 @@ public class MvcConfig {
 		return ha;
 	}
 
-//	@Bean
-//	public HandlerMapping simpleHandlerMapping() {
-//		SimpleUrlHandlerMapping hm = new SimpleUrlHandlerMapping();
-//		Map<String, Object> pathMap = new HashMap<>();
-//		pathMap.put("/**", defaultServletHandler());
-//		hm.setUrlMap(pathMap);
-//		return hm;
-//	}
+	@Bean
+	public HandlerMapping simpleHandlerMapping() {
+		SimpleUrlHandlerMapping hm = new SimpleUrlHandlerMapping();
+		Map<String, Object> pathMap = new HashMap<>();
+		pathMap.put("/**", defaultServletHandler());
+		hm.setUrlMap(pathMap);
+		return hm;
+	}
 
-//	@Bean
-//	public HttpRequestHandler defaultServletHandler() {
-//		DefaultServletHttpRequestHandler handler = new DefaultServletHttpRequestHandler();
-//		return handler;
-//	}
+	@Bean
+	public HttpRequestHandler defaultServletHandler() {
+		DefaultServletHttpRequestHandler handler = new DefaultServletHttpRequestHandler();
+		return handler;
+	}
 
 	@Bean
 	public HandlerAdapter requestHandlerAdapter() {
-//		RequestMappingHandlerAdapter
 		HttpRequestHandlerAdapter ha = new HttpRequestHandlerAdapter();
 		return ha;
 	}

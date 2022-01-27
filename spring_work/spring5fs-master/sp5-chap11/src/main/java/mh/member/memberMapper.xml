@@ -3,15 +3,18 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="members">
-	<select id="selectone" resultType="chap10.member.Member">
+	<select id="selectone" resultType="mh.member.Member">
 		select * from member where idx = 3
 	</select>
 	
-	<select id="selectall" resultType="chap10.member.Member">
+	<select id="selectall" resultType="mh.member.Member">
 		select * from member order by idx desc
 	</select>
 	
 	<insert id="insert">
-		inservasdflajncsed
+		insert into member
+		(email,pwd,gender)
+		values
+		('aa@naver.com',1234,'남자')
 	</insert>
 </mapper>

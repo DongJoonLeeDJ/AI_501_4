@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableWebMvc
+@EnableWebMvc // url...맵핑
 public class MvcConfig implements WebMvcConfigurer {
 
 	@Override
