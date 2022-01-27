@@ -10,8 +10,8 @@ public class MyMemberDao {
 	@Autowired
 	SqlSessionTemplate sst;
 	
-	public void insert() {
-		sst.insert("members.insert");
+	public void insert(Member member) {
+		sst.insert("members.insert",member);
 	}
 
 }

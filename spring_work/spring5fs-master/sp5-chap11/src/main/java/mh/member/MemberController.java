@@ -13,20 +13,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("member")
 public class MemberController {
 	
-	// 화면 폼... insert
-
 	@Autowired
 	MemberService ms;
 	
 	@GetMapping("insert")
 	public String getinsert(Model model) {
-		model.addAttribute("aa", "AA");
+		model.addAttribute("aa", "GET");
 		model.addAttribute("memberForm",
 				new MemberForm(0, "aa@an.com", "123", "남자"));
 		return "member/insert";
 	}
 	@PostMapping("insert")
 	public String postinsert(Model model, MemberForm memberForm) {
-		return "member/insert";
+		model.addAttribute("aa", "POST");
+		Member member = new Member(
+					memberForm.getIdx(),
+					memberForm.getEmail(),
+					memberForm.getPwd(),
+					memberForm.getGender(),
+					"2022/01/27"
+					);
+		ms.insert(member);
+		return "redirect:/main";
 	}
 }

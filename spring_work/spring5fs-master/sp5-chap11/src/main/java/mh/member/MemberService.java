@@ -8,8 +8,8 @@ public class MemberService {
 	@Autowired
 	MyMemberDao memberdao;
 	
-	public void insert() {
-		memberdao.insert();
+	public void insert(Member member) {
+		memberdao.insert(member);
 	}
 
 }

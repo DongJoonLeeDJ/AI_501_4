@@ -11,10 +11,10 @@
 		select * from member order by idx desc
 	</select>
 	
-	<insert id="insert">
+	<insert id="insert" parameterType="mh.member.Member">
 		insert into member
-		(email,pwd,gender)
+		(email,pwd,gender,wdate)
 		values
-		('aa@naver.com',1234,'남자')
+		(#{email},#{pwd},#{gender},#{wdate})
 	</insert>
 </mapper>
