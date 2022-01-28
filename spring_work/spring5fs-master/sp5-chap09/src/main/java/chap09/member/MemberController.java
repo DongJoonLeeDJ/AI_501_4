@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 
@@ -23,13 +24,21 @@ public class MemberController {
 	}
 	
 	@GetMapping(value = "memberform")
-	public String memberform(Model model) {
+	public String memberform(Model model,
+			@RequestParam(defaultValue = "0") int idx ) {
+		MemberDto dto = new MemberDto(0,"","","","");
+		if(idx!=0)
+			dto = ms.selectone(idx);
+		model.addAttribute("memberdto",dto);
 		return "member/memberform";
 	}
 	
 	@PostMapping(value = "memberinsert")
 	public String memberinsert(MemberDto memberdto) {
-		ms.insert(memberdto);
+		if(memberdto.getIdx()!=0)
+			ms.update(memberdto);
+		else
+			ms.insert(memberdto);
 		return "redirect:selectall";
 	}
 

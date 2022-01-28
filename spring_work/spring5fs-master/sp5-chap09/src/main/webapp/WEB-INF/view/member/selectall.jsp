@@ -36,7 +36,7 @@
 		<tr>
 			<td><input type="checkbox"></td>
 			<td>${dto.idx}</td>
-			<td>${dto.email}</td>
+			<td><a href="memberform?idx=${dto.idx}">${dto.email}</a></td>
 			<td>${dto.pwd}</td>
 			<td>${dto.gender}</td>
 			<td>${dto.wdate}</td>

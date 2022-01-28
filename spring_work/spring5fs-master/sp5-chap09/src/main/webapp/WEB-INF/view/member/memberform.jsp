@@ -18,23 +18,24 @@
 	<div class="container">
 		<h1>memberform</h1>
 		<form:form action="memberinsert" method="post" modelAttribute="memberdto">
+			<form:hidden path="idx"/>
 			<div class="form-group">
 				<label for="email">Email address:</label> 
-				<input 
-					name="email"
+				<form:input 
+					path="email"
 					type="email"
 					class="form-control" 
 					placeholder="Enter email" 
-					id="email">
+					/>
 			</div>
 			<div class="form-group">
 				<label for="pwd">Password:</label> 
-				<input
-					name="pwd" 
+				<form:input 
+					path="pwd"
 					type="password"
 					class="form-control"
 					placeholder="Enter password" 
-					id="pwd">
+					/>
 			</div>
 			<button type="submit" class="btn btn-primary">Submit</button>
 		</form:form>

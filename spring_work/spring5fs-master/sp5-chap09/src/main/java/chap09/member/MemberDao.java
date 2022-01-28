@@ -23,5 +23,14 @@ public class MemberDao {
 	public void insert(MemberDto memberdto) {
 		ss.insert("members.insert",memberdto);
 	}
+	
+	public void update(MemberDto memberdto) {
+		ss.update("members.update",memberdto);
+	}
+
+	public MemberDto selectone(int idx) {
+		MemberDto dto = ss.selectOne("members.selectone",idx);
+		return dto;
+	}
 
 }

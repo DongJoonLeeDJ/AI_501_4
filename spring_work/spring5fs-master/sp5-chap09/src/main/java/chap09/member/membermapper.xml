@@ -12,4 +12,29 @@
 		values
 		(#{email},#{pwd},#{gender},#{wdate})
 	</insert>
+	<select id="selectone" parameterType="int" resultType="chap09.member.MemberDto">
+		select * from member
+		where idx = #{idx}
+	</select>
+	<update id="update" parameterType="chap09.member.MemberDto">
+		update member
+			set 
+				email = #{email},
+				gender = #{gender},
+				pwd = #{pwd},
+				wdate = #{wdate}
+		where idx = #{idx}
+	</update>
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+

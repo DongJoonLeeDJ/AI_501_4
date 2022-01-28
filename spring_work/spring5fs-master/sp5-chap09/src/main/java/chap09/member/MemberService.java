@@ -20,4 +20,13 @@ public class MemberService {
 		memberdao.insert(memberdto);
 	}
 
+	public void update(MemberDto memberdto) {
+		memberdao.update(memberdto);
+	}
+	
+	public MemberDto selectone(int idx) {
+		MemberDto dto = memberdao.selectone(idx);
+		return dto;
+	}
+
 }
