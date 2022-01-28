@@ -20,4 +20,8 @@ public class MemberDao {
 		return list;
 	}
 
+	public void insert(MemberDto memberdto) {
+		ss.insert("members.insert",memberdto);
+	}
+
 }

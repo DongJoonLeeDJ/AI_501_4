@@ -10,7 +10,7 @@
             <a class="nav-link" href="/sp5-chap09/member/selectall">memberlist</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/sp5-chap09/member/insertform">memberform</a>
+            <a class="nav-link" href="/sp5-chap09/member/memberform">memberform</a>
         </li>
         <!-- Dropdown -->
         <li class="nav-item dropdown">

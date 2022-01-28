@@ -16,4 +16,8 @@ public class MemberService {
 		return list;
 	}
 
+	public void insert(MemberDto memberdto) {
+		memberdao.insert(memberdto);
+	}
+
 }

@@ -1,7 +1,5 @@
 package config;
 
-import java.io.IOException;
-
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.tomcat.jdbc.pool.DataSource;
 import org.mybatis.spring.SqlSessionFactoryBean;
@@ -30,18 +28,9 @@ public class MyConf {
 		return ds;
 	}
 	/*
-	 * pom.xml 
-	 * datasource.jar
-	 * 1.
-	 * mybatis.jar
-	 * mybatis-spring.jar
-	 * 
-	 * 2.
-	 * SqlSessionFactoryBean 객체 주입
-	 * SqlSessionTemplate 객체 주입
-	 * 
-	 * 3. Mapper.xml 작성
-	 * 4. sql 구문작성.
+	 * 프로젝트 server...
+	 * server.xml, web.xml
+	 * 읽어서 실행한다.
 	 */
 	@Bean
 	public SqlSessionFactory sqlsessionfactorybean() throws Exception {

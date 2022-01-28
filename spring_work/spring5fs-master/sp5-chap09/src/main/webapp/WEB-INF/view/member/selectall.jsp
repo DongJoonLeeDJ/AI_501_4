@@ -6,13 +6,23 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <%@ include file="../head.jsp"%>
+<script type="text/javascript">
+	$('document').ready(function(){
+		var myfn = ()=>{ alert('누름') };
+		var mya = function(){  alert('누름') };
+// 		$('#memberform').on('click', function(){ alert('누름')} );
+		$('#memberform').on('click', ()=>{ 
+			window.location='memberform';
+		} );
+	});
+</script>
 </head>
 <body>
 <%@ include file="../nav.jsp"%>
 <div class="container">
 <h1>memberselectall</h1>
 <button class="btn btn-primary mt-3 mb-3" type="button">삭제</button>
-<button class="btn btn-primary mt-3 mb-3" type="button">회원작성</button>
+<button class="btn btn-primary mt-3 mb-3" type="button" id="memberform">회원작성</button>
 <table class="table">
 	<tr>
 		<th></th>
