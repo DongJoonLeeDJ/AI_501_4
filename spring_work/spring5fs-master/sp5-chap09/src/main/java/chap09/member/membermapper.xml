@@ -8,7 +8,8 @@
 	</select>
 	<insert id="insert" parameterType="chap09.member.MemberDto">
 		insert into member 
+		(email,pwd,gender,wdate)
 		values
-		(#{idx},#{email},#{pwd},#{gender})
+		(#{email},#{pwd},#{gender},#{wdate})
 	</insert>
 </mapper>

@@ -17,9 +17,12 @@
 소스를 바꿔면 되나...
 <%=request.getAttribute("list")%>
 <% 
-	List<MemberDto> list = (List<MemberDto>) request.getAttribute("list");
-	for(MemberDto dto : list)
+	List<MemberDto> list = 
+		(List<MemberDto>) request.getAttribute("list");
+	for(MemberDto dto : list){
 		out.print(dto.getEmail());
+		out.print(dto.getGender());
+	}
 %>
 <br>
 ${list}<br>

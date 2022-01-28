@@ -9,11 +9,31 @@
 </head>
 <body>
 <%@ include file="../nav.jsp"%>
+<div class="container">
 <h1>memberselectall</h1>
-${list}<br>
-<c:forEach items="${list}" var="dto">
-${dto.email}
-</c:forEach>
-<!-- for if switch set -->
+<button class="btn btn-primary mt-3 mb-3" type="button">삭제</button>
+<button class="btn btn-primary mt-3 mb-3" type="button">회원작성</button>
+<table class="table">
+	<tr>
+		<th></th>
+		<th>idx</th>
+		<th>email</th>
+		<th>pwd</th>
+		<th>gender</th>
+		<th>wdate</th>
+	</tr>
+	<c:forEach items="${list}" var="dto">
+		<tr>
+			<td><input type="checkbox"></td>
+			<td>${dto.idx}</td>
+			<td>${dto.email}</td>
+			<td>${dto.pwd}</td>
+			<td>${dto.gender}</td>
+			<td>${dto.wdate}</td>
+		</tr>
+	</c:forEach>
+</table>
+<br>
+</div>
 </body>
 </html>
