@@ -31,6 +31,7 @@ public class FormController {
 		List<Code> jobCodes = Arrays.asList(
 				new Code("01", "프로그래머"),
 				new Code("02", "디자이너"));
+		
 		model.addAttribute("jobCodes", jobCodes);
 		
 		model.addAttribute("favoriteOsNames", new String[] {"윈도우8", "윈도우10", "맥OS"});

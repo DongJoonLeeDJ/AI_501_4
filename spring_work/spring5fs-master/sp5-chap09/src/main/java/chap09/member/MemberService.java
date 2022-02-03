@@ -17,7 +17,11 @@ public class MemberService {
 	}
 
 	public void insert(MemberDto memberdto) {
+//		boolean a = mdmeberdao.getSelectByEmail("members.check",email);
+//		if( a== false)
 		memberdao.insert(memberdto);
+//		else
+//			중복이다..그 이메일 들어갈수가 없다..
 	}
 
 	public void update(MemberDto memberdto) {

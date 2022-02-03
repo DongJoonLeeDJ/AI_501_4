@@ -4,7 +4,9 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="members">
 	<select id="selectall" resultType="chap09.member.MemberDto">
-		select * from member
+		select * from member 
+		order by idx desc
+		limit 0,5
 	</select>
 	<insert id="insert" parameterType="chap09.member.MemberDto">
 		insert into member 
@@ -25,6 +27,9 @@
 				wdate = #{wdate}
 		where idx = #{idx}
 	</update>
+	<delete id="delete">
+		delete from member
+	</delete>
 </mapper>
 
 

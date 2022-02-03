@@ -21,7 +21,8 @@
 <%@ include file="../nav.jsp"%>
 <div class="container">
 <h1>memberselectall</h1>
-<button class="btn btn-primary mt-3 mb-3" type="button">삭제</button>
+<form action="delete" method="post">
+<input class="btn btn-primary mt-3 mb-3" type="submit" value="삭제">
 <button class="btn btn-primary mt-3 mb-3" type="button" id="memberform">회원작성</button>
 <table class="table">
 	<tr>
@@ -34,7 +35,7 @@
 	</tr>
 	<c:forEach items="${list}" var="dto">
 		<tr>
-			<td><input type="checkbox"></td>
+			<td><input type="checkbox" name="idxs" value="${dto.idx}"></td>
 			<td>${dto.idx}</td>
 			<td><a href="memberform?idx=${dto.idx}">${dto.email}</a></td>
 			<td>${dto.pwd}</td>
@@ -43,6 +44,7 @@
 		</tr>
 	</c:forEach>
 </table>
+</form>
 <br>
 </div>
 </body>
