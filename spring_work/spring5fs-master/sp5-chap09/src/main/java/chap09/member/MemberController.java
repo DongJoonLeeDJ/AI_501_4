@@ -1,5 +1,10 @@
 package chap09.member;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
 
 
 
@@ -50,8 +57,39 @@ public class MemberController {
 	
 	@PostMapping(value = "delete")
 	public String delete(int[] idxs) {
-		ss.delete("members.delete");
+		List<Integer> list_idxs = new ArrayList<Integer>();
+		if(idxs != null)
+			for(int idx:idxs) {	
+				list_idxs.add(idx);
+			}
+		
+		HashMap<String, List<Integer>> hashmap
+			= new HashMap<String, List<Integer>>();
+		hashmap.put("idxs", list_idxs);
+		
+		ss.delete("members.delete",hashmap);
 		return "redirect:selectall";
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

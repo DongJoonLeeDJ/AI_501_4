@@ -27,8 +27,12 @@
 				wdate = #{wdate}
 		where idx = #{idx}
 	</update>
-	<delete id="delete">
+	<delete id="delete" parameterType="hashmap">
 		delete from member
+		where idx in
+		<foreach collection="idxs" item="idx" open="(" close=")" separator=",">
+			#{idx.value}
+		</foreach>
 	</delete>
 </mapper>
 
