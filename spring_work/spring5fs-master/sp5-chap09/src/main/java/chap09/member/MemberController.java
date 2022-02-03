@@ -30,26 +30,27 @@ public class MemberController {
 	
 	@GetMapping(value = "selectall")
 	public String selectall(Model model,@RequestParam(defaultValue = "0")int page) {
-		System.out.println("page = "+ page);
-		
-		/*
-		 * page == 1
-		 * pageNumber = 0
-		 * page == 2
-		 * pageNumber = 5
-		 * page == 3
-		 * pageNumber 10
-		 */
 		int pageNumber = (page==0? 0: (page-1)*5);
 		MemberPage mp = new MemberPage();
 		mp.setPageNumber(pageNumber);
+		mp.setPage(page);
 		
+		int totalrow = ss.selectOne("members.selectrowcount");
+//		System.out.println("totalpage = "+ totalrow);
+		// 11/5 값은 2 나머지 1 pagecnt =3
+		// 10/5 값은 2 나머지 0 pagecnt =2
+		int pagecnt = totalrow/5;
+		if( totalrow%5 > 0 )
+			pagecnt +=1;
+//		System.out.println("pagecnt = "+ pagecnt);
+		mp.setTotalrow(totalrow);
+		mp.setPagecnt(pagecnt);
+		
+		model.addAttribute("memberpage",mp);
 		model.addAttribute("list", ms.selectall(mp));
 		return "member/selectall";
 	}
 	
-	// idx 가 값이 안들어오면.. 기본값으로 0을 선택한다.
-	// String idx = request.getParameter("idx"); 
 	@GetMapping(value = "memberform")
 	public String memberform(Model model,
 			@RequestParam(defaultValue = "0") int idx ) {

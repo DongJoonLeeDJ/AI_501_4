@@ -36,6 +36,10 @@
 	</delete>
 	<!-- 민간 업체 쿠팡 jpa, 공공기관si mybatis  -->
 	<!-- ibatis <- mybatis, jpa -> hibernate -->
+	
+	<select id="selectrowcount" resultType="int">
+		SELECT COUNT(*) FROM member;
+	</select>
 </mapper>
 
 
