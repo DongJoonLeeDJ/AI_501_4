@@ -11,8 +11,8 @@ public class MemberService {
 	@Autowired
 	MemberDao memberdao;
 
-	public List<MemberDto> selectall() {
-		List<MemberDto> list = memberdao.selectall();
+	public List<MemberDto> selectall(MemberPage mp) {
+		List<MemberDto> list = memberdao.selectall(mp);
 		return list;
 	}
 

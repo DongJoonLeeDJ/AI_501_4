@@ -45,7 +45,15 @@
 	</c:forEach>
 </table>
 </form>
-<br>
+<div class="pt-3">
+	<ul class="pagination justify-content-center">
+	  <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+	  <li class="page-item"><a class="page-link" href="selectall?page=1">1</a></li>
+	  <li class="page-item active"><a class="page-link" href="selectall?page=2">2</a></li>
+	  <li class="page-item"><a class="page-link" href="selectall?page=3">3</a></li>
+	  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+	</ul>
+</div>
 </div>
 </body>
 </html>

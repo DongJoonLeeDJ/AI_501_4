@@ -29,8 +29,22 @@ public class MemberController {
 	SqlSessionTemplate ss;
 	
 	@GetMapping(value = "selectall")
-	public String selectall(Model model) {
-		model.addAttribute("list", ms.selectall());
+	public String selectall(Model model,@RequestParam(defaultValue = "0")int page) {
+		System.out.println("page = "+ page);
+		
+		/*
+		 * page == 1
+		 * pageNumber = 0
+		 * page == 2
+		 * pageNumber = 5
+		 * page == 3
+		 * pageNumber 10
+		 */
+		int pageNumber = (page==0? 0: (page-1)*5);
+		MemberPage mp = new MemberPage();
+		mp.setPageNumber(pageNumber);
+		
+		model.addAttribute("list", ms.selectall(mp));
 		return "member/selectall";
 	}
 	

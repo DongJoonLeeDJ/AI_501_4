@@ -12,11 +12,10 @@ public class MemberDao {
 	@Autowired
 	SqlSessionTemplate ss;
 
-	public List<MemberDto> selectall() {
-//		List<MemberDto> list = Arrays.asList(
-//				new MemberDto(1,"aaa@naver.com","1234","남자","20220128"),
-//				new MemberDto(2,"bbb@naver.com","4567","여자","20220128"));
-		List<MemberDto> list = ss.selectList("members.selectall");
+	public List<MemberDto> selectall(MemberPage mp) {
+//		MemberPage mp = new MemberPage();
+//		mp.setPageNumber(0);
+		List<MemberDto> list = ss.selectList("members.selectall",mp);
 		return list;
 	}
 

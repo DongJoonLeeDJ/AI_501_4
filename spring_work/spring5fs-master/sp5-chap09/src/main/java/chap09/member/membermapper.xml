@@ -3,10 +3,10 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="members">
-	<select id="selectall" resultType="chap09.member.MemberDto">
+	<select id="selectall" resultType="chap09.member.MemberDto" parameterType="chap09.member.MemberPage">
 		select * from member 
 		order by idx desc
-		limit 0,5
+		limit #{pageNumber},5
 	</select>
 	<insert id="insert" parameterType="chap09.member.MemberDto">
 		insert into member 
@@ -34,6 +34,8 @@
 			#{idx.value}
 		</foreach>
 	</delete>
+	<!-- 민간 업체 쿠팡 jpa, 공공기관si mybatis  -->
+	<!-- ibatis <- mybatis, jpa -> hibernate -->
 </mapper>
 
 
