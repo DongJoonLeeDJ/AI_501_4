@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,30 +46,27 @@
 </style>
 <script type="text/javascript">
 	$('document').ready(function(){ 
-		$('#insertbtn').on('click',function(){ 
-			window.location='insert';
-		});		
+		$('#listbtn').on('click',function(){ 
+			window.location='selectall';
+		});
 	})
 </script>
 </head>
 <body>
 <%@ include file="../nav.jsp"%>
-<div class="container mycolor">
-	<h1>todolist</h1>
-	<div class="todiv">
-		<button id="insertbtn" class="btn btn-primary">할일추가</button>
+<form:form action="insert" method="post" modelAttribute="tododto">
+	<div class="container mycolor">
+		<h1>todoinsert</h1>
+		<div class="todiv">
+			<button id="listbtn" class="btn btn-primary">목록</button>
+			<input type="submit" class="btn btn-primary" value="저장"/>
+		</div>
+		<div class="wrap">
+			할일 
+			<form:textarea class="form-control" path="todo"/>			
+		</div>
 	</div>
-	<div class="wrap">
-		<c:forEach items="${list}" var="dto">
-			<div class="box">
-				<span>${dto.todo}</span>
-				<div class="trash">
-					<button class="btn btn-primary">휴지통</button>
-				</div>
-			</div>
-		</c:forEach>
-	</div>
-</div>
+</form:form>
 </body>
 </html>
 

@@ -19,7 +19,7 @@
             </a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="/sp5-chap09/todo/selectall">selectall</a>
-                <a class="dropdown-item" href="/1224_war_exploded/board/boardinsertform.jsp">insert</a>
+                <a class="dropdown-item" href="/sp5-chap09/todo/insert">insert</a>
                 <a class="dropdown-item" href="#">Link 3</a>
             </div>
         </li>

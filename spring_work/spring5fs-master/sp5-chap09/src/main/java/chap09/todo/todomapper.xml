@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="todo">
-	<insert id="insert">
+	<insert id="insert" parameterType="chap09.todo.TodoDto">
 		insert into todo
 		(todo,wdate)
 		values
-		('할일1','20220204')
+		(#{todo},#{wdate})
 	</insert>
 	
 	<select id="selectall" resultType="chap09.todo.TodoDto">
