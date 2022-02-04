@@ -23,6 +23,7 @@
 		align-items: center;
 	}
 	.box{
+		position: relative;
 		margin: 10px;
 		width: 300px;
 		height: 100px;
@@ -30,17 +31,49 @@
 		border: 1px solid #aaa;
 		text-align: center;	
 	}
+	.trash{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
 </style>
 </head>
 <body>
 <%@ include file="../nav.jsp"%>
 <div class="container mycolor">
 	<h1>todolist</h1>
+	<div style="float: right;">
+		<button class="btn btn-primary">할일추가</button>
+	</div>
 	<div class="wrap">
-		<div class="box">첫번째 할일....</div>
-		<div class="box">두번째 할일....</div>
-		<div class="box">세번째 할일....</div>
+		<c:forEach items="${list}" var="dto">
+			<div class="box">
+				<span>${dto.todo}</span>
+				<div class="trash">
+					<button class="btn btn-primary">휴지통</button>
+				</div>
+			</div>
+		</c:forEach>
 	</div>
 </div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

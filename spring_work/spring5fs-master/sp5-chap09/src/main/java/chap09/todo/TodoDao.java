@@ -1,14 +1,20 @@
 package chap09.todo;
 
+import java.util.List;
+
+import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class TodoDao {
 	
-	// selectall(모든내용) 
-	// insert(삽입) 
-	// update(수정) 
-	// delete(삭제) 
-	// selectone(한개가져오기)
-
+	@Autowired
+	SqlSessionTemplate sst;
+	
+	public List<TodoDto> selectall() {
+		List<TodoDto> list
+			= sst.selectList("todo.selectall");
+		return list;
+	}
 }
