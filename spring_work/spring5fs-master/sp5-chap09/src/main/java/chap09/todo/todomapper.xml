@@ -12,4 +12,9 @@
 		select * from todo
 		order by idx desc
 	</select>
+	
+	<delete id="delete" parameterType="int">
+		delete from todo
+		where idx = #{idx}
+	</delete>
 </mapper>

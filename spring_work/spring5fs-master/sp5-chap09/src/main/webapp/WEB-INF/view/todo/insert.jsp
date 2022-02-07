@@ -58,7 +58,7 @@
 	<div class="container mycolor">
 		<h1>todoinsert</h1>
 		<div class="todiv">
-			<button id="listbtn" class="btn btn-primary">목록</button>
+			<button type="button" id="listbtn" class="btn btn-primary">목록</button>
 			<input type="submit" class="btn btn-primary" value="저장"/>
 		</div>
 		<div class="wrap">

@@ -47,7 +47,11 @@
 	$('document').ready(function(){ 
 		$('#insertbtn').on('click',function(){ 
 			window.location='insert';
-		});		
+		});	
+		$('.delete').on('click',function(){
+			var idx = $(this).attr('idx');
+			window.location='delete?idx='+idx;
+		});	
 	})
 </script>
 </head>
@@ -63,7 +67,7 @@
 			<div class="box">
 				<span>${dto.todo}</span>
 				<div class="trash">
-					<button class="btn btn-primary">휴지통</button>
+					<button class="btn btn-primary delete" idx="${dto.idx}">휴지통</button>
 				</div>
 			</div>
 		</c:forEach>

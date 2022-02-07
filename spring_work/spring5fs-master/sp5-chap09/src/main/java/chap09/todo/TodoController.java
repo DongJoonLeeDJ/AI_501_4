@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping(value = "todo")
@@ -20,12 +21,16 @@ public class TodoController {
 	@Autowired
 	TodoService todoservice;
 	
+	@GetMapping(value = "delete")
+	public String delete(Model model,int idx) {
+		sst.delete("todo.delete",idx);
+		return "redirect:selectall";
+	}
+	
 	@GetMapping(value = "selectall")
 	public String selectall(Model model) {
-//		sst.insert("todo.insert");
 		List<TodoDto> list = todoservice.selectall();
 		model.addAttribute("list",list);
-		
 		return "todo/selectall";
 	}
 	
