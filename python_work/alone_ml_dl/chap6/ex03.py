@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 from sklearn.decomposition import PCA
 from sklearn.linear_model import LogisticRegression # 분류학습기
 
+import cv2
+
 def draw_fruits(arr,ratio = 1):
     n = len(arr)
     rows = int(np.ceil(n/10))
@@ -32,15 +34,39 @@ print('50개의 특성변환', fruits_pca.shape)
 # 지도 target...  비지도 군집화 Kmeans
 lrclf = LogisticRegression()
 # 0 apple 1 pineapple 2 banana
-lrclf.fit(fruits_pca, np.array([0]*100+[1]*100+[2]*100))
+lrclf.fit(fruits_2d, np.array([0]*100+[1]*100+[2]*100))
 
-score = lrclf.score(fruits_pca,np.array([0]*100+[1]*100+[2]*100))
-print(score)
+# score = lrclf.score(fruits_pca,np.array([0]*100+[1]*100+[2]*100))
+# print(score)
+
+img = cv2.imread('img1.png')
+img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+img = cv2.cvtColor(img,cv2.COLOR_RGB2GRAY)
+print(img.shape)
+
+plt.imshow(img,cmap='gray')
+plt.show()
+
+img = cv2.resize(img,(100,100))
+print(img.shape)
+
+# cv2.imshow('img',img)
+# cv2.waitKey(0)
+
+img_2d = img.reshape(-1,10000)
+prevalue = lrclf.predict(img_2d)
+print(prevalue)
 
 
+# img_pca = pca.transform(img.reshape(-1,10000))
+# prevalue = lrclf.predict(img_pca)
+# print(prevalue)
 
-lrclf.predict
+# cv2.imshow('img',img)
+# cv2.waitKey(0)
 
-# plt.imshow(fruits[200:201].reshape(100,100),cmap='gray_r')
+# lrclf.predict
+
+# plt.imshow(fruits[0:1].reshape(100,100),cmap='gray')
 # plt.axis('off')
-# plt.savefig('img3.png')
+# plt.savefig('img1.png')
