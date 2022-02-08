@@ -67,5 +67,63 @@ namespace MyCSharp_from_06_03
             MessageBox.Show($"ldj1의 이름 : {ldj1.Name}, ID : {ldj1.Id}, 잔액 : {ldj1.deposit} {Environment.NewLine} " +
                 $"ldj2의 이름 : {ldj2.Name},  ID : {ldj2.Id}, 잔액 : {ldj2.deposit}");
         }
+
+        void change(int a)
+        {
+            a = 100;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            int a = 10;
+            change(a);
+            MessageBox.Show("a="+a);
+        }
+
+        void change(BankAccount a)
+        {
+            a.deposit = 0;
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            ldj1 = new BankAccount();
+            ldj1.deposit = 1000;
+            change(ldj1);
+            MessageBox.Show("ldj1의 통장 잔액은 " + ldj1.deposit+"이다.");
+        }
+
+        void change(ref int a)
+        {
+            a = 20;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            int a = 10;
+            change(ref a);
+            MessageBox.Show("a는 " + a +"입니다!!!");
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            ldj1 = new BankAccount();
+            ldj1.Name = "이동준";
+            ldj1.Id = textBox10.Text;
+            ldj1.deposit = int.Parse(textBox9.Text);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            ldj2 = new BankAccount(); //참조복사와는 다르게 메모리 영역을 새로 만들고
+            ldj2.Name = ldj1.Name; //값을 하나하나 복사함
+            ldj2.Id = textBox7.Text;
+            ldj2.deposit = int.Parse(textBox8.Text);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"ldj1의 이름 : {ldj1.Name}, ID : {ldj1.Id}, 잔액 : {ldj1.deposit} {Environment.NewLine} " +
+                $"ldj2의 이름 : {ldj2.Name},  ID : {ldj2.Id}, 잔액 : {ldj2.deposit}");
+        }
     }
 }
