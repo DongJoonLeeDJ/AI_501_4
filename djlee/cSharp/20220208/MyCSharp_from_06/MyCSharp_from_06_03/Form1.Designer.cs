@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -63,6 +64,16 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.button13 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label_one_result = new System.Windows.Forms.Label();
+            this.label_two_result = new System.Windows.Forms.Label();
+            this.textBox_one = new System.Windows.Forms.TextBox();
+            this.textBox_two = new System.Windows.Forms.TextBox();
+            this.button_swap = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label_now = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -405,11 +416,104 @@
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(553, 388);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(77, 12);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "변경전첫번째";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(553, 446);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 12);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "변경전두번째";
+            // 
+            // label_one_result
+            // 
+            this.label_one_result.AutoSize = true;
+            this.label_one_result.Location = new System.Drawing.Point(781, 388);
+            this.label_one_result.Name = "label_one_result";
+            this.label_one_result.Size = new System.Drawing.Size(85, 12);
+            this.label_one_result.TabIndex = 20;
+            this.label_one_result.Text = "변경 후 첫번째";
+            // 
+            // label_two_result
+            // 
+            this.label_two_result.AutoSize = true;
+            this.label_two_result.Location = new System.Drawing.Point(781, 446);
+            this.label_two_result.Name = "label_two_result";
+            this.label_two_result.Size = new System.Drawing.Size(85, 12);
+            this.label_two_result.TabIndex = 21;
+            this.label_two_result.Text = "변경 후 두번째";
+            // 
+            // textBox_one
+            // 
+            this.textBox_one.Location = new System.Drawing.Point(636, 385);
+            this.textBox_one.Name = "textBox_one";
+            this.textBox_one.Size = new System.Drawing.Size(100, 21);
+            this.textBox_one.TabIndex = 22;
+            // 
+            // textBox_two
+            // 
+            this.textBox_two.Location = new System.Drawing.Point(636, 437);
+            this.textBox_two.Name = "textBox_two";
+            this.textBox_two.Size = new System.Drawing.Size(100, 21);
+            this.textBox_two.TabIndex = 23;
+            // 
+            // button_swap
+            // 
+            this.button_swap.Location = new System.Drawing.Point(555, 480);
+            this.button_swap.Name = "button_swap";
+            this.button_swap.Size = new System.Drawing.Size(279, 23);
+            this.button_swap.TabIndex = 7;
+            this.button_swap.Text = "swap";
+            this.button_swap.UseVisualStyleBackColor = true;
+            this.button_swap.Click += new System.EventHandler(this.button_swap_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(48, 366);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(164, 92);
+            this.button14.TabIndex = 24;
+            this.button14.Text = "button14";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label_now
+            // 
+            this.label_now.AutoSize = true;
+            this.label_now.Location = new System.Drawing.Point(48, 576);
+            this.label_now.Name = "label_now";
+            this.label_now.Size = new System.Drawing.Size(11, 12);
+            this.label_now.TabIndex = 25;
+            this.label_now.Text = "-";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1257, 450);
+            this.ClientSize = new System.Drawing.Size(1334, 645);
+            this.Controls.Add(this.label_now);
+            this.Controls.Add(this.button14);
+            this.Controls.Add(this.button_swap);
+            this.Controls.Add(this.textBox_two);
+            this.Controls.Add(this.textBox_one);
+            this.Controls.Add(this.label_two_result);
+            this.Controls.Add(this.label_one_result);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
@@ -425,6 +529,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -465,6 +570,16 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label_one_result;
+        private System.Windows.Forms.Label label_two_result;
+        private System.Windows.Forms.TextBox textBox_one;
+        private System.Windows.Forms.TextBox textBox_two;
+        private System.Windows.Forms.Button button_swap;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label_now;
     }
 }
 
