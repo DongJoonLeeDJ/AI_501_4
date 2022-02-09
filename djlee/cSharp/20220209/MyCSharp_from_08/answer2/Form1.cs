@@ -50,7 +50,7 @@ namespace answer2
             timer_limit.Enabled = true;
             try
             {
-                nowtime = int.Parse(textBox1.Text);
+                limitTimer = int.Parse(textBox1.Text);
             }
             catch (Exception ex)
             {
