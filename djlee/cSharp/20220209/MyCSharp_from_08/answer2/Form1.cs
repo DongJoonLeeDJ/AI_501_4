@@ -77,7 +77,7 @@ namespace answer2
         {
             nowtime++;
             //nowtime = -1 -> 시간제한을 잘못걸었을 때
-            if (nowtime >= limitTimer || nowtime == -1)
+            if (nowtime >= limitTimer || nowtime <= 0)
             {
                 label2.Text = "Game Over!!";
                 nowtime = 0;
