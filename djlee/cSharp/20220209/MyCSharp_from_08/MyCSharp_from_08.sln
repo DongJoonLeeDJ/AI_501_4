@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCSharp_from_08", "MyCShar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "answer2", "answer2\answer2.csproj", "{4DD00728-E1EE-4A12-8EBD-1CB52D708CC8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCSharp_chap08_01", "MyCSharp_chap08_01\MyCSharp_chap08_01.csproj", "{7581A031-0AE0-43E6-9E62-12EF6C1A3853}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4DD00728-E1EE-4A12-8EBD-1CB52D708CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4DD00728-E1EE-4A12-8EBD-1CB52D708CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4DD00728-E1EE-4A12-8EBD-1CB52D708CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7581A031-0AE0-43E6-9E62-12EF6C1A3853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7581A031-0AE0-43E6-9E62-12EF6C1A3853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7581A031-0AE0-43E6-9E62-12EF6C1A3853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7581A031-0AE0-43E6-9E62-12EF6C1A3853}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
