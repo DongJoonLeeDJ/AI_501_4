@@ -20,7 +20,12 @@
       "ProjectGuid": "7581a031-0ae0-43e6-9e62-12ef6c1a3853",
       "DisplayName": "MyCSharp_chap08_01",
       "ColorIndex": 2
+    },
+    "eccf0c74-98a9-4533-86bf-f5657ce82b31": {
+      "ProjectGuid": "eccf0c74-98a9-4533-86bf-f5657ce82b31",
+      "DisplayName": "MyCSharp_chap08_01_02",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }
