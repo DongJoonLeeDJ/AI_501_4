@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "095e0b22-c8a6-4c03-95f8-59bf2de685bb": {
+      "ProjectGuid": "095e0b22-c8a6-4c03-95f8-59bf2de685bb",
+      "DisplayName": "MyCSharpChap07",
+      "ColorIndex": 0
+    },
+    "0915ee7e-9aa0-4104-8ba3-780bded6cdd2": {
+      "ProjectGuid": "0915ee7e-9aa0-4104-8ba3-780bded6cdd2",
+      "DisplayName": "MyCSharpChap07_02",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "기타 파일",
+      "ColorIndex": -1
+    },
+    "17f53e98-a077-4245-9320-a2f69078481c": {
+      "ProjectGuid": "17f53e98-a077-4245-9320-a2f69078481c",
+      "DisplayName": "myanswer",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
