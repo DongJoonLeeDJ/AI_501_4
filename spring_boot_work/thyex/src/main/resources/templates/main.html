@@ -2,11 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layouts/layout1}">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <span th:text="${myname}">index.</span>
-</body>
+
+<th:block layout:fragment="script">
+    <script>
+        $('docuemnt').ready(function(){
+            // alert('들어왔나...');
+        });
+    </script>
+</th:block>
+<th:block layout:fragment="css">
+    <style>
+    *{
+        font-size:1.5rem;
+    }
+    </style>
+</th:block>
+<div layout:fragment="content">
+    <h1> main.html </h1>
+</div>
 </html>
