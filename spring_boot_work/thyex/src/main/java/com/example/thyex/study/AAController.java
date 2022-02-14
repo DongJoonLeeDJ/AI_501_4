@@ -23,7 +23,9 @@ public class AAController {
 
     @GetMapping(value = "aaselect")
     public String select(){
+        //List<AA> list = aaRepository.findAllById(Arrays.asList(1L,2L,3L));
         List<AA> list = aaRepository.findAll();
+//        AA aa = aaRepository.findById(1L).orElse(new AA());
         System.out.println(list);
         return list.toString();
     }

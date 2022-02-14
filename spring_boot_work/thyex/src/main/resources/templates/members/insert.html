@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<th:block layout:fragment="script">
+    <script>
+        $('docuemnt').ready(function(){
+        });
+    </script>
+</th:block>
+<th:block layout:fragment="css">
+    <style>
+    *{
+        font-size:1.5rem;
+    }
+    </style>
+</th:block>
+<div layout:fragment="content" class="container">
+    <h1> insert.html </h1>
+    <a href="selectall" class="btn btn-primary">list</a>
+    <form action="insert" method="post">
+        <div class="form-group">
+            <label for="email">Email address:</label>
+            <input type="email"
+                   class="form-control"
+                   placeholder="Enter email"
+                   id="email"
+                   name="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password"
+                   class="form-control"
+                   placeholder="Enter password"
+                   id="pwd"
+                   name="pwd">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1}">
+
+<th:block layout:fragment="script">
+    <script>
+        $('docuemnt').ready(function(){
+        });
+    </script>
+</th:block>
+<th:block layout:fragment="css">
+    <style>
+    *{
+        font-size:1.5rem;
+    }
+    </style>
+</th:block>
+<div layout:fragment="content" class="container">
+    <h1> selectall.html </h1>
+    <a href="insert" class="btn btn-primary">insert</a>
+</div>
+</html>
