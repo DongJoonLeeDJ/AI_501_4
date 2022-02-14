@@ -27,4 +27,5 @@ public class HomeController {
         model.addAttribute("myname","honggildong");
         return "main";
     }
+
 }
