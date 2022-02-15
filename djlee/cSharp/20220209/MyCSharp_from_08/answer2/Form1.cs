@@ -47,6 +47,14 @@ namespace answer2
                 }
             }
 
+            //Controls Form안에 있는 눈에 보이는 컴포넌트들(버튼 텍스트 박스 등)
+            //foreach (var item in Controls)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+
+
             timer_limit.Enabled = true;
             try
             {
