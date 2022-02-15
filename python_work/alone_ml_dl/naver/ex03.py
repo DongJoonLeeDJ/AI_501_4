@@ -11,8 +11,8 @@ a = np.arange(0,10000,1)
 train_input = a
 train_target = [a*a for a in train_input]
 
-train_input = np.asarray(train_input).astype('float32')
-train_target = np.asarray(train_target).astype('float32')
+train_input = np.asarray(train_input)
+train_target = np.asarray(train_target)
 
 print(train_input[:5])
 print(train_target[:5])
