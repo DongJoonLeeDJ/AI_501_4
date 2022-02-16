@@ -1,0 +1,41 @@
+{
+  "cars": {
+    "car": [
+      {
+        "parkingSpot": 1,
+        "carNumber": "30고1234",
+        "driverName": "이동준",
+        "phoneNumber": "010-2940-1613",
+        "parkingTime": "2022-02-11T17:24:42.1377317+09:00"
+      },
+      {
+        "parkingSpot": 2,
+        "carNumber": "",
+        "driverName": "",
+        "phoneNumber": "",
+        "parkingTime": "0001-01-01T00:00:00"
+      },
+      {
+        "parkingSpot": 3,
+        "carNumber": "",
+        "driverName": "",
+        "phoneNumber": "",
+        "parkingTime": "0001-01-01T00:00:00"
+      },
+      {
+        "parkingSpot": 4,
+        "carNumber": "",
+        "driverName": "",
+        "phoneNumber": "",
+        "parkingTime": "0001-01-01T00:00:00"
+      },
+      {
+        "parkingSpot": 5,
+        "carNumber": "",
+        "driverName": "",
+        "phoneNumber": "",
+        "parkingTime": "0001-01-01T00:00:00"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a30fe43c-9a98-41c8-a4ef-1751a26ba402": {
+      "ProjectGuid": "a30fe43c-9a98-41c8-a4ef-1751a26ba402",
+      "DisplayName": "BookManager",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

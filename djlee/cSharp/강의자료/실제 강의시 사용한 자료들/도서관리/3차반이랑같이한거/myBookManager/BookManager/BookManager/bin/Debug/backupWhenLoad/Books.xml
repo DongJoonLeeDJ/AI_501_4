@@ -1,0 +1,12 @@
+<books>
+<book>
+   <isbn>5678</isbn>
+   <name>취업하자_취업고고</name>
+   <publisher>취업하자</publisher>
+   <page>300</page>
+   <borrowedAt>0001-01-01 오전 12:00:00</borrowedAt>
+   <isBorrowed>0</isBorrowed>
+   <userId>0</userId>
+   <userName></userName>
+</book>
+</books>
