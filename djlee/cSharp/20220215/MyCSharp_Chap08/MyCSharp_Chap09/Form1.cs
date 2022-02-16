@@ -111,6 +111,8 @@ namespace MyCSharp_Chap09
             IMonsterFight am = new DrMun();
             IMonsterFight ab = new BabyMundo();
 
+            //IMonsterFight aaa = new IMonsterFight();
+
             ac.MagicArrow();
             am.MagicArrow();
             ab.MagicArrow();
