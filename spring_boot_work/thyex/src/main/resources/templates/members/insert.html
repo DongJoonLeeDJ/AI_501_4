@@ -22,6 +22,7 @@
     <form action="insert" method="post">
         <div class="form-group">
             <label for="email">Email address:</label>
+            <span th:text="${errorMessage}"></span>
             <input type="email"
                    class="form-control"
                    placeholder="Enter email"
