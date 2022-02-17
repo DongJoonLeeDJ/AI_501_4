@@ -6,6 +6,10 @@
 <th:block layout:fragment="script">
     <script>
         $('docuemnt').ready(function(){
+            var errorMessage = "[[${errorMessage}]]";
+            if( errorMessage != ""){
+                alert(errorMessage);
+            }
         });
     </script>
 </th:block>
@@ -19,10 +23,11 @@
 <div layout:fragment="content" class="container">
     <h1> insert.html </h1>
     <a href="selectall" class="btn btn-primary">list</a>
-    <form action="insert" method="post">
+    <form action="insert" method="post" th:object="${memberFormDto}">
         <div class="form-group">
             <label for="email">Email address:</label>
-            <span th:text="${errorMessage}"></span>
+            <p th:if="${#fields.hasErrors('email')}" class="fieldError">error</p>
+<!--            <span th:text="${errorMessage}"></span>-->
             <input type="email"
                    class="form-control"
                    placeholder="Enter email"
@@ -31,6 +36,7 @@
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
+            <p th:if="${#fields.hasErrors('pwd')}" class="fieldError">error</p>
             <input type="password"
                    class="form-control"
                    placeholder="Enter password"

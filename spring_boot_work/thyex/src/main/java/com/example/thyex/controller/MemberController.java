@@ -7,11 +7,14 @@ import com.example.thyex.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping(value = "members")
@@ -36,16 +39,21 @@ public class MemberController {
     }
 
     @GetMapping("insert")
-    public String insert(){
+    public String insert(Model model){
+        model.addAttribute("memberFormDto",new MemberFormDto());
         return "members/insert";
     }
 
     @PostMapping("insert")
 //    @RequestMapping(value = "insert",method = RequestMethod.POST)
-    public String insert(MemberFormDto dto, Model model){
-        System.out.println(dto);
+    public String insert(@Valid MemberFormDto memberFormDto, BindingResult bindingResult, Model model){
+        if(bindingResult.hasErrors()){
+            return "members/insert";
+        }
+
+        System.out.println(memberFormDto);
         // MemberFormDto -> Member(Entity) 객체로 바꿈..
-        Member member = Member.createMember(dto);
+        Member member = Member.createMember(memberFormDto);
         // member(Entity) 객체를 MemberService를 호출하면서...
         try {
             memberService.save(member);
