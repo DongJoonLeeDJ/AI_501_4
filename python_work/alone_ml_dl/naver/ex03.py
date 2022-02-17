@@ -24,10 +24,11 @@ model.compile(optimizer="adam", loss='mse')
 model.fit(train_input.reshape(-1,1), train_target, verbose=1, epochs=900)
 
 predvalue = model.predict([10,12,20,30])
+
 print('predvalue')
 print(predvalue)
 
-model.save('model-whole.h5')
+model.save('./model-hole.h5')
 
 # lr = LinearRegression()
 # lr.fit(train_input.reshape(-1,1),train_target)

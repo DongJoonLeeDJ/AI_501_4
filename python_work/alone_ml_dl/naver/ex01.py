@@ -171,24 +171,5 @@ def below_threshold_len(max_len, nested_list):
 max_len = 30
 below_threshold_len(max_len, X_train)
 
-np.savez('xytrain.npz',X_train=X_train,y_train=y_train)
+np.savez('xytrain.npz',X_train=X_train,y_train=y_train,vocab_size=vocab_size)
 
-from tensorflow.keras.layers import Embedding, Dense, LSTM
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.models import load_model
-from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
-
-embedding_dim = 100
-hidden_units = 128
-
-
-model = Sequential()
-model.add(Embedding(vocab_size, embedding_dim))
-model.add(LSTM(hidden_units))
-model.add(Dense(1, activation='sigmoid'))
-
-es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=4)
-mc = ModelCheckpoint('best_model.h5', monitor='val_acc', mode='max', verbose=1, save_best_only=True)
-
-model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
-history = model.fit(X_train, y_train, epochs=15, callbacks=[es, mc], batch_size=64, validation_split=0.2)
