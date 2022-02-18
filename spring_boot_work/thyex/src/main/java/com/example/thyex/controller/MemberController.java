@@ -9,12 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping(value = "members")
@@ -33,8 +31,13 @@ public class MemberController {
     @Autowired
     MemberService memberService;
 
+    @Autowired
+    MemberRepository memberRepository;
+
     @GetMapping("selectall")
-    public String selectall(){
+    public String selectall(Model model){
+        List<Member> members = memberRepository.findAll();
+        model.addAttribute("members", members);
         return "members/selectall";
     }
 
@@ -44,8 +47,35 @@ public class MemberController {
         return "members/insert";
     }
 
+    @GetMapping("update")
+    public String update(Model model, @RequestParam() Long id){
+        Member member = memberRepository.findById(id).orElse(new Member());
+        model.addAttribute("id",id);
+        model.addAttribute("memberFormDto", new MemberFormDto(member.getEmail(), member.getPwd()));
+        return "members/update";
+    }
+
+    @PostMapping("update")
+    public String update(@Valid MemberFormDto memberFormDto, BindingResult bindingResult, Model model,Long id){
+        model.addAttribute("id", id.toString());
+        if(bindingResult.hasErrors()){
+            return "members/update";
+        }
+        Member member = Member.createMember(memberFormDto);
+        member.setId(id);
+        try {
+            memberService.save(member);
+        }
+        catch (Exception e){
+            System.out.println(e.toString());
+            System.out.println("- 발생...");
+            model.addAttribute("errorMessage","Email중복");
+            return "members/update";
+        }
+        return "redirect:selectall";
+    }
+
     @PostMapping("insert")
-//    @RequestMapping(value = "insert",method = RequestMethod.POST)
     public String insert(@Valid MemberFormDto memberFormDto, BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
             return "members/insert";

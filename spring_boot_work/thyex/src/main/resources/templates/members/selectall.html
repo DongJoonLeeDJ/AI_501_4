@@ -17,7 +17,24 @@
     </style>
 </th:block>
 <div layout:fragment="content" class="container">
-    <h1> selectall.html </h1>
+    <h1>selectall.html</h1>
+    <h1>회원목록</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>pwd</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="mem:${members}">
+                <td th:text="${mem.id}">1</td>
+                <td><a th:text="${mem.email}" th:href="@{update(id=${mem.id})}">aa@naver.com</a></td>
+                <td th:text="${mem.pwd}">1234</td>
+            </tr>
+        </tbody>
+    </table>
     <a href="insert" class="btn btn-primary">insert</a>
 </div>
 </html>
