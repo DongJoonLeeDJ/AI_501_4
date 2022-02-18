@@ -19,8 +19,8 @@ public class HomeController {
     @GetMapping("main")
     public String index(Model model){
 
-        memberRepository.save(new Member().createMember(new MemberFormDto("aa@naver.com","1234")));
-        memberRepository.save(new Member().createMember(new MemberFormDto("bb@naver.com","3456")));
+//        memberRepository.save(new Member().createMember(new MemberFormDto("aa@naver.com","1234")));
+//        memberRepository.save(new Member().createMember(new MemberFormDto("bb@naver.com","3456")));
 
         List<Member> list = memberRepository.findAll();
         System.out.println(list);

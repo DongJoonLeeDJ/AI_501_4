@@ -50,14 +50,12 @@ public class MemberController {
     @GetMapping("update")
     public String update(Model model, @RequestParam() Long id){
         Member member = memberRepository.findById(id).orElse(new Member());
-        model.addAttribute("id",id);
-        model.addAttribute("memberFormDto", new MemberFormDto(member.getEmail(), member.getPwd()));
+        model.addAttribute("memberFormDto", new MemberFormDto(id,member.getEmail(), member.getPwd()));
         return "members/update";
     }
 
     @PostMapping("update")
     public String update(@Valid MemberFormDto memberFormDto, BindingResult bindingResult, Model model,Long id){
-        model.addAttribute("id", id.toString());
         if(bindingResult.hasErrors()){
             return "members/update";
         }

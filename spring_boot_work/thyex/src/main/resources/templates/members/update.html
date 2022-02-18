@@ -25,7 +25,7 @@
     <h1> 수정 화면 </h1>
     <a href="selectall" class="btn btn-primary">list</a>
     <form action="update" method="post" th:object="${memberFormDto}">
-        <input type="hidden" name="id" value="${id}">
+        <input type="hidden" name="id" th:field="*{id}">
         <div class="form-group">
             <label for="email">Email address:</label>
             <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">error</p>

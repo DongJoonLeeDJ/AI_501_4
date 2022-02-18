@@ -13,6 +13,8 @@ import javax.validation.constraints.NotEmpty;
 @RequiredArgsConstructor
 public class MemberFormDto {
 
+    private long id;
+
     @NotEmpty(message = "필수 입력값입니다.")
     @Email(message = "이메일 형식어이야 합니다.")
     private String email;
