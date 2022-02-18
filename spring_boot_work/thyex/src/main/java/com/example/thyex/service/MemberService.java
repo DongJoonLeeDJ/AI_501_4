@@ -15,7 +15,6 @@ public class MemberService {
 
         // select * from member where email = ?
         // ? = member.getemail()
-
         Member db_member = memberRepository.getByEmail(member.getEmail());
         if(db_member != null)
             throw new Exception("그 해당 되는 행 email 있음..");

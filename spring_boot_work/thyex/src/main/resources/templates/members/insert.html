@@ -26,22 +26,24 @@
     <form action="insert" method="post" th:object="${memberFormDto}">
         <div class="form-group">
             <label for="email">Email address:</label>
-            <p th:if="${#fields.hasErrors('email')}" class="fieldError">error</p>
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">error</p>
 <!--            <span th:text="${errorMessage}"></span>-->
             <input type="email"
                    class="form-control"
                    placeholder="Enter email"
                    id="email"
-                   name="email">
+                   name="email"
+                   th:field="*{email}">
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
-            <p th:if="${#fields.hasErrors('pwd')}" class="fieldError">error</p>
+            <p th:if="${#fields.hasErrors('pwd')}"  th:errors="*{pwd}" class="fieldError">error</p>
             <input type="password"
                    class="form-control"
                    placeholder="Enter password"
                    id="pwd"
-                   name="pwd">
+                   name="pwd"
+                   th:field="*{pwd}">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

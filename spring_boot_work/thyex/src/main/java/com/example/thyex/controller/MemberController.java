@@ -21,7 +21,7 @@ import javax.validation.Valid;
 public class MemberController {
      /*
         1. 중복나면 저장이 안되게끔.. MemberService..
-        2. valid.jar 아이디와 패스워드가 입력이 안되면... 에러...
+        2. sprinbboot-starter-validation.jar 아이디와 패스워드가 입력이 안되면... 에러...
          -> BingdingResult
         3. th:obejct="${mebmerform}"
          ->th:field="*{email}"
@@ -50,11 +50,7 @@ public class MemberController {
         if(bindingResult.hasErrors()){
             return "members/insert";
         }
-
-        System.out.println(memberFormDto);
-        // MemberFormDto -> Member(Entity) 객체로 바꿈..
         Member member = Member.createMember(memberFormDto);
-        // member(Entity) 객체를 MemberService를 호출하면서...
         try {
             memberService.save(member);
         }

@@ -1,19 +1,25 @@
-from tensorflow.keras.layers import Embedding, Dense, LSTM
+from tensorflow.keras.layers import Embedding, Dense, LSTM, SimpleRNN
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.models import load_model
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 import numpy as np
 
-X_train = np.load('xytrain.npz')['X_train']
-y_train = np.load('xytrain.npz')['y_train']
-vocab_size = np.load('xytrain.npz')['vocab_size']
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+with np.load('./xytrain.npz',allow_pickle=True) as f:
+    X_train = f['X_train']
+    y_train = f['y_train']
+    vocab_size = f['vocab_size']
+
+print(vocab_size)
 
 embedding_dim = 100
 hidden_units = 128
 
 model = Sequential()
 model.add(Embedding(vocab_size, embedding_dim))
-model.add(LSTM(hidden_units))
+model.add(SimpleRNN(hidden_units))
 model.add(Dense(1, activation='sigmoid'))
 
 es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=4)
