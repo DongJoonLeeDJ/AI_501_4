@@ -13,7 +13,14 @@ from tqdm import tqdm
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
-loaded_model = load_model('best_model.h5')
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
+okt = Okt()
+
+tokenizer = 
+
+loaded_model = load_model('./naver/best_model.h5')
 # print("\n 테스트 정확도: %.4f" % (loaded_model.evaluate(X_test, y_test)[1]))
 
 def sentiment_predict(new_sentence):

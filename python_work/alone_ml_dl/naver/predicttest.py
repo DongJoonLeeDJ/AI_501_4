@@ -2,15 +2,24 @@
 # A very simple Flask Hello World app for you to get started with...
 from flask import jsonify
 from flask import Flask, request, abort,render_template
+import re
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-import re
 from konlpy.tag import Okt
 from tensorflow import keras
 
 app = Flask(__name__)
 
-loadmodel = keras.models.load_model('./naver/best_model.h5')
+# model = keras.models.Sequential()
+# model.add(keras.layers.Embedding(19416, 100))
+# model.add(keras.layers.LSTM(128))
+# model.add(keras.layers.Dense(1, activation='sigmoid'))
+
+# model.load_weights('best_model.h5')
+# model.save('best_hole_model.h5')
+model = keras.models.load_model('./model-whole.h5')
+model.load_weights('best_model.h5')
+
 okt = Okt()
 tokenizer = Tokenizer()
 stopwords = ['의','가','이','은','들','는','좀','잘','걍','과','도','를','으로','자','에','와','한','하다']
@@ -22,8 +31,36 @@ def loadmodel_predict(new_sentence):
   new_sentence = [word for word in new_sentence if not word in stopwords] # 불용어 제거
   encoded = tokenizer.texts_to_sequences([new_sentence]) # 정수 인코딩
   pad_new = pad_sequences(encoded, maxlen = max_len) # 패딩
-  score = float(loadmodel.predict(pad_new)) # 예측
+  score = float(model.predict(pad_new)) # 예측
   if(score > 0.5):
     print("{:.2f}% 확률로 긍정 리뷰입니다.\n".format(score * 100))
+    return "{:.2f}% 확률로 긍정 리뷰입니다.\n".format(score * 100)
   else:
     print("{:.2f}% 확률로 부정 리뷰입니다.\n".format((1 - score) * 100))
+    return "{:.2f}% 확률로 부정 리뷰입니다.\n".format(score * 100)
+
+@app.route('/')
+def hello_world():
+    return 'hihihihi!'
+
+@app.route('/keyboard')
+def keyboard():
+    return jsonify({'type': 'text',"aa":"bb"})
+
+@app.route('/aa')
+def aa():
+    return "aa"
+
+@app.route("/html")
+def html():
+    data = request.args.get('data');
+    if len(data) == 0 :
+      return render_template('a.html',result='data param need')
+    print(data)
+    result = loadmodel_predict(data)
+    return render_template('a.html',result=result)
+
+
+
+
+app.run()

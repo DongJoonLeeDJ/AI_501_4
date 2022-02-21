@@ -3,8 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import re
 import urllib.request
-from konlpy.tag import Okt
 from tqdm import tqdm
+from konlpy.tag import Okt
+
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
@@ -46,6 +47,8 @@ print(len(train_data))
 
 '''
     데이터 전처리 수행
+    나는 이영화가 좋아요..
+    1 2 3
 '''
 
 eng_text = 'do!!! you expect... people~ to~ read~ the FAQ, etc. and actually accept hard~! atheism?@@'
@@ -171,5 +174,58 @@ def below_threshold_len(max_len, nested_list):
 max_len = 30
 below_threshold_len(max_len, X_train)
 
-np.savez('xytrain.npz',X_train=X_train,y_train=y_train,vocab_size=vocab_size)
+X_train = pad_sequences(X_train, maxlen=max_len)
+X_test = pad_sequences(X_test, maxlen=max_len)
 
+from tensorflow.keras.layers import Embedding, Dense, LSTM,GRU
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.models import load_model
+from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+import numpy as np
+
+embedding_dim = 100
+hidden_units = 128
+
+model = Sequential()
+model.add(Embedding(vocab_size, embedding_dim))
+model.add(LSTM(hidden_units))
+model.add(Dense(1, activation='sigmoid'))
+
+es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=4)
+mc = ModelCheckpoint('best_model.h5', monitor='val_acc', mode='max', verbose=1, save_best_only=True)
+
+model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
+
+print(X_train.shape)
+print(y_train.shape)
+
+history = model.fit(X_train, y_train, epochs=15, callbacks=[es, mc], batch_size=64, validation_split=0.2)
+model.save('model-whole.h5')
+
+def sentiment_predict(new_sentence):
+  new_sentence = re.sub(r'[^ㄱ-ㅎㅏ-ㅣ가-힣 ]','', new_sentence)
+  new_sentence = okt.morphs(new_sentence, stem=True) # 토큰화
+  new_sentence = [word for word in new_sentence if not word in stopwords] # 불용어 제거
+  print(stopwords)
+  encoded = tokenizer.texts_to_sequences([new_sentence]) # 정수 인코딩
+  pad_new = pad_sequences(encoded, maxlen = max_len) # 패딩
+  score = float(model.predict(pad_new)) # 예측
+  if(score > 0.5):
+    print("{:.2f}% 확률로 긍정 리뷰입니다.\n".format(score * 100))
+  else:
+    print("{:.2f}% 확률로 부정 리뷰입니다.\n".format((1 - score) * 100))
+
+
+predvalue = sentiment_predict('이 영화 개꿀잼 ㅋㅋㅋ')
+print(predvalue)
+predvalue = sentiment_predict('이 영화 핵노잼 ㅠㅠ')
+print(predvalue)
+
+predvalue = sentiment_predict('이딴게 영화냐 ㅉㅉ')
+print(predvalue)
+
+predvalue = sentiment_predict('감독 뭐하는 놈이냐?')
+print(predvalue)
+
+predvalue = sentiment_predict('와 개쩐다 정말 세계관 최강자들의 영화다')
+print(predvalue)
