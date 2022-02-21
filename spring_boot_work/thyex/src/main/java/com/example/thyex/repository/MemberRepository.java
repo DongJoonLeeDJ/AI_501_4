@@ -8,4 +8,6 @@ public interface MemberRepository extends JpaRepository<Member,Long> {
     Member getByEmail(String email);
 //    Member getByPwd(String pwd);
 //    Member getByEmailOrPwd(String email,String pwd);
+
+    // select * from member order by id desc
 }
