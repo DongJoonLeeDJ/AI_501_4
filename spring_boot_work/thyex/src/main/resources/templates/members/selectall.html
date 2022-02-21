@@ -45,11 +45,15 @@
     -->
     <div class="d-flex justify-content-center">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item" th:each="i:${#numbers.sequence(1,members.totalPages)}">
+            <li class="page-item" th:classappend="${members.pageable.pageNumber == 0} ? 'disabled'">
+                <a class="page-link" th:href="@{/members/selectall(pageNum=${members.pageable.pageNumber-1})}" href="#">Previous</a>
+            </li>
+            <li class="page-item" th:classappend="${members.pageable.pageNumber+1 == i} ? 'active'" th:each="i:${#numbers.sequence(1,members.totalPages)}">
                 <a class="page-link" href="#" th:href="@{/members/selectall(pageNum=${i-1})}" th:text="${i}">1</a>
             </li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <li class="page-item" th:classappend="${members.pageable.pageNumber == members.totalPages -1} ? 'disabled'">
+                <a class="page-link" href="#" th:href="@{/members/selectall(pageNum=${members.pageable.pageNumber+1})}">Next</a>
+            </li>
         </ul>
     </div>
 </div>

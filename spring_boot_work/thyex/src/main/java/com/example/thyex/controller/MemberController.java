@@ -47,6 +47,7 @@ public class MemberController {
         Pageable page = PageRequest.of(pageNum, size, Sort.by(Sort.Direction.DESC,"id"));
         Page<Member> members = memberRepository.findAll(page);
         // 0page 1page 2page내용이 없다..
+//        System.out.println(members.getPageable().getPageNumber());
         System.out.println("getTotalPages = "+members.getTotalPages());
         model.addAttribute("members", members);
         return "members/selectall";
