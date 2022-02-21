@@ -19,6 +19,8 @@
 <div layout:fragment="content" class="container">
     <h1>selectall.html</h1>
     <h1>회원목록</h1>
+    <div>총 page개수 : <span th:text="${members.totalPages}">3</span> </div>
+    <div>총 row개수 :  <span th:text="${members.totalElements}">3</span>  </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -44,9 +46,9 @@
     <div class="d-flex justify-content-center">
         <ul class="pagination">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item" th:each="i:${#numbers.sequence(1,members.totalPages)}">
+                <a class="page-link" href="#" th:href="@{/members/selectall(pageNum=${i-1})}" th:text="${i}">1</a>
+            </li>
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
         </ul>
     </div>

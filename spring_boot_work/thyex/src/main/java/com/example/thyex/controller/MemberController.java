@@ -5,6 +5,9 @@ import com.example.thyex.entity.Member;
 import com.example.thyex.repository.MemberRepository;
 import com.example.thyex.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,8 +39,15 @@ public class MemberController {
     MemberRepository memberRepository;
 
     @GetMapping("selectall")
-    public String selectall(Model model){
-        List<Member> members = memberRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
+    public String selectall(Model model,
+                            @RequestParam(defaultValue = "0", required = false) int pageNum,
+                            @RequestParam(defaultValue = "5", required = false) int size
+                            ){
+//        List<Member> members = memberRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
+        Pageable page = PageRequest.of(pageNum, size, Sort.by(Sort.Direction.DESC,"id"));
+        Page<Member> members = memberRepository.findAll(page);
+        // 0page 1page 2page내용이 없다..
+        System.out.println("getTotalPages = "+members.getTotalPages());
         model.addAttribute("members", members);
         return "members/selectall";
     }
