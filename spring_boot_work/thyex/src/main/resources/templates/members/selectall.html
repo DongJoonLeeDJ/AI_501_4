@@ -6,6 +6,12 @@
 <th:block layout:fragment="script">
     <script>
         $('docuemnt').ready(function(){
+            $('#deletebtn').on('click',function(){
+                var result = confirm('삭제 하시겟습니까?');
+                if(result){
+                    $('#frm').submit();
+                }
+            });
         });
     </script>
 </th:block>
@@ -21,9 +27,11 @@
     <h1>회원목록</h1>
     <div>총 page개수 : <span th:text="${members.totalPages}">3</span> </div>
     <div>총 row개수 :  <span th:text="${members.totalElements}">3</span>  </div>
+    <form action="" th:action="@{/members/delete}" id="frm" method="post">
     <table class="table table-striped">
         <thead>
             <tr>
+                <th></th>
                 <th>id</th>
                 <th>email</th>
                 <th>pwd</th>
@@ -31,15 +39,18 @@
         </thead>
         <tbody>
             <tr th:each="mem:${members}">
+                <td><input type="checkbox" class="form-control" th:value="${mem.id}" name="id"></td>
                 <td th:text="${mem.id}">1</td>
                 <td><a th:text="${mem.email}" th:href="@{update(id=${mem.id})}">aa@naver.com</a></td>
                 <td th:text="${mem.pwd}">1234</td>
             </tr>
         </tbody>
     </table>
+    </form>
     <div class="row">
         <div class="col-md-6">
             <a href="insert" class="btn btn-primary">insert</a>
+            <button id="deletebtn" type="button" class="btn btn-primary">delete</button>
         </div>
         <div class="col-md-6 my-2">
             <form class="form-inline" action="/members/selectall">
@@ -62,13 +73,13 @@
     <div class="d-flex justify-content-center">
         <ul class="pagination">
             <li class="page-item" th:classappend="${members.pageable.pageNumber == 0} ? 'disabled'">
-                <a class="page-link" th:href="@{/members/selectall(pageNum=${members.pageable.pageNumber-1})}" href="#">Previous</a>
+                <a class="page-link" th:href="@{/members/selectall(pageNum=${members.pageable.pageNumber-1},email=${param.email})}" href="#">Previous</a>
             </li>
             <li class="page-item" th:classappend="${members.pageable.pageNumber+1 == i} ? 'active'" th:each="i:${#numbers.sequence(1,members.totalPages)}">
-                <a class="page-link" href="#" th:href="@{/members/selectall(pageNum=${i-1})}" th:text="${i}">1</a>
+                <a class="page-link" href="#" th:href="@{/members/selectall(pageNum=${i-1},email=${param.email})}" th:text="${i}">1</a>
             </li>
             <li class="page-item" th:classappend="${members.pageable.pageNumber == members.totalPages -1} ? 'disabled'">
-                <a class="page-link" href="#" th:href="@{/members/selectall(pageNum=${members.pageable.pageNumber+1})}">Next</a>
+                <a class="page-link" href="#" th:href="@{/members/selectall(pageNum=${members.pageable.pageNumber+1},email=${param.email})}">Next</a>
             </li>
         </ul>
     </div>

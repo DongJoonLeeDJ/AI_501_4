@@ -16,27 +16,28 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Controller
 @RequestMapping(value = "members")
 public class MemberController {
-     /*
-        1. 중복나면 저장이 안되게끔.. MemberService..
-        2. sprinbboot-starter-validation.jar 아이디와 패스워드가 입력이 안되면... 에러...
-         -> BingdingResult
-        3. th:obejct="${mebmerform}"
-         ->th:field="*{email}"
-         커맨드객체 사용방법
-        4. select 오늘내일
-         */
 
-    //객체가 계속 생성되어져서 메모리 낭비를 초래한다
     @Autowired
     MemberService memberService;
 
     @Autowired
     MemberRepository memberRepository;
+
+    @PostMapping("delete")
+    public String delete(Long id[]){
+        List<Long> ids = Arrays.asList(id);
+        memberRepository.deleteAllByIdIn(ids);
+
+        return "redirect:selectall";
+    }
 
     @GetMapping("selectall")
     public String selectall(Model model,
