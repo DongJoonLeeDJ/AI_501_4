@@ -37,15 +37,25 @@
             </tr>
         </tbody>
     </table>
-    <a href="insert" class="btn btn-primary">insert</a>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="insert" class="btn btn-primary">insert</a>
+        </div>
+        <div class="col-md-6 my-2">
+            <form class="form-inline" action="/members/selectall">
+                <input class="form-control mr-3"
+                       type="text"
+                       placeholder="Email"
+                       name="email"
+                       th:value="${param.email}">
+                <button class="btn btn-success"
+                        type="submit">Search</button>
+            </form>
+        </div>
+    </div>
     <!--
-        왼쪽
-        justify-content-center 중간정렬
-        justify-content-end 오른쪽정렬...
-
         1. email 검색
         2. delete 만들기..
-
         3. menu 활성화
         4. board 만들기
     -->

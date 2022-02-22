@@ -41,13 +41,12 @@ public class MemberController {
     @GetMapping("selectall")
     public String selectall(Model model,
                             @RequestParam(defaultValue = "0", required = false) int pageNum,
-                            @RequestParam(defaultValue = "5", required = false) int size
+                            @RequestParam(defaultValue = "5", required = false) int size,
+                            @RequestParam(defaultValue = "", required = false) String email
                             ){
-//        List<Member> members = memberRepository.findAll(Sort.by(Sort.Direction.DESC,"id"));
         Pageable page = PageRequest.of(pageNum, size, Sort.by(Sort.Direction.DESC,"id"));
-        Page<Member> members = memberRepository.findAll(page);
-        // 0page 1page 2page내용이 없다..
-//        System.out.println(members.getPageable().getPageNumber());
+//        Page<Member> members = memberRepository.findAll(page);
+        Page<Member> members = memberRepository.findByEmailContaining(email,page);
         System.out.println("getTotalPages = "+members.getTotalPages());
         model.addAttribute("members", members);
         return "members/selectall";

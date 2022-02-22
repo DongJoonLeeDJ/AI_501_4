@@ -162,7 +162,7 @@ print('리뷰의 평균 길이 :',sum(map(len, X_train))/len(X_train))
 plt.hist([len(review) for review in X_train], bins=50)
 plt.xlabel('length of samples')
 plt.ylabel('number of samples')
-plt.show()
+# plt.show()
 
 def below_threshold_len(max_len, nested_list):
   count = 0
@@ -177,7 +177,7 @@ below_threshold_len(max_len, X_train)
 X_train = pad_sequences(X_train, maxlen=max_len)
 X_test = pad_sequences(X_test, maxlen=max_len)
 
-from tensorflow.keras.layers import Embedding, Dense, LSTM,GRU
+from tensorflow.keras.layers import Embedding, Dense, LSTM, GRU
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.models import load_model
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
@@ -191,22 +191,22 @@ model.add(Embedding(vocab_size, embedding_dim))
 model.add(LSTM(hidden_units))
 model.add(Dense(1, activation='sigmoid'))
 
-es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=4)
-mc = ModelCheckpoint('best_model.h5', monitor='val_acc', mode='max', verbose=1, save_best_only=True)
+checkpoint_cb = ModelCheckpoint('best-model.h5',save_best_only=True)
+early_stopping_cb = EarlyStopping(patience=3,restore_best_weights=True)
 
 model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
 
 print(X_train.shape)
 print(y_train.shape)
 
-history = model.fit(X_train, y_train, epochs=15, callbacks=[es, mc], batch_size=64, validation_split=0.2)
+history = model.fit(X_train, y_train, epochs=15, callbacks=[early_stopping_cb, checkpoint_cb], batch_size=64, validation_split=0.2)
+print(model.summary())
 model.save('model-whole.h5')
 
 def sentiment_predict(new_sentence):
   new_sentence = re.sub(r'[^ㄱ-ㅎㅏ-ㅣ가-힣 ]','', new_sentence)
   new_sentence = okt.morphs(new_sentence, stem=True) # 토큰화
   new_sentence = [word for word in new_sentence if not word in stopwords] # 불용어 제거
-  print(stopwords)
   encoded = tokenizer.texts_to_sequences([new_sentence]) # 정수 인코딩
   pad_new = pad_sequences(encoded, maxlen = max_len) # 패딩
   score = float(model.predict(pad_new)) # 예측
@@ -229,3 +229,31 @@ print(predvalue)
 
 predvalue = sentiment_predict('와 개쩐다 정말 세계관 최강자들의 영화다')
 print(predvalue)
+
+from flask import jsonify
+from flask import Flask, request, abort,render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'hihihihi!'
+
+@app.route('/keyboard')
+def keyboard():
+    return jsonify({'type': 'text',"aa":"bb"})
+
+@app.route('/aa')
+def aa():
+    return "aa"
+
+@app.route("/html")
+def html():
+    data = request.args.get('data');
+    if len(data) == 0 :
+      return render_template('a.html',result='data param need')
+    print(data)
+    result = sentiment_predict(data)
+    return render_template('a.html',result=result)
+
+app.run()
