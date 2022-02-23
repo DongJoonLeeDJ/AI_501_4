@@ -157,7 +157,7 @@ namespace MyCSharp_Chap12
 
             foreach (var item in output)
             {
-                Console.WriteLine(item.Day + " " + item.korWeather);
+                Console.WriteLine( item.Day + " " + item.korWeather );
             }
         }
 
