@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title th:text="${menu}"></title>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link th:href="@{/css/layout1.css}" rel="stylesheet">
@@ -18,7 +18,7 @@
 
 </head>
 <body>
-<div th:replace="fragments/header::header"></div>
+<div th:replace="fragments/header::header(${menu})"></div>
 <div layout:fragment="content" class="content">
 </div>
 <div th:replace="fragments/footer::footer"></div>

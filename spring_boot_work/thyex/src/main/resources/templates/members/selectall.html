@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layouts/layout1}">
-
+      layout:decorate="~{layouts/layout1(menu='members')}">
+<title layout:fragment="title">members</title>
 <th:block layout:fragment="script">
     <script>
         $('docuemnt').ready(function(){
@@ -65,10 +65,10 @@
         </div>
     </div>
     <!--
-        1. email 검색
-        2. delete 만들기..
-        3. menu 활성화
-        4. board 만들기
+        1. menu 활성화
+        2. board 만들기
+        3. todo 만들기
+        4. 로그인하는것..
     -->
     <div class="d-flex justify-content-center">
         <ul class="pagination">

@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<div th:fragment="header">
+<div th:fragment="header(menu)">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <!-- Brand -->
-        <a class="navbar-brand" href="/main">Main</a>
-
         <!-- Toggler/collapsibe Button -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -14,17 +11,20 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="/members/selectall">member</a>
+                    <a class="nav-link" th:classappend="${menu =='main'} ? 'active'" href="/main">Main</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/board">board</a>
+                    <a class="nav-link" th:classappend="${menu =='members'} ? 'active'" href="/members/selectall">member</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/todo">todo</a>
+                    <a class="nav-link" th:classappend="${menu =='board'} ? 'active'" href="/board">board</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${menu =='todo'} ? 'active'" href="/todo">todo</a>
                 </li>
             </ul>
         </div>
-        <form class="form-inline" action="/action_page.php">
+        <form class="form-inline" action="">
             <input class="form-control mr-md-2" type="text" placeholder="Search">
             <button class="btn btn-success" type="submit">Search</button>
         </form>
