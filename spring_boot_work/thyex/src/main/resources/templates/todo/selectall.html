@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1(menu='todo')}">
+<title layout:fragment="title">todo</title>
+<th:block layout:fragment="script">
+    <script>
+    </script>
+</th:block>
+<th:block layout:fragment="css">
+    <style>
+        *{
+            font-size:1.5rem;
+        }
+    </style>
+</th:block>
+<div layout:fragment="content" class="container">
+    <h1>todo selectall.html</h1>
+    <h1>할일</h1>
+</div>
+</html>
