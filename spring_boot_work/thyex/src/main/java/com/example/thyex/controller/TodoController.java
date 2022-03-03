@@ -1,16 +1,29 @@
 package com.example.thyex.controller;
 
+import com.example.thyex.entity.Todo;
+import com.example.thyex.repository.TodoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("todo")
 public class TodoController {
 
-    @GetMapping("selectall")
-    public String selectall(){
+    @Autowired
+    TodoRepository todoRepository;
 
+    @GetMapping("selectall")
+    public String selectall(Model model) {
+        todoRepository.save(new Todo(0L,"할일1","20220303"));
+        todoRepository.save(new Todo(1L,"할일2","20220303"));
+        List<Todo> list = todoRepository.findAll();
+        System.out.println(list);
+        model.addAttribute("list",list);
         return "todo/selectall";
     }
 }
