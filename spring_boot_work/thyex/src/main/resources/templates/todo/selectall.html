@@ -5,7 +5,9 @@
 <title layout:fragment="title">todo</title>
 <th:block layout:fragment="script">
     <script>
-
+        function del_func(id){
+            alert(id);
+        }
     </script>
 </th:block>
 <th:block layout:fragment="css">
@@ -22,14 +24,23 @@
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">추가</button>
     </div>
     <div th:each="obj:${list}">
-        <!-- display inline 속성은 옆으로.. 나오는거 span 기본값이 inline-->
-        <!-- display block 속성은 밑으로.. 나오는거 div 기본값이 block-->
-        <span>순번</span> <span th:text="${obj.id + 1}">순번</span>
-        <div th:text="${obj.content}"
-             class="p-2"
-             style="width:100%;
-                    background-color:gray;">
-            중간에 나오는거
+        <div>
+            <span>순번</span><span th:text="${obj.id + 1}">순번</span>
+        </div>
+        <div style="overflow:hidden; background-color:gray;">
+            <div class="p-2"
+                 style="float:left;">
+                <p th:text="${obj.content}">중간에 나오는거</p>
+            </div>
+            <div style="float:right;
+                        margin-right:10px;
+                        margin-top:10px;">
+                <button
+                        th:onclick="|del_func(${obj.id})|"
+                        id="del"
+                        type="button"
+                        class="btn btn-primary">삭제</button>
+            </div>
         </div>
         <div style="display: flex;
                   align-items: center;
