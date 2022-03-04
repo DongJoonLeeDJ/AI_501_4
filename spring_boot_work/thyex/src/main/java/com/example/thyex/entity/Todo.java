@@ -1,10 +1,12 @@
 package com.example.thyex.entity;
 
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -19,6 +21,9 @@ public class Todo {
     private Long id;
 
     private String content;
-    private String wdate;
+
+    @Column(name="wdate", updatable = false)
+    @CreationTimestamp
+    private LocalDateTime wdate;
 
 }

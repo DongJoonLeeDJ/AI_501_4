@@ -5,6 +5,7 @@
 <title layout:fragment="title">todo</title>
 <th:block layout:fragment="script">
     <script>
+
     </script>
 </th:block>
 <th:block layout:fragment="css">
@@ -17,10 +18,13 @@
 <div layout:fragment="content" class="container">
     <h1>todo selectall.html</h1>
     <h1>할일</h1>
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">추가</button>
+    </div>
     <div th:each="obj:${list}">
         <!-- display inline 속성은 옆으로.. 나오는거 span 기본값이 inline-->
         <!-- display block 속성은 밑으로.. 나오는거 div 기본값이 block-->
-        <span>순번</span> <span th:text="${obj.id}">순번</span>
+        <span>순번</span> <span th:text="${obj.id + 1}">순번</span>
         <div th:text="${obj.content}"
              class="p-2"
              style="width:100%;
@@ -30,9 +34,29 @@
         <div style="display: flex;
                   align-items: center;
                   justify-content: flex-end;">
-            <span style="margin-right:1rem;">날짜</span>
-            <span th:text="${obj.wdate}">날짜</span>
+            <span th:text="${#temporals.format(obj.wdate, 'yyyy년 MM월 dd일')}">날짜</span>
         </div>
+    </div>
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <form th:action="@{/todo/insert}" method="post">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">할일추가</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <textarea class="form-control" name="content"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                        <button type="submit" class="btn btn-primary">확인</button>
+                    </div>
+
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 </html>
