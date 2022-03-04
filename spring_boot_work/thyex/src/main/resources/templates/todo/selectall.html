@@ -17,5 +17,22 @@
 <div layout:fragment="content" class="container">
     <h1>todo selectall.html</h1>
     <h1>할일</h1>
+    <div th:each="obj:${list}">
+        <!-- display inline 속성은 옆으로.. 나오는거 span 기본값이 inline-->
+        <!-- display block 속성은 밑으로.. 나오는거 div 기본값이 block-->
+        <span>순번</span> <span th:text="${obj.id}">순번</span>
+        <div th:text="${obj.content}"
+             class="p-2"
+             style="width:100%;
+                    background-color:gray;">
+            중간에 나오는거
+        </div>
+        <div style="display: flex;
+                  align-items: center;
+                  justify-content: flex-end;">
+            <span style="margin-right:1rem;">날짜</span>
+            <span th:text="${obj.wdate}">날짜</span>
+        </div>
+    </div>
 </div>
 </html>
