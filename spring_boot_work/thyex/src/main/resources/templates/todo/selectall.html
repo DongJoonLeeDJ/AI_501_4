@@ -7,18 +7,22 @@
     <script>
         function del_func(id){
             var params = {
-                name   : '123123',
-                content : 'contentcontent'
+                id  : id,
             }
             $.ajax({
                 type : "delete",
                 url : "/todo/delete",
                 data : params,
                 success : function(res,txt){
-                    alert(res);
+                    /*
+                        alert(res);
+                        alert(txt);
+                        $('#cont').append("<p>"+res.code+"</p>");
+                    */
                     alert(res.code);
-                    alert(txt);
-                    $('#cont').append("<p>"+res.code+"</p>");
+                    if(res.code =='ok'){
+                        location.href='selectall';
+                    }
                 },
                 error : function(request, textStatus, err){
                     alert("통신 실패."+request);

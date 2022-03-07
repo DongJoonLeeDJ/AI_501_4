@@ -43,11 +43,11 @@ public class TodoController {
 
     @DeleteMapping("delete")
     @ResponseBody
-    public Map<String, Object> delete(String name, String content){
-        System.out.println("name ="+name);
-        System.out.println("content ="+content);
+    public Map<String, Object> delete(Long id){
+        System.out.println("id ="+id);
+        todoRepository.deleteById(id);
         Map<String,Object> map = new HashMap<>();
-        map.put("code","0000");
+        map.put("code","ok");
 //        return name+" asdf "+content;
         return map;
     }
