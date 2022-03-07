@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("todo")
@@ -40,4 +40,16 @@ public class TodoController {
 
         return "redirect:selectall";
     }
+
+    @DeleteMapping("delete")
+    @ResponseBody
+    public Map<String, Object> delete(String name, String content){
+        System.out.println("name ="+name);
+        System.out.println("content ="+content);
+        Map<String,Object> map = new HashMap<>();
+        map.put("code","0000");
+//        return name+" asdf "+content;
+        return map;
+    }
 }
+
