@@ -15,6 +15,11 @@ namespace myBookManager
         public MainForm()
         {
             InitializeComponent();
+
+            label_allBookCount.Text = DataManager.Books.Count.ToString();
+            label_allUserCount.Text = DataManager.Users.Count.ToString();
+
+            //Console.WriteLine("\t안녕\t하세요");
         }
 
         private void timer_now_Tick(object sender, EventArgs e)

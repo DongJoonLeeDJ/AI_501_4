@@ -112,11 +112,37 @@ namespace myBookManager
             string booksOutput = "";
             booksOutput += "<books>\n";
 
-
-
-
+            foreach(var item in Books)
+            {
+                booksOutput += $"\t<{BOOK}>\n";
+                booksOutput += $"\t\t<{ISBN}> {item.Isbn}</{ISBN}>\n";
+                booksOutput += $"\t\t<{NAME}> {item.Name} </{NAME}>\n";
+                booksOutput += $"\t\t<{PUBLISHER}> {item.Publisher}</{PUBLISHER}>\n";
+                booksOutput += $"\t\t<{PAGE}> {item.Page} </{PAGE}>\n";
+                booksOutput += $"\t\t<{BORROWEDAT}> {item.BorrowedAt} </{BORROWEDAT}>\n";
+                booksOutput += $"\t\t<{ISBORROWED}>" + (item.isBorrowed ? 1 : 0) + $"</{ISBORROWED}>\n";
+                booksOutput += $"\t\t<{USERID}> {item.UserId} </{USERID}>\n";
+                booksOutput += $"\t\t<{USERNAME}> {item.UserName} </{USERNAME}>\n";
+                booksOutput += $"\t</{BOOK}>\n";
+            }
 
             booksOutput += "</books>";
+            Console.WriteLine(booksOutput);
+            File.WriteAllText(@"./Books.xml", booksOutput); //xml파일에 값 넣는 것
+
+
+            string usersOutput = "";
+            usersOutput += "<users>\n";
+            foreach(var item in Users)
+            {
+                usersOutput += $"\t<{USER}>\n";
+                usersOutput += $"\t\t<{UID}>{item.Id}</{UID}>\n";
+                usersOutput += $"\t\t<{UNAME}>{item.Name}</{UNAME}>\n";
+                usersOutput += $"\t</{USER}>\n";
+            }
+            usersOutput += "</users>";
+            Console.WriteLine(usersOutput);
+            File.WriteAllText(@"./Users.xml", usersOutput);
         }
     } 
 }
