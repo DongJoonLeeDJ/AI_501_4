@@ -10,6 +10,7 @@ namespace myBookManager
     {
         public string Isbn { get; set; }
         public string Name { get; set; }
+        public string Publisher { get; set; }
         public int Page { get; set; }
 
         public int UserId { get; set; } //원래 DB였다면 FK
