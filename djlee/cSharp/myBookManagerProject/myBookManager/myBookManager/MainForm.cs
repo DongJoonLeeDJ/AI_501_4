@@ -66,8 +66,50 @@ namespace myBookManager
             };
 
             button_borrow.Click += Button_Borrow_Click;
+            button_return.Click += Button_Return_Click;
 
 
+        }
+
+        private void Button_Return_Click(object sender, EventArgs e)
+        {
+            if(textBox_isbn.Text.Trim()=="")
+                MessageBox.Show("isbn입력하세요.");
+            else
+            {
+                try
+                {
+                    Book book = DataManager.Books.Single((x) => x.Isbn == textBox_isbn.Text);
+                    if (book.isBorrowed)
+                    {
+                        DateTime oldDay = book.BorrowedAt; //반납적에 언제 빌린건지 날짜 받아옴
+                        book.UserId = 0; //없다고 가정
+                        book.UserName = "";
+                        book.isBorrowed = false;
+                        book.BorrowedAt = new DateTime(); //0001년 과 같은 비어있는 값 들어감
+
+                        dataGridView_bookManager.DataSource = null;
+                        dataGridView_bookManager.DataSource = DataManager.Books;
+                        DataManager.Save();
+
+                        //연체여부 출력
+                        TimeSpan timeDiff = DateTime.Now - oldDay;
+                        if(timeDiff.Days>7)
+                            MessageBox.Show(book.Name+"은 연체 상태로 반납");
+                        else
+                            MessageBox.Show(book.Name+"은 정상 반납.");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("대여상태 아닙니다.");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("없는 책입니다.");
+                }
+            }
         }
 
         private void Button_Borrow_Click(object sender, EventArgs e)
