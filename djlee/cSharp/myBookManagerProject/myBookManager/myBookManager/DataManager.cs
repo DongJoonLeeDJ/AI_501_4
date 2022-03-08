@@ -115,14 +115,14 @@ namespace myBookManager
             foreach(var item in Books)
             {
                 booksOutput += $"\t<{BOOK}>\n";
-                booksOutput += $"\t\t<{ISBN}> {item.Isbn}</{ISBN}>\n";
-                booksOutput += $"\t\t<{NAME}> {item.Name} </{NAME}>\n";
-                booksOutput += $"\t\t<{PUBLISHER}> {item.Publisher}</{PUBLISHER}>\n";
-                booksOutput += $"\t\t<{PAGE}> {item.Page} </{PAGE}>\n";
-                booksOutput += $"\t\t<{BORROWEDAT}> {item.BorrowedAt} </{BORROWEDAT}>\n";
+                booksOutput += $"\t\t<{ISBN}>{item.Isbn}</{ISBN}>\n";
+                booksOutput += $"\t\t<{NAME}>{item.Name}</{NAME}>\n";
+                booksOutput += $"\t\t<{PUBLISHER}>{item.Publisher}</{PUBLISHER}>\n";
+                booksOutput += $"\t\t<{PAGE}>{item.Page}</{PAGE}>\n";
+                booksOutput += $"\t\t<{BORROWEDAT}>{item.BorrowedAt}</{BORROWEDAT}>\n";
                 booksOutput += $"\t\t<{ISBORROWED}>" + (item.isBorrowed ? 1 : 0) + $"</{ISBORROWED}>\n";
-                booksOutput += $"\t\t<{USERID}> {item.UserId} </{USERID}>\n";
-                booksOutput += $"\t\t<{USERNAME}> {item.UserName} </{USERNAME}>\n";
+                booksOutput += $"\t\t<{USERID}>{item.UserId}</{USERID}>\n";
+                booksOutput += $"\t\t<{USERNAME}>{item.UserName}</{USERNAME}>\n";
                 booksOutput += $"\t</{BOOK}>\n";
             }
 

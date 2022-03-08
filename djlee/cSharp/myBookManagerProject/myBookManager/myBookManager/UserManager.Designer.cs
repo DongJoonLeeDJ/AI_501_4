@@ -31,13 +31,13 @@
             this.dataGridView_Users = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button_add = new System.Windows.Forms.Button();
-            this.button_modify = new System.Windows.Forms.Button();
             this.button_delete = new System.Windows.Forms.Button();
+            this.button_modify = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
+            this.textBox_Name = new System.Windows.Forms.TextBox();
+            this.textBox_ID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Users)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -67,8 +67,8 @@
             this.groupBox2.Controls.Add(this.button_delete);
             this.groupBox2.Controls.Add(this.button_modify);
             this.groupBox2.Controls.Add(this.button_add);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBox_Name);
+            this.groupBox2.Controls.Add(this.textBox_ID);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(422, 23);
@@ -78,14 +78,49 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "사용자 추가/수정/삭제";
             // 
-            // label1
+            // button_delete
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "사용자 ID";
+            this.button_delete.Location = new System.Drawing.Point(245, 138);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(75, 23);
+            this.button_delete.TabIndex = 6;
+            this.button_delete.Text = "삭제";
+            this.button_delete.UseVisualStyleBackColor = true;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
+            // 
+            // button_modify
+            // 
+            this.button_modify.Location = new System.Drawing.Point(134, 138);
+            this.button_modify.Name = "button_modify";
+            this.button_modify.Size = new System.Drawing.Size(75, 23);
+            this.button_modify.TabIndex = 5;
+            this.button_modify.Text = "수정";
+            this.button_modify.UseVisualStyleBackColor = true;
+            this.button_modify.Click += new System.EventHandler(this.button_modify_Click);
+            // 
+            // button_add
+            // 
+            this.button_add.Location = new System.Drawing.Point(19, 138);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(75, 23);
+            this.button_add.TabIndex = 4;
+            this.button_add.Text = "추가";
+            this.button_add.UseVisualStyleBackColor = true;
+            this.button_add.Click += new System.EventHandler(this.button_add_Click);
+            // 
+            // textBox_Name
+            // 
+            this.textBox_Name.Location = new System.Drawing.Point(109, 88);
+            this.textBox_Name.Name = "textBox_Name";
+            this.textBox_Name.Size = new System.Drawing.Size(100, 21);
+            this.textBox_Name.TabIndex = 3;
+            // 
+            // textBox_ID
+            // 
+            this.textBox_ID.Location = new System.Drawing.Point(109, 36);
+            this.textBox_ID.Name = "textBox_ID";
+            this.textBox_ID.Size = new System.Drawing.Size(100, 21);
+            this.textBox_ID.TabIndex = 2;
             // 
             // label2
             // 
@@ -96,46 +131,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "이름";
             // 
-            // textBox1
+            // label1
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 36);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 2;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(109, 88);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 21);
-            this.textBox2.TabIndex = 3;
-            // 
-            // button_add
-            // 
-            this.button_add.Location = new System.Drawing.Point(19, 138);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(75, 23);
-            this.button_add.TabIndex = 4;
-            this.button_add.Text = "추가";
-            this.button_add.UseVisualStyleBackColor = true;
-            // 
-            // button_modify
-            // 
-            this.button_modify.Location = new System.Drawing.Point(134, 138);
-            this.button_modify.Name = "button_modify";
-            this.button_modify.Size = new System.Drawing.Size(75, 23);
-            this.button_modify.TabIndex = 5;
-            this.button_modify.Text = "수정";
-            this.button_modify.UseVisualStyleBackColor = true;
-            // 
-            // button_delete
-            // 
-            this.button_delete.Location = new System.Drawing.Point(245, 138);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(75, 23);
-            this.button_delete.TabIndex = 6;
-            this.button_delete.Text = "삭제";
-            this.button_delete.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "사용자 ID";
             // 
             // UserManager
             // 
@@ -162,8 +165,8 @@
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_modify;
         private System.Windows.Forms.Button button_add;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Name;
+        private System.Windows.Forms.TextBox textBox_ID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

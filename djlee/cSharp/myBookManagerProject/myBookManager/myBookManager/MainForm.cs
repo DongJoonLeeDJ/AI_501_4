@@ -125,11 +125,23 @@ namespace myBookManager
             //Show :모달리스 -> 창 띄우고 그 밑에 코드들도 수행. 뒤에 화면 조작 O
             //ShowDialog : 모달 -> 창을 띄우면 코드가 여기서 멈춤. 뒤에 화면 조작X
             new BookManager().ShowDialog();
+
+            //창을 닫으면 아래 코드들 실행
+            DataManager.Load();
+            dataGridView_bookManager.DataSource = null;
+            if (DataManager.Books.Count > 0)
+                dataGridView_bookManager.DataSource = DataManager.Books;
         }
 
         private void 사용자관리ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new UserManager().ShowDialog();
+            DataManager.Load();
+            dataGridView_userManager.DataSource = null;
+            if (DataManager.Users.Count > 0)
+                dataGridView_userManager.DataSource = DataManager.Users;
+
+            label_allUserCount.Text = DataManager.Users.Count.ToString();
         }
     }
 }
