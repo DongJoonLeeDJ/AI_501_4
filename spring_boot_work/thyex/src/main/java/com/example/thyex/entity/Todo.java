@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @AllArgsConstructor // 모든변수생성자
-@NoArgsConstructor // 기본생성자
+@NoArgsConstructor  // 기본생성자
 public class Todo {
 
     @Id
