@@ -20,19 +20,20 @@
     <h1> 글작성 </h1>
     <h1> insert.html </h1>
     <a href="selectall" class="btn btn-primary">list</a>
-    <form th:action="@{insert}" action="insert" method="post" th:object="${boardformdto}">
+    <form th:action="@{insert}" action="insert" method="post" th:object="${boardFormDto}">
         <div class="form-group">
             <label for="name">글작성자</label>
-            <p th:if="${#fields.hasErrors('name')}">name</p>
+            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" >name</p>
             <input type="text"
                    class="form-control"
                    placeholder="Enter writer"
                    id="name"
-                   name="name">
+                   name="name"
+                   th:field="*{name}">
         </div>
         <div class="form-group">
             <label for="title">글제목</label>
-            <p th:if="${#fields.hasErrors('title')}">title</p>
+            <p th:if="${#fields.hasErrors('title')}" th:errors="*{title}">title</p>
             <input type="text"
                    class="form-control"
                    placeholder="Enter title"
@@ -41,7 +42,7 @@
         </div>
         <div class="form-group">
             <label for="content">글내용</label>
-            <p th:if="${#fields.hasErrors('content')}">content</p>
+            <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}">content</p>
             <textarea class="form-control"
                    placeholder="Enter content"
                    id="content"

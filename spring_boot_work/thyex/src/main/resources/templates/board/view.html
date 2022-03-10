@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/layout1(menu='board')}">
+
+<th:block layout:fragment="script">
+    <script>
+        $('docuemnt').ready(function(){
+        });
+    </script>
+</th:block>
+<th:block layout:fragment="css">
+    <style>
+    *{
+        font-size:1.5rem;
+    }
+    </style>
+</th:block>
+<div layout:fragment="content" class="container">
+    <h1> 글작성 </h1>
+    <h1> view.html </h1>
+    <div class="clearfix mb-1">
+        <a href="selectall" class="btn btn-primary float-left">list</a>
+        <a href="update" class="btn btn-primary float-right">update</a>
+    </div>
+    <div class="rounded shadow p-1 mb-1 bg-white">
+        <span>글작성자</span>
+        <span th:text="${board.name}"></span>
+    </div>
+    <div class="rounded shadow p-1 mb-1 bg-white">
+        <span>글제목</span>
+        <span th:text="${board.title}"></span>
+    </div>
+    <div class="rounded shadow p-1 mb-1 bg-white">
+        <span>글내용</span>
+        <p th:text="${board.content}"></p>
+    </div>
+    <div>
+        댓글내용
+    </div>
+    <div class="rounded shadow p-1 mb-1 bg-white">
+        <form class="form-group">
+            <input type="hidden" name="board_id" th:value="${param.id}">
+            <div>
+                <label for="name">작성자</label>
+                <input id="name" name="name" class="form-control">
+            </div>
+            <div class="mb-1">
+                <label for="content">댓글내용</label>
+                <textarea class="form-control" id="content" name="content"></textarea>
+            </div>
+            <input class="btn btn-primary" type="submit" value="댓글저장">
+        </form>
+    </div>
+</div>
+</html>

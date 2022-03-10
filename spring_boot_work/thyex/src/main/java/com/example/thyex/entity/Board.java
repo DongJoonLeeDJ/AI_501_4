@@ -1,5 +1,6 @@
 package com.example.thyex.entity;
 
+import com.example.thyex.dto.BoardFormDto;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -35,4 +36,12 @@ public class Board {
     List<BoardTail> boardTailList
             = new ArrayList<>();
 
+    public static Board createBoard(BoardFormDto boardFormDto) {
+        Board board = new Board();
+        board.setContent(boardFormDto.getContent());
+        board.setName(boardFormDto.getName());
+        board.setTitle(boardFormDto.getTitle());
+        board.setWdate(LocalDateTime.now());
+        return board;
+    }
 }

@@ -28,23 +28,31 @@ public class BoardController {
         return "board/selectall";
     }
 
+    @GetMapping("view")
+    public String view(Model model,long id){
+        Board board = boardRepository.findById(id).orElse(new Board());
+        System.out.println(board);
+        model.addAttribute("board",board);
+        return "board/view";
+    }
+
     @GetMapping("insert")
     public String insert(Model model){
-        model.addAttribute("boardformdto",new BoardFormDto());
+        model.addAttribute("boardFormDto",new BoardFormDto());
         return "board/insert";
     }
 
     @PostMapping("insert")
-    public String insert(@Valid BoardFormDto boardformdto,
+    public String insert(@Valid BoardFormDto boardFormDto,
                          BindingResult bindingResult,
                          Model model){
         if( bindingResult.hasErrors() ){
             return "board/insert";
         }
-//        Board.
-//        boardRepository.save
+        Board board = Board.createBoard(boardFormDto);
+        boardRepository.save(board);
 
-        return "board/insert";
+        return "redirect:selectall";
     }
 
 }

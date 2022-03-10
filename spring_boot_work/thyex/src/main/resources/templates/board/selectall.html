@@ -20,5 +20,22 @@
     <h1>selectall.html</h1>
     <h1>글목록</h1>
     <a class="btn btn-primary" href="/board/insert">글작성</a>
+    <div class="mt-2">
+        <table class="table">
+            <tr>
+                <th>글번호</th>
+                <th>글제목</th>
+                <th>글작성자</th>
+            </tr>
+            <tr th:each="board:${list}">
+                <td th:text="${board.id}"></td>
+                <td>
+                    <a th:text="${board.title}"
+                       th:href="@{/board/view(id=${board.id})}">title</a>
+                </td>
+                <td th:text="${board.name}"></td>
+            </tr>
+        </table>
+    </div>
 </div>
 </html>
