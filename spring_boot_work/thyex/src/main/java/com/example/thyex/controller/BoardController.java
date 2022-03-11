@@ -1,6 +1,7 @@
 package com.example.thyex.controller;
 
 import com.example.thyex.dto.BoardFormDto;
+import com.example.thyex.dto.BoardTailFormDto;
 import com.example.thyex.entity.Board;
 import com.example.thyex.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class BoardController {
         Board board = boardRepository.findById(id).orElse(new Board());
         System.out.println(board);
         model.addAttribute("board",board);
+        model.addAttribute("boardTailFormDto",new BoardTailFormDto());
         return "board/view";
     }
 

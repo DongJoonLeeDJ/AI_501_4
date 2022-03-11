@@ -22,6 +22,7 @@ public class BoardTailFormDto {
     @NotEmpty(message = "필수 입력값입니다.")
     @Length(min=2,max=14,message = "이름의 길이는 2이상14이하여야합니다.")
     private String name;
+
     @NotEmpty(message = "필수 입력값입니다.")
     @Length(min=5,max=100,message = "내용의 길이는 2이상14이하여야합니다.")
     private String content;

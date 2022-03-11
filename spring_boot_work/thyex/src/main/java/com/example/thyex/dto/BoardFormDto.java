@@ -28,7 +28,7 @@ public class BoardFormDto {
     private String title;
 
     @NotEmpty(message = "필수입력값입니다.")
-    @Length(min = 5, max = 100, message = "글제목의 길이는 5이상 100이하 이어야합니다.")
+    @Length(min = 5, max = 100, message = "글내용의 길이는 5이상 100이하 이어야합니다.")
     private String content;
 
     private LocalDateTime wdate;

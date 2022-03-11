@@ -41,14 +41,16 @@
         댓글내용
     </div>
     <div class="rounded shadow p-1 mb-1 bg-white">
-        <form th:action="@{/boardtail/insert}" class="form-group" method="post">
+        <form th:action="@{/boardtail/insert}" class="form-group" method="post" th:obejct="${boardTailFormDto}">
             <input type="hidden" name="board_id" th:value="${param.id}">
             <div>
                 <label for="name">작성자</label>
+                <p th:if="${#fields.hasErrors('name')}">작성자 짤음</p>
                 <input id="name" name="name" class="form-control">
             </div>
             <div class="mb-1">
                 <label for="content">댓글내용</label>
+                <p th:if="${#fields.hasErrors('content')}">sodyd 짤음</p>
                 <textarea class="form-control" id="content" name="content"></textarea>
             </div>
             <input class="btn btn-primary" type="submit" value="댓글저장">

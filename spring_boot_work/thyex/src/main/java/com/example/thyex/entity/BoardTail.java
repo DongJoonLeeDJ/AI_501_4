@@ -28,8 +28,12 @@ public class BoardTail {
     @JoinColumn(name = "board_id")
     private Board board;
 
-    public static BoardTail create(BoardTailFormDto boardTailFormDto) {
+    public static BoardTail createBoardTail(BoardTailFormDto boardTailFormDto, Board board) {
         BoardTail boardTail = new BoardTail();
+        boardTail.setBoard(board);
+        boardTail.setWdate(LocalDateTime.now());
+        boardTail.setContent(boardTailFormDto.getContent());
+        boardTail.setName(boardTailFormDto.getName());
         return boardTail;
     }
 }
