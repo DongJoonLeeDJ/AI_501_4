@@ -1,5 +1,6 @@
 package com.example.thyex.entity;
 
+import com.example.thyex.dto.BoardTailFormDto;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
@@ -27,4 +28,8 @@ public class BoardTail {
     @JoinColumn(name = "board_id")
     private Board board;
 
+    public static BoardTail create(BoardTailFormDto boardTailFormDto) {
+        BoardTail boardTail = new BoardTail();
+        return boardTail;
+    }
 }

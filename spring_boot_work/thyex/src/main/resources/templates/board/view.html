@@ -23,13 +23,15 @@
         <a href="selectall" class="btn btn-primary float-left">list</a>
         <a href="update" class="btn btn-primary float-right">update</a>
     </div>
-    <div class="rounded shadow p-1 mb-1 bg-white">
-        <span>글작성자</span>
-        <span th:text="${board.name}"></span>
-    </div>
-    <div class="rounded shadow p-1 mb-1 bg-white">
-        <span>글제목</span>
-        <span th:text="${board.title}"></span>
+    <div class="clearfix mb-1">
+        <div class="rounded shadow p-1 mb-1 bg-white float-left" style="width:50%;">
+            <span>글제목</span>
+            <span th:text="${board.title}"></span>
+        </div>
+        <div class="rounded shadow p-1 mb-1 bg-white float-right text-right" style="width:35%;">
+            <span>글작성자</span>
+            <span th:text="${board.name}"></span>
+        </div>
     </div>
     <div class="rounded shadow p-1 mb-1 bg-white">
         <span>글내용</span>
@@ -39,7 +41,7 @@
         댓글내용
     </div>
     <div class="rounded shadow p-1 mb-1 bg-white">
-        <form class="form-group">
+        <form th:action="@{/boardtail/insert}" class="form-group" method="post">
             <input type="hidden" name="board_id" th:value="${param.id}">
             <div>
                 <label for="name">작성자</label>
