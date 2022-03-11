@@ -19,7 +19,9 @@ public class BoardService {
 
     public void save(BoardTailFormDto boardTailFormDto) throws Exception{
         Board board =
-                boardRepository.findById(boardTailFormDto.getBoard_id()).orElseThrow(Exception::new);
+                boardRepository.findById(
+                        boardTailFormDto.getBoard_id())
+                        .orElseThrow(Exception::new);
 
         BoardTail boardTail = BoardTail.createBoardTail(boardTailFormDto,board);
         boardTailRepository.save(boardTail);

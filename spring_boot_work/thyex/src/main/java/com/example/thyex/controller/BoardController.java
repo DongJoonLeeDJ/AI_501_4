@@ -7,7 +7,9 @@ import com.example.thyex.repository.BoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.AbstractBindingResult;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.BindingResultUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +34,6 @@ public class BoardController {
     @GetMapping("view")
     public String view(Model model,long id){
         Board board = boardRepository.findById(id).orElse(new Board());
-        System.out.println(board);
         model.addAttribute("board",board);
         model.addAttribute("boardTailFormDto",new BoardTailFormDto());
         return "board/view";

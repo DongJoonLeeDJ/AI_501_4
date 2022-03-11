@@ -19,7 +19,7 @@
 <div layout:fragment="content" class="container">
     <h1> 글작성 </h1>
     <h1> insert.html </h1>
-    <a href="selectall" class="btn btn-primary">list</a>
+    <a href="/board/selectall" class="btn btn-primary">list</a>
     <form th:action="@{insert}" action="insert" method="post" th:object="${boardFormDto}">
         <div class="form-group">
             <label for="name">글작성자</label>

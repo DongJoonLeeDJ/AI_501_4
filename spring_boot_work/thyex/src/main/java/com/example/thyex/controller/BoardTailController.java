@@ -28,22 +28,25 @@ public class BoardTailController {
     public String intsert(@Valid BoardTailFormDto boardTailFormDto,
                           BindingResult bindingResult,
                           Model model){
+        Board board = boardRepository.findById(boardTailFormDto.getBoard_id())
+                .orElse(new Board());
+        model.addAttribute("board",board);
+
+//        model.addAttribute("boardTailFormDto",boardTailFormDto);
+
         if(bindingResult.hasErrors()){
-            model.addAttribute("board",boardRepository.findById(boardTailFormDto.getBoard_id())
-                    .orElse(new Board()));
             return "board/view";
         }
 
         try {
             boardService.save(boardTailFormDto);
+            model.addAttribute("boardTailFormDto",new BoardTailFormDto());
         } catch (Exception e) {
             System.out.println("Board id 가 참조 실패");
-            model.addAttribute("board",boardRepository.findById(boardTailFormDto.getBoard_id())
-                    .orElse(new Board()));
             return "board/view";
         }
 
-        return "redirect:/board/view?id="+boardTailFormDto.getBoard_id();
+        return "redirect:/board/view?id="+board.getId();
     }
 }
 

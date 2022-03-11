@@ -40,18 +40,31 @@
     <div>
         댓글내용
     </div>
+    <div th:each="boardtail : ${board.boardTailList}" class="rounded shadow p-1 mb-1 bg-white">
+        <div class="clearfix">
+            <div class="float-left rounded shadow p-1 mb-1 bg-white">
+                <span th:text="${boardtail.content}"></span>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="float-right rounded shadow p-1 mb-1 bg-white">
+                <span>댓글작성자</span>
+                <span th:text="${boardtail.name}"></span>
+            </div>
+        </div>
+    </div>
     <div class="rounded shadow p-1 mb-1 bg-white">
-        <form th:action="@{/boardtail/insert}" class="form-group" method="post" th:obejct="${boardTailFormDto}">
-            <input type="hidden" name="board_id" th:value="${param.id}">
+        <form th:action="@{/boardtail/insert}" class="form-group" method="post" th:object="${boardTailFormDto}">
+            <input type="hidden" name="board_id" th:value="${board.id}">
             <div>
                 <label for="name">작성자</label>
-                <p th:if="${#fields.hasErrors('name')}">작성자 짤음</p>
-                <input id="name" name="name" class="form-control">
+                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">작성자 짤음</p>
+                <input id="name" name="name" class="form-control" th:field="*{name}">
             </div>
             <div class="mb-1">
                 <label for="content">댓글내용</label>
-                <p th:if="${#fields.hasErrors('content')}">sodyd 짤음</p>
-                <textarea class="form-control" id="content" name="content"></textarea>
+                <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}">sodyd 짤음</p>
+                <textarea class="form-control" id="content" name="content" th:field="*{content}"></textarea>
             </div>
             <input class="btn btn-primary" type="submit" value="댓글저장">
         </form>
