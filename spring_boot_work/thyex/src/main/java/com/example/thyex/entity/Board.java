@@ -30,7 +30,7 @@ public class Board {
     private LocalDateTime wdate;
 
     @OneToMany(mappedBy = "board",
-            cascade = CascadeType.ALL
+            cascade = CascadeType.REMOVE
             , orphanRemoval = true,
             fetch = FetchType.EAGER)
     List<BoardTail> boardTailList

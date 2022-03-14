@@ -63,13 +63,11 @@ public class BoardTailController {
     @DeleteMapping("delete")
     @ResponseBody
     public Map<String,Object> delete(Long boardtail_id){
-        System.out.println(boardtail_id);
         Map<String,Object> map = new HashMap<>();
         try{
             boardTailRepository.deleteById(boardtail_id);
             map.put("code","ok");
         }catch (Exception e){
-            e.printStackTrace();
             map.put("code","fail");
         }
         return map;
