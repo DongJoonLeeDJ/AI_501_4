@@ -4,15 +4,20 @@ import com.example.thyex.dto.BoardTailFormDto;
 import com.example.thyex.entity.Board;
 import com.example.thyex.entity.BoardTail;
 import com.example.thyex.repository.BoardRepository;
+import com.example.thyex.repository.BoardTailRepository;
 import com.example.thyex.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
 @RequestMapping("boardtail")
 @Controller
@@ -20,6 +25,9 @@ public class BoardTailController {
 
     @Autowired
     BoardService boardService;
+
+    @Autowired
+    BoardTailRepository boardTailRepository;
 
     @Autowired
     BoardRepository boardRepository;
@@ -47,6 +55,24 @@ public class BoardTailController {
         }
 
         return "redirect:/board/view?id="+board.getId();
+    }
+
+    // method get post put delete
+    // @ResponseBody O -> String 문자열을 반환...
+    // @ResponseBody X -> thymeleaf html 파일을 찾는다..
+    @DeleteMapping("delete")
+    @ResponseBody
+    public Map<String,Object> delete(Long boardtail_id){
+        System.out.println(boardtail_id);
+        Map<String,Object> map = new HashMap<>();
+        try{
+            boardTailRepository.deleteById(boardtail_id);
+            map.put("code","ok");
+        }catch (Exception e){
+            e.printStackTrace();
+            map.put("code","fail");
+        }
+        return map;
     }
 }
 
