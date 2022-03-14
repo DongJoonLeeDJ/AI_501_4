@@ -1,6 +1,6 @@
 import './App.css';
+import './css/bootstrap.css';
 import MyDiv from './components/MyDiv';
-
 
 function App() {
   return (
