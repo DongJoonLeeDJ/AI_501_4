@@ -32,9 +32,30 @@ public class Board {
     @OneToMany(mappedBy = "board",
             cascade = CascadeType.ALL
             , orphanRemoval = true,
-            fetch = FetchType.LAZY)
+            fetch = FetchType.EAGER)
     List<BoardTail> boardTailList
             = new ArrayList<>();
+
+//    lazy -> 원본글 select, board_table select...
+//    select
+//        board0_.board_id as board_id1_1_0_,
+//        board0_.content as content2_1_0_,
+//        board0_.name as name3_1_0_,
+//        board0_.title as title4_1_0_,
+//        board0_.wdate as wdate5_1_0_,
+//        boardtaill1_.board_id as board_id5_2_1_,
+//        boardtaill1_.boardtail_id as boardtai1_2_1_,
+//        boardtaill1_.boardtail_id as boardtai1_2_2_,
+//        boardtaill1_.board_id as board_id5_2_2_,
+//        boardtaill1_.content as content2_2_2_,
+//        boardtaill1_.name as name3_2_2_,
+//        boardtaill1_.wdate as wdate4_2_2_
+//            from board board0_
+//    left outer join
+//    board_tail boardtaill1_
+//    on board0_.board_id=boardtaill1_.board_id
+//            where
+//    board0_.board_id=?
 
     public static Board createBoard(BoardFormDto boardFormDto) {
         Board board = new Board();

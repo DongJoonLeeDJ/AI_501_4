@@ -24,20 +24,21 @@
         <a href="update" class="btn btn-primary float-right">update</a>
     </div>
     <div class="clearfix mb-1">
-        <div class="rounded shadow p-1 mb-1 bg-white float-left" style="width:50%;">
-            <span>글제목</span>
-            <span th:text="${board.title}"></span>
+        <div class="rounded shadow p-1 mb-1 bg-white float-left alert alert-success" style="width:50%;">
+            <p>글제목</p>
+            <p th:text="${board.title}"></p>
         </div>
-        <div class="rounded shadow p-1 mb-1 bg-white float-right text-right" style="width:35%;">
+        <div class="rounded shadow p-1 mb-1 bg-white float-right text-right alert alert-success" style="width:35%;">
             <span>글작성자</span>
             <span th:text="${board.name}"></span>
         </div>
     </div>
-    <div class="rounded shadow p-1 mb-1 bg-white">
+    <div class="rounded shadow p-1 mb-1 bg-white" style="background-color:#ccc;" >
         <span>글내용</span>
         <p th:text="${board.content}"></p>
     </div>
-    <div>
+    <hr>
+    <div class="mt-5" ><!--style="margin-top:1rem"-->
         댓글내용
     </div>
     <div th:each="boardtail : ${board.boardTailList}" class="rounded shadow p-1 mb-1 bg-white">
@@ -58,16 +59,43 @@
             <input type="hidden" name="board_id" th:value="${board.id}">
             <div>
                 <label for="name">작성자</label>
-                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">작성자 짤음</p>
+                <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="alert alert-danger">작성자 짤음</p>
                 <input id="name" name="name" class="form-control" th:field="*{name}">
             </div>
             <div class="mb-1">
                 <label for="content">댓글내용</label>
-                <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}">sodyd 짤음</p>
+                <p th:if="${#fields.hasErrors('content')}" th:errors="*{content}" class="alert alert-danger">sodyd 짤음</p>
                 <textarea class="form-control" id="content" name="content" th:field="*{content}"></textarea>
             </div>
             <input class="btn btn-primary" type="submit" value="댓글저장">
         </form>
     </div>
+<!--    insert into board_tail-->
+<!--    (-->
+<!--        board_id(fk), content, name, wdate, boardtail_id(pk)-->
+<!--    )-->
+<!--    values-->
+<!--    (   1, '좋아요....', '홍길동매니아2', '2022-03-14T10:01:46.583+0900', 3);-->
+
+<!--    insert into board_tail -->
+<!--    (board_id, content, name, wdate, boardtail_id) -->
+<!--    values -->
+<!--    (4, 'ㅂㅈㄷㄱㅂㅈㄷㄱ국민대통합', 'ㅂㅈㄷㄱ매니아', '2022-03-14T10:05:01.689+0900', 5);-->
+
+<!--    select -->
+<!--    board0_.board_id as board_id1_1_0_, board0_.content as content2_1_0_, board0_.name as name3_1_0_, -->
+<!--    board0_.title as title4_1_0_, board0_.wdate as wdate5_1_0_ -->
+<!--    from board board0_ -->
+<!--    where board0_.board_id=1;-->
+
+<!--    select -->
+<!--    boardtaill0_.board_id as board_id5_2_0_, boardtaill0_.boardtail_id as boardtai1_2_0_,-->
+<!--    boardtaill0_.boardtail_id as boardtai1_2_1_,-->
+<!--    boardtaill0_.board_id as board_id5_2_1_, boardtaill0_.content as content2_2_1_,-->
+<!--    boardtaill0_.name as name3_2_1_, boardtaill0_.wdate as wdate4_2_1_ -->
+<!--    from board_tail boardtaill0_ -->
+<!--    where boardtaill0_.board_id=1;-->
+
+
 </div>
 </html>

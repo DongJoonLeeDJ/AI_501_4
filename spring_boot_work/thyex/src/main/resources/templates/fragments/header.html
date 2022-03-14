@@ -9,7 +9,7 @@
 
         <!-- Navbar links -->
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav w-100"> <!--  flex -->
                 <li class="nav-item">
                     <a class="nav-link" th:classappend="${menu =='main'} ? 'active'" href="/main">Main</a>
                 </li>
@@ -22,12 +22,16 @@
                 <li class="nav-item">
                     <a class="nav-link" th:classappend="${menu =='todo'} ? 'active'" href="/todo/selectall">todo</a>
                 </li>
+                <li class="nav-item ml-auto">
+                    <form class="form-inline" action=""> <!-- todo members board 3개를 조인... 내용을.. -->
+                        <input class="form-control mr-md-2" type="text" placeholder="Search">
+                        <button class="btn btn-success" type="submit">Search</button>
+                    </form>
+                </li>
             </ul>
+
         </div>
-        <form class="form-inline" action="">
-            <input class="form-control mr-md-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-        </form>
+
     </nav>
 </div>
 </html>
