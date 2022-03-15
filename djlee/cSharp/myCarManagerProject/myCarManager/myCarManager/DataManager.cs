@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,29 @@ namespace myCarManager
 
         public static void Load() //DB에서 주차데이터들 불러올 때
         {
+            try
+            {
+                DBHelper.selectQuery();
+                Cars.Clear(); //db에서 새로 받아오기
+                foreach(DataRow item in DBHelper.ds.Tables[0].Rows) //select의 결과값을 받아옴
+                {
+                    ParkingCar tempCar = new ParkingCar();
+                    tempCar.ParkingSpot = int.Parse(item["parkingSpot"].ToString());
+                    tempCar.CarNumber = item["CarNumber"].ToString();
+                    tempCar.DriverName = item["driverName"].ToString();
+                    tempCar.PhoneNumber = item["PhoneNumber"].ToString();
+                    //ParkingTime이 null일 경우 new DateTime()을 넣음
+                    //new DateTime()은 0000년 01월... 이런 초기값임
+                    tempCar.ParkingTime = item["ParkingTime"].ToString() == "" ?
+                        new DateTime() : DateTime.Parse(item["parkingTime"].ToString());
+                    Cars.Add(tempCar);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
         }
         public static void Save() //주차 출차때 주로 사용됨
         {
