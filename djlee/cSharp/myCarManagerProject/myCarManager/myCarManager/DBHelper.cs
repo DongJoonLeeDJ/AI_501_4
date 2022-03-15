@@ -135,13 +135,13 @@ namespace myCarManager
                 string sqlcommand;
                 if(isRemove)
                 {
-                    sqlcommand = "update carmanager set carnumber='', drivername='', phonenumber=''," +
+                    sqlcommand = "update carManager set carNumber='', driverName='', phoneNumber=''," +
                         " parkingTime=null where parkingspot=@p1";
                     cmd.Parameters.AddWithValue("@p1", parkingSpot);
                 }
                 else
                 {
-                    sqlcommand = "update carmanager set carnumber=@p1, drivername=@p2, phonenumber=@p3," +
+                    sqlcommand = "update carManager set carNumber=@p1, driverName=@p2, phoneNumber=@p3," +
                         "parkingtime=@p4 where parkingspot=@p5";
 
                     cmd.Parameters.AddWithValue("@p1", carNumber);
