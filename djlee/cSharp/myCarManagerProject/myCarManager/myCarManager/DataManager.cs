@@ -41,10 +41,21 @@ namespace myCarManager
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
+                PrintLog(ex.StackTrace);
             }
         }
-        public static void Save() //주차 출차때 주로 사용됨
+        public static void Save
+            (int parkingSpot, string carNumber, string driverName, string phoneNumber, bool isRemove=false) //주차 출차때 주로 사용됨
         {
+            try
+            {
+                DBHelper.updateQuery(parkingSpot, carNumber, driverName, phoneNumber, isRemove);
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                PrintLog(ex.StackTrace);
+            }
         }
         public static void PrintLog(string contents) //기록을 적을 때 사용됨
         {
