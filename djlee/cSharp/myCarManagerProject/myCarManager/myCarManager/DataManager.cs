@@ -44,6 +44,7 @@ namespace myCarManager
                 PrintLog(ex.StackTrace);
             }
         }
+        //update용 Save
         public static void Save
             (int parkingSpot, string carNumber, string driverName, string phoneNumber, bool isRemove=false) //주차 출차때 주로 사용됨
         {
@@ -77,5 +78,45 @@ namespace myCarManager
             }
         }
 
+        //insert delete용 Save
+        public static bool Save(string query, int parkingSpot, out string contents)
+        {
+            DBHelper.selectQuery(parkingSpot); //해당 공간이 이미 존재하는지 여부 체크
+            contents = "";
+            if (query == "insert")
+                return DBInsert(parkingSpot, ref contents);//contents를 참조하는 값
+            else                                           //참조한다는 건 메소드에서 값 바꾸면 원본도 같이 바뀜
+                return DBDelete(parkingSpot, ref contents);
+        }
+
+        private static bool DBDelete(int parkingSpot, ref string contents)
+        {
+            if(DBHelper.dt.Rows.Count !=0) //해당 주차 공간 존재하면...
+            {
+                DBHelper.deleteQuery(parkingSpot);
+                contents = $"주차공간 {parkingSpot}이/가 삭제 되었습니다.";
+                return true; //삭제 성공
+            }
+            else //조회되지 않음. 즉 없는 경우
+            {
+                contents = $"{parkingSpot} 번호는 아직 없음";
+                return false;
+            }
+        }
+
+        private static bool DBInsert(int parkingSpot, ref string contents)
+        {
+            if (DBHelper.dt.Rows.Count == 0) //해당 주차 공간이 아직 없는 경우
+            {
+                DBHelper.insertQuery(parkingSpot);
+                contents = $"주차공간 {parkingSpot}이/가 추가 되었습니다.";
+                return true; //추가 성공
+            }
+            else //이미 있는 경우
+            {
+                contents = $"{parkingSpot} 주차 공간 이미 존재합니다.";
+                return false;
+            }
+        }
     }
 }
