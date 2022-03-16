@@ -145,5 +145,21 @@ namespace myCarManager
 
             }
         }
+
+        private void dataGridView_parkingManager_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                ParkingCar car = dataGridView_parkingManager.CurrentRow.DataBoundItem as ParkingCar;
+                textBox_parkingSpot.Text = car.ParkingSpot.ToString();
+                textBox_carNumber.Text = car.CarNumber;
+                textBox_driverName.Text = car.DriverName;
+                textBox_phoneNumber.Text = car.PhoneNumber;
+
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

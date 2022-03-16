@@ -246,6 +246,7 @@
             this.dataGridView_parkingManager.RowTemplate.Height = 23;
             this.dataGridView_parkingManager.Size = new System.Drawing.Size(740, 105);
             this.dataGridView_parkingManager.TabIndex = 0;
+            this.dataGridView_parkingManager.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_parkingManager_CellClick);
             // 
             // listBox_logPrint
             // 
