@@ -72,7 +72,12 @@ namespace myCarManager
                 //잘못된 값이 들어와도 프로그램을 종료시키지 않고
                 //TryParse자체는 false를 반환하고, out int parkingSpot에는 0을 준다.
                 //out 키워드를 통해서 하나의 함수로 여러 개의 변수에 값을 대입할 수 있다.
-                if (int.TryParse(textBox_parkingSpot_lookUp.Text, out int parkingSpot) == false)
+
+
+                //visual studio 구버전에선 out int 동시에 못씀
+                //일단 선언을 먼저하고 그 뒤에 out 키워드 사용 가능
+                int parkingSpot = 0;
+                if (int.TryParse(textBox_parkingSpot_lookUp.Text, out parkingSpot) == false)
                 {
                     MessageBox.Show("주차공간번호는 숫자여야 합니다.");
                     return;
