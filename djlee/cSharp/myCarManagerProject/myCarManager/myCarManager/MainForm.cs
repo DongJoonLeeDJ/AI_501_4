@@ -161,5 +161,55 @@ namespace myCarManager
             {
             }
         }
+
+        //db에 있는 값을 다시 불러옴(insert, delete 후 다시 불러올 때 쓰임)
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            DataManager.Load();
+            dataGridView_parkingManager.DataSource = null;
+            if (DataManager.Cars.Count > 0)
+                dataGridView_parkingManager.DataSource = DataManager.Cars;
+        }
+
+        private void button_selected_lookUp_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //textBox_parkingSpot_lookUp에 잘못된 값이 들어가면 에러가 날 것
+                int parkingSpot = int.Parse(textBox_parkingSpot_lookUp.Text);
+                string ParkingCar = lookUpParkingSpot(parkingSpot);
+                string contents;
+                if(ParkingCar== "해당주차공간없음")
+                {
+                    contents = $"해당 주차 공간은 존재하지 않습니다. ({parkingSpot})";
+                }
+                else if(ParkingCar != "")
+                {
+                    contents = $"주차 공간 {parkingSpot}에 주차되어 있는 차는 {ParkingCar}입니다.";
+                }
+                else
+                {
+                    contents = $"주차공간 {parkingSpot}에 주차되어 있는 차가 없습니다.";
+                }
+                WriteLog(contents);
+
+            }
+            catch (Exception ex)
+            {
+                WriteLog($"{textBox_parkingSpot_lookUp.Text} 값은 잘못되었습니다.");
+            }
+        }
+
+        private string lookUpParkingSpot(int parkingSpot)
+        {
+            foreach (var item in DataManager.Cars)
+            {
+                if (item.ParkingSpot == parkingSpot) //해당 공간에 주차된 차가 있으면 그 차 번호 리턴
+                    return item.CarNumber.ToString();
+            }
+
+
+            return "해당주차공간없음";
+        }
     }
 }

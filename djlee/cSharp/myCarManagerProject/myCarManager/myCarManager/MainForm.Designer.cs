@@ -184,6 +184,7 @@
             this.button_refresh.TabIndex = 5;
             this.button_refresh.Text = "전체 갱신";
             this.button_refresh.UseVisualStyleBackColor = true;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
             // 
             // button_delete
             // 
@@ -211,6 +212,7 @@
             this.button_selected_lookUp.TabIndex = 2;
             this.button_selected_lookUp.Text = "해당 공간 조회 ";
             this.button_selected_lookUp.UseVisualStyleBackColor = true;
+            this.button_selected_lookUp.Click += new System.EventHandler(this.button_selected_lookUp_Click);
             // 
             // textBox_parkingSpot_lookUp
             // 
