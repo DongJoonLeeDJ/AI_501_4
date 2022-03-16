@@ -30,28 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button_parkingRemove = new System.Windows.Forms.Button();
+            this.button_parkingAdd = new System.Windows.Forms.Button();
+            this.textBox_phoneNumber = new System.Windows.Forms.TextBox();
+            this.textBox_driverName = new System.Windows.Forms.TextBox();
+            this.textBox_carNumber = new System.Windows.Forms.TextBox();
+            this.textBox_parkingSpot = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button_refresh = new System.Windows.Forms.Button();
+            this.button_delete = new System.Windows.Forms.Button();
+            this.button_add = new System.Windows.Forms.Button();
+            this.button_selected_lookUp = new System.Windows.Forms.Button();
+            this.textBox_parkingSpot_lookUp = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView_parkingManager = new System.Windows.Forms.DataGridView();
             this.listBox_logPrint = new System.Windows.Forms.ListBox();
             this.label_now = new System.Windows.Forms.Label();
             this.timer_now = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox_parkingSpot = new System.Windows.Forms.TextBox();
-            this.textBox_carNumber = new System.Windows.Forms.TextBox();
-            this.textBox_driverName = new System.Windows.Forms.TextBox();
-            this.textBox_phoneNumber = new System.Windows.Forms.TextBox();
-            this.button_parkingAdd = new System.Windows.Forms.Button();
-            this.button_parkingRemove = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox_parkingSpot_lookUp = new System.Windows.Forms.TextBox();
-            this.button_selected_lookUp = new System.Windows.Forms.Button();
-            this.button_add = new System.Windows.Forms.Button();
-            this.button_delete = new System.Windows.Forms.Button();
-            this.button_refresh = new System.Windows.Forms.Button();
-            this.dataGridView_parkingManager = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -77,6 +77,90 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "주차/출차";
             // 
+            // button_parkingRemove
+            // 
+            this.button_parkingRemove.Location = new System.Drawing.Point(189, 53);
+            this.button_parkingRemove.Name = "button_parkingRemove";
+            this.button_parkingRemove.Size = new System.Drawing.Size(75, 23);
+            this.button_parkingRemove.TabIndex = 9;
+            this.button_parkingRemove.Text = "출차";
+            this.button_parkingRemove.UseVisualStyleBackColor = true;
+            this.button_parkingRemove.Click += new System.EventHandler(this.button_parkingRemove_Click);
+            // 
+            // button_parkingAdd
+            // 
+            this.button_parkingAdd.Location = new System.Drawing.Point(189, 20);
+            this.button_parkingAdd.Name = "button_parkingAdd";
+            this.button_parkingAdd.Size = new System.Drawing.Size(75, 23);
+            this.button_parkingAdd.TabIndex = 8;
+            this.button_parkingAdd.Text = "주차";
+            this.button_parkingAdd.UseVisualStyleBackColor = true;
+            this.button_parkingAdd.Click += new System.EventHandler(this.button_parkingAdd_Click);
+            // 
+            // textBox_phoneNumber
+            // 
+            this.textBox_phoneNumber.Location = new System.Drawing.Point(67, 104);
+            this.textBox_phoneNumber.Name = "textBox_phoneNumber";
+            this.textBox_phoneNumber.Size = new System.Drawing.Size(100, 21);
+            this.textBox_phoneNumber.TabIndex = 7;
+            // 
+            // textBox_driverName
+            // 
+            this.textBox_driverName.Location = new System.Drawing.Point(67, 80);
+            this.textBox_driverName.Name = "textBox_driverName";
+            this.textBox_driverName.Size = new System.Drawing.Size(100, 21);
+            this.textBox_driverName.TabIndex = 6;
+            // 
+            // textBox_carNumber
+            // 
+            this.textBox_carNumber.Location = new System.Drawing.Point(67, 53);
+            this.textBox_carNumber.Name = "textBox_carNumber";
+            this.textBox_carNumber.Size = new System.Drawing.Size(100, 21);
+            this.textBox_carNumber.TabIndex = 5;
+            // 
+            // textBox_parkingSpot
+            // 
+            this.textBox_parkingSpot.Location = new System.Drawing.Point(67, 21);
+            this.textBox_parkingSpot.Name = "textBox_parkingSpot";
+            this.textBox_parkingSpot.Size = new System.Drawing.Size(100, 21);
+            this.textBox_parkingSpot.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(7, 113);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "전화번호";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "차주이름";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(7, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "차량번호";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(7, 21);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "공간번호";
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button_refresh);
@@ -92,6 +176,58 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "주차 공간 현황 관리";
             // 
+            // button_refresh
+            // 
+            this.button_refresh.Location = new System.Drawing.Point(239, 118);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(121, 23);
+            this.button_refresh.TabIndex = 5;
+            this.button_refresh.Text = "전체 갱신";
+            this.button_refresh.UseVisualStyleBackColor = true;
+            // 
+            // button_delete
+            // 
+            this.button_delete.Location = new System.Drawing.Point(239, 88);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(121, 23);
+            this.button_delete.TabIndex = 4;
+            this.button_delete.Text = "공간 삭제";
+            this.button_delete.UseVisualStyleBackColor = true;
+            // 
+            // button_add
+            // 
+            this.button_add.Location = new System.Drawing.Point(239, 59);
+            this.button_add.Name = "button_add";
+            this.button_add.Size = new System.Drawing.Size(121, 23);
+            this.button_add.TabIndex = 3;
+            this.button_add.Text = "공간 추가";
+            this.button_add.UseVisualStyleBackColor = true;
+            // 
+            // button_selected_lookUp
+            // 
+            this.button_selected_lookUp.Location = new System.Drawing.Point(239, 21);
+            this.button_selected_lookUp.Name = "button_selected_lookUp";
+            this.button_selected_lookUp.Size = new System.Drawing.Size(121, 23);
+            this.button_selected_lookUp.TabIndex = 2;
+            this.button_selected_lookUp.Text = "해당 공간 조회 ";
+            this.button_selected_lookUp.UseVisualStyleBackColor = true;
+            // 
+            // textBox_parkingSpot_lookUp
+            // 
+            this.textBox_parkingSpot_lookUp.Location = new System.Drawing.Point(87, 21);
+            this.textBox_parkingSpot_lookUp.Name = "textBox_parkingSpot_lookUp";
+            this.textBox_parkingSpot_lookUp.Size = new System.Drawing.Size(100, 21);
+            this.textBox_parkingSpot_lookUp.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "공간번호";
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView_parkingManager);
@@ -101,6 +237,15 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "주차 현황";
+            // 
+            // dataGridView_parkingManager
+            // 
+            this.dataGridView_parkingManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_parkingManager.Location = new System.Drawing.Point(11, 21);
+            this.dataGridView_parkingManager.Name = "dataGridView_parkingManager";
+            this.dataGridView_parkingManager.RowTemplate.Height = 23;
+            this.dataGridView_parkingManager.Size = new System.Drawing.Size(740, 105);
+            this.dataGridView_parkingManager.TabIndex = 0;
             // 
             // listBox_logPrint
             // 
@@ -125,149 +270,6 @@
             this.timer_now.Enabled = true;
             this.timer_now.Interval = 1000;
             this.timer_now.Tick += new System.EventHandler(this.timer_now_Tick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 21);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "공간번호";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "차량번호";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "차주이름";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 113);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 12);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "전화번호";
-            // 
-            // textBox_parkingSpot
-            // 
-            this.textBox_parkingSpot.Location = new System.Drawing.Point(67, 21);
-            this.textBox_parkingSpot.Name = "textBox_parkingSpot";
-            this.textBox_parkingSpot.Size = new System.Drawing.Size(100, 21);
-            this.textBox_parkingSpot.TabIndex = 4;
-            // 
-            // textBox_carNumber
-            // 
-            this.textBox_carNumber.Location = new System.Drawing.Point(67, 53);
-            this.textBox_carNumber.Name = "textBox_carNumber";
-            this.textBox_carNumber.Size = new System.Drawing.Size(100, 21);
-            this.textBox_carNumber.TabIndex = 5;
-            // 
-            // textBox_driverName
-            // 
-            this.textBox_driverName.Location = new System.Drawing.Point(67, 80);
-            this.textBox_driverName.Name = "textBox_driverName";
-            this.textBox_driverName.Size = new System.Drawing.Size(100, 21);
-            this.textBox_driverName.TabIndex = 6;
-            // 
-            // textBox_phoneNumber
-            // 
-            this.textBox_phoneNumber.Location = new System.Drawing.Point(67, 104);
-            this.textBox_phoneNumber.Name = "textBox_phoneNumber";
-            this.textBox_phoneNumber.Size = new System.Drawing.Size(100, 21);
-            this.textBox_phoneNumber.TabIndex = 7;
-            // 
-            // button_parkingAdd
-            // 
-            this.button_parkingAdd.Location = new System.Drawing.Point(189, 20);
-            this.button_parkingAdd.Name = "button_parkingAdd";
-            this.button_parkingAdd.Size = new System.Drawing.Size(75, 23);
-            this.button_parkingAdd.TabIndex = 8;
-            this.button_parkingAdd.Text = "주차";
-            this.button_parkingAdd.UseVisualStyleBackColor = true;
-            // 
-            // button_parkingRemove
-            // 
-            this.button_parkingRemove.Location = new System.Drawing.Point(189, 53);
-            this.button_parkingRemove.Name = "button_parkingRemove";
-            this.button_parkingRemove.Size = new System.Drawing.Size(75, 23);
-            this.button_parkingRemove.TabIndex = 9;
-            this.button_parkingRemove.Text = "출차";
-            this.button_parkingRemove.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(53, 12);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "공간번호";
-            // 
-            // textBox_parkingSpot_lookUp
-            // 
-            this.textBox_parkingSpot_lookUp.Location = new System.Drawing.Point(87, 21);
-            this.textBox_parkingSpot_lookUp.Name = "textBox_parkingSpot_lookUp";
-            this.textBox_parkingSpot_lookUp.Size = new System.Drawing.Size(100, 21);
-            this.textBox_parkingSpot_lookUp.TabIndex = 1;
-            // 
-            // button_selected_lookUp
-            // 
-            this.button_selected_lookUp.Location = new System.Drawing.Point(239, 21);
-            this.button_selected_lookUp.Name = "button_selected_lookUp";
-            this.button_selected_lookUp.Size = new System.Drawing.Size(121, 23);
-            this.button_selected_lookUp.TabIndex = 2;
-            this.button_selected_lookUp.Text = "해당 공간 조회 ";
-            this.button_selected_lookUp.UseVisualStyleBackColor = true;
-            // 
-            // button_add
-            // 
-            this.button_add.Location = new System.Drawing.Point(239, 59);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(121, 23);
-            this.button_add.TabIndex = 3;
-            this.button_add.Text = "공간 추가";
-            this.button_add.UseVisualStyleBackColor = true;
-            // 
-            // button_delete
-            // 
-            this.button_delete.Location = new System.Drawing.Point(239, 88);
-            this.button_delete.Name = "button_delete";
-            this.button_delete.Size = new System.Drawing.Size(121, 23);
-            this.button_delete.TabIndex = 4;
-            this.button_delete.Text = "공간 삭제";
-            this.button_delete.UseVisualStyleBackColor = true;
-            // 
-            // button_refresh
-            // 
-            this.button_refresh.Location = new System.Drawing.Point(239, 118);
-            this.button_refresh.Name = "button_refresh";
-            this.button_refresh.Size = new System.Drawing.Size(121, 23);
-            this.button_refresh.TabIndex = 5;
-            this.button_refresh.Text = "전체 갱신";
-            this.button_refresh.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView_parkingManager
-            // 
-            this.dataGridView_parkingManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_parkingManager.Location = new System.Drawing.Point(11, 21);
-            this.dataGridView_parkingManager.Name = "dataGridView_parkingManager";
-            this.dataGridView_parkingManager.RowTemplate.Height = 23;
-            this.dataGridView_parkingManager.Size = new System.Drawing.Size(740, 105);
-            this.dataGridView_parkingManager.TabIndex = 0;
             // 
             // MainForm
             // 
