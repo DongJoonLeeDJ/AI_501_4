@@ -16,9 +16,24 @@ namespace myCarManager
         {
             InitializeComponent();
 
-            //DataManager 자체에 접근하는 순간! DataManager 안의
-            //static DataManager 생성자(정적 생성자)가 호출됨
-            dataGridView_parkingManager.DataSource = DataManager.Cars;
+            try
+            {
+                //DataManager 자체에 접근하는 순간! DataManager 안의
+                //static DataManager 생성자(정적 생성자)가 호출됨
+                textBox_parkingSpot.Text = DataManager.Cars[0].ParkingSpot.ToString();
+                textBox_carNumber.Text = DataManager.Cars[0].CarNumber.ToString();
+                textBox_driverName.Text = DataManager.Cars[0].DriverName.ToString();
+                textBox_phoneNumber.Text = DataManager.Cars[0].PhoneNumber.ToString();
+            }
+            catch (Exception ex) //Cars에 아무것도 없는 경우에 대한 예외처리
+            {
+                WriteLog("초창기 데이터 없음. 주차 공간을 하나 이상 생성하세요.");
+            }
+            //데이터가 하나라도 있을 때 DataSource를 Cars로 바꿔야 함
+            //Cars의 길이가 0일 때, 즉 하나도 없을 때 DataSource를 Cars로 바꾸면
+            //데이터그리드뷰 클릭시 오류메시지가 계속 나타난다.(접근할 수 없는 인덱스 접근했다는 메시지)
+            if (DataManager.Cars.Count > 0)
+                dataGridView_parkingManager.DataSource = DataManager.Cars;
         }
 
         private void timer_now_Tick(object sender, EventArgs e)
