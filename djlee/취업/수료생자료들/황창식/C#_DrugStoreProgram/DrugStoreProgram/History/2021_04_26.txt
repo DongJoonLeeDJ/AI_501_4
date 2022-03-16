@@ -1,0 +1,20 @@
+[ 2021_04_26 ] [오류일시 :2021-04-26 14:49:20 ]
+[폼 위치 : dataManager - 제약사] [ex.Message] : 'C:\Users\KB\Desktop\teamProject\teamProject\bin\Release\drugCompInfo.xml' 파일을 찾을 수 없습니다., 
+[ex.StackTrace] :    위치: System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   위치: System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   위치: System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   위치: System.IO.File.ReadAllText(String path)
+   위치: teamProject.DataManager_comp.Load() 파일 C:\Users\KB\Desktop\teamProject\teamProject\DataManagers\DataManager_comp.cs:줄 31
+
+[ 2021_04_26 ] [오류일시 :2021-04-26 14:49:48 ]
+[폼 위치 : dataManager - 약 정보] [ex.Message] : 'C:\Users\KB\Desktop\teamProject\teamProject\bin\Release\drugInfo.xml' 파일을 찾을 수 없습니다., 
+[ex.StackTrace] :    위치: System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   위치: System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   위치: System.IO.StreamReader..ctor(String path, Encoding encoding, Boolean detectEncodingFromByteOrderMarks, Int32 bufferSize, Boolean checkHost)
+   위치: System.IO.File.InternalReadAllText(String path, Encoding encoding, Boolean checkHost)
+   위치: System.IO.File.ReadAllText(String path)
+   위치: teamProject.DataManager.Load() 파일 C:\Users\KB\Desktop\teamProject\teamProject\DataManagers\DataManager.cs:줄 27
+
