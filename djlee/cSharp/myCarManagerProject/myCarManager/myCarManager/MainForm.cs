@@ -34,6 +34,45 @@ namespace myCarManager
             //데이터그리드뷰 클릭시 오류메시지가 계속 나타난다.(접근할 수 없는 인덱스 접근했다는 메시지)
             if (DataManager.Cars.Count > 0)
                 dataGridView_parkingManager.DataSource = DataManager.Cars;
+
+
+            //무명 델리게이트로 이벤트 추가(주차공간 추가)
+            button_add.Click += delegate (object sender, EventArgs e)
+            {
+                //TryParse 는 Parse와는 다르게 문자열을 숫자로 변경시
+                //잘못된 값이 들어와도 프로그램을 종료시키지 않고
+                //TryParse자체는 false를 반환하고, out int parkingSpot에는 0을 준다.
+                //out 키워드를 통해서 하나의 함수로 여러 개의 변수에 값을 대입할 수 있다.
+                if (int.TryParse(textBox_parkingSpot_lookUp.Text, out int parkingSpot) == false)
+                {
+                    MessageBox.Show("주차공간번호는 숫자여야 합니다.");
+                    return;
+                }
+                if(parkingSpot <= 0)
+                {
+                    MessageBox.Show("주차공간번호는 0 이상의 값이어야 합니다.");
+                    return;
+                }
+
+                string contents = string.Empty; //string contents = ""; 이랑 똑같음
+                //함수의 오버로딩
+                //기존의 Save와는 다르게 매개변수가 3개이고, 타입도 다름 그리고 out 키워드도 있음
+                //insert를 성공하게 되면, 갱신 버튼을 눌러준다.
+                if(DataManager.Save("insert", parkingSpot, out contents))
+                {
+                    button_refresh.PerformClick();//갱신 버튼 강제 클릭.
+                }
+                WriteLog(contents);
+
+
+            };
+
+            //람다로 이벤트 추가(주차공간 삭제)
+            button_delete.Click += (sender, e) =>
+            {
+
+            };
+
         }
 
         private void timer_now_Tick(object sender, EventArgs e)
