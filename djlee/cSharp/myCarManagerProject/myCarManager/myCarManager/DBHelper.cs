@@ -32,7 +32,7 @@ namespace myCarManager
         {
             ConnectDB(); //쿼리를 보내기 전에 DB랑 연결
             SqlCommand cmd = new SqlCommand();
-            cmd.Connection = conn; //연결을 안 함...
+            cmd.Connection = conn; //연결을 해야 함...
             try
             {
                 if (parkingSpot < 0) //parkingSpot이 -1인 경우

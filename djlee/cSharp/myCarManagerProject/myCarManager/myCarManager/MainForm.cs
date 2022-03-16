@@ -45,7 +45,7 @@ namespace myCarManager
 
         private bool checkParkingSpot(ParkingCar parkingCar)
         {
-            return parkingCar.ToString() == textBox_parkingSpot.Text;
+            return parkingCar.ParkingSpot.ToString() == textBox_parkingSpot.Text;
         }
         //주차 
         private void button_parkingAdd_Click(object sender, EventArgs e)
@@ -70,6 +70,8 @@ namespace myCarManager
                     //      { return parkingCar.ParkingSpot.ToString() == textBox_parkingSpot.Text; });
 
                     ParkingCar car = DataManager.Cars.Single(checkParkingSpot);
+
+
                     if(car.CarNumber.Trim() != "")
                         MessageBox.Show("이미 해당 공간에 차가 있음");
                     else //차가 없는 경우
