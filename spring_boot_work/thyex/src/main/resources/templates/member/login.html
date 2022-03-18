@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login Form</h2>
+        <form th:action="@{/member/login}" action="action.php" method="post">
+            <div class="imgcontainer">
+                <img th:src="@{/img/img_avatar2.png}" src="img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div style="width:550px;margin:0 auto;">
+                <label for="email" style="padding-left:30px;"><b>Username</b></label>
+                <input type="text"
+                       placeholder="Enter Username"
+                       name="email" id="email" required>
+                <label for="psw" style="padding-left:30px;"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="psw" required>
+                <button type="submit" style="width:100%;">Login</button>
+                <p>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                </p>
+            </div>
+            <div th:if="${param.error}" style="padding: 10px 0; text-align:center;background-color:rgb(240, 120, 120); font-color:rgb(243, 240, 240);">
+                로그인실패
+            </div>
+
+<!--            <div style="background-color:#f1f1f1">-->
+<!--                <button type="button" class="cancelbtn">Cancel</button>-->
+<!--                <span class="psw">Forgot <a href="#">password?</a></span>-->
+<!--            </div>-->
+
+        </form>
+    </div>
+</body>
+
+</html>

@@ -11,7 +11,9 @@ import java.util.List;
 
 public interface MemberRepository extends JpaRepository<Member,Long> {
     // select * from member where email ='' and pwd ='?';
-    Member getByEmail(String email);
+//    Member getByEmail(String email);
+    //select * from member where email ='';
+    Member findByEmail(String email);
     // select * from member where email like '%email%';
     Page<Member> findByEmailContaining(String email, Pageable pageable);
 //    Member getByPwd(String pwd);

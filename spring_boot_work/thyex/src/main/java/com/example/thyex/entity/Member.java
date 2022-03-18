@@ -4,6 +4,8 @@ import com.example.thyex.dto.MemberFormDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
 
@@ -21,10 +23,12 @@ public class Member {
     private String email;
     private String pwd;
 
-    public static Member createMember(MemberFormDto memberFormDto){
+    public static Member createMember(MemberFormDto memberFormDto,PasswordEncoder passwordEncoder){
+//        PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         Member member = new Member();
         member.setEmail(memberFormDto.getEmail());
-        member.setPwd(memberFormDto.getPwd());
+//        member.setPwd(memberFormDto.getPwd());
+        member.setPwd(passwordEncoder.encode(memberFormDto.getPwd()));
         return member;
     }
 }

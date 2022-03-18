@@ -592,13 +592,19 @@ def preprocess_sentence(sentence):
   return sentence
 
 output = predict('영화 볼래?')
+print(output)
 
 output = predict("고민이 있어")
+print(output)
 
 output = predict("너무 화가나")
+print(output)
 
 output = predict("게임하고싶은데 할래?")
+print(output)
 
 output = predict("나 너 좋아하는 것 같아")
+print(output)
 
 output = predict("딥 러닝 자연어 처리를 잘 하고 싶어")
+print(output)

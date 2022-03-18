@@ -34,7 +34,7 @@
                 <th></th>
                 <th>id</th>
                 <th>email</th>
-                <th>pwd</th>
+<!--                <th>pwd</th>-->
             </tr>
         </thead>
         <tbody>
@@ -42,7 +42,7 @@
                 <td><input type="checkbox" class="form-control" th:value="${mem.id}" name="id"></td>
                 <td th:text="${mem.id}">1</td>
                 <td><a th:text="${mem.email}" th:href="@{update(id=${mem.id})}">aa@naver.com</a></td>
-                <td th:text="${mem.pwd}">1234</td>
+<!--                <td th:text="${mem.pwd}">1234</td>-->
             </tr>
         </tbody>
     </table>

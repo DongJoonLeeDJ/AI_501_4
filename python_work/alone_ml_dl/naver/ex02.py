@@ -18,9 +18,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 okt = Okt()
 
-tokenizer = 
-
-loaded_model = load_model('./naver/best_model.h5')
+loaded_model = load_model('./best_model.h5')
 # print("\n 테스트 정확도: %.4f" % (loaded_model.evaluate(X_test, y_test)[1]))
 
 def sentiment_predict(new_sentence):
@@ -48,3 +46,16 @@ print(predvalue)
 
 predvalue = sentiment_predict('와 개쩐다 정말 세계관 최강자들의 영화다')
 print(predvalue)
+
+
+@app.route("/html")
+def html():
+    data = request.args.get('data')
+    if len(data) == 0:
+        return render_template('a.html', result='data param need')
+    print(data)
+    result = sentiment_predict(data)
+    return render_template('a.html', result=result)
+
+
+app.run()

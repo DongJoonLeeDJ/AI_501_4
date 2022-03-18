@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <div th:fragment="header(menu)">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Toggler/collapsibe Button -->
@@ -14,19 +15,31 @@
                     <a class="nav-link" th:classappend="${menu =='main'} ? 'active'" href="/main">Main</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:classappend="${menu =='members'} ? 'active'" href="/members/selectall">member</a>
+<!--                    <a class="nav-link" th:classappend="${menu =='members'} ? 'active'" href="/members/selectall" sec:authorize="isAnonymous()">member</a>-->
+                    <a class="nav-link" th:classappend="${menu =='members'} ? 'active'" href="/members/selectall" sec:authorize="hasAnyAuthority('ADMIN')">member</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:classappend="${menu =='board'} ? 'active'" href="/board/selectall">board</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:classappend="${menu =='todo'} ? 'active'" href="/todo/selectall">todo</a>
+                    <a class="nav-link" th:classappend="${menu =='login'} ? 'active'" href="/member/login" sec:authorize="isAnonymous()">login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${menu =='login'} ? 'active'" href="/member/logout" sec:authorize="isAuthenticated()">logOut</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${menu =='todo'} ? 'active'" href="/todo/selectall" sec:authorize="isAuthenticated()">todo</a>
                 </li>
                 <li class="nav-item ml-auto">
                     <form class="form-inline" action=""> <!-- todo members board 3개를 조인... 내용을.. -->
+                        <div style="margin-right:1rem;">
+                            <span style="font-size:0.8rem;" class="text-white" sec:authentication="name">사용자</span>
+                        </div>
+<!--                        <span class="text-white mx-2" sec:authentication="principal.authorities">권한</span>-->
                         <input class="form-control mr-md-2" type="text" placeholder="Search">
                         <button class="btn btn-success" type="submit">Search</button>
                     </form>
+
                 </li>
             </ul>
 

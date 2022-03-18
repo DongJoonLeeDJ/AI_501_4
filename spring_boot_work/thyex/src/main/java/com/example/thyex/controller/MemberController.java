@@ -10,15 +10,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.sql.Connection;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,6 +29,9 @@ public class MemberController {
 
     @Autowired
     MemberRepository memberRepository;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     @PostMapping("delete")
     public String delete(Long id[]){
@@ -72,7 +73,7 @@ public class MemberController {
         if(bindingResult.hasErrors()){
             return "members/update";
         }
-        Member member = Member.createMember(memberFormDto);
+        Member member = Member.createMember(memberFormDto,passwordEncoder);
         member.setId(id);
         try {
             memberService.save(member);
@@ -88,19 +89,28 @@ public class MemberController {
 
     @PostMapping("insert")
     public String insert(@Valid MemberFormDto memberFormDto, BindingResult bindingResult, Model model){
-        if(bindingResult.hasErrors()){
-            return "members/insert";
-        }
-        Member member = Member.createMember(memberFormDto);
+        System.out.println("일로오나");
         try {
-            memberService.save(member);
+            if (bindingResult.hasErrors()) {
+                return "members/insert";
+            }
+            Member member = Member.createMember(memberFormDto,passwordEncoder);
+            try {
+                System.out.println(member);
+                memberService.save(member);
+            } catch (Exception e) {
+                System.out.println(e.toString());
+                System.out.println("- 발생...");
+                model.addAttribute("errorMessage", "Email중복");
+                return "members/insert";
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        catch (Exception e){
-            System.out.println(e.toString());
-            System.out.println("- 발생...");
-            model.addAttribute("errorMessage","Email중복");
-            return "members/insert";
-        }
+//        return "members/insert";
         return "redirect:selectall";
     }
+
+
+
 }
