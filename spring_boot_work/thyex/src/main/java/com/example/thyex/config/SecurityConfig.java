@@ -74,6 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService( (email)->{
                     Member member = memberRepository.findByEmail(email);
+                    String role = member.getEmail().equals("aa@naver.com")?"USER":"ADMIN";
 
                     if( member == null)
                         throw new UsernameNotFoundException(email);
@@ -81,7 +82,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     return User.builder()
                             .username(member.getEmail())
                             .password(member.getPwd())
-                            .roles("USER")
+                            .roles(role)
                             .build();
                 })
                 .passwordEncoder(passwordEncoder());

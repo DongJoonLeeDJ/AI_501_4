@@ -16,7 +16,7 @@
                 </li>
                 <li class="nav-item">
 <!--                    <a class="nav-link" th:classappend="${menu =='members'} ? 'active'" href="/members/selectall" sec:authorize="isAnonymous()">member</a>-->
-                    <a class="nav-link" th:classappend="${menu =='members'} ? 'active'" href="/members/selectall" sec:authorize="hasAnyAuthority('ADMIN')">member</a>
+                    <a class="nav-link" th:classappend="${menu =='members'} ? 'active'" href="/members/selectall" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">member</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" th:classappend="${menu =='board'} ? 'active'" href="/board/selectall">board</a>
@@ -34,8 +34,9 @@
                     <form class="form-inline" action=""> <!-- todo members board 3개를 조인... 내용을.. -->
                         <div style="margin-right:1rem;">
                             <span style="font-size:0.8rem;" class="text-white" sec:authentication="name">사용자</span>
+                            <span style="font-size:0.8rem;" class="text-white mx-2" sec:authorize="hasAnyAuthority('ROLE_USER')">유저</span>
+                            <span style="font-size:0.8rem;" class="text-white mx-2" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">관리자</span>
                         </div>
-<!--                        <span class="text-white mx-2" sec:authentication="principal.authorities">권한</span>-->
                         <input class="form-control mr-md-2" type="text" placeholder="Search">
                         <button class="btn btn-success" type="submit">Search</button>
                     </form>
