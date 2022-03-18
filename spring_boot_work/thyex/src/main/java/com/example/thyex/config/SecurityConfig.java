@@ -74,7 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService( (email)->{
                     Member member = memberRepository.findByEmail(email);
-                    String role = member.getEmail().equals("aa@naver.com")?"USER":"ADMIN";
+                    String role = member.getEmail().equals("aa@naver.com")?"ADMIN":"USER";
 
                     if( member == null)
                         throw new UsernameNotFoundException(email);
