@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 
-export default function AA(){
-    const [aa,setAa] = useState('aaa');
+export default function AA(props){
+    // console.log(props);
+    let iaa = props.aa;
+    const [aa,setAa] = useState(iaa);
     function doA(){
-        aa === "aaa"? setAa("bbb"):setAa("aaa");
+        aa === iaa? setAa("bbb"):setAa(iaa);
     }
     return(
         <div>

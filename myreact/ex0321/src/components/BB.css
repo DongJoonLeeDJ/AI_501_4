@@ -1,0 +1,16 @@
+
+input{
+    min-width: 300px;
+    width: 50%;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.2rem;
+}
+
+.btn{
+    margin: 1rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border-radius: 0.2rem;
+    background-color: aqua;
+}
