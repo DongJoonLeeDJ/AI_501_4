@@ -10,8 +10,8 @@ function App() {
   const [input,setInput] = useState('');
   const [todos,setTodos] = useState([
     { id: 0, text: ' 리액트 소개', checked: false },
-    { id: 1, text: ' 리액트 소개', checked: true },
-    { id: 2, text: ' 리액트 소개', checked: false }
+    { id: 1, text: ' 두번째 값', checked: true },
+    { id: 2, text: ' 세번째 값', checked: false }
   ]);
 
   const handleCreate = ()=>{
