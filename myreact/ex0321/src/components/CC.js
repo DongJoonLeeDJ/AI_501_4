@@ -9,7 +9,7 @@ export default function CC(){
             ]
     // 5개 ...
     const ultags = numbers.map((number)=> <li key={number}>{number}</li> );
-    const cctags = cc.map(obj => <li key={obj.id}>{obj.text} x {obj.val && '츄루'}</li>)
+    const cctags = cc.map(obj => <li key={obj.id}>{obj.text} &times; {obj.val && '츄루'}</li>)
     return (
         <div>
             <ul className="myul">

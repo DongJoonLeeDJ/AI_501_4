@@ -27,3 +27,4 @@ mc = ModelCheckpoint('best_model.h5', monitor='val_acc', mode='max', verbose=1, 
 
 model.compile(optimizer='rmsprop', loss='binary_crossentropy', metrics=['acc'])
 history = model.fit(X_train, y_train, epochs=15, callbacks=[es, mc], batch_size=64, validation_split=0.2)
+

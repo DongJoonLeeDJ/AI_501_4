@@ -1,0 +1,14 @@
+.Nav{
+    background-image: url('./nav.jpg');
+}
+a{
+    display: inline-block;
+    color: rgb(253, 66, 66);
+    border-radius: 0.2rem;
+    text-decoration-line: none;
+    line-height: 1.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: rgb(185, 248, 248);
+    font-size: 2rem;
+}
