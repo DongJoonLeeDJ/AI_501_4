@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0
+//EN " "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="book">
+	<insert id="insert" parameterType="hashMap" useGeneratedKeys="true" keyProperty="book_id">
+	<![CDATA[
+		insert into book (title,category,price) values (#{title}, #{category}, #{price})
+	]]>
+	
+	</insert>
+	
+	<!-- 데이터 하나만 받아올 거임 -->
+	<select id="select_detail" parameterType="hashMap" resultType="hashMap">
+		<![CDATA[
+			select title,category,price,insert_date from book where book_id=#{bookId}
+		]]>
+	
+	</select>
+	
+	<update id="update" parameterType="hashMap">
+	<![CDATA[
+	update book set title=#{title}, category=#{category}, price=#{price} where book_id=#{bookId}
+	]]>
+	
+	</update>
+	
+	<delete id="delete" parameterType="hashMap">
+	<![CDATA[
+		delete from book where book_id=#{bookId}
+	]]>
+	</delete>
+	
+	<!-- 가장 최근에 발매한 책부터 보여주기 위함. 만약 오래된 책부터 보여주고 싶으면 asc를 적거나 그냥 desc를 지우면 된다.  -->
+	<!-- 왜냐면 order by는 기본적으로 asc가 기본값(asc=오름차순, desc=내림차순) -->
+<!-- 	<select id="select_list" parameterType="hashMap" resultType="hashMap"> -->
+<!-- 		<![CDATA[ -->
+<!-- 			select book_id, title, category, price, insert_date from book order by insert_date desc  -->
+<!-- 		]]>  -->
+<!-- 	</select> -->
+<!-- where 1=1 관습적인 구문. 여러 개의 조건을 이어 붙일 때 쓰고, 그 조건 중 하나를 지우거나 추가할 때 쉽게 하려고 쓰는 구문 -->
+
+
+<!-- if태그조건이 해당이 될수도있고 안 될 수도 있어서, 끝에 where 1=1 붙였다. -->
+<!-- if태그가 들어가는 부분은 CDATA 밖으로 빠짐 -->
+<!-- mybatis의 쿼리문에선 따옴표(')를 안 써서  likie '%keyword%' 이렇게 표현할 수 있는 걸-->
+<!-- CONCAT('%', #{keyword}, '%') 이렇게 표현함 -->
+<select id="select_list" parameterType="hashMap" resultType="hashMap">
+<![CDATA[
+select book_id,title,category,price,insert_date from book 
+where 1=1
+]]>
+<if test="keyword!=null and keyword!=''">
+and (title like CONCAT('%', #{keyword}, '%') or category like CONCAT('%', #{keyword}, '%'))
+</if>
+order by insert_date desc
+
+</select>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</mapper>

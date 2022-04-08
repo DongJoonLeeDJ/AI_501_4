@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- bean 객체 등록 -->
+	<!-- DB연결에 필요한 모든 정보를 다 등록 -->
+	<!-- mybatis는 db쿼리를 저장한 xml 파일에 있는 쿼리를 읽어들여서 db처리하는 방식인데, 그에 대한 정보들도 추가 예정 -->
+	<!-- &amp; = & -->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+		<property name="url" 
+		value="jdbc:mysql://localhost:3306/my_web_dev_study?
+		serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true"/>
+		<property name="username" value="root"/>
+		<property name="password" value="1234"/>
+	</bean>
+	
+	<!-- mybatis쪽 객체 -->
+	<!-- 특정 xml 파일에 있는 db쿼리를 사용할 수 있는 객체 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="mapperLocations" value="classpath:/sqlmap/**/*_SQL.xml"/>
+	</bean>
+	
+	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory"/> <!-- sqlSessionTemplate객체의 생성자 -->
+	</bean>
+		
+</beans>
+
+
+
+
+
+
