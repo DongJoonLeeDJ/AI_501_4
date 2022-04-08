@@ -1,0 +1,30 @@
+프로시저 구문
+CREATE PROCEDURE `create_sequence` (IN the_name text)
+modifies sql data
+deterministic
+BEGIN
+	delete from sequences where name = the_name;
+    insert into sequences values(the_name, 0);
+END
+
+function 구문
+CREATE FUNCTION `nextval` (the_name varchar(32))
+RETURNS bigint unsigned
+modifies sql data
+deterministic
+BEGIN
+	declare ret bigint unsigned;
+    update sequences set currval = currval+1 where name = the_name;
+    select currval into ret from sequences where name = the_name limit 1;
+RETURN ret;
+END
+
+CREATE FUNCTION `currval` (the_name varchar(32))
+RETURNS bigint unsigned
+modifies sql data
+deterministic
+BEGIN
+	declare ret bigint unsigned;
+    select ifnull(max(currval),1) into ret from sequences where name = the_name limit 1;
+RETURN ret;
+END
