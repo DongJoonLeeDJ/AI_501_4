@@ -7,6 +7,9 @@ export default function Board(){
     const url = "http://localhost:3001/boards";
     const [boards,setBoards] = useState([]);
 
+    // $.ajax({
+    //     url:'http://local'
+    // })
     useEffect(()=>{
         fetch(url)
         .then(res=>res.json())
