@@ -15,9 +15,10 @@
                 url : "https://dongjoonleedj.github.io/testWebHosting/myjson.json",
                 dataType:"json",
                 success : function(data){
-                    let h1 = $('<h1></h1>')
-                    h1.text("가격은"+data.price+"입니다.")
-                    $('body').append(h1)
+                    console.log(data)
+                    let h1 = $('<h1></h1>') //h1태그 만들기
+                    h1.text("가격은"+data['price']+"입니다.")//data.price
+                    $('body').append(h1)//document.appendChild랑 동일
                 },
                 error:function(r,s,e){}
 
